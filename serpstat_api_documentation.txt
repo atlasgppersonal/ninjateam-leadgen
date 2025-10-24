@@ -1,0 +1,2774 @@
+
+
+--- URL: https://api-docs.serpstat.com/docs/serpstat-public-api/jenasqbwtxdlr-introduction-to-serpstat-api ---
+
+Introduction to Serpstat API
+
+Welcome to the Serpstat API documentation. Find all you need to integrate our powerful SEO data into your applications, automate reporting, and build custom tools for your workflow. API (application program interface) allows you to retrieve large amounts of data without using the Serpstat user interface. Our API consists of these thematic chapters:
+
+Domain Analysis: Various data about domain SEO stats.
+
+Keyword Analysis: Keyword selection, synonyms, suggestions.
+
+Url Analysis: SEO stats for specific URLs or paths of the website
+
+Backlink Analysis: Backlinks, External Links, Referring domains and Domain stats
+
+Domain Classification: Classify your domain listings by the most common categories used by Google.
+
+Site Audit: Scan your website for common SEO errors.
+
+Rank Tracker: Track the ranks of your website's keywords.
+
+Project Management: Manage your projects.
+
+Team Management: Manage your team directly.
+
+SERP Crawling: Crawl SERPs through API with AI overview scrapping.
+
+Keyword Volume Checker: Set up the keyword volume scanning through API.
+
+Credits API: Stats about your API credits usage.
+
+Getting ready:
+1. Activate Subscription
+
+To use Serpstat API make sure you have an active subscription.
+
+Serpstat API is available on middle and top tier subscripion plans. Checkout our plans here.
+
+Especially for heavy API usage we offer special API plans.
+
+You can try out API at trial period with no payment needed.
+
+2. Get API Token
+You need a personal API token to start using Serpstat API.
+Token can be generated (or renewed) at your Serpstat profile section.
+3. Testing
+
+Each user can have only one API token per user.
+
+There are no sandbox, test endpoint or any other test environment.
+
+For testing, we suggest you:
+
+Add a test user account to your team
+Give them a small amount of API credits
+Use their token as test credentials
+
+This helps avoid accidentally spending your main API credits during testing.
+
+Our API standard
+
+We using JSON-RPC 2.0
+
+Custom methods, volumes?
+
+Looking for custom options, like dealing with big volumes or reselling data? Need help with developing solutions to cover your tasks? Book a call with our experts to get professional assistance.
+
+
+--- URL: https://api-docs.serpstat.com/docs/serpstat-public-api/7f3773b547e37-custom-data-export-by-serpstat ---
+
+Custom Data Export by Serpstat
+
+Transform Serpstat's vast SEO database into actionable insights tailored specifically for your business needs.
+
+What We Offer
+
+Get direct access to our comprehensive SEO data through customized exports designed around your requirements. Whether you need competitive analysis, market trends, or keyword opportunities – we'll deliver the exact data you need, in the format that works best for your workflow.
+
+Why Choose Custom Export?
+
+• Flexible Data Format: Choose from industry-standard formats including CSV, Parquet, or direct BigQuery integration – perfectly aligned with your existing data infrastructure
+
+• Scale Without Limits: Access data in any volume – from focused datasets to comprehensive market analysis
+
+• Custom-Tailored Structure: Get data structured exactly how you need it, optimized for your specific use case and analysis tools
+
+Perfect For:
+Enterprise SEO teams requiring deep market analysis
+Data scientists integrating SEO insights into existing models
+Marketing agencies handling multiple high-volume projects
+Business intelligence teams seeking raw SEO data for custom analysis
+How It Works:
+Tell us your data requirements and preferred format
+Receive a custom quote based on your needs
+Get your data delivered in your chosen format
+
+Contact our enterprise team to discuss your custom data export needs and get a quote tailored to your requirements.
+
+
+--- URL: https://api-docs.serpstat.com/docs/serpstat-public-api/139902435d58c-serp-scraper-api ---
+
+SERP Scraper API
+
+SERP Scraper API offers the following key benefits for SEO specialists and business owners:
+
+Deep understanding of competitors' SERP positions
+Identification of industry leaders' effective SEO strategies
+Research of high-ranking pages' meta tags
+Analysis of URL structure and internal linking
+Tracking search position dynamics
+SERP changes monitoring
+
+SERP Scraper becomes an indispensable tool for making data-driven decisions in SEO and improving website visibility in search engines.
+
+AI Overview: Google AI Overview results are currently available within standard Desktop and Mobile SERP Scraper requests at no additional cost. This allows you to access AI-generated summaries and reference sources as part of your regular SERP data. However, starting August 1, 2025, AI Overview data will become a separate optional parameter with additional pricing. After this date, you will need to specifically enable AI Overview in your API requests and account for the additional costs in your usage billing.
+
+Credits and pricing
+
+This API has separate billing and credits type for this API are not included in any available subscription plan. Contacts sales for details.
+
+The cost varies from $0.0013 to $0.00065 per one keyword depending on the volume of credits required.
+
+The minimum budget for the service is $300 ( ~ 230,000 SERPs)
+
+Unlimited number of requests per day and month.
+
+Perform analysis regardless of the availability of a pricing plan or available credits.
+
+Credits for SERP Scraper don't expire at the end of the month, you can use them when it is convenient for you.
+
+All keywords accepted to task are billed after task submission.
+
+Charged credits are not refundable.
+
+"Pay as you go" and recurring billing options are not available for this API
+
+API Methods and Flow
+
+Description for all available methods of Serpstat SERP Scraper Api
+
+At the core of SERP Scraper service lies an elegant three-step process flow that ensures deep SERP analysis:
+
+1. Initialize
+
+Through the API interface, you submit a request to analyze a set of keywords considering the specifics of your chosen search region. This ensures obtaining maximally relevant data for your target geolocation.
+
+Use method addTask to submit your keyword list to parsing. This method is suitable for tasks with one or a small number of keywords.
+
+Use method addKeywordList to add up to 10,000 keywords per top parsing task.
+
+Both methods returns task_id, save it for the future, to get results.
+
+If some of your keywords doesn't meet the common validation criteria you would receive non empty array blocked_keywords in response:
+
+{
+  "id": "123",
+  "result": {
+    "task_id": "5492895",
+    "blocked_keywords": [
+      "*****"
+    ]
+  }
+}
+
+Blocked keywords are not charged and can't be parsed by our API. They won't be included in the parsing task.
+
+These references help you to choose the right ones id's for:
+
+language
+search region
+country code
+2. Wait till it's done
+
+Usually, top parsing takes up to 2-3 minutes depending to task size and service load.
+
+Use method getTaskResult to get results. If task is not complete you will receive response like that
+
+{
+  "id": "123",
+  "result": {
+    "progress": "0%",
+    "message": "Not all keywords have been tracked"
+  }
+}
+
+The system provides real-time task status updates, ensuring complete transparency of the data collection process. Use method
+
+3. Get results!
+
+Use method getTaskResult to get results again after little while. Upon completion of the analysis, you receive structured search results data for your keywords list. Each result contains detailed information about positions, meta-data, and other key SEO parameters found in SERP like that:
+
+{
+  "id": "123",
+  "result": {
+    "task_meta": {
+      "se_id": "1",
+      "country_id": "23",
+      "region_id": "21176",
+      "device_type_id": "1"
+    },
+    "tops": [
+      {
+        "keyword_id": "707207631",
+        "keyword": "eat jelephones on breakfast",
+        "keyword_data": {
+          "top": [
+            {
+              "url": "https://www.reddit.com/r/ketorecipes/comments/2y1c6r/jalapeno_poppersfor_breakfast/",
+              "domain": "reddit.com",
+              "subdomain": "www.reddit.com",
+              "title": "Jalapeno Poppers...for Breakfast! : r/ketorecipes",
+              "title_length": 49,
+              "snippet": "Jalapeno Popper Egg Cups. Yields 12 Egg Cups. Macros Per Egg Cup 216 Calories, 19.3g Fats, 0.9g Net Carbs, and 9.6g Protein. Perhaps the epitome of volume eating, the Balkan ...62 postsSep 23, 2024TIFU by eating too many jalapenos. - Reddit136 postsJun 3, 2013Are these Jalapeño peppers safe to eat? : r/PepperLovers28 postsDec 7, 2022I always throw out jalapeños when they get wrinkles. I ...68 postsNov 2, 2023More results from www.reddit.com Missing: jelephones  Show results with: jelephones",
+              "snippet_length": 497,
+              "breadcrumbs": "20+ comments  ·  9 years ago",
+              "spec_elements": [
+                {
+                  "type": "snip_breadcrumbs",
+                  "content": "20+ comments  ·  9 years ago",
+                  "href": null,
+                  "anchor": null,
+                  "sort_number": 0
+                }
+              ],
+              "types": [
+                "snip_breadcrumbs"
+              ],
+              "position": 1
+            }
+          ],
+          "ads": {
+            "1": [],
+            "2": [],
+            "3": []
+          },
+          "results": 51000,
+          "right_spell": "ear headphones on breakfast",
+          "types": [
+            "pic",
+            "also_asks",
+            "related_search"
+          ],
+          "top_features_content": [
+            {
+              "PeopleAlsoAsk": {
+                "PeopleAlsoAsk": {
+                  "people_also_ask_block": [],
+                  "people_also_ask_questions": [
+                    "Can you eat Knafeh for breakfast?",
+                    "Is it okay to eat a lot of jalapenos?",
+                    "What are the benefits of eating jalapenos?",
+                    "Is it okay to eat jalapeno as a snack?"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "target_fields": "[]"
+      }
+    ]
+  }
+}
+
+In this example, we've used one keyword and shrunk the response to 1 position in SERP. Of course, you will get 99-100 positions in the real world, depending on special elements.
+
+More methods to up your awareness.
+Get your task history.
+
+Method getList allows getting a list of required tasks with status for the last 7 days. After 7 days all completted task will be purged.
+
+Get raw SERP.
+
+The getKeywordSerp method returns the raw SERP in HTML format. To get results you must use keyword_id parameter from method getTaskResult response instead of keyword in string representation.
+
+Control your balance.
+
+The getParsingBalance method return your balance and current price for one SERP parsing for the keyword.
+
+{
+  "id": "123",
+  "result": {
+    "available_usd": "99999.891", <-- your balance
+    "serp_parsing_cost": "0.0004",  <-- your price for one SERP
+    "volume_parsing_cost": "0.0006"
+
+
+  }
+}
+
+Please note: price is always negotiable! :)
+
+
+--- URL: https://api-docs.serpstat.com/docs/serpstat-public-api/b197adb2c1e98-keyword-volume-checker-api ---
+
+Keyword Volume Checker API
+
+Use a keyword search volume checker to optimize your keyword list:
+
+Discover the popularity and trends of keywords
+Identify low-competition keywords
+Estimate demand and assess competition in your niche
+Key Features of API Keyword Volume Checker
+
+Set up the keyword volume scanning to automatically collect results for your tasks:
+
+Desktop search engine results
+Specified region and city for Google search results
+Supports any language
+Get your data in JSON using API requests
+
+In the response you would get a estimated volume of search requests for your keyword monthly for the last year and PPC advertising cost.
+
+To get precise results you have to set right search region. List of all search regions available here.
+
+"id": "123",
+  "result": {
+    "total": 1,
+    "page": 1,
+    "pageSize": 10,
+    "taskMeta": {
+      "typeId": "1",
+      "seId": "1",
+      "regionId": "2840", <---- Your search region
+      "match": "exact"
+    },
+    "keywords": [
+      {
+        "keyword": "vitos", <---- Your keyword
+        "keyword.raw": "vitos",
+        "status": 2,
+        "cost": 0.33, <---- PPC advertising cost
+        "searchVolume": 60500, <--- Actual Search Volume
+        "searchVolumeHistory": [
+          {
+            "date": "2024-02-01T00:00:00",
+            "value": 49500   <--- Search Volumne
+          },
+          {
+            "date": "2024-03-01T00:00:00",
+            "value": 49500
+          },
+          {
+            "date": "2024-04-01T00:00:00",
+            "value": 49500
+          },
+          {
+            "date": "2024-05-01T00:00:00",
+            "value": 49500
+          },
+          {
+            "date": "2024-06-01T00:00:00",
+            "value": 49500
+          },
+          {
+            "date": "2024-07-01T00:00:00",
+            "value": 49500
+          },
+          {
+            "date": "2024-08-01T00:00:00",
+            "value": 60500
+          },
+          {
+            "date": "2024-09-01T00:00:00",
+            "value": 60500
+          },
+          {
+            "date": "2024-10-01T00:00:00",
+            "value": 60500
+          },
+          {
+            "date": "2024-11-01T00:00:00",
+            "value": 60500
+          },
+          {
+            "date": "2024-12-01T00:00:00",
+            "value": 60500
+          },
+          {
+            "date": "2025-01-01T00:00:00",
+            "value": 60500
+          }
+        ],
+        "competition": 3
+      }
+    ]
+  }
+}
+Credits and pricing
+This API has separate billing and credits type for this API are not included in any available subscription plan. Contacts sales for details.
+The cost varies from $0.001 to $0.0005 depending on the volume of credits required
+The minimum budget for the service is $300
+Unlimited number of requests per day and month.
+Credits for Keyword Volume API Checker don't expire at the end of the month, you can use them when it is convenient for you.
+All keywords accepted to task are billed after task submission.
+Charged credits are not refundable.
+API Methods Overview
+
+addKeywordListFreq — Submit your crawling task;
+
+getTaskResultFreq — Get crawled results from that task;
+
+getTaskStatus — Check your task status.
+
+All available methods description here.
+
+
+--- URL: https://api-docs.serpstat.com/docs/serpstat-public-api/qq7lrv3zfvhd9-audit-errors ---
+
+Audit errors
+
+A reference guide to all error codes and descriptions that can be found during a site audit. Use this list to interpret results and prioritize fixes based on data from the Audit API.
+
+CATEGORY	ERROR NAME	ERROR DESCRIPTION
+pages_status	errors_400	Server status code: 4xx
+	errors_500	Server status code: 5xx
+meta_tags	no_desc	Missing Description tag
+	no_title	Missing Title tag
+	tiny_desc	Description Too Short
+	long_title	Title is too long
+	tiny_title	Title is too short
+	many_title	Multiple title tags
+	meta_refresh	Used meta refresh tag for redirect
+	title_dup_h1	h1 duplicates title
+	charset_missing	Missing character encoding
+	long_desc	Description Too Long
+	pages_title_dup	Title duplicated
+	pages_desc_dup	Duplicate Description
+	pages_h1_dup	Duplicate h1
+headings	h1_missing	Missing h1 Heading
+	many_h1	Multiple h1 headings
+content	large_page_size	Too large page size
+	body_text_missing	Missing body text
+	dummy_text	Lorem Ipsum placeholder text
+multimedia	broken_image_url	Broken Images
+	large_image_size	Image size is too large
+	image_no_alt	Image contains empty alt attribute
+indexation	many_canonical	Multiple rel="canonical" tags
+	use_flash	Flash elements on page
+	use_iframe	iframe found on page
+	less_words	Low word count
+	wrong_canonical	Page with canonical tag
+	hidden_no_index	Page is blocked from crawling with noindex tag
+	hidden_robots_txt	Page is blocked from crawling in robots.txt file
+	offsite_canonical	Cross-domain canonical links
+	relative_canonical	Canonical has a relative URL
+redirects	redirects	Corrupt Redirects
+links	many_get_params	Too many URL parameters
+	long_url	URL Too Long
+	many_external_links	Too many on-page links
+	miss_favicon	Missing Favicon
+	external_link_without_no_follow_exist	External links do not contain rel="nofollow"
+	internal_links_no_follow_exist	Internal links contain rel="nofollow" attribute
+https	https_check_domain_in_cert	Incorrect certificate name
+	https_hsts	HTTP Strict Transport Security (HSTS) not supported
+	https_cert_chain	SSL certificate chain violated
+	https_expired	Certificate is invalid
+	https_tls	Old version of the TLS protocol
+	https_sslv3	Using SSL protocol
+	https_self_signed	Self-signed certificate
+	https_sitemap_with_http	HTTP URLs are present in sitemap.xml
+	https_mixed_content	HTTPS/HTTP mixed content
+	https_link_to_http	HTTPS page leads to HTTP page
+	https_non_secure_page	Pages with insecure password input
+hreflang	hreflang_usage	Pages without hreflang and lang attributes
+	hreflang_wrong_value	Conflicts of hreflang attributes in the original code of the page
+	hreflang_no_link	Page is not multilanguage
+	hreflang_wrong_url	Invalid hreflang meaning
+	hreflang_broken_links	Incorrect hreflang links
+amp	amp_usage	AMP not used
+markup	markup_schema_missing	Missing schema markup
+	markup_open_graph_missing	Missing Open Graph markup
+	markup_twitter_card_missing	Missing Twitter Cards markup
+pagespeed_desktop	OptimizeImages	Optimize images for desktop
+	LeverageBrowserCaching	Use of browser caching
+pagespeed_mobile	MinimizeRenderBlockingResources	Above the fold content for mobile
+	LeverageBrowserCaching	Use of browser caching
+server_params	https_status:no_redirect	Page is available via HTTP and does not redirect to HTTPS
+	www_status:www_status	WWW version and non-WWW version do not redirect to each other
+
+
+--- URL: https://api-docs.serpstat.com/docs/serpstat-public-api/704g22jqj5lqb-errors-and-response-codes ---
+
+Errors and Response Codes
+
+This page lists all possible status codes and errors returned by Serpstat Public API.
+Use this reference when debugging requests or handling API responses.
+
+400 – Bad Request
+Query required: The query parameter (domain, URL) was not specified.
+SE database parameter not set: Add {required_se} to your query. The SE parameter was not specified.
+Wrong search engine: Invalid search engine.
+Missing token: Query token is missing.
+Json schema validation error: Not a valid JSON query schema.
+402 – Payment Required / Plan Limitations
+Plan credit exceeded: Your pricing plan has run out of credits.
+Pricing plan credits exceeded: Credits exhausted for the current billing period.
+To get more than {max_sort_size}: Use export report methods. Maximum allowable credit for sorting exceeded.
+403 – Forbidden
+Problems with authorization: Invalid token, forbidden method or user blocked.
+Selected SE is limited: Search engine is not available for your account.
+Forbidden query: Query access denied.
+Invalid token: Invalid query token.
+Invalid user: Not a valid user.
+Not enough credits: Not enough credits for this query.
+API not allowed for your plan: This method is unavailable for your plan.
+Method forbidden: Access to the procedure is prohibited.
+Not access to functional: Invalid request method or access denied for this procedure.
+404 – Not Found
+Empty result: No results returned.
+Wrong API query: Use API domain subdomain; Invalid API query.
+429 – Too Many Requests
+Query frequency exceeded: Increase the interval between queries.
+Too many queries: You’ve exceeded the query limit.
+500 – Internal Server Error
+Undefined server error: Something went wrong on our side.
+32xxx – Custom Application-Level Errors
+32012 – Credits exceeded: Credits are over.
+32018 – Wrong search engine provided: Invalid search engine specified.
+32016 – Large query domains not supported: Large domains are not available for query.
+32116 – Procedure name not allowed exact count: Used when getting the exact number of available rows.
+32116 – Method not supported by provider: This method or query is not supported by the selected provider.
+32015 / 32017 – No Data Found
+
+Note: Starting June 15, 2025, this method will consume 1 API credit even when no data is available for the requested query. Previously, no credits were consumed for empty results.
+
+32015 – No data found for requested domain: No info found for the specified domain.
+32017 – No data found for requested domain: No info found for the specified domain or the error message text can simply be "Data not found".
+32117 – Filtering and Parameter Errors
+Not allowed field: {field}: The field for the filter is incorrect or not supported.
+Invalid crawl date: The date in the filter is incorrect.
+Not allowed method {method} for field {field}: Filtering method not supported.
+Not allowed values for between method: Invalid values in between.
+Field compareType is required: compareType filtering method not specified.
+Field value is required: Filter field is not set.
+Not allowed params for filter: Invalid filter parameters.
+
+
+--- URL: https://api-docs.serpstat.com/docs/serpstat-public-api/u6fdz4prsbezn-question-words ---
+
+Question Words
+
+A reference list of question words used across various languages. This is useful when working with the API to analyze search suggestions and find question-based keyword opportunities. These question words are utilized in search filters.
+
+SEARCH REGION	SEARCH QUESTIONS
+g_us	what, where, when, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_ua	чому, де, звідки, куди, коли, як, скільки, чий, котрий, який, що, хто, скольки, нужно ли, можно ли, чем, почему, где, откуда, куда, когда, как, сколько, чей, каковой, который, какие, какая, какой, что, кто
+g_bg	кой, кого, кому, коя, кое, кои, какво, какъв, каква, какви, що, чий, чия, чие, чии, кога, как, къде, колко, защо, накъде, закъде, откъде
+g_kz	кім, не, неше, қанша, қайда, қайдан, қашан, қалай, қайда, қандай, можно ли, нужно ли, скольки, какого, откуда, где, почему, сколько, как, когда, куда, который, каковой, чей, қайсы, кто, что, какой
+g_nl	hoe, hoeveel, wat, wanneer, waar, welke, wie, waarom, waarvan, wiens, wier
+g_pl	kiedy, gdzie, który, kto, czyj, dlaczego, co, jak, ile, czy ty masz, czy, do kogo, z czym
+g_es	quién, cuándo, por qué, cuál, de dónde, cuánto, adónde, de dónde, qué, dónde, cómo, cuáles, para qué, cuántos, a quién, con quién
+g_ca	what, when, where, which, who, whom, whose, why, how
+g_de	wer, was, warum, wo, wie, wen, wem, wieso, woher, wohin, welch
+g_cz	co, jak, jaký, jaká, kam, kde, kdo, kdy, kolik, kolikrát, odkud, proč
+g_br	como, o quê, quem, por quê, onde
+g_au	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_at	wer, was, warum, wo, wie, wen, wem, wieso, woher, wohin, welch
+g_az	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_al	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_dz	من ,ما,ماذا ,أين ,متى , لماذا, كيف, أي ,لمن ,من أين ,إلى أين ,كم ,بكم ,مَعَ مَن ,qui, que ,quoi ,pourquoi ,combien ,quand ,où ,comment
+g_as	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_ai	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_ao	aonde, à que horas, onde, o que, para onde, por que, qual, quando, quanto, quantos, quem
+g_ad	quin, quina, quins, quines, quant, quanta, quants, quantes, qui, què, on, quan, com, what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_ag	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_ar	quién, cuándo, por qué, cuál, de dónde, cuánto, adónde, de dónde, qué, dónde, cómo, cuáles, para qué, cuántos, a quién, con quién
+g_aw	hoe, hoeveel, wat, wanneer, waar, welke, wie, waarom, waarvan, wiens, wier, what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_af	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one, کُدام , کِه , کی , کُجا , چرا , چکار
+g_bs	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_bd	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_bb	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_bh	,من ,ما ,ماذا ,أي ,متى ,لماذا ,كيف ,أي ,لمن ,من أين ,إلى أين ,كم ,بكم ,مَعَ مَن
+g_bz	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one, quién, cuándo, por qué, cuál, de dónde, cuánto, adónde, de dónde, qué, dónde, cómo, cuáles, para qué, cuántos, a quién, con quién
+g_be	hoe, hoeveel, wat, wanneer, waar, welke, wie, waarom, waarvan, wiens, wier
+g_bj	qui, que, quoi, quand, où, comment, pourquoi, combien
+g_bm	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_bg	скольки, кто, что, какой, который, каковой, чей, сколько, как, когда, куда, откуда, где, почему, чый, чыё, чыя, чыi, які, якое, якая, якія, гэта, што, хто
+g_bo	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one, quién, cuándo, por qué, cuál, de dónde, cuánto, adónde, de dónde, qué, dónde, cómo, cuáles, para qué, cuántos, a quién, con quién
+g_ba	kada, otkada, dokada, gdje, kuda, kamo, otkuda, zašto, zbog čega, koliko, kako, odakle, dokud, ko, šta, kada, gde, kako, koliko, zašto, zbog čega, s kim, kome, what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_bw	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_io	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_vg	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_bn	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one, kenapa, mengapa, apa, bila, bagaimana, berapa, dimana
+g_bf	qui, que, quoi, quand, où, comment, pourquoi, combien
+g_bi	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one, qui, que, quoi, quand, où, comment, pourquoi, combien
+g_bt	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_vn	làm thế nào, những gì, khi nào, ở đâu, ai, tại sao
+g_vu	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one, qui, que, quoi, quand, où, comment, pourquoi, combien
+g_va	qui, que, quoi, quand, où, comment, pourquoi, combien, parla inglese, chi, cosa, quando, dove, perché, come, quanto
+g_ve	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one, quién, cuándo, por qué, cuál, de dónde, cuánto, adónde, de dónde, qué, dónde, cómo, cuáles, para qué, cuántos, a quién, con quién
+g_vi	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_am	Հարցեր, ինչպես, i՞nch - ի՞նչ, ո՞վ, ո՞վքեր, ինչու՞, որտեղ, ուր, what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_ga	qui, que, quoi, quand, où, comment, pourquoi, combien
+g_ht	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one, qui, que, quoi, quand, où, comment, pourquoi, combien
+g_gy	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_gm	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_gh	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_gp	qui, que, quoi, quand, où, comment, pourquoi, combien, what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_gt	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one, quién, cuándo, por qué, cuál, de dónde, cuánto, adónde, de dónde, qué, dónde, cómo, cuáles, para qué, cuántos, a quién, con quién
+g_gn	qui, que, quoi, quand, où, comment, pourquoi, combien
+g_gw	aonde, à que horas, onde, o que, para onde, por que, qual, quando, quanto, quantos, quem
+g_gg	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one, qui, que, quoi, quand, où, comment, pourquoi, combien
+g_gi	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one, quién, cuándo, por qué, cuál, de dónde, cuánto, adónde, de dónde, qué, dónde, cómo, cuáles, para qué, cuántos, a quién, con quién
+g_hn	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one, quién, cuándo, por qué, cuál, de dónde, cuánto, adónde, de dónde, qué, dónde, cómo, cuáles, para qué, cuántos, a quién, con quién
+g_hk	谁, 什么, 哪里, 哪个, 什么时候, 为什么, 怎么, 多少, 几, what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_gd	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one, qui, que, quoi, quand, où, comment, pourquoi, combien
+g_gl	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one, hvordan, hvad, hvem, hvorfor, hvor, hvar, hvaðan, hvenær, hvað, hvers vegna, hvernig, hver
+g_gr	πώς, pó̱s, τι, ti, πότε, póte, πού, poú, ποιος, poios, γιατί, giatí
+g_ge	rogor, ra, vin, rat'om, sad, რა, ვინ, როგორ, რატომ, სად
+g_gu	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_cg	qui, que, quoi, quand, où, comment, pourquoi, combien
+g_dk	hvordan, hvad, hvem, hvorfor, hvor, hvornår, hvem, kan jeg, har du, kan du, taler du engelsk
+g_je	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one, qui, que, quoi, quand, où, comment, pourquoi, combien
+g_dj	qui, que, quoi, quand, où, comment, pourquoi, combien, ,من ,ما ,ماذا ,أي ,متى ,لماذا ,كيف ,أي ,لمن ,من أين ,إلى أين ,كم ,بكم ,مَعَ مَن
+g_dm	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_do	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one, quién, cuándo, por qué, cuál, de dónde, cuánto, adónde, de dónde, qué, dónde, cómo, cuáles, para qué, cuántos, a quién, con quién
+g_ec	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one, quién, cuándo, por qué, cuál, de dónde, cuánto, adónde, de dónde, qué, dónde, cómo, cuáles, para qué, cuántos, a quién, con quién
+g_gq	quién, cuándo, por qué, cuál, de dónde, cuánto, adónde, de dónde, qué, dónde, cómo, cuáles, para qué, cuántos, a quién, con quién, qui, que, quoi, quand, où, comment, pourquoi, combien, aonde, à que horas, onde, o que, para onde, por que, qual, quando, quanto, quantos, quem
+g_er	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one, ,من ,ما ,ماذا ,أي ,متى ,لماذا ,كيف ,أي ,لمن ,من أين ,إلى أين ,كم ,بكم ,مَعَ مَن
+g_ee	kuidas, mis, mida, kes, miks, kus
+g_et	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_eg	,من ,ما ,ماذا ,أي ,متى ,لماذا ,كيف ,أي ,لمن ,من أين ,إلى أين ,كم ,بكم ,مَعَ مَن
+g_zm	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_zw	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_il	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one, أَيٌّ ,أيّ ,أيّة ,أين ,أَيْنَ ,كَمْ ,كيف ,كَيْفَ ,لماذا ,ماذا ,مَاذا ,متى ,مَتَى ,من ,مَنْ ,אַחֲרֵי מַה ,אַחֲרֵי מִי ,אֵיזֶה ,אֵיזוֹ ,אֵיך ,אֵילוּ ,אֵיפֹה ,אֶל מַה ,אֶל מִי ,אֵצֶל מִי ,אֶת מַה ,אֶת מִי ,בִּגלַל מַה ,בִּגלַל מִי ,בִּשבִיל מַה ,בִּשבִיל מִי ,כַּמָה ,לְאָן ,לְמָה ,לָמָה ,לְמִי ,לִפנֵי מַה ,לִפנֵי מִי ,מֵאַיִן ,מִי ,מָתַי ,עַל מַה ,עַל מִי ,עִם מַה ,עִם מִי ,где , для кого, для чего, из-за кого, из-за чего, как,какая,какие,какой,к кому,когда,кого, кому, который,кто,куда,к чему,можно ли,нужно ли,о ком,откуда,о чем,перед кем,перед чем,после кого,после чего,почему,с кем,скольки,сколько,с чем,у кого,чей,чему,что
+g_in	कौन, क्या, कब, कहाँ, क्यों, कौन सा, किसका, कितना, कितने, यहाँ, वहाँ
+g_id	apa, siapa, kenapa, mengapa, kapan, berapa banyak, berapa lama, bagaimana, di mana, ke mana, dari mana
+g_iq	,من ,ما ,ماذا ,أي ,متى ,لماذا ,كيف ,أي ,لمن ,من أين ,إلى أين ,كم ,بكم ,مَعَ مَن
+g_ie	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_is	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one, hvar, hvaðan, hvenær, hvað, hvers vegna, hvernig, hver
+g_it	parla inglese, chi, cosa, quando, dove, perché, come, quanto
+g_jo	,من ,ما ,ماذا ,أي ,متى ,لماذا ,كيف ,أي ,لمن ,من أين ,إلى أين ,كم ,بكم ,مَعَ مَن
+g_ye	,من ,ما ,ماذا ,أي ,متى ,لماذا ,كيف ,أي ,لمن ,من أين ,إلى أين ,كم ,بكم ,مَعَ مَن
+g_cv	aonde, à que horas, onde, o que, para onde, por que, qual, quando, quanto, quantos, quem
+g_ky	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_kh	qui, que, quoi, quand, où, comment, pourquoi, combien
+g_cm	qui, que, quoi, quand, où, comment, pourquoi, combien, what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_qa	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one, ,من ,ما ,ماذا ,أي ,متى ,لماذا ,كيف ,أي ,لمن ,من أين ,إلى أين ,كم ,بكم ,مَعَ مَن
+g_ke	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_kg	кто, что, какой, который, каковой, чей, сколько, как, когда, куда, откуда, где, почему, можно ли, нужно ли, сколько
+g_cn	谁, 什么, 哪里, 哪个, 什么时候, 为什么, 怎么, 多少, 几, what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_cy	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one, ne, niye, ne zaman, nerede, nasıl, ne kadar, kaç, hangi, hangisi, kim, kimi, kime, kimin, nereden, nereye, ποιος, ποια, ποιο, ποιον, ποια, ποιο, πού, πότε, πώς, τίνος, τι, γιατί
+g_ki	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_cc	kenapa, mengapa, apa, bila, bagaimana, berapa, dimana, quién, cuándo, por qué, cuál, de dónde, cuánto, adónde, de dónde, qué, dónde, cómo, cuáles, para qué, cuántos, a quién, con quién
+g_co	quién, cuándo, por qué, cuál, de dónde, cuánto, adónde, de dónde, qué, dónde, cómo, cuáles, para qué, cuántos, a quién, con quién
+g_km	qui, que, quoi, quand, où, comment, pourquoi, combien, ,من ,ما ,ماذا ,أي ,متى ,لماذا ,كيف ,أي ,لمن ,من أين ,إلى أين ,كم ,بكم ,مَعَ مَن
+g_cg	qui, que, quoi, quand, où, comment, pourquoi, combien
+g_cr	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one, quién, cuándo, por qué, cuál, de dónde, cuánto, adónde, de dónde, qué, dónde, cómo, cuáles, para qué, cuántos, a quién, con quién
+g_ci	qui, que, quoi, quand, où, comment, pourquoi, combien
+g_kw	,من ,ما ,ماذا ,أي ,متى ,لماذا ,كيف ,أي ,لمن ,من أين ,إلى أين ,كم ,بكم ,مَعَ مَن
+g_cw	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one, hoe, hoeveel, wat, wanneer, waar, welke, wie, waarom, waarvan, wiens, wier
+g_la	qui, que, quoi, quand, où, comment, pourquoi, combien
+g_lv	kā, kas, kas, kāpēc, kur, kam, ko, kad
+g_ls	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_lt	kas, ko, kam, kuo, kur
+g_lr	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_lb	qui, que, quoi, quand, où, comment, pourquoi, combien, ,من ,ما ,ماذا ,أي ,متى ,لماذا ,كيف ,أي ,لمن ,من أين ,إلى أين ,كم ,بكم ,مَعَ مَن
+g_ly	parla inglese, chi, cosa, quando, dove, perché, come, quanto, ,من ,ما ,ماذا ,أي ,متى ,لماذا ,كيف ,أي ,لمن ,من أين ,إلى أين ,كم ,بكم ,مَعَ مَن
+g_li	wer, was, warum, wo, wie, wen, wem, wieso, woher, wohin, welch
+g_lu	qui, que, quoi, quand, où, comment, pourquoi, combien, wer, was, warum, wo, wie, wen, wem, wieso, woher, wohin, welch
+g_mm	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_mu	qui, que, quoi, quand, où, comment, pourquoi, combien, what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_mr	qui, que, quoi, quand, où, comment, pourquoi, combien, ,من ,ما ,ماذا ,أي ,متى ,لماذا ,كيف ,أي ,لمن ,من أين ,إلى أين ,كم ,بكم ,مَعَ مَن
+g_mg	qui, que, quoi, quand, où, comment, pourquoi, combien
+g_yt	qui, que, quoi, quand, où, comment, pourquoi, combien, what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one
+g_mo	aonde, à que horas, onde, o que, para onde, por que, qual, quando, quanto, quantos, quem
+g_mk	what, when, where, which, who, whom, whose, why, how, do, does, is there, it there, are there, can i, should i, should you, should one, ko, šta, kada, gde, kako, koliko, zašto, zbog čega, s kim, kome, ne, niye, ne zaman, nerede, nasıl, ne kadar, kaç, hangi, hangisi, kim, kimi, kime, kimin, nereden, nereye
+
+
+--- URL: https://api-docs.serpstat.com/docs/serpstat-public-api/ba97ni814ao9p-search-engine-short-names ---
+
+Search engine short names
+
+A complete list of short names for all search engines supported by Serpstat. Use these official identifiers in your API requests to specify the correct search database for analysis. This parameter se is widelly used in most Search Analytics methods.
+
+Example "se":"g_us"
+
+For Google
+SE	SEARCH ENGINE	COUNTRY
+g_af	Google	Afghanistan
+g_al	Google	Albania
+g_dz	Google	Algeria
+g_as	Google	American Samoa
+g_ad	Google	Andorra
+g_ao	Google	Angola
+g_ai	Google	Anguilla
+g_ag	Google	Antigua and Barbuda
+g_ar	Google	Argentina
+g_am	Google	Armenia
+g_aw	Google	Aruba
+g_au	Google	Australia
+g_at	Google	Austria
+g_az	Google	Azerbaijan
+g_bh	Google	Bahrain
+g_bd	Google	Bangladesh
+g_bb	Google	Barbados
+g_by	Google	Belarus
+g_be	Google	Belgium
+g_bz	Google	Belize
+g_bj	Google	Benin
+g_bm	Google	Bermuda
+g_bt	Google	Bhutan
+g_bo	Google	Bolivia
+g_ba	Google	Bosnia and Herzegovina
+g_bw	Google	Botswana
+g_br	Google	Brazil
+g_io	Google	British Indian Ocean Territory
+g_vg	Google	British Virgin Islands
+g_bn	Google	Brunei
+g_bg	Google	Bulgaria
+g_bf	Google	Burkina Faso
+g_bi	Google	Burundi
+g_kh	Google	Cambodia
+g_cm	Google	Cameroon
+g_ca	Google	Canada
+g_cv	Google	Cape Verde
+g_ky	Google	Cayman Islands
+g_cf	Google	Central African Republic
+g_td	Google	Chad
+g_cl	Google	Chile
+g_cn	Google	China
+g_cx	Google	Christmas Island
+g_сс	Google	Cocos (Keeling) Islands
+g_co	Google	Colombia
+g_km	Google	Comoros
+g_ck	Google	Cook Islands
+g_cr	Google	Costa Rica
+g_ci	Google	Cote d'Ivoire
+g_hr	Google	Croatia
+g_cw	Google	Curacao
+g_cy	Google	Cyprus
+g_cz	Google	Czech Republic
+g_cd	Google	Democratic Republic of the Congo
+g_dk	Google	Denmark
+g_dj	Google	Djibouti
+g_dm	Google	Dominica
+g_do	Google	Dominican Republic
+g_ec	Google	Ecuador
+g_eg	Google	Egypt
+g_sv	Google	El Salvador
+g_gq	Google	Equatorial Guinea
+g_er	Google	Eritrea
+g_ee	Google	Estonia
+g_et	Google	Ethiopia
+g_fk	Google	Falkland Islands (Islas Malvinas)
+g_fo	Google	Faroe Islands
+g_fm	Google	Federated States of Micronesia
+g_fj	Google	Fiji
+g_fi	Google	Finland
+g_fr	Google	France
+g_gf	Google	French Guiana
+g_pf	Google	French Polynesia
+g_ga	Google	Gabon
+g_ge	Google	Georgia
+g_de	Google	Germany
+g_gh	Google	Ghana
+g_gi	Google	Gibraltar
+g_gr	Google	Greece
+g_gl	Google	Greenland
+g_gd	Google	Grenada
+g_gp	Google	Guadeloupe
+g_gu	Google	Guam
+g_gt	Google	Guatemala
+g_gg	Google	Guernsey
+g_gn	Google	Guinea
+g_gw	Google	Guinea-Bissau
+g_gy	Google	Guyana
+g_ht	Google	Haiti
+g_hn	Google	Honduras
+g_hk	Google	Hong Kong
+g_hu	Google	Hungary
+g_is	Google	Iceland
+g_in	Google	India
+g_id	Google	Indonesia
+g_iq	Google	Iraq
+g_ie	Google	Ireland
+g_im	Google	Isle of Man
+g_il	Google	Israel
+g_it	Google	Italy
+g_jm	Google	Jamaica
+g_jp	Google	Japan
+g_je	Google	Jersey
+g_jo	Google	Jordan
+g_kz	Google	Kazakhstan
+g_ke	Google	Kenya
+g_ki	Google	Kiribati
+g_kw	Google	Kuwait
+g_kg	Google	Kyrgyzstan
+g_la	Google	Laos
+g_lv	Google	Latvia
+g_lb	Google	Lebanon
+g_ls	Google	Lesotho
+g_lr	Google	Liberia
+g_ly	Google	Libya
+g_li	Google	Liechtenstein
+g_lt	Google	Lithuania
+g_lu	Google	Luxembourg
+g_mo	Google	Macau
+g_mk	Google	Macedonia (FYROM)
+g_mg	Google	Madagascar
+g_mw	Google	Malawi
+g_my	Google	Malaysia
+g_mv	Google	Maldives
+g_ml	Google	Mali
+g_mt	Google	Malta
+g_mh	Google	Marshall Islands
+g_mq	Google	Martinique
+g_mr	Google	Mauritania
+g_mu	Google	Mauritius
+g_yt	Google	Mayotte
+g_mx	Google	Mexico
+g_md	Google	Moldova
+g_mc	Google	Monaco
+g_mn	Google	Mongolia
+g_me	Google	Montenegro
+g_ms	Google	Montserrat
+g_ma	Google	Morocco
+g_mz	Google	Mozambique
+g_mm	Google	Myanmar (Burma)
+g_na	Google	Namibia
+g_nr	Google	Nauru
+g_np	Google	Nepal
+g_nl	Google	Netherlands
+g_nc	Google	New Caledonia
+g_nz	Google	New Zealand
+g_ni	Google	Nicaragua
+g_ne	Google	Niger
+g_ng	Google	Nigeria
+g_nu	Google	Niue
+g_nf	Google	Norfolk Island
+g_mp	Google	Northern Mariana Islands
+g_no	Google	Norway
+g_om	Google	Oman
+g_pk	Google	Pakistan
+g_pw	Google	Palau
+g_ps	Google	Palestine
+g_pa	Google	Panama
+g_pg	Google	Papua New Guinea
+g_py	Google	Paraguay
+g_pe	Google	Peru
+g_ph	Google	Philippines
+g_pn	Google	Pitcairn Islands
+g_pl	Google	Poland
+g_pt	Google	Portugal
+g_pr	Google	Puerto Rico
+g_qa	Google	Qatar
+g_cg	Google	Republic of the Congo
+g_re	Google	Reunion
+g_ro	Google	Romania
+g_ru	Google	Russia
+g_rw	Google	Rwanda
+g_sh	Google	Saint Helena, Ascension and Tristan da Cunha
+g_kn	Google	Saint Kitts and Nevis
+g_lc	Google	Saint Lucia
+g_pm	Google	Saint Pierre and Miquelon
+g_vc	Google	Saint Vincent and Grenadines
+g_ws	Google	Samoa
+g_sm	Google	San Marino
+g_st	Google	Sao Tome and Principe
+g_sa	Google	Saudi Arabia
+g_sn	Google	Senegal
+g_rs	Google	Serbia
+g_sc	Google	Seychelles
+g_sl	Google	Sierra Leone
+g_sg	Google	Singapore
+g_sx	Google	Sint Maarten
+g_sk	Google	Slovakia
+g_si	Google	Slovenia
+g_sb	Google	Solomon Islands
+g_so	Google	Somalia
+g_za	Google	South Africa
+g_kr	Google	South Korea
+g_es	Google	Spain
+g_lk	Google	Sri Lanka
+g_sr	Google	Suriname
+g_sz	Google	Swaziland
+g_se	Google	Sweden
+g_ch	Google	Switzerland
+g_tw	Google	Taiwan
+g_tj	Google	Tajikistan
+g_tz	Google	Tanzania
+g_th	Google	Thailand
+g_bs	Google	The Bahamas
+g_gm	Google	The Gambia
+g_tl	Google	Timor-Leste
+g_tg	Google	Togo
+g_tk	Google	Tokelau
+g_to	Google	Tonga
+g_tt	Google	Trinidad and Tobago
+g_tn	Google	Tunisia
+g_tr	Google	Turkey
+g_tm	Google	Turkmenistan
+g_tc	Google	Turks and Caicos Islands
+g_tv	Google	Tuvalu
+g_vi	Google	U.S. Virgin Islands
+g_ug	Google	Uganda
+g_ua	Google	Ukraine
+g_ae	Google	United Arab Emirates
+g_uk	Google	United Kingdom
+g_us	Google	United States
+g_uy	Google	Uruguay
+g_uz	Google	Uzbekistan
+g_vu	Google	Vanuatu
+g_va	Google	Vatican City
+g_ve	Google	Venezuela
+g_vn	Google	Vietnam
+g_wf	Google	Wallis and Futuna
+g_ye	Google	Yemen
+g_zm	Google	Zambia
+g_zw	Google	Zimbabwe
+For Bing
+SE	SEARCH ENGINE	COUNTRY
+bing_us	Bing	United States
+
+
+--- URL: https://api-docs.serpstat.com/docs/serpstat-public-api/3vs2ueyhe5j08-serp-features-and-snippets-reference ---
+
+SERP Features And Snippets Reference
+
+A reference for the different types of SERP Features that Serpstat tracks in search results. Learn how to identify rich snippets, local packs, and more in your API reports.
+
+AI-Related SERP Features
+TYPE	DESCRIPTION
+ai_overview	AI-generated overview block at the top of search results
+snip_url_in_aio	Url of this position was found in AI overview block
+snip_fqdn_in_aio	FQDN (fully qualified domain name) of this position was found in AI overview block
+All SERP Features
+TYPE	DESCRIPTION
+a_box_c_converter	Currency conversion calculator
+a_box_card	Card with information about tournaments
+a_box_color_picker	Color picker (color palette)
+a_box_dictionary	Fragment of the dictionary (transcript, transcription of the request, interpretation)
+a_box_dtime	Shows local date and time
+a_box_earthquake	Information about earthquakes in the area
+a_box_flights	Flight information table
+a_box_fsnippet	Large information snippet
+a_box_g_converter	General unit converter
+a_box_map	Map with routes and addresses
+a_box_nutrition	Nutrient values for foods
+a_box_population	Population dynamics graph
+a_box_some	Dates, addresses, etc.
+a_box_sports	Information about sporting events (who? when? where?)
+a_box_stock	Chart with stock quotes
+a_box_translation	Block for translation
+a_box_weather	Weather forecast
+a_box_when_is	Reply to a request for an event date
+ads_bot	Contextual advertising block at the bottom
+ads_rhs	Contextual advertising block to the right of search results
+ads_top	PPC block on top of search results
+also_asks	List of questions related to the request
+bests	Links to reviews, top rated products / services
+calc	Online calculator
+car_loan_calc	Car loan calculator
+discover_places	Popular destinations
+graph	Schedule for request
+kn_graph_brand	Information about the desired organization
+kn_graph_card	Information card
+kn_graph_carousel_list	Carousel block — one row of dice, each transition to a different search page
+kn_graph_carousel_table	Carousel block — several rows of dice with a transition
+kn_graph_disambiguation	Other search options, on the right under the knowledge graph
+kn_graph_health	Block with a description of the disease
+kn_graph_hotel_booking	Hotel room reservation is part of the knowledge graph
+kn_graph_local	Knowledge graph with map
+local_pack	Block with a card and 3 addresses
+map	Map
+mortgage_calc	Mortgage calculator
+pic	Examples of pictures for request
+refine_by_brand	List of products by brand to request
+related_search	Related phrases, tips
+research	A selection of articles on request, located among the snippets
+shopping_rhs	Shopping block on the right
+shopping_top	Shopping block on top of the top
+shopping_bottom	Shopping block at the bottom of the top
+snip_breadcrumbs	Breadcrumbs instead of URL
+snip_doc_type	Document format next to title snippet
+snip_https	https in URL
+snip_image_thumbnail	Image in snippet
+snip_info	Additional information — contacts, dates, events, founders, chemical composition ...
+snip_reviews_stars	Article rating with stars
+snip_search_box	Search string inside snippet
+snip_sitelinks	Additional links inside the snippet to other sections of the site
+snip_twitter	Twitter posts section
+snip_video_thumbnail	Icon for video inside snippet
+snip_amp_logo	Icon on the right after breadcrumbs
+snip_best_answer	Framed text in a carousel snippet
+top_stories	List of news articles
+a_box_knowledge_game	In the SERP under the translator there is a block with a question and answer buttons
+recipes	Block with recipes at the top
+app_store	Block in the middle of the issue with applications in the App Store
+podcasts	Podcast block in the middle
+
+
+--- URL: https://api-docs.serpstat.com/docs/serpstat-public-api/oerp7nc8ivqp7-countries ---
+
+Countries
+
+A list of all supported countries and their corresponding codes for SERP Scraper. Use this reference to ensure accurate geolocation targeting in your API requests for regional analysis.
+
+ID	NAME (IN ENGLISH)	CODE
+1	Australia	au
+2	Malaysia	my
+3	Korea	kr
+4	China	cn
+5	Japan	jp
+6	India	in
+7	Taiwan	tw
+8	Hong Kong	hk
+9	Thailand	th
+11	Vietnam	vn
+12	France	fr
+13	Italy	it
+14	United Arab Emirates	ae
+15	Sweden	se
+16	Kazakhstan	kz
+17	Portugal	pt
+18	Greece	gr
+19	Saudi Arabia	sa
+20	Russian Federation	ru
+21	United Kingdom	gb
+22	Denmark	dk
+23	United States	us
+24	Canada	ca
+25	Mexico	mx
+26	Bermuda	bm
+27	Puerto Rico	pr
+28	Virgin Islands	
+29	Germany	de
+30	Iran	ir
+31	Bolivia	bo
+32	Montserrat	ms
+33	Netherlands	nl
+34	Israel	il
+35	Spain	es
+36	Bahamas	bs
+37	Saint Vincent and the Grenadines	vc
+38	Chile	cl
+39	New Caledonia	nc
+40	Argentina	ar
+41	Dominica	dm
+42	Singapore	sg
+43	Nepal	np
+44	Philippines	ph
+45	Indonesia	id
+46	Pakistan	pk
+47	Tokelau	tk
+48	New Zealand	nz
+49	Cambodia	kh
+50	Macau	mo
+51	Papua New Guinea	pg
+52	Maldives	mv
+53	Afghanistan	af
+54	Bangladesh	bd
+55	Ireland	ie
+56	Belgium	be
+57	Belize	bz
+58	Brazil	br
+59	Switzerland	ch
+60	South Africa	za
+61	Egypt	eg
+62	Nigeria	ng
+63	Tanzania	tz
+64	Zambia	zm
+65	Senegal	sn
+66	Ghana	gh
+67	Sudan	sd
+68	Cameroon	cm
+69	Malawi	mw
+70	Angola	ao
+71	Kenya	ke
+72	Gabon	ga
+73	Mali	ml
+74	Benin	bj
+75	Madagascar	mg
+76	Chad	td
+77	Botswana	bw
+78	Libya	ly
+79	Cape Verde	cv
+80	Rwanda	rw
+81	Mozambique	mz
+82	Gambia	gm
+83	Lesotho	ls
+84	Mauritius	mu
+85	Congo	cg
+86	Uganda	ug
+87	Burkina Faso	bf
+88	Sierra Leone	sl
+89	Somalia	so
+90	Zimbabwe	zw
+91	Democratic Republic Of The Congo	cd
+92	Niger	ne
+93	Central African Republic	cf
+94	Swaziland	sz
+95	Togo	tg
+96	Guinea	gn
+97	Liberia	lr
+98	Seychelles	sc
+99	Morocco	ma
+100	Algeria	dz
+101	Mauritania	mr
+102	Namibia	na
+103	Djibouti	dj
+105	Comoros	km
+106	Reunion	re
+107	Equatorial Guinea	gq
+108	Tunisia	tn
+109	Turkey	tr
+110	Poland	pl
+111	Latvia	lv
+112	Ukraine	ua
+113	Belarus	by
+114	Czech Republic	cz
+115	Palestinian Territory	ps
+116	Iceland	is
+117	Cyprus	cy
+118	Hungary	hu
+119	Slovakia	sk
+120	Serbia	rs
+121	Bulgaria	bg
+122	Oman	om
+123	Romania	ro
+124	Georgia	ge
+125	Norway	no
+126	Armenia	am
+127	Austria	at
+128	Albania	al
+129	Slovenia	si
+130	Panama	pa
+131	Brunei Darussalam	bn
+132	Sri Lanka	lk
+133	Montenegro	me
+134	Europe	eu
+135	Tajikistan	tj
+136	Iraq	iq
+137	Lebanon	lb
+138	Moldova	md
+139	Finland	fi
+140	Estonia	ee
+141	Bosnia and Herzegovina	ba
+142	Kuwait	kw
+143	Aland Islands	ax
+144	Lithuania	lt
+145	Luxembourg	lu
+146	Antigua and Barbuda	ag
+147	Macedonia	mk
+148	San Marino	sm
+149	Malta	mt
+150	Falkland Islands	fk
+151	Bahrain	bh
+152	Uzbekistan	uz
+153	Azerbaijan	az
+154	Monaco	mc
+155	Haiti	ht
+156	Guam	gu
+157	Jamaica	jm
+158	United States Minor Outlying Islands	um
+159	Micronesia	fm
+160	Ecuador	ec
+161	Peru	pe
+162	Cayman Islands	ky
+163	Colombia	co
+164	Honduras	hn
+165	Netherlands Antilles	an
+166	Yemen	ye
+167	Virgin Islands	
+168	Syria	sy
+169	Nicaragua	ni
+170	Dominican Republic	do
+171	Grenada	gd
+172	Guatemala	gt
+173	Costa Rica	cr
+174	El Salvador	sv
+175	Venezuela	ve
+176	Barbados	bb
+177	Trinidad and Tobago	tt
+178	Bouvet Island	bv
+179	Marshall Islands	mh
+180	Cook Islands	ck
+181	Gibraltar	gi
+182	Paraguay	py
+184	Samoa	ws
+185	Saint Kitts and Nevis	kn
+186	Fiji	fj
+187	Uruguay	uy
+188	Northern Mariana Islands	mp
+189	Palau	pw
+190	Qatar	qa
+191	Jordan	jo
+192	American Samoa	as
+193	Turks and Caicos Islands	tc
+194	Saint Lucia	lc
+195	Mongolia	mn
+196	Holy See	va
+197	Aruba	aw
+198	Guyana	gy
+199	Suriname	sr
+200	Isle of Man	im
+201	Vanuatu	vu
+202	Croatia	hr
+203	Anguilla	ai
+204	Saint Pierre and Miquelon	pm
+205	Guadeloupe	gp
+206	Saint Martin	mf
+207	Guernsey	gg
+208	Burundi	bi
+209	Turkmenistan	tm
+210	Kyrgyzstan	kg
+211	Myanmar	mm
+212	Bhutan	bt
+213	Liechtenstein	li
+214	Faroe Islands	fo
+215	Ethiopia	et
+216	Martinique	mq
+217	Jersey	je
+218	Andorra	ad
+219	Antarctica	aq
+220	British Indian Ocean Territory	io
+221	Greenland	gl
+222	Guinea-Bissau	gw
+223	Eritrea	er
+224	Wallis and Futuna	wf
+225	French Polynesia	pf
+226	Cuba	cu
+227	Tonga	to
+228	Timor-Leste	tl
+229	Sao Tome and Principe	st
+230	French Guiana	gf
+231	Solomon Islands	sb
+232	Tuvalu	tv
+233	Kiribati	ki
+234	Niue	nu
+235	Norfolk Island	nf
+236	Nauru	nr
+237	Mayotte	yt
+238	Pitcairn Islands	pn
+239	Cote D'Ivoire	ci
+240	Lao	la
+241	Democratic People's Republic of Korea	kp
+242	Svalbard and Jan Mayen	sj
+243	Saint Helena	sh
+244	Cocos (Keeling) Islands	cc
+245	Western Sahara	eh
+247	South Sudan	ss
+
+
+--- URL: https://api-docs.serpstat.com/docs/serpstat-public-api/wuoshjguna09o-languages ---
+
+Home
+Serpstat Public API
+Intoduction
+Custom Data Export
+SERP Crawling API
+Keyword Volume Checker API
+REFERENCE INFORMATION
+Audit errors
+Response Codes
+Question Words
+Search engine short names
+Snippets types
+Countries
+Languages
+APIS
+Project Management API
+Projects
+Schemas
+Audit API
+AuditSite
+Schemas
+Rank Tracker API
+Rank Tracker
+Schemas
+Backlinks API
+Backlinks
+Schemas
+Domain Analysis API
+Domain Analysis
+Schemas
+Domain Classification API
+Domain Classification
+Schemas
+Keyword Analysis API
+Keyword Analysis
+Schemas
+Team Management API
+Team Management
+Schemas
+Url Analysis API
+Url Analysis
+Schemas
+Keyword Volume Checker API
+Keyword Volume Checker
+Schemas
+SERP Crawling API
+SERP Crawling
+Schemas
+Credits API
+Api credits
+Schemas
+powered by Stoplight
+
+
+--- URL: https://api-docs.serpstat.com/docs/serpstat-public-api/fan1bd16rencj-serpstat-project-management-api-v4 ---
+
+Serpstat Project Management API v4
+Export
+v4
+API Base URL
+Default server:
+https://api.serpstat.com/v4
+Security
+API Key
+
+An API key is a token that you provide when making API calls. Include the token in a query parameter called token.
+
+Example: ?token=123
+
+Additional Information
+
+Contact Support
+
+CC BY 4.0
+
+Manage your Serpstat projects with the Project Management API v4. This section covers methods to create and delete your projects and get projects list via API.
+
+Current version: 4
+
+https://api.serpstat.com/v4 — Endpoint URL, through which all requests should be processed.
+
+API protocol
+Our API protocol is JSON-RPC 2.0.
+Requests
+All requests should be sent via POST method.
+All request parameters must be set via POST request body in JSON format.
+Each request should contain a method name parameter corresponding to the API method (case-sensitive).
+Authentication
+Tokens are used for authentication. Create a token on your profile page.
+token is required for all API requests.
+Api token is available for almost paid and trial plans that have API feature enabled.
+Main concept
+
+This API allows you to manage Projects.
+
+Project is a long term entity, in simple words, your domain that you do SEO actions for.
+
+To start Site audit or start tracking positions in SERPs you shoud create a new project with domain's name.
+
+Pagination
+
+For pagination, use the parameters:
+
+size: number of results per page (default 100, maximum 1000);
+page: page number (default is 1st page).
+
+Please note: not all methods are supporting pagination.
+
+Filters
+
+Filters can be applied to each method, most of them are specific for the method you used. filters object are optional for most methods.
+
+Responses
+All responses are in JSON format.
+All responses have 200 HTTP status, even erroneous ones. In case of error, the response contains an error object instead of result.
+API credits (limits)
+
+When calculating the used credits, your pricing plan's API requests are taken into account, including identical requests and requests for export.
+
+Request rates
+
+Most subscription plans are limited to 1 request per second. Top-tier plans allow up to 10 requests per second. For higher rate limits, contact our sales team. Exceeding your rate limit will result in an error response.
+
+Max results
+
+The maximum number of results returned by each API method is limited up to 60,000 rows.
+
+Home
+Serpstat Public API
+Intoduction
+Custom Data Export
+SERP Crawling API
+Keyword Volume Checker API
+REFERENCE INFORMATION
+Audit errors
+Response Codes
+Question Words
+Search engine short names
+Snippets types
+Countries
+Languages
+APIS
+Project Management API
+Projects
+Schemas
+Audit API
+AuditSite
+Schemas
+Rank Tracker API
+Rank Tracker
+Schemas
+Backlinks API
+Backlinks
+Schemas
+Domain Analysis API
+Domain Analysis
+Schemas
+Domain Classification API
+Domain Classification
+Schemas
+Keyword Analysis API
+Keyword Analysis
+Schemas
+Team Management API
+Team Management
+Schemas
+Url Analysis API
+Url Analysis
+Schemas
+Keyword Volume Checker API
+Keyword Volume Checker
+Schemas
+SERP Crawling API
+SERP Crawling
+Schemas
+Credits API
+Api credits
+Schemas
+powered by Stoplight
+
+
+--- URL: https://api-docs.serpstat.com/docs/serpstat-public-api/7sojfhgut3kcl-audit-api ---
+
+Audit API
+Export
+v4.0
+API Base URL
+Default server:
+https://api.serpstat.com/v4
+Security
+API Key
+
+An API key is a token that you provide when making API calls. Include the token in a query parameter called token.
+
+Example: ?token=123
+
+Additional Information
+
+Contact Support
+
+CC BY 4.0
+
+Terms of Service
+
+Automate your technical site audits with the Audit API. Retrieve data on errors, get category statistics, and access scan history to integrate into your monitoring systems.
+
+Current version: 4
+
+https://api.serpstat.com/v4 — Endpoint URL, through which all requests should be processed.
+
+API protocol
+Our API protocol is JSON-RPC 2.0.
+Requests
+All requests should be sent via POST method.
+All request parameters must be set via POST request body in JSON format.
+Each request should contain a method name parameter corresponding to the API method (case-sensitive).
+Authentication
+Tokens are used for authentication. Create a token on your profile page.
+token is required for all API requests.
+Api token is available for almost paid and trial plans that have API feature enabled.
+Pagination
+
+For pagination, use the parameters:
+
+size: number of results per page (default 100, maximum 1000);
+page: page number (default is 1st page).
+
+Please note: not all methods are supporting pagination.
+
+Filters
+
+Filters can be applied to each method, most of them are specific for the method you used. filters object are optional for most methods.
+
+Responses
+All responses are in JSON format.
+All responses have 200 HTTP status, even erroneous ones. In case of error, the response contains an error object instead of result.
+API credits (limits)
+
+When calculating the used credits, your pricing plan's API requests are taken into account, including identical requests and requests for export.
+
+Request rates
+
+Most subscription plans are limited to 1 request per second. Top-tier plans allow up to 10 requests per second. For higher rate limits, contact our sales team. Exceeding your rate limit will result in an error response.
+
+Max results
+
+The maximum number of results returned by each API method is limited up to 60,000 rows.
+
+Home
+Serpstat Public API
+Intoduction
+Custom Data Export
+SERP Crawling API
+Keyword Volume Checker API
+REFERENCE INFORMATION
+Audit errors
+Response Codes
+Question Words
+Search engine short names
+Snippets types
+Countries
+Languages
+APIS
+Project Management API
+Projects
+Schemas
+Audit API
+AuditSite
+Schemas
+Rank Tracker API
+Rank Tracker
+Schemas
+Backlinks API
+Backlinks
+Schemas
+Domain Analysis API
+Domain Analysis
+Schemas
+Domain Classification API
+Domain Classification
+Schemas
+Keyword Analysis API
+Keyword Analysis
+Schemas
+Team Management API
+Team Management
+Schemas
+Url Analysis API
+Url Analysis
+Schemas
+Keyword Volume Checker API
+Keyword Volume Checker
+Schemas
+SERP Crawling API
+SERP Crawling
+Schemas
+Credits API
+Api credits
+Schemas
+powered by Stoplight
+
+
+--- URL: https://api-docs.serpstat.com/docs/serpstat-public-api/fbbvt84sg54bg-rank-tracker-api ---
+
+Rank Tracker API
+Export
+v4.0
+API Base URL
+Default server:
+https://api.serpstat.com/v4
+Security
+API Key
+
+An API key is a token that you provide when making API calls. Include the token in a query parameter called token.
+
+Example: ?token=123
+
+Additional Information
+
+Contact Support
+
+CC BY 4.0
+
+Terms of Service
+
+Track your website's search engine rankings with the Rank Tracker API. Access historical position data, monitor competitors, and analyze visibility dynamics for your projects.
+
+Current version: 4
+
+https://api.serpstat.com/v4 — Endpoint URL, through which all requests should be processed.
+
+API protocol
+Our API protocol is JSON-RPC 2.0.
+Requests
+All requests should be sent via POST method.
+All request parameters must be set via POST request body in JSON format.
+Each request should contain a method name parameter corresponding to the API method (case-sensitive).
+Authentication
+Tokens are used for authentication. Create a token on your profile page.
+token is required for all API requests.
+Api token is available for almost paid and trial plans that have API feature enabled.
+Pagination
+
+For pagination, use the parameters:
+
+size: number of results per page (default 100, maximum 1000);
+page: page number (default is 1st page).
+
+Please note: not all methods are supporting pagination.
+
+Filters
+
+Filters can be applied to each method, most of them are specific for the method you used. filters object are optional for most methods.
+
+Responses
+All responses are in JSON format.
+All responses have 200 HTTP status, even erroneous ones. In case of error, the response contains an error object instead of result.
+API credits (limits)
+
+When calculating the used credits, your pricing plan's API requests are taken into account, including identical requests and requests for export.
+
+Request rates
+
+Most subscription plans are limited to 1 request per second. Top-tier plans allow up to 10 requests per second. For higher rate limits, contact our sales team. Exceeding your rate limit will result in an error response.
+
+Max results
+
+The maximum number of results returned by each API method is limited up to 60,000 rows.
+
+Home
+Serpstat Public API
+Intoduction
+Custom Data Export
+SERP Crawling API
+Keyword Volume Checker API
+REFERENCE INFORMATION
+Audit errors
+Response Codes
+Question Words
+Search engine short names
+Snippets types
+Countries
+Languages
+APIS
+Project Management API
+Projects
+Schemas
+Audit API
+AuditSite
+Schemas
+Rank Tracker API
+Rank Tracker
+Schemas
+Backlinks API
+Backlinks
+Schemas
+Domain Analysis API
+Domain Analysis
+Schemas
+Domain Classification API
+Domain Classification
+Schemas
+Keyword Analysis API
+Keyword Analysis
+Schemas
+Team Management API
+Team Management
+Schemas
+Url Analysis API
+Url Analysis
+Schemas
+Keyword Volume Checker API
+Keyword Volume Checker
+Schemas
+SERP Crawling API
+SERP Crawling
+Schemas
+Credits API
+Api credits
+Schemas
+powered by Stoplight
+
+
+--- URL: https://api-docs.serpstat.com/docs/serpstat-public-api/xu9jnzib39dsn-backlinks-api ---
+
+Backlinks API
+Export
+v4.0
+API Base URL
+Default server:
+https://api.serpstat.com/v4
+Security
+API Key
+
+An API key is a token that you provide when making API calls. Include the token in a query parameter called token.
+
+Example: ?token=123
+
+Additional Information
+
+Contact Support
+
+CC BY 4.0
+
+Terms of Service
+
+Analyze the backlink profile of any domain with our Backlinks API. Get comprehensive data on referring domains, anchors, new and lost links, DR, and other key link-building metrics.
+
+Current version: 4
+
+https://api.serpstat.com/v4 — Endpoint URL, through which all requests should be processed.
+
+API protocol
+Our API protocol is JSON-RPC 2.0.
+Requests
+All requests should be sent via POST method.
+All request parameters must be set via POST request body in JSON format.
+Each request should contain a method name parameter corresponding to the API method (case-sensitive).
+Authentication
+Tokens are used for authentication. Create a token on your profile page.
+token is required for all API requests.
+Api token is available for almost paid and trial plans that have API feature enabled.
+Pagination
+
+For pagination, use the parameters:
+
+size: number of results per page (default 100, maximum 1000);
+page: page number (default is 1st page).
+
+Please note: not all methods are supporting pagination.
+
+Filters
+
+Filters can be applied to each method, most of them are specific for the method you used. filters object are optional for most methods.
+
+Responses
+All responses are in JSON format.
+All responses have 200 HTTP status, even erroneous ones. In case of error, the response contains an error object instead of result.
+API credits (limits)
+
+When calculating the used credits, your pricing plan's API requests are taken into account, including identical requests and requests for export.
+
+Request rates
+
+Most subscription plans are limited to 1 request per second. Top-tier plans allow up to 10 requests per second. For higher rate limits, contact our sales team. Exceeding your rate limit will result in an error response.
+
+Max results
+
+The maximum number of results returned by each API method is limited up to 60,000 rows.
+
+Home
+Serpstat Public API
+Intoduction
+Custom Data Export
+SERP Crawling API
+Keyword Volume Checker API
+REFERENCE INFORMATION
+Audit errors
+Response Codes
+Question Words
+Search engine short names
+Snippets types
+Countries
+Languages
+APIS
+Project Management API
+Projects
+Schemas
+Audit API
+AuditSite
+Schemas
+Rank Tracker API
+Rank Tracker
+Schemas
+Backlinks API
+Backlinks
+Schemas
+Domain Analysis API
+Domain Analysis
+Schemas
+Domain Classification API
+Domain Classification
+Schemas
+Keyword Analysis API
+Keyword Analysis
+Schemas
+Team Management API
+Team Management
+Schemas
+Url Analysis API
+Url Analysis
+Schemas
+Keyword Volume Checker API
+Keyword Volume Checker
+Schemas
+SERP Crawling API
+SERP Crawling
+Schemas
+Credits API
+Api credits
+Schemas
+powered by Stoplight
+
+
+--- URL: https://api-docs.serpstat.com/docs/serpstat-public-api/okpb7grp4v67f-domain-analysis-api ---
+
+Domain Analysis API
+Export
+v4.0
+API Base URL
+Default server:
+https://api.serpstat.com/v4
+Security
+API Key
+
+An API key is a token that you provide when making API calls. Include the token in a query parameter called token.
+
+Example: ?token=123
+
+Additional Information
+
+Contact Support
+
+CC BY 4.0
+
+Terms of Service
+
+Conduct in-depth analysis of any website with the Domain Analysis API. Get data on organic visibility, traffic, keywords, competitors, and much more.
+
+Current version: 4
+
+https://api.serpstat.com/v4 — Endpoint URL, through which all requests should be processed.
+
+API protocol
+Our API protocol is JSON-RPC 2.0.
+Requests
+All requests should be sent via POST method.
+All request parameters must be set via POST request body in JSON format.
+Each request should contain a method name parameter corresponding to the API method (case-sensitive).
+Authentication
+Tokens are used for authentication. Create a token on your profile page.
+token is required for all API requests.
+Api token is available for almost paid and trial plans that have API feature enabled.
+Pagination
+
+For pagination, use the parameters:
+
+size: number of results per page (default 100, maximum 1000);
+page: page number (default is 1st page).
+
+Please note: not all methods are supporting pagination.
+
+Filters
+
+Filters can be applied to each method, most of them are specific for the method you used. filters object are optional for most methods.
+
+Responses
+All responses are in JSON format.
+All responses have 200 HTTP status, even erroneous ones. In case of error, the response contains an error object instead of result.
+API credits (limits)
+
+When calculating the used credits, your pricing plan's API requests are taken into account, including identical requests and requests for export.
+
+Request rates
+
+Most subscription plans are limited to 1 request per second. Top-tier plans allow up to 10 requests per second. For higher rate limits, contact our sales team. Exceeding your rate limit will result in an error response.
+
+Max results
+
+The maximum number of results returned by each API method is limited up to 60,000 rows.
+
+Home
+Serpstat Public API
+Intoduction
+Custom Data Export
+SERP Crawling API
+Keyword Volume Checker API
+REFERENCE INFORMATION
+Audit errors
+Response Codes
+Question Words
+Search engine short names
+Snippets types
+Countries
+Languages
+APIS
+Project Management API
+Projects
+Schemas
+Audit API
+AuditSite
+Schemas
+Rank Tracker API
+Rank Tracker
+Schemas
+Backlinks API
+Backlinks
+Schemas
+Domain Analysis API
+Domain Analysis
+Schemas
+Domain Classification API
+Domain Classification
+Schemas
+Keyword Analysis API
+Keyword Analysis
+Schemas
+Team Management API
+Team Management
+Schemas
+Url Analysis API
+Url Analysis
+Schemas
+Keyword Volume Checker API
+Keyword Volume Checker
+Schemas
+SERP Crawling API
+SERP Crawling
+Schemas
+Credits API
+Api credits
+Schemas
+powered by Stoplight
+
+
+--- URL: https://api-docs.serpstat.com/docs/serpstat-public-api/jj5nrsbjeb9wi-domain-classification-api ---
+
+Domain Classification API
+Export
+v4.0
+API Base URL
+Default server:
+https://api.serpstat.com/v4
+Security
+API Key
+
+An API key is a token that you provide when making API calls. Include the token in a query parameter called token.
+
+Example: ?token=123
+
+Additional Information
+
+Contact Support
+
+CC BY 4.0
+
+Terms of Service
+
+Use the Domain Classification API to determine the thematic category or niche of any domain. This categorization comes from evaluating the domain’s primary subject matter.
+
+Current version: 4
+
+https://api.serpstat.com/v4 — Endpoint URL, through which all requests should be processed.
+
+API protocol
+Our API protocol is JSON-RPC 2.0.
+Requests
+All requests should be sent via POST method.
+All request parameters must be set via POST request body in JSON format.
+Each request should contain a method name parameter corresponding to the API method (case-sensitive).
+Authentication
+Tokens are used for authentication. Create a token on your profile page.
+token is required for all API requests.
+Api token is available for almost paid and trial plans that have API feature enabled.
+Pagination
+
+For pagination, use the parameters:
+
+size: number of results per page (default 100, maximum 1000);
+page: page number (default is 1st page).
+
+Please note: not all methods are supporting pagination.
+
+Filters
+
+Filters can be applied to each method, most of them are specific for the method you used. filters object are optional for most methods.
+
+Responses
+All responses are in JSON format.
+All responses have 200 HTTP status, even erroneous ones. In case of error, the response contains an error object instead of result.
+API credits (limits)
+
+When calculating the used credits, your pricing plan's API requests are taken into account, including identical requests and requests for export.
+
+Request rates
+
+Most subscription plans are limited to 1 request per second. Top-tier plans allow up to 10 requests per second. For higher rate limits, contact our sales team. Exceeding your rate limit will result in an error response.
+
+Max results
+
+The maximum number of results returned by each API method is limited up to 60,000 rows.
+
+Home
+Serpstat Public API
+Intoduction
+Custom Data Export
+SERP Crawling API
+Keyword Volume Checker API
+REFERENCE INFORMATION
+Audit errors
+Response Codes
+Question Words
+Search engine short names
+Snippets types
+Countries
+Languages
+APIS
+Project Management API
+Projects
+Schemas
+Audit API
+AuditSite
+Schemas
+Rank Tracker API
+Rank Tracker
+Schemas
+Backlinks API
+Backlinks
+Schemas
+Domain Analysis API
+Domain Analysis
+Schemas
+Domain Classification API
+Domain Classification
+Schemas
+Keyword Analysis API
+Keyword Analysis
+Schemas
+Team Management API
+Team Management
+Schemas
+Url Analysis API
+Url Analysis
+Schemas
+Keyword Volume Checker API
+Keyword Volume Checker
+Schemas
+SERP Crawling API
+SERP Crawling
+Schemas
+Credits API
+Api credits
+Schemas
+powered by Stoplight
+
+
+--- URL: https://api-docs.serpstat.com/docs/serpstat-public-api/8qvah42r5f9la-keyword-analysis-api ---
+
+Keyword Analysis API
+Export
+v4.0
+API Base URL
+Default server:
+https://api.serpstat.com/v4
+Security
+API Key
+
+An API key is a token that you provide when making API calls. Include the token in a query parameter called token.
+
+Example: ?token=123
+
+Additional Information
+
+Contact Support
+
+CC BY 4.0
+
+Terms of Service
+
+Research keywords at scale with the Keyword Analysis API. Access data on search volume, keyword difficulty, competitors, and discover related queries to improve your keyword strategy.
+
+Current version: 4
+
+https://api.serpstat.com/v4 — Endpoint URL, through which all requests should be processed.
+
+API protocol
+Our API protocol is JSON-RPC 2.0.
+Requests
+All requests should be sent via POST method.
+All request parameters must be set via POST request body in JSON format.
+Each request should contain a method name parameter corresponding to the API method (case-sensitive).
+Authentication
+Tokens are used for authentication. Create a token on your profile page.
+token is required for all API requests.
+Api token is available for almost paid and trial plans that have API feature enabled.
+Pagination
+
+For pagination, use the parameters:
+
+size: number of results per page (default 100, maximum 1000);
+page: page number (default is 1st page).
+
+Please note: not all methods are supporting pagination.
+
+Filters
+
+Filters can be applied to each method, most of them are specific for the method you used. filters object are optional for most methods.
+
+Responses
+All responses are in JSON format.
+All responses have 200 HTTP status, even erroneous ones. In case of error, the response contains an error object instead of result.
+API credits (limits)
+
+When calculating the used credits, your pricing plan's API requests are taken into account, including identical requests and requests for export.
+
+Request rates
+
+Most subscription plans are limited to 1 request per second. Top-tier plans allow up to 10 requests per second. For higher rate limits, contact our sales team. Exceeding your rate limit will result in an error response.
+
+Max results
+
+The maximum number of results returned by each API method is limited up to 60,000 rows.
+
+Home
+Serpstat Public API
+Intoduction
+Custom Data Export
+SERP Crawling API
+Keyword Volume Checker API
+REFERENCE INFORMATION
+Audit errors
+Response Codes
+Question Words
+Search engine short names
+Snippets types
+Countries
+Languages
+APIS
+Project Management API
+Projects
+Schemas
+Audit API
+AuditSite
+Schemas
+Rank Tracker API
+Rank Tracker
+Schemas
+Backlinks API
+Backlinks
+Schemas
+Domain Analysis API
+Domain Analysis
+Schemas
+Domain Classification API
+Domain Classification
+Schemas
+Keyword Analysis API
+Keyword Analysis
+Schemas
+Team Management API
+Team Management
+Schemas
+Url Analysis API
+Url Analysis
+Schemas
+Keyword Volume Checker API
+Keyword Volume Checker
+Schemas
+SERP Crawling API
+SERP Crawling
+Schemas
+Credits API
+Api credits
+Schemas
+powered by Stoplight
+
+
+--- URL: https://api-docs.serpstat.com/docs/serpstat-public-api/eulycl3dnfrz8-team-management-api ---
+
+Team Management API
+Export
+v4.0
+API Base URL
+Default server:
+https://api.serpstat.com/v4
+Security
+API Key
+
+An API key is a token that you provide when making API calls. Include the token in a query parameter called token.
+
+Example: ?token=123
+
+Additional Information
+
+Contact Support
+
+CC BY 4.0
+
+Terms of Service
+
+Manage your Serpstat team members via the API. Easily add, activate, deactivate, or remove users to simplify account and access management.
+
+Current version: 4
+
+https://api.serpstat.com/v4 — Endpoint URL, through which all requests should be processed.
+
+API protocol
+Our API protocol is JSON-RPC 2.0.
+Requests
+All requests should be sent via POST method.
+All request parameters must be set via POST request body in JSON format.
+Each request should contain a method name parameter corresponding to the API method (case-sensitive).
+Authentication
+Tokens are used for authentication. Create a token on your profile page.
+token is required for all API requests.
+Api token is available for almost paid and trial plans that have API feature enabled.
+Pagination
+
+For pagination, use the parameters:
+
+size: number of results per page (default 100, maximum 1000);
+page: page number (default is 1st page).
+
+Please note: not all methods are supporting pagination.
+
+Filters
+
+Filters can be applied to each method, most of them are specific for the method you used. filters object are optional for most methods.
+
+Responses
+All responses are in JSON format.
+All responses have 200 HTTP status, even erroneous ones. In case of error, the response contains an error object instead of result.
+API credits (limits)
+
+When calculating the used credits, your pricing plan's API requests are taken into account, including identical requests and requests for export.
+
+Request rates
+
+Most subscription plans are limited to 1 request per second. Top-tier plans allow up to 10 requests per second. For higher rate limits, contact our sales team. Exceeding your rate limit will result in an error response.
+
+Max results
+
+The maximum number of results returned by each API method is limited up to 60,000 rows.
+
+Home
+Serpstat Public API
+Intoduction
+Custom Data Export
+SERP Crawling API
+Keyword Volume Checker API
+REFERENCE INFORMATION
+Audit errors
+Response Codes
+Question Words
+Search engine short names
+Snippets types
+Countries
+Languages
+APIS
+Project Management API
+Projects
+Schemas
+Audit API
+AuditSite
+Schemas
+Rank Tracker API
+Rank Tracker
+Schemas
+Backlinks API
+Backlinks
+Schemas
+Domain Analysis API
+Domain Analysis
+Schemas
+Domain Classification API
+Domain Classification
+Schemas
+Keyword Analysis API
+Keyword Analysis
+Schemas
+Team Management API
+Team Management
+Schemas
+Url Analysis API
+Url Analysis
+Schemas
+Keyword Volume Checker API
+Keyword Volume Checker
+Schemas
+SERP Crawling API
+SERP Crawling
+Schemas
+Credits API
+Api credits
+Schemas
+powered by Stoplight
+
+
+--- URL: https://api-docs.serpstat.com/docs/serpstat-public-api/oc2emgo18vdim-serpstat-url-analysis-api ---
+
+Serpstat Url Analysis API
+Export
+v4.0
+API Base URL
+Default server:
+https://api.serpstat.com/v4
+Security
+API Key
+
+An API key is a token that you provide when making API calls. Include the token in a query parameter called token.
+
+Example: ?token=123
+
+Additional Information
+
+Contact Support
+
+CC BY 4.0
+
+Analyze any specific URL with the URL Analysis API. Get data on a page's traffic, ranking keywords, competitors, and find missing keyword opportunities for optimization.
+
+Current version: 4
+
+https://api.serpstat.com/v4 — Endpoint URL, through which all requests should be processed.
+
+API protocol
+Our API protocol is JSON-RPC 2.0.
+Requests
+All requests should be sent via POST method.
+All request parameters must be set via POST request body in JSON format.
+Each request should contain a method name parameter corresponding to the API method (case-sensitive).
+Authentication
+Tokens are used for authentication. Create a token on your profile page.
+token is required for all API requests.
+Api token is available for almost paid and trial plans that have API feature enabled.
+Pagination
+
+For pagination, use the parameters:
+
+size: number of results per page (default 100, maximum 1000);
+page: page number (default is 1st page).
+
+Please note: not all methods are supporting pagination.
+
+Filters
+
+Filters can be applied to each method, most of them are specific for the method you used. filters object are optional for most methods.
+
+Responses
+All responses are in JSON format.
+All responses have 200 HTTP status, even erroneous ones. In case of error, the response contains an error object instead of result.
+API credits (limits)
+
+When calculating the used credits, your pricing plan's API requests are taken into account, including identical requests and requests for export.
+
+Request rates
+
+Most subscription plans are limited to 1 request per second. Top-tier plans allow up to 10 requests per second. For higher rate limits, contact our sales team. Exceeding your rate limit will result in an error response.
+
+Max results
+
+The maximum number of results returned by each API method is limited up to 60,000 rows.
+
+Home
+Serpstat Public API
+Intoduction
+Custom Data Export
+SERP Crawling API
+Keyword Volume Checker API
+REFERENCE INFORMATION
+Audit errors
+Response Codes
+Question Words
+Search engine short names
+Snippets types
+Countries
+Languages
+APIS
+Project Management API
+Projects
+Schemas
+Audit API
+AuditSite
+Schemas
+Rank Tracker API
+Rank Tracker
+Schemas
+Backlinks API
+Backlinks
+Schemas
+Domain Analysis API
+Domain Analysis
+Schemas
+Domain Classification API
+Domain Classification
+Schemas
+Keyword Analysis API
+Keyword Analysis
+Schemas
+Team Management API
+Team Management
+Schemas
+Url Analysis API
+Url Analysis
+Schemas
+Keyword Volume Checker API
+Keyword Volume Checker
+Schemas
+SERP Crawling API
+SERP Crawling
+Schemas
+Credits API
+Api credits
+Schemas
+powered by Stoplight
+
+
+--- URL: https://api-docs.serpstat.com/docs/serpstat-public-api/1uyfsa142buo9-serpstat-keyword-volume-checker-api ---
+
+Serpstat Keyword Volume Checker API
+Export
+v4.0
+API Base URL
+Default server:
+https://api.serpstat.com/v4
+Security
+API Key
+
+An API key is a token that you provide when making API calls. Include the token in a query parameter called token.
+
+Example: ?token=123
+
+Additional Information
+
+Contact Support
+
+CC BY 4.0
+
+Use the Keyword Volume Checker API for bulk search volume analysis. Create asynchronous tasks to get accurate search volume data for very large lists of keywords.
+
+Current version: 4
+
+https://api.serpstat.com/v4 — Endpoint URL, through which all requests should be processed.
+
+API protocol
+Our API protocol is JSON-RPC 2.0.
+Requests
+All requests should be sent via POST method.
+All request parameters must be set via POST request body in JSON format.
+Each request should contain a method name parameter corresponding to the API method (case-sensitive).
+Authentication
+Tokens are used for authentication. Create a token on your profile page.
+token is required for all API requests.
+Api token is available for almost paid and trial plans that have API feature enabled.
+Pagination
+
+For pagination, use the parameters:
+
+size: number of results per page (default 100, maximum 1000);
+page: page number (default is 1st page).
+
+Please note: not all methods are supporting pagination.
+
+Filters
+
+Filters can be applied to each method, most of them are specific for the method you used. filters object are optional for most methods.
+
+Responses
+All responses are in JSON format.
+All responses have 200 HTTP status, even erroneous ones. In case of error, the response contains an error object instead of result.
+Credits and pricing
+This API has separate billing and credits type for this API are not included in any available subscription plan. Contacts sales for details.
+The cost varies from $0.001 to $0.0005 depending on the volume of credits required
+The minimum budget for the service is $300
+Unlimited number of requests per day and month.
+Credits for SERP Crawling don't expire at the end of the month, you can use them when it is convenient for you.
+All keywords accepted to task are billed after task submission.
+Charged credits are not refundable.
+Request rates
+
+Most subscription plans are limited to 1 request per second. Top-tier plans allow up to 10 requests per second. For higher rate limits, contact our sales team. Exceeding your rate limit will result in an error response.
+
+Max results
+
+The maximum number of results returned by each API method is limited up to 60,000 rows.
+
+Home
+Serpstat Public API
+Intoduction
+Custom Data Export
+SERP Crawling API
+Keyword Volume Checker API
+REFERENCE INFORMATION
+Audit errors
+Response Codes
+Question Words
+Search engine short names
+Snippets types
+Countries
+Languages
+APIS
+Project Management API
+Projects
+Schemas
+Audit API
+AuditSite
+Schemas
+Rank Tracker API
+Rank Tracker
+Schemas
+Backlinks API
+Backlinks
+Schemas
+Domain Analysis API
+Domain Analysis
+Schemas
+Domain Classification API
+Domain Classification
+Schemas
+Keyword Analysis API
+Keyword Analysis
+Schemas
+Team Management API
+Team Management
+Schemas
+Url Analysis API
+Url Analysis
+Schemas
+Keyword Volume Checker API
+Keyword Volume Checker
+Schemas
+SERP Crawling API
+SERP Crawling
+Schemas
+Credits API
+Api credits
+Schemas
+powered by Stoplight
+
+
+--- URL: https://api-docs.serpstat.com/docs/serpstat-public-api/0b54hq7qrsbab-serpstat-serp-crawling-api ---
+
+Serpstat SERP Crawling API
+Export
+v2.0
+API Base URL
+Default server:
+https://serpstat.com/rt/api/v2
+Security
+API Key
+
+An API key is a token that you provide when making API calls. Include the token in a query parameter called token.
+
+Example: ?token=123
+
+Additional Information
+
+Contact Support
+
+CC BY 4.0
+
+Get real-time search engine results data with the SERP Scraping API. Create tasks to parse the SERP for any keyword, location, and device for the most up-to-date insights.
+
+Current version: 2
+
+https://serpstat.com/rt/api/v2 — Endpoint URL, through which all requests should be processed.
+
+API protocol
+Our API protocol is JSON-RPC 2.0.
+Requests
+All requests should be sent via POST method.
+All request parameters must be set via POST request body in JSON format.
+Each request should contain a method name parameter corresponding to the API method (case-sensitive).
+Authentication
+Tokens are used for authentication. Create a token on your profile page.
+token is required for all API requests.
+Api token is available for almost paid and trial plans that have API feature enabled.
+Pagination
+
+For pagination, use the parameters:
+
+size: number of results per page (default 100, maximum 1000);
+page: page number (default is 1st page).
+
+Please note: not all methods are supporting pagination.
+
+Filters
+
+Filters can be applied to each method, most of them are specific for the method you used. filters object are optional for most methods.
+
+Responses
+All responses are in JSON format.
+All responses have 200 HTTP status, even erroneous ones. In case of error, the response contains an error object instead of result.
+API credits
+
+This API has separate billing and credits type for this API are not included in any available subscription plan. Contacts sales for details.
+
+The cost varies from $0.0013 to $0.00065 per one keyword depending on the volume of credits required.
+
+The minimum budget for the service is $300 ( ~ 230,000 SERPs)
+
+Unlimited number of requests per day and month.
+
+Perform analysis regardless of the availability of a pricing plan or available credits.
+
+Credits for SERP Crawling don't expire at the end of the month, you can use them when it is convenient for you.
+
+All keywords accepted to task are billed after task submission.
+
+Charged credits are not refundable.
+
+AI Overview
+
+Google AI Overview results are currently available within standard SERP Crawling requests at no additional cost. This allows you to access AI-generated summaries and reference sources as part of your regular SERP data. However, starting August 1, 2025, AI Overview data will become a separate optional parameter with additional pricing. After this date, you will need to specifically enable AI Overview in your API requests and account for the additional costs in your usage billing.
+
+Request rates
+
+Most subscription plans are limited to 1 request per second. Top-tier plans allow up to 10 requests per second. For higher rate limits, contact our sales team. Exceeding your rate limit will result in an error response.
+
+Max results
+
+The maximum number of results returned by each API method is limited up to 60,000 rows.
+
+Home
+Serpstat Public API
+Intoduction
+Custom Data Export
+SERP Crawling API
+Keyword Volume Checker API
+REFERENCE INFORMATION
+Audit errors
+Response Codes
+Question Words
+Search engine short names
+Snippets types
+Countries
+Languages
+APIS
+Project Management API
+Projects
+Schemas
+Audit API
+AuditSite
+Schemas
+Rank Tracker API
+Rank Tracker
+Schemas
+Backlinks API
+Backlinks
+Schemas
+Domain Analysis API
+Domain Analysis
+Schemas
+Domain Classification API
+Domain Classification
+Schemas
+Keyword Analysis API
+Keyword Analysis
+Schemas
+Team Management API
+Team Management
+Schemas
+Url Analysis API
+Url Analysis
+Schemas
+Keyword Volume Checker API
+Keyword Volume Checker
+Schemas
+SERP Crawling API
+SERP Crawling
+Schemas
+Credits API
+Api credits
+Schemas
+powered by Stoplight
+
+
+--- URL: https://api-docs.serpstat.com/docs/serpstat-public-api/25i6hwpyk7drz-credits-api ---
+
+Credits API
+Export
+v4.0
+API Base URL
+Default server:
+https://api.serpstat.com/v4
+Security
+API Key
+
+An API key is a token that you provide when making API calls. Include the token in a query parameter called token.
+
+Example: ?token=123
+
+Additional Information
+
+Contact Support
+
+CC BY 4.0
+
+Terms of Service
+
+Monitor your API credit usage with the Credits API. Get up-to-date information on your current balance and consumption to effectively manage your subscription limits.
+
+Current version: 4
+
+https://api.serpstat.com/v4 — Endpoint URL, through which all requests should be processed.
+
+API protocol
+Our API protocol is JSON-RPC 2.0.
+Requests
+All requests should be sent via POST method.
+All request parameters must be set via POST request body in JSON format.
+Each request should contain a method name parameter corresponding to the API method (case-sensitive).
+Authentication
+Tokens are used for authentication. Create a token on your profile page.
+token is required for all API requests.
+Api token is available for almost paid and trial plans that have API feature enabled.
+Pagination
+
+For pagination, use the parameters:
+
+size: number of results per page (default 100, maximum 1000);
+page: page number (default is 1st page).
+
+Please note: not all methods are supporting pagination.
+
+Filters
+
+Filters can be applied to each method, most of them are specific for the method you used. filters object are optional for most methods.
+
+Responses
+All responses are in JSON format.
+All responses have 200 HTTP status, even erroneous ones. In case of error, the response contains an error object instead of result.
+API credits (limits)
+
+When calculating the used credits, your pricing plan's API requests are taken into account, including identical requests and requests for export.
+
+Request rates
+
+Most subscription plans are limited to 1 request per second. Top-tier plans allow up to 10 requests per second. For higher rate limits, contact our sales team. Exceeding your rate limit will result in an error response.
+
+Max results
+
+The maximum number of results returned by each API method is limited up to 60,000 rows.
+
+Home
+Serpstat Public API
+Intoduction
+Custom Data Export
+SERP Crawling API
+Keyword Volume Checker API
+REFERENCE INFORMATION
+Audit errors
+Response Codes
+Question Words
+Search engine short names
+Snippets types
+Countries
+Languages
+APIS
+Project Management API
+Projects
+Schemas
+Audit API
+AuditSite
+Schemas
+Rank Tracker API
+Rank Tracker
+Schemas
+Backlinks API
+Backlinks
+Schemas
+Domain Analysis API
+Domain Analysis
+Schemas
+Domain Classification API
+Domain Classification
+Schemas
+Keyword Analysis API
+Keyword Analysis
+Schemas
+Team Management API
+Team Management
+Schemas
+Url Analysis API
+Url Analysis
+Schemas
+Keyword Volume Checker API
+Keyword Volume Checker
+Schemas
+SERP Crawling API
+SERP Crawling
+Schemas
+Credits API
+Api credits
+Schemas
+powered by Stoplight

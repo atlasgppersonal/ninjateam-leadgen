@@ -1,0 +1,8 @@
+`flash-attention` package not found, consider installing for better performance: No module named 'flash_attn'.
+Current `flash-attention` does not support `window_size`. Either upgrade or use `attn_implementation='eager'`.
+Loading model: microsoft/Phi-3-mini-4k-instruct...
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Error loading model: The paging file is too small for this operation to complete. (os error 1455)
+Model loading failed. Exiting.

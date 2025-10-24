@@ -1,0 +1,48 @@
+--- Test Log started at 2025-10-07 11:13:38 ---
+--- All test output redirected to C:\Users\GIO PLUGLIESE\Documents\Work\ags site\leadgen\test_category_arbitrage_log.txt ---
+
+--- Starting test_category_arbitrage.py ---
+    [Test] Attempting to load config from: C:\Users\GIO PLUGLIESE\Documents\Work\ags site\leadgen\config.json
+    [Test] Config loaded successfully.
+    [Test] LLM Model configured: gemini-2.0-flash-lite
+    [Test] Master DB Path: master_contacts.db
+    [Test] Firebase Arbitrage Sync URL: https://us-central1-fourth-outpost-470409-u3.cloudfunctions.net/saveArbitrageData
+    [Test] Arbitrage Update Interval: 7 days
+    [Test] Ensuring master_contacts.db and canonical_categories table exist...
+    [Test] canonical_categories table checked/created successfully.
+    [Test] Preparing to call normalize_business_category with a batch of 1 leads.
+
+--- Calling normalize_business_category ---
+
+--- normalize_business_category completed ---
+
+--- Normalized Leads Results ---
+[
+  {
+    "body_text": "QR Code Link to This Post Your Last-Minute Go-To: Movers, Laborers, Long-Distance Moving, Junk Removal, Hauling & Cleaning Services! Looking for reliable, professional movers? Strongman Mover is here for all your moving needs \u2013 big or small, local or long-distance. We handle everything with speed, care, and reliability! Why Choose Strongman Mover? Experienced Crews - Over 3 years of experience per crew ensures a smooth move. Any Move, Any Distance - Residential or commercial, local or long-distance \u2013 we do it all! Specialty Item Experts - Safes, pianos, hot tubs? No problem! We move large and delicate items with care. Last-Minute & Same-Day Service - Need to move now? We're available anytime, anywhere, even for last-minute jobs. Flexible Scheduling - No extra charges for date or time changes. Our Services: (For any move - Big or Small) Residential Moves: Apartments, homes, condos. Commercial Moves: Offices, businesses. Labor Only: Packing, loading, and unloading. Junk Removal: Clearing out unwanted items Residential & Commercial Cleaning: Thorough cleaning and sanitization for homes and businesses, perfect for pre-move-in or post-move-out. Availability & Contact: \u2022 7 Days a Week: 8 AM - 6 PM \u2022 After-Hours/Emergencies: Call us directly at (503) 433-5602. Simple Terms of Service:: \u2022 Deposit Policy: No refunds or cancellations once processed. Reschedule requests are based on availability. \u2022 Guaranteed Completion: Your move will be completed within 72 hours of the estimated time of arrival. Call/Text Now: (503) 433-5602 Visit Us Online: www.STRONGMANMOVER.com STRONGMAN MOVER - Your Trusted Partner for a Stress-Free Move! Thank you for choosing STRONGMAN MOVER for your Movers and Laborers!",
+    "business_name": "Strongman Mover",
+    "cant_text": 1,
+    "category": "movers",
+    "city": "portland",
+    "email": null,
+    "image_hash": "04Q03d",
+    "name": null,
+    "name_confidence": 0,
+    "original_category": "labor & moving",
+    "phone": "5034335602",
+    "post_id": "7881623662",
+    "services_rendered": [
+      "Residential Moves: Apartments, homes, condos.",
+      "Commercial Moves: Offices, businesses.",
+      "Labor Only: Packing, loading, and unloading.",
+      "Junk Removal: Clearing out unwanted items",
+      "Residential & Commercial Cleaning: Thorough cleaning and sanitization for homes and businesses, perfect for pre-move-in or post-move-out."
+    ],
+    "state": "OR",
+    "url": "https://portland.craigslist.org/lbs/d/portland-your-last-minute-local-move/7881623662.html",
+    "website_url": "https://www.STRONGMANMOVER.com"
+  }
+]
+--- End of Normalized Leads Results ---
+
+--- Test Script Finished ---

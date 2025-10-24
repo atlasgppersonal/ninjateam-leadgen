@@ -1,0 +1,12 @@
+- [x] Create a `todo.md` file with the detailed steps.
+- [x] Examine `contact-extractor.py` to understand Playwright and LLM integration.
+- [x] Implement Playwright to navigate to the Serpstat documentation page.
+- [x] Implement Playwright to dismiss the ad pop-up if it appears.
+- [x] Read `config.json` to get API key and LLM model.
+- [x] Integrate LLM to analyze the page content and identify links to API documentation.
+- [x] Implement a recursive function to visit all identified API documentation links.
+- [x] Within the recursive function, extract "signature, descriptions results" from each documentation page.
+- [x] Ensure a 1.5-second delay between consecutive LLM calls.
+- [x] Store the extracted documentation information in a structured format (e.g., JSON, Markdown files).
+- [x] Save the extracted information to a file.
+- [ ] Test the `download_serpstat_docs.py` script.

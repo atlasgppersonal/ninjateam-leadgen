@@ -1,0 +1,132 @@
+AI Personalization & Inference Rulebook
+1. Introduction & Purpose
+This rulebook provides a comprehensive, structured guide for transforming raw scraped
+business data into highly personalized, AI-enhanced outreach content. It defines the base
+dataset, inferred data points, concern mapping, scoring/ranking logic, and final assembly
+rules for dynamically generated communications.
+2. Base Dataset Specification
+The base dataset represents the raw, scraped or input data for a given business. This is the
+foundation for all subsequent inference, concern mapping, and personalization logic.
+JSON Schema Example:
+{
+"post_id": "<string>",
+"url": "<string>",
+"image_hash": "<string or null>",
+"original_category": "<string>",
+"body_text": "<string>",
+"business_name": "<string or null>",
+"category": "<string or null>",
+"services_rendered": ["<string>", "..."] or null,
+"name": "<string or null>",
+"email": "<string or null>",
+"phone": "<string or null>",
+"website_url": "<string or null>"
+}
+Data Enrichment Example:
+{
+"score": "<total_points>",
+"data_points": {
+"business_name": "<string or null>",
+"owner_name": "<string or null>",
+"years_in_business": "<string or null>",
+"service_area": ["<city>", "<city>", "..."] or null,
+"specialized_equipment": ["<item>", "..."] or null,
+"unique_selling_point": "<string or null>",
+
+
+--- PAGE 1 ---
+
+"awards_certifications": ["<award>", "..."] or null,
+"seasonal_offers": "<string or null>",
+"customer_testimonials": true/false,
+"before_after_photos": true/false,
+"blog_articles": true/false,
+"community_involvement": "<string or null>",
+"service_guarantee": "<string or null>",
+"detailed_service_list": ["<service>", "..."] or null,
+"case_studies": ["<case>", "..."] or null,
+"extra_contact_methods": ["<method>", "..."] or null,
+"pricing_info": "<string or null>",
+"videos": true/false,
+"team_info": ["<name/role>", "..."] or null,
+"geo_targeted_content": ["<location>", "..."] or null,
+"press_mentions": ["<mention>", "..."] or null
+}
+}
+3. Inference Rules
+Inference rules define how additional, implicit data points are derived from the base
+dataset. These inferred points drive concern mapping, personalization, and AI
+recommendations.
+Example Inferred Data Points JSON:
+{
+"target_audience": ["<audience segment>", "..."],
+"likely_challenges": ["<challenge>", "..."],
+"competitive_positioning": "<string>",
+"seasonal_factors": ["<factor>", "..."],
+"location_risks": ["<risk>", "..."],
+"market_opportunities": ["<opportunity>", "..."],
+"potential_ai_applications": ["<application>", "..."]
+}
+4. Concern Matrix Construction
+The concern matrix organizes potential issues and opportunities into logical categories (e.g.,
+Location, Audience, Operational, Financial) with sub-factors. These are later scored and
+ranked.
+Example Concern Matrix JSON:
+
+
+--- PAGE 2 ---
+
+{
+"Location": {
+"Hurricanes": 8,
+"Snow": 5,
+"Drought": 4
+},
+"Audience": {
+"Elderly": 7,
+"Middle-aged": 6,
+"Young adults": 4
+},
+"Operational": {
+"Hiring shortages": 9,
+"Equipment maintenance": 6
+},
+"Financial": {
+"Cash flow": 8,
+"High costs": 7
+}
+}
+5. Scoring & Ranking Methodology
+Concerns are ranked at both the category and sub-factor (leaf) level. Leaf-level concerns are
+scored across all categories, enabling global ranking regardless of hierarchy.
+Example Scored Output JSON:
+{
+"ranked_concerns": [
+{"concern": "Hiring shortages", "score": 9},
+{"concern": "Hurricanes", "score": 8},
+{"concern": "Cash flow", "score": 8},
+{"concern": "Elderly audience", "score": 7}
+]
+}
+6. Email Section Assembly Rules
+Emails are built in three dynamic sections:
+Section 1: Intro (scraped web details)
+
+
+--- PAGE 3 ---
+
+Section 2: Problem framing (concerns + gravity)
+Section 3: AI-driven solutions
+7. Variation & Combination Generation
+Each email component has multiple variants. Variants can be mixed to create unique
+combinations, increasing personalization while maintaining structural consistency.
+Example Variation JSON:
+{
+"section1_variants": ["<intro1>", "<intro2>", "..."],
+"section2_variants": ["<problem1>", "<problem2>", "..."],
+"section3_variants": ["<solution1>", "<solution2>", "..."]
+}
+
+
+--- PAGE 4 ---
+

@@ -1,0 +1,2238 @@
+{
+  "seed_keywords": [
+    "residential movers denver",
+    "moving boxes denver",
+    "weekend movers denver",
+    "moving services denver",
+    "packing supplies denver",
+    "moving company denver",
+    "moving labor denver",
+    "commercial movers denver",
+    "local movers denver",
+    "same day moving denver",
+    "moving quotes denver",
+    "moving truck denver",
+    "office movers denver",
+    "cheap movers denver",
+    "unpacking services denver",
+    "storage moving denver",
+    "moving estimate denver",
+    "moving blankets denver",
+    "moving help denver",
+    "professional movers denver",
+    "licensed movers denver",
+    "furniture movers denver",
+    "piano movers denver",
+    "affordable movers denver",
+    "long distance movers denver",
+    "house movers denver",
+    "emergency moving denver",
+    "best moving company denver",
+    "packing services denver",
+    "moving cost denver"
+  ],
+  "customer_domain": "https://www.movingbrothers.net/",
+  "customer_domain_authority": {
+    "domain": "https://www.movingbrothers.net/",
+    "keyword_count_top10": 51,
+    "traffic": 6764.49
+  },
+  "total_keywords_in_pool": 107,
+  "scored_keywords": [
+    {
+      "keyword": "denver commercial movers",
+      "search_volume": 390,
+      "cpc": 18.94,
+      "competition": 0.009999999776482582,
+      "arbitrage_score": 5166.582884,
+      "potential_roi": 9750,
+      "blueprint": {
+        "title_idea": "Denver Commercial Movers Services: Your Local Experts",
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 100
+    },
+    {
+      "keyword": "denver commercial moving companies",
+      "search_volume": 390,
+      "cpc": 18.94,
+      "competition": 0.009999999776482582,
+      "arbitrage_score": 5166.582884,
+      "potential_roi": 9750,
+      "blueprint": {
+        "title_idea": "Denver Commercial Moving Companies Services: Your Local Experts",
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 100
+    },
+    {
+      "keyword": "commercial moving companies denver",
+      "search_volume": 390,
+      "cpc": 18.94,
+      "competition": 0.009999999776482582,
+      "arbitrage_score": 5166.582884,
+      "potential_roi": 9750,
+      "blueprint": {
+        "title_idea": "Commercial Moving Companies Denver Services: Your Local Experts",
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 100
+    },
+    {
+      "keyword": "residential movers denver",
+      "search_volume": 90,
+      "cpc": 32.11,
+      "competition": 0.029999999329447746,
+      "arbitrage_score": 1617.624264,
+      "potential_roi": 2250,
+      "blueprint": {
+        "title_idea": "Residential Movers Denver Services: Your Local Experts",
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 31.98
+    },
+    {
+      "keyword": "denver long distance movers",
+      "search_volume": 390,
+      "cpc": 39.71,
+      "competition": 0.23000000417232513,
+      "arbitrage_score": 879.018653,
+      "potential_roi": 9750,
+      "blueprint": {
+        "title_idea": "Denver Long Distance Movers Services: Your Local Experts",
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 17.82
+    },
+    {
+      "keyword": "denver long distance moving companies",
+      "search_volume": 390,
+      "cpc": 39.71,
+      "competition": 0.23000000417232513,
+      "arbitrage_score": 879.018653,
+      "potential_roi": 9750,
+      "blueprint": {
+        "title_idea": "Denver Long Distance Moving Companies Services: Your Local Experts",
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 17.82
+    },
+    {
+      "keyword": "long distance movers in denver",
+      "search_volume": 390,
+      "cpc": 39.71,
+      "competition": 0.23000000417232513,
+      "arbitrage_score": 879.018653,
+      "potential_roi": 9750,
+      "blueprint": {
+        "title_idea": "Long Distance Movers In Denver Services: Your Local Experts",
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 17.82
+    },
+    {
+      "keyword": "long distance moving companies in denver co",
+      "search_volume": 390,
+      "cpc": 39.71,
+      "competition": 0.23000000417232513,
+      "arbitrage_score": 879.018653,
+      "potential_roi": 9750,
+      "blueprint": {
+        "title_idea": "Long Distance Moving Companies In Denver Co Services: Your Local Experts",
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 17.82
+    },
+    {
+      "keyword": "long distance movers denver",
+      "search_volume": 390,
+      "cpc": 41.33,
+      "competition": 0.3400000035762787,
+      "arbitrage_score": 626.741507,
+      "potential_roi": 9750,
+      "blueprint": {
+        "title_idea": "Long Distance Movers Denver Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 12.98
+    },
+    {
+      "keyword": "long-distance movers denver",
+      "search_volume": 390,
+      "cpc": 41.33,
+      "competition": 0.3400000035762787,
+      "arbitrage_score": 626.741507,
+      "potential_roi": 9750,
+      "blueprint": {
+        "title_idea": "Long-Distance Movers Denver Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 12.98
+    },
+    {
+      "keyword": "long distance moving companies denver",
+      "search_volume": 390,
+      "cpc": 41.33,
+      "competition": 0.3400000035762787,
+      "arbitrage_score": 626.741507,
+      "potential_roi": 9750,
+      "blueprint": {
+        "title_idea": "Long Distance Moving Companies Denver Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 12.98
+    },
+    {
+      "keyword": "moving and packing companies",
+      "search_volume": 4400,
+      "cpc": 27.94,
+      "competition": 0.36000001430511475,
+      "arbitrage_score": 569.954143,
+      "potential_roi": 110000,
+      "blueprint": {
+        "title_idea": "Moving And Packing Companies Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 11.89
+    },
+    {
+      "keyword": "moving denver",
+      "search_volume": 1300,
+      "cpc": 9.5,
+      "competition": 0.12999999523162842,
+      "arbitrage_score": 467.091519,
+      "potential_roi": 32500,
+      "blueprint": {
+        "title_idea": "Moving Denver Services: Your Local Experts",
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 9.92
+    },
+    {
+      "keyword": "denver moving services",
+      "search_volume": 12100,
+      "cpc": 22.38,
+      "competition": 0.4300000071525574,
+      "arbitrage_score": 433.888729,
+      "potential_roi": 302500,
+      "blueprint": {
+        "title_idea": "Denver Moving Services Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 9.29
+    },
+    {
+      "keyword": "movers in denver",
+      "search_volume": 12100,
+      "cpc": 22.38,
+      "competition": 0.4300000071525574,
+      "arbitrage_score": 433.888729,
+      "potential_roi": 302500,
+      "blueprint": {
+        "title_idea": "Movers In Denver Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 9.29
+    },
+    {
+      "keyword": "moving company denver",
+      "search_volume": 12100,
+      "cpc": 22.38,
+      "competition": 0.4300000071525574,
+      "arbitrage_score": 433.888729,
+      "potential_roi": 302500,
+      "blueprint": {
+        "title_idea": "Moving Company Denver Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 9.29
+    },
+    {
+      "keyword": "moving service denver",
+      "search_volume": 12100,
+      "cpc": 22.38,
+      "competition": 0.4300000071525574,
+      "arbitrage_score": 433.888729,
+      "potential_roi": 302500,
+      "blueprint": {
+        "title_idea": "Moving Service Denver Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 9.29
+    },
+    {
+      "keyword": "moving services denver co",
+      "search_volume": 12100,
+      "cpc": 22.38,
+      "competition": 0.4300000071525574,
+      "arbitrage_score": 433.888729,
+      "potential_roi": 302500,
+      "blueprint": {
+        "title_idea": "Moving Services Denver Co Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 9.29
+    },
+    {
+      "keyword": "denver colorado moving companies",
+      "search_volume": 12100,
+      "cpc": 22.38,
+      "competition": 0.4300000071525574,
+      "arbitrage_score": 433.888729,
+      "potential_roi": 302500,
+      "blueprint": {
+        "title_idea": "Denver Colorado Moving Companies Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 9.29
+    },
+    {
+      "keyword": "denver moving company",
+      "search_volume": 12100,
+      "cpc": 22.38,
+      "competition": 0.4300000071525574,
+      "arbitrage_score": 433.888729,
+      "potential_roi": 302500,
+      "blueprint": {
+        "title_idea": "Denver Moving Company Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 9.29
+    },
+    {
+      "keyword": "commercial movers denver",
+      "search_volume": 260,
+      "cpc": 6,
+      "competition": 0.07000000029802322,
+      "arbitrage_score": 422.620334,
+      "potential_roi": 6500,
+      "blueprint": {
+        "title_idea": "Commercial Movers Denver Services: Your Local Experts",
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 9.07
+    },
+    {
+      "keyword": "commercial movers denver co",
+      "search_volume": 260,
+      "cpc": 6,
+      "competition": 0.07000000029802322,
+      "arbitrage_score": 422.620334,
+      "potential_roi": 6500,
+      "blueprint": {
+        "title_idea": "Commercial Movers Denver Co Services: Your Local Experts",
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 9.07
+    },
+    {
+      "keyword": "denver commercial moving",
+      "search_volume": 260,
+      "cpc": 6,
+      "competition": 0.07000000029802322,
+      "arbitrage_score": 422.620334,
+      "potential_roi": 6500,
+      "blueprint": {
+        "title_idea": "Denver Commercial Moving Services: Your Local Experts",
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 9.07
+    },
+    {
+      "keyword": "commercial moving denver co",
+      "search_volume": 260,
+      "cpc": 6,
+      "competition": 0.07000000029802322,
+      "arbitrage_score": 422.620334,
+      "potential_roi": 6500,
+      "blueprint": {
+        "title_idea": "Commercial Moving Denver Co Services: Your Local Experts",
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 9.07
+    },
+    {
+      "keyword": "denver movers",
+      "search_volume": 12100,
+      "cpc": 22.53,
+      "competition": 0.44999998807907104,
+      "arbitrage_score": 417.686705,
+      "potential_roi": 302500,
+      "blueprint": {
+        "title_idea": "Denver Movers Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 8.98
+    },
+    {
+      "keyword": "denver moving companies",
+      "search_volume": 12100,
+      "cpc": 22.53,
+      "competition": 0.44999998807907104,
+      "arbitrage_score": 417.686705,
+      "potential_roi": 302500,
+      "blueprint": {
+        "title_idea": "Denver Moving Companies Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 8.98
+    },
+    {
+      "keyword": "moving companies denver",
+      "search_volume": 12100,
+      "cpc": 22.53,
+      "competition": 0.44999998807907104,
+      "arbitrage_score": 417.686705,
+      "potential_roi": 302500,
+      "blueprint": {
+        "title_idea": "Moving Companies Denver Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 8.98
+    },
+    {
+      "keyword": "moving services denver",
+      "search_volume": 12100,
+      "cpc": 22.53,
+      "competition": 0.44999998807907104,
+      "arbitrage_score": 417.686705,
+      "potential_roi": 302500,
+      "blueprint": {
+        "title_idea": "Moving Services Denver Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 8.98
+    },
+    {
+      "keyword": "moving services in denver",
+      "search_volume": 12100,
+      "cpc": 22.53,
+      "competition": 0.44999998807907104,
+      "arbitrage_score": 417.686705,
+      "potential_roi": 302500,
+      "blueprint": {
+        "title_idea": "Moving Services In Denver Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 8.98
+    },
+    {
+      "keyword": "moving help denver",
+      "search_volume": 210,
+      "cpc": 23.28,
+      "competition": 0.4399999976158142,
+      "arbitrage_score": 250.593266,
+      "potential_roi": 5250,
+      "blueprint": {
+        "title_idea": "Moving Help Denver Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 5.77
+    },
+    {
+      "keyword": "moving help denver co",
+      "search_volume": 210,
+      "cpc": 23.28,
+      "competition": 0.4399999976158142,
+      "arbitrage_score": 250.593266,
+      "potential_roi": 5250,
+      "blueprint": {
+        "title_idea": "Moving Help Denver Co Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 5.77
+    },
+    {
+      "keyword": "furniture movers denver co",
+      "search_volume": 110,
+      "cpc": 24.71,
+      "competition": 0.4399999976158142,
+      "arbitrage_score": 233.263139,
+      "potential_roi": 2750,
+      "blueprint": {
+        "title_idea": "Furniture Movers Denver Co Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 5.44
+    },
+    {
+      "keyword": "denver office movers",
+      "search_volume": 40,
+      "cpc": 75.05,
+      "competition": 0.550000011920929,
+      "arbitrage_score": 217.565464,
+      "potential_roi": 1000,
+      "blueprint": {
+        "title_idea": "Denver Office Movers Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 5.14
+    },
+    {
+      "keyword": "local movers denver",
+      "search_volume": 390,
+      "cpc": 17.23,
+      "competition": 0.44999998807907104,
+      "arbitrage_score": 205.370039,
+      "potential_roi": 9750,
+      "blueprint": {
+        "title_idea": "Local Movers Denver Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 4.91
+    },
+    {
+      "keyword": "moving labor denver",
+      "search_volume": 50,
+      "cpc": 56.48,
+      "competition": 0.47999998927116394,
+      "arbitrage_score": 199.299588,
+      "potential_roi": 1250,
+      "blueprint": {
+        "title_idea": "Moving Labor Denver Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 4.79
+    },
+    {
+      "keyword": "moving labor denver co",
+      "search_volume": 50,
+      "cpc": 56.48,
+      "competition": 0.47999998927116394,
+      "arbitrage_score": 199.299588,
+      "potential_roi": 1250,
+      "blueprint": {
+        "title_idea": "Moving Labor Denver Co Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 4.79
+    },
+    {
+      "keyword": "cheap movers denver",
+      "search_volume": 720,
+      "cpc": 20.24,
+      "competition": 0.6200000047683716,
+      "arbitrage_score": 192.665847,
+      "potential_roi": 18000,
+      "blueprint": {
+        "title_idea": "Affordable Cheap Movers Denver: Save on Quality Repairs",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 4.66
+    },
+    {
+      "keyword": "affordable movers denver",
+      "search_volume": 720,
+      "cpc": 20.24,
+      "competition": 0.6200000047683716,
+      "arbitrage_score": 192.665847,
+      "potential_roi": 18000,
+      "blueprint": {
+        "title_idea": "Affordable Affordable Movers Denver: Save on Quality Repairs",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 4.66
+    },
+    {
+      "keyword": "affordable movers in denver",
+      "search_volume": 720,
+      "cpc": 20.24,
+      "competition": 0.6200000047683716,
+      "arbitrage_score": 192.665847,
+      "potential_roi": 18000,
+      "blueprint": {
+        "title_idea": "Affordable Affordable Movers In Denver: Save on Quality Repairs",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 4.66
+    },
+    {
+      "keyword": "inexpensive movers denver",
+      "search_volume": 720,
+      "cpc": 20.24,
+      "competition": 0.6200000047683716,
+      "arbitrage_score": 192.665847,
+      "potential_roi": 18000,
+      "blueprint": {
+        "title_idea": "Inexpensive Movers Denver Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 4.66
+    },
+    {
+      "keyword": "cheap movers denver co",
+      "search_volume": 720,
+      "cpc": 20.24,
+      "competition": 0.6200000047683716,
+      "arbitrage_score": 192.665847,
+      "potential_roi": 18000,
+      "blueprint": {
+        "title_idea": "Affordable Cheap Movers Denver Co: Save on Quality Repairs",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 4.66
+    },
+    {
+      "keyword": "furniture movers denver",
+      "search_volume": 110,
+      "cpc": 29.53,
+      "competition": 0.6700000166893005,
+      "arbitrage_score": 183.30505,
+      "potential_roi": 2750,
+      "blueprint": {
+        "title_idea": "Furniture Movers Denver Services: Your Local Experts",
+        "content_angle": "In-depth guide / landing page",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 4.48
+    },
+    {
+      "keyword": "denver furniture movers",
+      "search_volume": 110,
+      "cpc": 29.53,
+      "competition": 0.6700000166893005,
+      "arbitrage_score": 183.30505,
+      "potential_roi": 2750,
+      "blueprint": {
+        "title_idea": "Denver Furniture Movers Services: Your Local Experts",
+        "content_angle": "In-depth guide / landing page",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 4.48
+    },
+    {
+      "keyword": "furniture moving denver co",
+      "search_volume": 110,
+      "cpc": 29.53,
+      "competition": 0.6700000166893005,
+      "arbitrage_score": 183.30505,
+      "potential_roi": 2750,
+      "blueprint": {
+        "title_idea": "Furniture Moving Denver Co Services: Your Local Experts",
+        "content_angle": "In-depth guide / landing page",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 4.48
+    },
+    {
+      "keyword": "denver moving help",
+      "search_volume": 210,
+      "cpc": 17.2,
+      "competition": 0.5199999809265137,
+      "arbitrage_score": 159.488274,
+      "potential_roi": 5250,
+      "blueprint": {
+        "title_idea": "Denver Moving Help Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 4.03
+    },
+    {
+      "keyword": "moving help in denver",
+      "search_volume": 210,
+      "cpc": 17.2,
+      "competition": 0.5199999809265137,
+      "arbitrage_score": 159.488274,
+      "potential_roi": 5250,
+      "blueprint": {
+        "title_idea": "Moving Help In Denver Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 4.03
+    },
+    {
+      "keyword": "cheapest movers denver",
+      "search_volume": 590,
+      "cpc": 17.28,
+      "competition": 0.6600000262260437,
+      "arbitrage_score": 151.197531,
+      "potential_roi": 14750,
+      "blueprint": {
+        "title_idea": "Affordable Cheapest Movers Denver: Save on Quality Repairs",
+        "content_angle": "In-depth guide / landing page",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 3.87
+    },
+    {
+      "keyword": "cheapest movers in denver",
+      "search_volume": 590,
+      "cpc": 17.28,
+      "competition": 0.6600000262260437,
+      "arbitrage_score": 151.197531,
+      "potential_roi": 14750,
+      "blueprint": {
+        "title_idea": "Affordable Cheapest Movers In Denver: Save on Quality Repairs",
+        "content_angle": "In-depth guide / landing page",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 3.87
+    },
+    {
+      "keyword": "denver boxes",
+      "search_volume": 260,
+      "cpc": 22.99,
+      "competition": 0.800000011920929,
+      "arbitrage_score": 143.049901,
+      "potential_roi": 6500,
+      "blueprint": {
+        "title_idea": "Denver Boxes Services: Your Local Experts",
+        "content_angle": "In-depth guide / landing page",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 3.71
+    },
+    {
+      "keyword": "boxes denver",
+      "search_volume": 260,
+      "cpc": 22.99,
+      "competition": 0.800000011920929,
+      "arbitrage_score": 143.049901,
+      "potential_roi": 6500,
+      "blueprint": {
+        "title_idea": "Boxes Denver Services: Your Local Experts",
+        "content_angle": "In-depth guide / landing page",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 3.71
+    },
+    {
+      "keyword": "denver movers by the hour",
+      "search_volume": 110,
+      "cpc": 27.44,
+      "competition": 0.8500000238418579,
+      "arbitrage_score": 135.016759,
+      "potential_roi": 2750,
+      "blueprint": {
+        "title_idea": "Denver Movers By The Hour Services: Your Local Experts",
+        "content_angle": "In-depth guide / landing page",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 3.56
+    },
+    {
+      "keyword": "moving quotes denver",
+      "search_volume": 50,
+      "cpc": 42.37,
+      "competition": 0.5400000214576721,
+      "arbitrage_score": 133.971502,
+      "potential_roi": 1250,
+      "blueprint": {
+        "title_idea": "Moving Quotes Denver Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 3.54
+    },
+    {
+      "keyword": "best moving company denver",
+      "search_volume": 880,
+      "cpc": 11.35,
+      "competition": 0.5600000023841858,
+      "arbitrage_score": 127.594249,
+      "potential_roi": 22000,
+      "blueprint": {
+        "title_idea": "Best Best Moving Company Denver: Top Rated Services",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 3.42
+    },
+    {
+      "keyword": "denver piano movers",
+      "search_volume": 590,
+      "cpc": 8.12,
+      "competition": 0.44999998807907104,
+      "arbitrage_score": 109.870309,
+      "potential_roi": 14750,
+      "blueprint": {
+        "title_idea": "Denver Piano Movers Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 3.08
+    },
+    {
+      "keyword": "piano movers denver co",
+      "search_volume": 590,
+      "cpc": 8.12,
+      "competition": 0.44999998807907104,
+      "arbitrage_score": 109.870309,
+      "potential_roi": 14750,
+      "blueprint": {
+        "title_idea": "Piano Movers Denver Co Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 3.08
+    },
+    {
+      "keyword": "piano movers denver denver co",
+      "search_volume": 590,
+      "cpc": 8.12,
+      "competition": 0.44999998807907104,
+      "arbitrage_score": 109.870309,
+      "potential_roi": 14750,
+      "blueprint": {
+        "title_idea": "Piano Movers Denver Denver Co Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 3.08
+    },
+    {
+      "keyword": "piano movers denver",
+      "search_volume": 590,
+      "cpc": 8.36,
+      "competition": 0.5,
+      "arbitrage_score": 101.706568,
+      "potential_roi": 14750,
+      "blueprint": {
+        "title_idea": "Piano Movers Denver Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 2.92
+    },
+    {
+      "keyword": "piano movers denver colorado",
+      "search_volume": 590,
+      "cpc": 8.36,
+      "competition": 0.5,
+      "arbitrage_score": 101.706568,
+      "potential_roi": 14750,
+      "blueprint": {
+        "title_idea": "Piano Movers Denver Colorado Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 2.92
+    },
+    {
+      "keyword": "denver moving labor",
+      "search_volume": 50,
+      "cpc": 11.13,
+      "competition": 0.30000001192092896,
+      "arbitrage_score": 66.47905,
+      "potential_roi": 1250,
+      "blueprint": {
+        "title_idea": "Denver Moving Labor Services: Your Local Experts",
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 2.24
+    },
+    {
+      "keyword": "commercial moving denver",
+      "search_volume": 70,
+      "cpc": 0,
+      "competition": 0.019999999552965164,
+      "arbitrage_score": 61.503269,
+      "potential_roi": 1750,
+      "blueprint": {
+        "title_idea": "Commercial Moving Denver Services: Your Local Experts",
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization_hint": "Top-of-funnel explainer"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 2.15
+    },
+    {
+      "keyword": "moving truck rental denver",
+      "search_volume": 1000,
+      "cpc": 5.42,
+      "competition": 0.6200000047683716,
+      "arbitrage_score": 61.142857,
+      "potential_roi": 25000,
+      "blueprint": {
+        "title_idea": "Moving Truck Rental Denver Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 2.14
+    },
+    {
+      "keyword": "moving truck rentals denver co",
+      "search_volume": 1000,
+      "cpc": 5.42,
+      "competition": 0.6200000047683716,
+      "arbitrage_score": 61.142857,
+      "potential_roi": 25000,
+      "blueprint": {
+        "title_idea": "Moving Truck Rentals Denver Co Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 2.14
+    },
+    {
+      "keyword": "rental trucks for moving denver",
+      "search_volume": 1000,
+      "cpc": 5.42,
+      "competition": 0.6200000047683716,
+      "arbitrage_score": 61.142857,
+      "potential_roi": 25000,
+      "blueprint": {
+        "title_idea": "Rental Trucks For Moving Denver Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 2.14
+    },
+    {
+      "keyword": "denver packing supplies",
+      "search_volume": 30,
+      "cpc": 18.59,
+      "competition": 0.49000000953674316,
+      "arbitrage_score": 57.87361,
+      "potential_roi": 750,
+      "blueprint": {
+        "title_idea": "Denver Packing Supplies Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 2.08
+    },
+    {
+      "keyword": "rent a truck in denver",
+      "search_volume": 1000,
+      "cpc": 4.16,
+      "competition": 0.5400000214576721,
+      "arbitrage_score": 56.290907,
+      "potential_roi": 25000,
+      "blueprint": {
+        "title_idea": "Rent A Truck In Denver Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Lead gen blog post"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 2.05
+    },
+    {
+      "keyword": "rent a truck denver",
+      "search_volume": 1000,
+      "cpc": 4.16,
+      "competition": 0.5400000214576721,
+      "arbitrage_score": 56.290907,
+      "potential_roi": 25000,
+      "blueprint": {
+        "title_idea": "Rent A Truck Denver Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Lead gen blog post"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 2.05
+    },
+    {
+      "keyword": "truck rental denver",
+      "search_volume": 1000,
+      "cpc": 4.88,
+      "competition": 0.6299999952316284,
+      "arbitrage_score": 55.125,
+      "potential_roi": 25000,
+      "blueprint": {
+        "title_idea": "Truck Rental Denver Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Lead gen blog post"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 2.03
+    },
+    {
+      "keyword": "moving truck rental denver co",
+      "search_volume": 1000,
+      "cpc": 4.88,
+      "competition": 0.6299999952316284,
+      "arbitrage_score": 55.125,
+      "potential_roi": 25000,
+      "blueprint": {
+        "title_idea": "Moving Truck Rental Denver Co Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Lead gen blog post"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 2.03
+    },
+    {
+      "keyword": "moving truck rental denver colorado",
+      "search_volume": 1000,
+      "cpc": 4.88,
+      "competition": 0.6299999952316284,
+      "arbitrage_score": 55.125,
+      "potential_roi": 25000,
+      "blueprint": {
+        "title_idea": "Moving Truck Rental Denver Colorado Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Lead gen blog post"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 2.03
+    },
+    {
+      "keyword": "moving truck denver",
+      "search_volume": 30,
+      "cpc": 9.05,
+      "competition": 0.25999999046325684,
+      "arbitrage_score": 54.981738,
+      "potential_roi": 750,
+      "blueprint": {
+        "title_idea": "Moving Truck Denver Services: Your Local Experts",
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 2.02
+    },
+    {
+      "keyword": "moving help denver colorado",
+      "search_volume": 140,
+      "cpc": 6.93,
+      "competition": 0.6399999856948853,
+      "arbitrage_score": 52.365525,
+      "potential_roi": 3500,
+      "blueprint": {
+        "title_idea": "Moving Help Denver Colorado Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.97
+    },
+    {
+      "keyword": "moving trucks denver co",
+      "search_volume": 40,
+      "cpc": 5.78,
+      "competition": 0.20999999344348907,
+      "arbitrage_score": 49.372578,
+      "potential_roi": 1000,
+      "blueprint": {
+        "title_idea": "Moving Trucks Denver Co Services: Your Local Experts",
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.92
+    },
+    {
+      "keyword": "packing services denver",
+      "search_volume": 90,
+      "cpc": 0,
+      "competition": 0.029999999329447746,
+      "arbitrage_score": 48.856064,
+      "potential_roi": 2250,
+      "blueprint": {
+        "title_idea": "Packing Services Denver Services: Your Local Experts",
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization_hint": "Top-of-funnel explainer"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.91
+    },
+    {
+      "keyword": "denver packing services",
+      "search_volume": 90,
+      "cpc": 0,
+      "competition": 0.029999999329447746,
+      "arbitrage_score": 48.856064,
+      "potential_roi": 2250,
+      "blueprint": {
+        "title_idea": "Denver Packing Services Services: Your Local Experts",
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization_hint": "Top-of-funnel explainer"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.91
+    },
+    {
+      "keyword": "packing service denver",
+      "search_volume": 90,
+      "cpc": 0,
+      "competition": 0.029999999329447746,
+      "arbitrage_score": 48.856064,
+      "potential_roi": 2250,
+      "blueprint": {
+        "title_idea": "Packing Service Denver Services: Your Local Experts",
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization_hint": "Top-of-funnel explainer"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.91
+    },
+    {
+      "keyword": "packing services denver co",
+      "search_volume": 90,
+      "cpc": 0,
+      "competition": 0.029999999329447746,
+      "arbitrage_score": 48.856064,
+      "potential_roi": 2250,
+      "blueprint": {
+        "title_idea": "Packing Services Denver Co Services: Your Local Experts",
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization_hint": "Top-of-funnel explainer"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.91
+    },
+    {
+      "keyword": "packing service denver co",
+      "search_volume": 90,
+      "cpc": 0,
+      "competition": 0.029999999329447746,
+      "arbitrage_score": 48.856064,
+      "potential_roi": 2250,
+      "blueprint": {
+        "title_idea": "Packing Service Denver Co Services: Your Local Experts",
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization_hint": "Top-of-funnel explainer"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.91
+    },
+    {
+      "keyword": "moving helpers denver co",
+      "search_volume": 20,
+      "cpc": 16.08,
+      "competition": 0.5400000214576721,
+      "arbitrage_score": 40.402894,
+      "potential_roi": 500,
+      "blueprint": {
+        "title_idea": "Moving Helpers Denver Co Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.74
+    },
+    {
+      "keyword": "piano moving denver",
+      "search_volume": 140,
+      "cpc": 2.45,
+      "competition": 0.38999998569488525,
+      "arbitrage_score": 37.02071,
+      "potential_roi": 3500,
+      "blueprint": {
+        "title_idea": "Piano Moving Denver Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Lead gen blog post"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.68
+    },
+    {
+      "keyword": "piano movers in denver",
+      "search_volume": 140,
+      "cpc": 3.33,
+      "competition": 0.550000011920929,
+      "arbitrage_score": 33.188336,
+      "potential_roi": 3500,
+      "blueprint": {
+        "title_idea": "Piano Movers In Denver Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Lead gen blog post"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.61
+    },
+    {
+      "keyword": "piano movers in denver colorado",
+      "search_volume": 140,
+      "cpc": 3.33,
+      "competition": 0.550000011920929,
+      "arbitrage_score": 33.188336,
+      "potential_roi": 3500,
+      "blueprint": {
+        "title_idea": "Piano Movers In Denver Colorado Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Lead gen blog post"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.61
+    },
+    {
+      "keyword": "denver moving helpers",
+      "search_volume": 140,
+      "cpc": 3.09,
+      "competition": 0.550000011920929,
+      "arbitrage_score": 31.348798,
+      "potential_roi": 3500,
+      "blueprint": {
+        "title_idea": "Denver Moving Helpers Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Lead gen blog post"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.57
+    },
+    {
+      "keyword": "denver shipping supplies",
+      "search_volume": 40,
+      "cpc": 9.75,
+      "competition": 0.6100000143051147,
+      "arbitrage_score": 27.777652,
+      "potential_roi": 1000,
+      "blueprint": {
+        "title_idea": "Denver Shipping Supplies Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.5
+    },
+    {
+      "keyword": "colorado piano movers",
+      "search_volume": 50,
+      "cpc": 7.84,
+      "competition": 0.6399999856948853,
+      "arbitrage_score": 23.105993,
+      "potential_roi": 1250,
+      "blueprint": {
+        "title_idea": "Colorado Piano Movers Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.41
+    },
+    {
+      "keyword": "professional movers denver",
+      "search_volume": 170,
+      "cpc": 1.24,
+      "competition": 0.4699999988079071,
+      "arbitrage_score": 20.817523,
+      "potential_roi": 4250,
+      "blueprint": {
+        "title_idea": "Professional Movers Denver Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Lead gen blog post"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.37
+    },
+    {
+      "keyword": "shipping boxes denver",
+      "search_volume": 30,
+      "cpc": 10,
+      "competition": 0.9200000166893005,
+      "arbitrage_score": 17.471326,
+      "potential_roi": 750,
+      "blueprint": {
+        "title_idea": "Shipping Boxes Denver Services: Your Local Experts",
+        "content_angle": "In-depth guide / landing page",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.31
+    },
+    {
+      "keyword": "shipping boxes denver co",
+      "search_volume": 30,
+      "cpc": 10,
+      "competition": 0.9200000166893005,
+      "arbitrage_score": 17.471326,
+      "potential_roi": 750,
+      "blueprint": {
+        "title_idea": "Shipping Boxes Denver Co Services: Your Local Experts",
+        "content_angle": "In-depth guide / landing page",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.31
+    },
+    {
+      "keyword": "moving boxes denver",
+      "search_volume": 170,
+      "cpc": 2.56,
+      "competition": 0.9300000071525574,
+      "arbitrage_score": 16.894464,
+      "potential_roi": 4250,
+      "blueprint": {
+        "title_idea": "Moving Boxes Denver Services: Your Local Experts",
+        "content_angle": "In-depth guide / landing page",
+        "monetization_hint": "Lead gen blog post"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.29
+    },
+    {
+      "keyword": "denver moving boxes",
+      "search_volume": 170,
+      "cpc": 2.56,
+      "competition": 0.9300000071525574,
+      "arbitrage_score": 16.894464,
+      "potential_roi": 4250,
+      "blueprint": {
+        "title_idea": "Denver Moving Boxes Services: Your Local Experts",
+        "content_angle": "In-depth guide / landing page",
+        "monetization_hint": "Lead gen blog post"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.29
+    },
+    {
+      "keyword": "moving boxes denver co",
+      "search_volume": 170,
+      "cpc": 2.56,
+      "competition": 0.9300000071525574,
+      "arbitrage_score": 16.894464,
+      "potential_roi": 4250,
+      "blueprint": {
+        "title_idea": "Moving Boxes Denver Co Services: Your Local Experts",
+        "content_angle": "In-depth guide / landing page",
+        "monetization_hint": "Lead gen blog post"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.29
+    },
+    {
+      "keyword": "denver's moving boxes",
+      "search_volume": 170,
+      "cpc": 2.56,
+      "competition": 0.9300000071525574,
+      "arbitrage_score": 16.894464,
+      "potential_roi": 4250,
+      "blueprint": {
+        "title_idea": "Denver'S Moving Boxes Services: Your Local Experts",
+        "content_angle": "In-depth guide / landing page",
+        "monetization_hint": "Lead gen blog post"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.29
+    },
+    {
+      "keyword": "cheap moving truck rental denver",
+      "search_volume": 50,
+      "cpc": 4.66,
+      "competition": 0.6299999952316284,
+      "arbitrage_score": 15.025266,
+      "potential_roi": 1250,
+      "blueprint": {
+        "title_idea": "Affordable Cheap Moving Truck Rental Denver: Save on Quality Repairs",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Lead gen blog post"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.26
+    },
+    {
+      "keyword": "shipping supplies denver",
+      "search_volume": 30,
+      "cpc": 6.94,
+      "competition": 1,
+      "arbitrage_score": 11.612221,
+      "potential_roi": 750,
+      "blueprint": {
+        "title_idea": "Shipping Supplies Denver Services: Your Local Experts",
+        "content_angle": "In-depth guide / landing page",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.19
+    },
+    {
+      "keyword": "shipping supplies denver co",
+      "search_volume": 30,
+      "cpc": 6.94,
+      "competition": 1,
+      "arbitrage_score": 11.612221,
+      "potential_roi": 750,
+      "blueprint": {
+        "title_idea": "Shipping Supplies Denver Co Services: Your Local Experts",
+        "content_angle": "In-depth guide / landing page",
+        "monetization_hint": "Service / conversion page"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.19
+    },
+    {
+      "keyword": "hourly movers denver",
+      "search_volume": 30,
+      "cpc": 0,
+      "competition": 0.12999999523162842,
+      "arbitrage_score": 10.550866,
+      "potential_roi": 750,
+      "blueprint": {
+        "title_idea": "Hourly Movers Denver Services: Your Local Experts",
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization_hint": "Top-of-funnel explainer"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.17
+    },
+    {
+      "keyword": "denver cardboard boxes",
+      "search_volume": 30,
+      "cpc": 4.97,
+      "competition": 1,
+      "arbitrage_score": 8.731103,
+      "potential_roi": 750,
+      "blueprint": {
+        "title_idea": "Denver Cardboard Boxes Services: Your Local Experts",
+        "content_angle": "In-depth guide / landing page",
+        "monetization_hint": "Lead gen blog post"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.14
+    },
+    {
+      "keyword": "reusable moving boxes denver",
+      "search_volume": 30,
+      "cpc": 4.7,
+      "competition": 1,
+      "arbitrage_score": 8.336229,
+      "potential_roi": 750,
+      "blueprint": {
+        "title_idea": "Reusable Moving Boxes Denver Services: Your Local Experts",
+        "content_angle": "In-depth guide / landing page",
+        "monetization_hint": "Lead gen blog post"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.13
+    },
+    {
+      "keyword": "moving supplies denver co",
+      "search_volume": 30,
+      "cpc": 1.44,
+      "competition": 0.6499999761581421,
+      "arbitrage_score": 5.460873,
+      "potential_roi": 750,
+      "blueprint": {
+        "title_idea": "Moving Supplies Denver Co Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Lead gen blog post"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.07
+    },
+    {
+      "keyword": "denver moving supplies",
+      "search_volume": 30,
+      "cpc": 1.44,
+      "competition": 0.6499999761581421,
+      "arbitrage_score": 5.460873,
+      "potential_roi": 750,
+      "blueprint": {
+        "title_idea": "Denver Moving Supplies Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Lead gen blog post"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.07
+    },
+    {
+      "keyword": "piano storage denver",
+      "search_volume": 30,
+      "cpc": 0,
+      "competition": 0.3199999928474426,
+      "arbitrage_score": 4.476125,
+      "potential_roi": 750,
+      "blueprint": {
+        "title_idea": "Piano Storage Denver Services: Your Local Experts",
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization_hint": "Top-of-funnel explainer"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.06
+    },
+    {
+      "keyword": "packing supplies denver",
+      "search_volume": 30,
+      "cpc": 0,
+      "competition": 0.38999998569488525,
+      "arbitrage_score": 3.692803,
+      "potential_roi": 750,
+      "blueprint": {
+        "title_idea": "Packing Supplies Denver Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Top-of-funnel explainer"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.04
+    },
+    {
+      "keyword": "packing supplies denver co",
+      "search_volume": 30,
+      "cpc": 0,
+      "competition": 0.38999998569488525,
+      "arbitrage_score": 3.692803,
+      "potential_roi": 750,
+      "blueprint": {
+        "title_idea": "Packing Supplies Denver Co Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Top-of-funnel explainer"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.04
+    },
+    {
+      "keyword": "denver piano moving",
+      "search_volume": 40,
+      "cpc": 0,
+      "competition": 0.4399999976158142,
+      "arbitrage_score": 3.560133,
+      "potential_roi": 1000,
+      "blueprint": {
+        "title_idea": "Denver Piano Moving Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Top-of-funnel explainer"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.04
+    },
+    {
+      "keyword": "office movers denver",
+      "search_volume": 40,
+      "cpc": 0,
+      "competition": 0.5,
+      "arbitrage_score": 3.141294,
+      "potential_roi": 1000,
+      "blueprint": {
+        "title_idea": "Office Movers Denver Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Top-of-funnel explainer"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.03
+    },
+    {
+      "keyword": "office moving companies denver",
+      "search_volume": 40,
+      "cpc": 0,
+      "competition": 0.5,
+      "arbitrage_score": 3.141294,
+      "potential_roi": 1000,
+      "blueprint": {
+        "title_idea": "Office Moving Companies Denver Services: Your Local Experts",
+        "content_angle": "Comparison / listicle",
+        "monetization_hint": "Top-of-funnel explainer"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.03
+    },
+    {
+      "keyword": "moving supplies denver",
+      "search_volume": 30,
+      "cpc": 0.39,
+      "competition": 1,
+      "arbitrage_score": 2.03287,
+      "potential_roi": 750,
+      "blueprint": {
+        "title_idea": "Moving Supplies Denver Services: Your Local Experts",
+        "content_angle": "In-depth guide / landing page",
+        "monetization_hint": "Top-of-funnel explainer"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1.01
+    },
+    {
+      "keyword": "packers and movers denver",
+      "search_volume": 20,
+      "cpc": 0,
+      "competition": 0.8299999833106995,
+      "arbitrage_score": 1.548845,
+      "potential_roi": 500,
+      "blueprint": {
+        "title_idea": "Packers And Movers Denver Services: Your Local Experts",
+        "content_angle": "In-depth guide / landing page",
+        "monetization_hint": "Top-of-funnel explainer"
+      },
+      "customer_domain_authority": {
+        "domain": "https://www.movingbrothers.net/",
+        "keyword_count_top10": 51,
+        "traffic": 6764.49
+      },
+      "normalized_arbitrage_score": 1
+    }
+  ],
+  "clusters": [
+    {
+      "primary": "denver commercial movers",
+      "related": [
+        "denver commercial moving companies",
+        "commercial moving companies denver",
+        "residential movers denver",
+        "denver long distance movers",
+        "long distance movers in denver",
+        "long distance movers denver",
+        "long-distance movers denver",
+        "movers in denver",
+        "commercial movers denver",
+        "commercial movers denver co",
+        "denver commercial moving",
+        "commercial moving denver co",
+        "denver movers",
+        "furniture movers denver co",
+        "denver office movers",
+        "local movers denver",
+        "cheap movers denver",
+        "affordable movers denver",
+        "affordable movers in denver",
+        "inexpensive movers denver",
+        "cheap movers denver co",
+        "furniture movers denver",
+        "denver furniture movers",
+        "cheapest movers denver",
+        "cheapest movers in denver",
+        "denver movers by the hour",
+        "denver piano movers",
+        "piano movers denver co",
+        "piano movers denver denver co",
+        "piano movers denver",
+        "piano movers denver colorado",
+        "commercial moving denver",
+        "piano movers in denver",
+        "piano movers in denver colorado",
+        "professional movers denver",
+        "hourly movers denver",
+        "office movers denver",
+        "packers and movers denver"
+      ],
+      "aggregate_search_volume": 37270,
+      "average_competition": 0.41,
+      "average_velocity": 28.11
+    },
+    {
+      "primary": "denver long distance moving companies",
+      "related": [
+        "long distance moving companies in denver co",
+        "long distance moving companies denver",
+        "moving and packing companies",
+        "moving denver",
+        "denver moving services",
+        "moving company denver",
+        "moving service denver",
+        "moving services denver co",
+        "denver colorado moving companies",
+        "denver moving company",
+        "denver moving companies",
+        "moving companies denver",
+        "moving services denver",
+        "moving services in denver",
+        "moving help denver",
+        "moving help denver co",
+        "moving labor denver",
+        "moving labor denver co",
+        "furniture moving denver co",
+        "denver moving help",
+        "moving help in denver",
+        "moving quotes denver",
+        "best moving company denver",
+        "denver moving labor",
+        "moving truck rental denver",
+        "moving truck rentals denver co",
+        "rental trucks for moving denver",
+        "moving truck rental denver co",
+        "moving truck rental denver colorado",
+        "moving truck denver",
+        "moving help denver colorado",
+        "moving trucks denver co",
+        "moving helpers denver co",
+        "piano moving denver",
+        "denver moving helpers",
+        "moving boxes denver",
+        "denver moving boxes",
+        "moving boxes denver co",
+        "cheap moving truck rental denver",
+        "reusable moving boxes denver",
+        "moving supplies denver co",
+        "denver moving supplies",
+        "denver piano moving",
+        "office moving companies denver",
+        "moving supplies denver"
+      ],
+      "aggregate_search_volume": 136170,
+      "average_competition": 0.52,
+      "average_velocity": 6.4
+    },
+    {
+      "primary": "denver boxes",
+      "related": [
+        "boxes denver",
+        "shipping boxes denver",
+        "shipping boxes denver co",
+        "denver cardboard boxes"
+      ],
+      "aggregate_search_volume": 610,
+      "average_competition": 0.89,
+      "average_velocity": 1.3
+    },
+    {
+      "primary": "denver packing supplies",
+      "related": [
+        "packing services denver",
+        "denver packing services",
+        "packing service denver",
+        "packing services denver co",
+        "packing service denver co",
+        "denver shipping supplies",
+        "shipping supplies denver",
+        "shipping supplies denver co",
+        "packing supplies denver",
+        "packing supplies denver co"
+      ],
+      "aggregate_search_volume": 640,
+      "average_competition": 0.37,
+      "average_velocity": 47.44
+    },
+    {
+      "primary": "rent a truck in denver",
+      "related": [
+        "rent a truck denver",
+        "truck rental denver"
+      ],
+      "aggregate_search_volume": 3000,
+      "average_competition": 0.57,
+      "average_velocity": 3.12
+    },
+    {
+      "primary": "colorado piano movers",
+      "related": [],
+      "aggregate_search_volume": 50,
+      "average_competition": 0.64,
+      "average_velocity": 2.44
+    },
+    {
+      "primary": "denver's moving boxes",
+      "related": [],
+      "aggregate_search_volume": 170,
+      "average_competition": 0.93,
+      "average_velocity": 1.15
+    },
+    {
+      "primary": "piano storage denver",
+      "related": [],
+      "aggregate_search_volume": 30,
+      "average_competition": 0.32,
+      "average_velocity": 9.67
+    }
+  ]
+}

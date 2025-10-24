@@ -1,0 +1,174 @@
+{
+  "global_settings": {
+    "my_timezone": "America/Bogota",
+    "google_api_key": "AIzaSyAu6MUOthXxuvH0uWNYdpguAIvEsz6Zk38",
+    "llm_model": "gemini-2.0-flash-lite",
+    "email_client_id": "8876cad2-6212-483e-b3a8-072fca017f78",
+    "email_tenant_id": "6b177e26-b09d-4e87-87a9-d234ffe52afd",
+    "token_file": "refresh_token.txt"
+  },
+  "city_profiles": {
+    "denver": {
+      "tz": "America/Denver",
+      "state":"CO",
+      "focus_cats": [ "sks", "lbs", "hss", "rts", "rej"]
+    },
+    "orlando": {
+      "tz": "America/New_York",
+      "state":"FL",
+      "focus_cats": [ "sks", "lbs", "hss", "rts", "rej"]
+    },
+	"tampa": {
+      "tz": "America/New_York",
+      "state":"FL",
+      "focus_cats": [ "sks", "lbs", "hss", "rts", "rej"]
+    },
+	"austin": {
+      "tz": "America/Chicago",
+      "state":"TX",
+      "focus_cats": [ "sks", "lbs", "hss", "rts", "rej"]
+    },
+	"nashville": {
+      "tz": "America/Chicago",
+      "state":"TN",
+      "focus_cats": [ "sks", "lbs", "hss", "rts", "rej"]
+    },
+    "portland": {
+      "tz": "America/Los_Angeles",
+      "state":"OR",
+      "focus_cats": [ "sks", "lbs", "hss", "rts", "rej"]
+    }
+  },
+  "producer_settings":{
+	"cloud_function_url": "https://receiveleaddata-koo5meozba-uc.a.run.app",
+    "craigslist_sub_domain": "tampa",
+    "craigslist_base_url": "craigslist.org",
+    "craigslist_services_path": "/search/bbb",
+    "master_database_file": "master_contacts.db",
+    "queue_database_file": "email_engine.db",
+    "proxy_file": "Webshare_residential_proxies.txt",
+    "templates_dir": "templates",
+    "firebase_category_arbitrage_sync_url": "https://us-central1-fourth-outpost-470409-u3.cloudfunctions.net/saveArbitrageData",
+    "category_arbitrage_update_interval_days": 7,
+	"llm_batch_size": 5,
+	"batch_size": 2,
+    "enrich_lead_batch": "You are a highly efficient data extraction system. I will provide a JSON array where each object represents a Craigslist post, identified by a unique 'post_id'. Your task is to analyze the 'post_body' for each object and extract the required information. CRITICAL RULES: 1. Your response MUST be a single, valid JSON array. 2. The response array MUST contain one object for every object in the input array. 3. Each object in your response array MUST include the original 'post_id' and the following extracted keys: 'business_name', 'category', 'services_rendered', 'name', 'name_confidence', 'email', 'phone', 'website_url', and 'cant_text'. 4. The 'name_confidence' field MUST be an integer from 0 to 100 representing your confidence that the extracted 'name' is a valid personal first + last name. If the extracted text is clearly not a personal name (e.g. a company name, generic text), then set 'name' = null and 'name_confidence' = 0. If it looks like a valid first + last name (e.g. 'John Smith'), return a high confidence (e.g. 90–100). If uncertain, return a lower confidence (e.g. 40–70). 5. Maintain the exact same order as the input array. 6. If a specific piece of information (e.g., email, phone) cannot be found in a post, you MUST return null for that key in the corresponding object. For 'email', if only a Craigslist-masked email (e.g., @serv.craigslist.org) is found, return null. Prioritize direct email addresses. 7. The 'website_url' MUST be a fully qualified URL including 'http://' or 'https://' (e.g., 'https://www.example.com'). If no website is found, return null. 8. The 'phone' key MUST always be a string or null, never a list. 9. The 'cant_text' field MUST be an integer (0 or 1). Set to 0 if the post explicitly states or strongly implies that the phone number cannot receive texts (e.g., 'voice only', 'no text', 'calls only'). Otherwise, default to 1. Here is the batch of posts to process: {batch_data_json} Your JSON Array Response: FINAL CHECKLIST: - Did you extract 'business_name' accurately, or set to 'null' if not found? - Did you provide a specific 'category'? - Did you extract all 'services_rendered' as a JSON array, or an empty array if none? - Did you extract 'name' and set 'name_confidence' (0-100) correctly based on whether it's a valid personal name? - Did you extract 'email' or set to 'null' if not found (especially for Craigslist-masked emails)? - Did you extract 'phone' and ensure it's a string or 'null'? - Did you extract 'website_url' as a fully qualified URL (e.g., 'https://www.example.com'), or set to 'null' if not found? - Did you correctly determine 'cant_text' (0 if 'no text' or 'voice only' is indicated, 1 otherwise)?",
+    "website_scoring_prompt": "SCORING TABLE:  \\n1. Business Name + Owner’s Name → 10 points  \\n2. Years in Business → 8 points  \\n3. Service Area → 6 points  \\n4. Specialized Equipment → 6 points  \\n5. Unique Selling Proposition (USP) → 8 points  \\n6. Awards / Certifications → 8 points  \\n7. Seasonal Offers / Promotions → 7 points  \\n8. Customer Testimonials → 7 points  \\n9. Before/After Project Photos → 6 points  \\n10. Blog or Articles → 5 points  \\n11. Community Involvement → 7 points  \\n12. Service Guarantee → 5 points  \\n13. Detailed Service List → 4 points  \\n14. Case Studies / Project Highlights → 8 points  \\n15. Contact Details Beyond Email/Phone → 4 points  \\n16. Clear Pricing / Packages → 5 points  \\n17. Videos on Site → 6 points  \\n18. Team Photos / Bios → 7 points  \\n19. Geotargeted SEO Content → 5 points  \\n20. Press Mentions / Media Coverage → 8 points  \\n\\nOUTPUT FORMAT (strict JSON):  \\n{\\n  \\\"score\\\": <total_points>,\\n  \\\"data_points\\\": {\\n    \\\"business_name\\\": \\\"<string or null>\\\",\\n    \\\"owner_name\\\": \\\"<string or null>\\\",\\n    \\\"years_in_business\\\": \\\"<string or null>\\\",\\n    \\\"service_area\\\": [\\\"<city>\\\", \\\"<city>\\\", ...] or null,\\n    \\\"specialized_equipment\\\": [\\\"<item>\\\", ...] or null,\\n    \\\"unique_selling_point\\\": \\\"<string or null>\\\",\\n    \\\"awards_certifications\\\": [\\\"<award>\\\", ...] or null,\\n    \\\"seasonal_offers\\\": \\\"<string or null>\\\",\\n    \\\"customer_testimonials\\\": true/false,\\n    \\\"before_after_photos\\\": true/false,\\n    \\\"blog_articles\\\": true/false,\\n    \\\"community_involvement\\\": \\\"<string or null>\\\",\\n    \\\"service_guarantee\\\": \\\"<string or null>\\\",\\n    \\\"detailed_service_list\\\": [\\\"<service>\\\", ...] or null,\\n    \\\"case_studies\\\": [\\\"<case>\\\", ...] or null,\\n    \\\"extra_contact_methods\\\": [\\\"<method>\\\", ...] or null,\\n    \\\"pricing_info\\\": \\\"<string or null>\\\",\\n    \\\"videos\\\": true/false,\\n    \\\"team_info\\\": [\\\"<name/role>\\\", ...] or null,\\n    \\\"geo_targeted_content\\\": [\\\"<location>\\\", ...] or null,\\n    \\\"press_mentions\\\": [\\\"<mention>\\\", ...] or null\\n  }\\n}\\n\\nINSTRUCTIONS:  \\n1. Read through the HTML/text.  \\n2. For each category in the scoring table:  \\n   - If present → record data + award points.  \\n   - If absent → set null or false and 0 points.  \\n3. Sum points into \\\"score\\\".  \\n4. Output exactly in the JSON format above.\\n\\nHere is the website body content to analyze: {website_body_text}",
+    "category_mapping": {
+		"4": ["biz", "small biz ads"], "76": ["cps", "computer services"], "77": ["crs", "creative services"], "79": ["evs", "event services"],
+		"80": ["hss", "household services"], "81": ["lss", "lessons & tutoring"], "82": ["lbs", "labor & moving"], "83": ["sks", "skilled trade services"],
+		"103": ["lgs", "legal services"], "104": ["fns", "financial services"], "105": ["rts", "real estate services"], "106": ["aos", "automotive services"],
+		"138": ["bts", "beauty services"], "139": ["wet", "writing / editing / translation"], "140": ["trv", "travel/vacation services"],
+		"154": ["fgs", "farm & garden services"], "155": ["pas", "pet services"], "156": ["mas", "marine services"], "158": ["cys", "cycle services"],
+		"207": ["cms", "cell phone / mobile services"], "210": ["hws", "health/wellness services"], "3": ["com", "general community"],
+		"29": ["vol", "volunteers"], "35": ["act", "activity partners"], "36": ["rid", "rideshare"], "37": ["pet", "pets"], "56": ["kid", "childcare"],
+		"63": ["mis", "missed connections"], "70": ["ats", "artists"], "71": ["muc", "musicians"], "87": ["pol", "politics"], "88": ["laf", "lost & found"],
+		"90": ["rnr", "rants & raves"], "91": ["grp", "groups"], "116": ["vnn", "local news and views"], "8": ["eve", "events"], "38": ["cls", "classes"],
+		"108": ["tlg", "talent gigs"], "109": ["cwg", "crew gigs"], "110": ["cpg", "computer gigs"], "111": ["lbg", "labor gigs"],
+		"112": ["wrg", "writing gigs"], "113": ["dmg", "domestic gigs"], "114": ["crg", "creative gigs"], "115": ["evg", "event gigs"],
+		"0": ["rea", "real estate for sale"], "143": ["reo", "real estate - by owner"], "144": ["reb", "real estate - by broker"],
+		"1": ["apa", "apartments / housing for rent"], "2": ["hou", "wanted: apts"], "18": ["roo", "rooms & shares"], "19": ["sha", "wanted: room/share"],
+		"39": ["sub", "sublets & temporary"], "40": ["off", "office & commercial"], "41": ["prk", "parking & storage"], "58": ["sbw", "wanted: sublet/temp"],
+		"65": ["swp", "housing swap"], "99": ["vac", "vacation rentals"], "121": ["rew", "wanted: real estate"], "11": ["web", "web/html/info design"],
+		"12": ["bus", "business/mgmt"], "13": ["mar", "marketing/advertising/pr"], "15": ["etc", "et cetera"], "16": ["wri", "writing/editing"],
+		"21": ["sof", "software/qa/dba/etc"], "23": ["acc", "accounting/finance"], "24": ["ofc", "admin/office"], "25": ["med", "art/media/design"],
+		"26": ["hea", "healthcare"], "27": ["ret", "retail/wholesale"], "28": ["npo", "nonprofit"], "47": ["lgl", "legal/paralegal"],
+		"48": ["egr", "architect/engineer/cad"], "49": ["sls", "sales"], "50": ["sad", "systems/networking"], "52": ["tfr", "tv/film/video/radio"],
+		"54": ["hum", "human resource"], "55": ["tch", "technical support"], "57": ["edu", "education/teaching"], "59": ["trd", "skilled trades/artisan"],
+		"61": ["gov", "government"], "75": ["sci", "science/biotech"], "100": ["csr", "customer service"], "125": ["trp", "transportation"],
+		"126": ["spa", "salon/spa/fitness"], "127": ["rej", "real estate"], "128": ["mnu", "manufacturing"], "129": ["fbh", "food/beverage/hospitality"],
+		"130": ["lab", "general labor"], "131": ["sec", "security"], "10": ["res", "resumes / job wanted"], "5": ["for", "general for sale - by owner"],
+		"179": ["fod", "general for sale - by dealer"], "7": ["sys", "computers - by owner"], "166": ["syd", "computers - by dealer"],
+		"20": ["wan", "wanted - by owner"], "190": ["wad", "wanted - by dealer"], "44": ["tix", "tickets - by owner"], "161": ["tid", "tickets - by dealer"],
+		"68": ["bik", "bicycles - by owner"], "172": ["bid", "bicycles - by dealer"], "69": ["mcy", "motorcycles/scooters - by owner"],
+		"160": ["mcd", "motorcycles/scooters - by dealer"], "92": ["bks", "books & magazines - by owner"], "173": ["bkd", "books & magazines - by dealer"],
+		"93": ["spo", "sporting goods - by owner"], "186": ["sgd", "sporting goods - by dealer"], "94": ["clo", "clothing & accessories - by owner"],
+		"176": ["cld", "clothing & accessories - by dealer"], "95": ["clt", "collectibles - by owner"], "177": ["cbd", "collectibles - by dealer"],
+		"96": ["ele", "electronics - by owner"], "167": ["eld", "electronics - by dealer"], "97": ["hsh", "household items - by owner"],
+		"181": ["hsd", "household items - by dealer"], "98": ["msg", "musical instruments - by owner"], "184": ["msd", "musical instruments - by dealer"],
+		"107": ["bab", "baby & kid stuff - by owner"], "171": ["bad", "baby & kid stuff - by dealer"], "117": ["emd", "cds / dvds / vhs - by owner"],
+		"175": ["emq", "cds / dvds / vhs - by dealer"], "118": ["tls", "tools - by owner"], "187": ["tld", "tools - by dealer"],
+		"119": ["boa", "boats - by owner"], "164": ["bod", "boats - by dealer"], "120": ["jwl", "jewelry - by owner"],
+		"182": ["jwd", "jewelry - by dealer"], "122": ["pts", "auto parts - by owner"], "163": ["ptd", "auto parts - by dealer"],
+		"124": ["rvs", "rvs - by owner"], "168": ["rvd", "rvs - by dealer"], "132": ["tag", "toys & games - by owner"],
+		"188": ["tad", "toys & games - by dealer"], "133": ["grd", "farm & garden - by owner"], "178": ["grq", "farm & garden - by dealer"],
+		"134": ["bfs", "business/commercial - by owner"], "174": ["bfd", "business/commercial - by dealer"], "135": ["art", "arts & crafts - by owner"],
+		"170": ["ard", "arts & crafts - by dealer"], "136": ["mat", "materials - by owner"], "183": ["mad", "materials - by dealer"],
+		"137": ["pho", "photo/video - by owner"], "185": ["phd", "photo/video - by dealer"], "141": ["fuo", "furniture - by owner"],
+		"142": ["fud", "furniture - by dealer"], "145": ["cto", "cars & trucks - by owner"], "146": ["ctd", "cars & trucks - by dealer"],
+		"149": ["app", "appliances - by owner"], "162": ["ppd", "appliances - by dealer"], "150": ["atq", "antiques - by owner"],
+		"169": ["atd", "antiques - by dealer"], "151": ["vgm", "video gaming - by owner"], "189": ["vgd", "video gaming - by dealer"],
+		"152": ["hab", "health and beauty - by owner"], "180": ["had", "health and beauty - by dealer"], "153": ["mob", "cell phones - by owner"],
+		"165": ["mod", "cell phones - by dealer"], "191": ["snw", "atvs, utvs, snowmobiles - by owner"], "192": ["snd", "atvs, utvs, snowmobiles - by dealer"],
+		"193": ["hvo", "heavy equipment - by owner"], "194": ["hvd", "heavy equipment - by dealer"], "195": ["mpo", "motorcycle parts - by owner"],
+		"196": ["mpd", "motorcycle parts - by dealer"], "197": ["bop", "bicycle parts - by owner"], "198": ["bdp", "bicycle parts - by dealer"],
+		"199": ["sop", "computer parts - by owner"], "200": ["sdp", "computer parts - by dealer"], "201": ["bpo", "boat parts & accessories - by owner"],
+		"202": ["bpd", "boat parts & accessories - by dealer"], "203": ["wto", "auto wheels & tires - by owner"],
+		"204": ["wtd", "auto wheels & tires - by dealer"], "205": ["tro", "trailers - by owner"], "206": ["trb", "trailers - by dealer"],
+		"208": ["avo", "aviation - by owner"], "209": ["avd", "aviation - by dealer"], "42": ["bar", "barter"],
+		"73": ["gms", "garage & moving sales"], "101": ["zip", "free stuff"]
+	}
+  },
+  "consumer_settings": {
+    "batch_size": 50,
+    "generate_variations_prompt": "Your task is to generate {num_variations} unique, conversational variations...",
+    "variation_management": {
+      "check_interval_seconds": 600,
+      "rules": [
+        { "queue_size_threshold": 0, "target_variation_count": 5 },
+		{ "queue_size_threshold": 20, "target_variation_count": 10 },
+		{ "queue_size_threshold": 50, "target_variation_count": 20 },
+		{ "queue_size_threshold": 100, "target_variation_count": 30 },
+		{ "queue_size_threshold": 500, "target_variation_count": 45 },
+		{ "queue_size_threshold": 750, "target_variation_count": 60 },
+		{ "queue_size_threshold": 1000, "target_variation_count": 80 },
+		{ "queue_size_threshold": 1500, "target_variation_count": 100 }
+      ]
+    },
+    "timing_settings": {
+	  "target_timezones": [
+        "America/New_York",
+        "America/Chicago",
+        "America/Denver",
+        "America/Phoenix",
+        "America/Los_Angeles",
+        "America/Anchorage",
+        "Pacific/Honolulu"
+      ],
+      "interval_between_emails_seconds": {"min": 3, "max": 20},
+      "working_hours": {
+        "enabled": true,
+        "start_time_military": "08:00",
+		"lunch_break": "12:30",
+		"lunch_break_duration": "2:00",
+        "end_time_military": "14:00",
+        "work_days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+      },
+      "pause_settings": {
+        "major_pause": {
+            "emails_before_pause": {"min": 10, "max": 20},
+            "pause_duration_minutes": {"min": 2, "max": 4}
+        },
+        "micro_break": {
+            "enabled": true,
+            "trigger_probability": 0.1,
+            "break_duration_seconds": {"min": 45, "max": 75}
+        }
+      }
+    },
+	"prompts": {
+		"enrich_lead": "You are an expert data analyst. From the provided Craigslist post body, extract the following information.\\nYour response MUST be a single, valid JSON object.\\n\\nRULES:\\n1.  **business_name**: Extract the specific, proper business name (e.g., \"John's Plumbing LLC\"). If no clear business name is mentioned, return null.\\n2.  **category**: Provide a clean, single business category (e.g., \"Landscaping\", \"Web Design\", \"Handyman Services\"). Use the provided 'Original Category' for context, but create a more specific, human-readable category if possible.\\n3.  **services_rendered**: Extract a list of specific services offered. This MUST be a JSON array of strings (e.g., [\"Mowing\", \"Tree Trimming\", \"Fertilizing\"]). If no services are listed, return an empty array [].\\n4.  **name, email, phone**: Extract the contact person's name, email, and phone number from the text if available.\\n5.  The final JSON object must only contain the keys \"business_name\", \"category\", \"services_rendered\", \"name\", \"email\", and \"phone\".\\n\\nCONTEXT:\\n- Original URL: \"{url}\"\\n- Original Category: \"{original_category}\"\\n\\nPOST BODY:\\n---\\n{post_body}\\n---",
+		"generate_variations": "Your task is to generate {num_variations} unique, conversational variations of an email subject and body.\\nThe goal is to reduce the \\\"bulk mail\\\" fingerprint by making each email slightly different, while maintaining a confident and professional tone.\\n\\nCRITICAL RULES:\\n1.  Your entire response MUST be a single, valid JSON array. Do not include any text or markdown before or after the array.\\n2.  The array must contain exactly {num_variations} JSON objects.\\n3.  Each object MUST have two keys: \\\"subject\\\" and \\\"body_html\\\".\\n4.  You ABSOLUTELY MUST NOT alter, remove, or change any placeholder like `{{first_name}}`, `{{image_hash}}`, or `{{bitly_link}}`. They must remain exactly as they are.\\n5.  You ABSOLUTELY MUST NOT alter, remove, or change the special placeholders `[--CHATGPT-ANALOGY--]` and `[--PRICING-BLOCK--]`. They must remain exactly as they are.\\n6.  For the subject lines: Create compelling, benefit-driven hooks like \\\"Ever wish you had 24/7 staff?\\\" or \\\"Don't miss another call\\\". Avoid weak phrasing like \\\"Tried to help\\\".\\n7.  For the body: Make subtle changes. Vary greetings, swap synonyms (e.g., \\\"contact\\\" for \\\"reach out\\\"), and slightly reorder sentences. Avoid overly formal or jargony language like \\\"provisioned\\\" or \\\"proactive demonstration\\\".\\n\\nHere is the base subject and body to work from:\\n\\nBASE SUBJECT:\\n{base_subject}\\n\\nBASE HTML BODY:\\n{base_body}",
+		"fix_and_generate_variations": "Your task is to revise a potentially problematic email template and then generate {num_variations} unique, conversational variations. The original template was blocked by an automated safety filter, likely because it seemed too much like a hard sales pitch or spam. Your first job is to rewrite the BASE SUBJECT and BASE HTML BODY to be more compliant and conversational. Soften the language, remove aggressive sales tactics, and focus on sounding more like a helpful, genuine human inquiry while preserving the core message. Your second job is to use your *newly revised* template to generate the {num_variations} variations. CRITICAL RULES: 1. Your entire response MUST be a single, valid JSON array of {num_variations} objects. 2. Each object MUST have two keys: \\\"subject\\\" and \\\"body_html\\\". 3. You ABSOLUTELY MUST NOT alter, remove, or change any placeholder like `{{first_name}}`, `{{image_hash}}`, `{{bitly_link}}`, `[--CHATGPT-ANALOGY--]`, or `[--PRICING-BLOCK--]`. They must remain exactly as they are in your final output. Here is the original base template that was blocked: BASE SUBJECT: {base_subject} BASE HTML BODY: {base_body}"
+	},
+    "extract_google_maps_business_details": "You are an expert data extraction system. I will provide a JSON array where each object represents a text snippet from a Google Maps search result. Your task is to analyze each 'text_content' and extract the required information. CRITICAL RULES: 1. Your response MUST be a single, valid JSON array. 2. The response array MUST contain one object for every object in the input array. 3. Each object in your response array MUST include the original 'snippet_id' and the following extracted keys: 'business_name', 'phone', 'website_url', 'stars', 'number_of_reviews', 'has_posts', and 'detailed_metadata'. 4. Maintain the exact same order as the input array. 5. If a specific piece of information cannot be found, you MUST return null for that key. 6. The 'phone' key MUST always be a string or null. 7. 'stars' should be a string (e.g., '5.0', '4.5') or null. 8. 'number_of_reviews' should be a string (e.g., '3', '64') or null. 9. 'has_posts' should be a boolean (true if 'Add update', 'Add offer', or 'Add event' are present, false otherwise) or null if not determinable. 10. 'detailed_metadata' should be a JSON object containing any other relevant key-value pairs found in the text (e.g., address, hours, services, etc.), or null if no additional metadata is found. Here is the batch of snippets to process: {batch_data_json} Your JSON Array Response:",
+	"email_attachments": {
+      "headshot_id": "assets/headshot.png",
+      "upwork_id": "assets/upwork.jpg"
+    },
+	"html_templates": {
+		"signature_html_template": "<table style=\"background-color: rgb(255, 255, 255); color: rgb(34, 34, 34); box-sizing: border-box; border-collapse: collapse; border-spacing: 0px;\"><tbody><tr><td style=\"border-right: 1pt solid rgb(0, 0, 0); padding: 5pt; vertical-align: top; width: 292px;\"><p style=\"direction: ltr; line-height: 1.38; margin-top: 0pt; margin-bottom: 19pt;\"><span style=\"font-family: Arial; font-size: 12pt; color: rgb(150, 174, 18); font-weight: 700;\">Giovanni Pugliese</span><span style=\"font-family: Arial; font-size: 11pt; color: rgb(150, 174, 18); font-weight: 700;\"><br></span><span style=\"font-family: Arial; font-size: 11pt; color: rgb(0, 0, 0);\">CEO and Founder</span></p><p style=\"direction: ltr; line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-family: Arial; font-size: 11pt; color: rgb(0, 0, 0);\">Tel: (786) 592 8894</span></p><p style=\"direction: ltr; line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-family: Arial; font-size: 11pt; color: rgb(17, 85, 204);\"><a style=\"color: rgb(17, 85, 204); margin-top: 0px; margin-bottom: 0px;\" href=\"mailto:gio.pugliese@agswebconsulting.com\">gio.pugliese@agswebconsulting.com</a></span></p><p style=\"direction: ltr; line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-family: Arial; font-size: 11pt; color: rgb(0, 0, 0); font-weight: 700;\"><a style=\"color: rgb(0, 0, 0); margin-top: 0px; margin-bottom: 0px;\" href=\"{bitly_link}\">www.agswebconsulting.com</a></span></p></td><td style=\"border-left: 1pt solid rgb(0, 0, 0); padding: 5pt; vertical-align: top; width: 169px;\"><span style=\"font-family: Arial; font-size: 11pt; color: rgb(0, 0, 0); line-height: 1.38;\"><img style=\"width: 144px; height: 119px; margin-top: 0px; margin-left: 0px;\" height=\"119\" width=\"144\" src=\"https://lh3.googleusercontent.com/yDXhqPbhgQS6u7hKJdDAgBLN8PU1Wf9AOcIXCsXRa0bcn5fk97105Ig4uU_2N6kCoIjfnVhrgaaj_N2kl2K0FlZwOY0LXz8rF15ygWF0qHBXkx9piLwFwhvQU39KE3i18CmAzgmg\"></span></td></tr></tbody></table>",
+		"html_template": "<!DOCTYPE html><html lang=\"en\"><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>{subject}</title><!--[if mso]><style type=\"text/css\">table {{border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;}} td {{mso-line-height-rule: exactly;}}</style><![endif]--><style type=\"text/css\">@media only screen and (max-width: 900px) {{ .stack-column {{ width: 100% !important; display: block !important; max-width: 100% !important; }} }}</style></head><body style=\"margin: 0; padding: 0; background-color: #ffffff;\"><!-- PRE-HEADER TEXT START --><div style=\"display:none;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;\">Your website should be your star employee.</div><!-- PRE-HEADER TEXT END --><table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" bgcolor=\"#ffffff\"><tr><td align=\"center\"><table width=\"900\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" align=\"center\" style=\"width: 900px; margin: 0 auto;\"><tr><td style=\"font-size: 0; vertical-align: top;\"><!--[if (gte mso 9)|(IE)]><table width=\"900\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\"><tr><td width=\"585\" valign=\"top\"><![endif]--><div class=\"stack-column\" style=\"width: 65%; display: inline-block; vertical-align: top;\"><table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\"><tr><td style=\"padding: 20px;\">{body_content}</td></tr></table></div><!--[if (gte mso 9)|(IE)]></td><td width=\"315\" valign=\"top\"><![endif]--><div class=\"stack-column\" style=\"width: 35%; display: inline-block; vertical-align: top;\"><table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\"><tr><td align=\"center\" style=\"padding: 20px;\"><!--[if mso]><v:roundrect xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:w=\"urn:schemas-microsoft-com:office:word\" style=\"height:250px;v-text-anchor:middle;width:250px;\" arcsize=\"4%\"><v:fill type=\"frame\" src=\"cid:headshot_id\" color=\"#ffffff\" /><w:anchorlock/></v:roundrect><![endif]--><!--[if !mso]><!--><img src=\"cid:headshot_id\" alt=\"Gio Pugliese\" width=\"250\" style=\"width: 250px; max-width: 100%; height: auto; display: block; border-radius: 10px;\" border=\"0\"><!--<![endif]--><div style=\"font-size: 20px; line-height: 20px;\">&nbsp;</div><img src=\"cid:upwork_id\" alt=\"Upwork Success Metrics\" width=\"200\" style=\"width: 200px; max-width: 100%; height: auto; display: block;\" border=\"0\"><div style=\"font-size: 30px; line-height: 30px;\">&nbsp;</div><table width=\"250\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" align=\"center\"><tr><td align=\"left\" style=\"font-family: Arial, sans-serif; font-size: 14px; line-height: 20px; color: #333333;\"><h3 style=\"font-size: 16px; margin-top: 0; margin-bottom: 10px; font-family: Arial, sans-serif; color: #000000;\">My Expertise Includes:</h3><p style=\"margin: 0 0 10px 0;\">&#10003; Marketing Automation Expert</p><p style=\"margin: 0 0 10px 0;\">&#10003; Salesforce Certified Architect</p><p style=\"margin: 0 0 10px 0;\">&#10003; AI Implementation Specialist</p><p style=\"margin: 0 0 10px 0;\">&#10003; Business Process Optimization</p></td></tr></table></td></tr></table></div><!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]--></td></tr><tr><td style=\"padding: 20px;\">{signature_block}</td></tr></table></td></tr></table></body></html>"
+	}
+  }
+}

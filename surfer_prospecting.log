@@ -1,0 +1,900 @@
+[2025-09-15 05:27:06.953] [INFO] 
+--- Starting Surfer Prospecting Script ---
+[2025-09-15 05:27:06.954] [INFO] [START] Surfer prospecting run for seeds: '['plumber orlando', 'emergency plumber orlando', '24 hour plumber orlando', 'drain cleaning orlando', 'water heater repair orlando', 'leak detection orlando', 'commercial plumbing orlando', 'affordable plumber orlando', 'best plumber orlando', 'local plumber orlando']', target pool size: 50
+[2025-09-15 05:27:06.954] [INFO] Building keyword pool...
+[2025-09-15 05:27:06.954] [INFO] [START] Building keyword pool for seeds: ['plumber orlando', 'emergency plumber orlando', '24 hour plumber orlando', 'drain cleaning orlando', 'water heater repair orlando', 'leak detection orlando', 'commercial plumbing orlando', 'affordable plumber orlando', 'best plumber orlando', 'local plumber orlando'], target size: 50
+[2025-09-15 05:27:06.955] [INFO] Step A: Fetching data for seed keyword: 'plumber orlando'
+[2025-09-15 05:27:06.955] [INFO] Fetching keywords for batch (size: 1) for country: US)
+[2025-09-15 05:27:06.955] [DEBUG] Encoding JSON array for URL: ['plumber orlando']
+[2025-09-15 05:27:06.956] [DEBUG] Encoded array: %5B%22plumber+orlando%22%5D
+[2025-09-15 05:27:06.956] [DEBUG] Making GET request to: https://db3.keywordsur.fr/api/ks/keywords?country=US&keywords=%5B%22plumber+orlando%22%5D (Attempt 1)
+[2025-09-15 05:27:06.956] [DEBUG] Request headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Origin': 'https://www.google.com', 'Referer': 'https://www.google.com/', 'Sec-CH-UA': '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"', 'Sec-CH-UA-Mobile': '?0', 'Sec-CH-UA-Platform': '"Windows"', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'cross-site', 'Priority': 'u=1, i'}
+[2025-09-15 05:27:07.320] [DEBUG] Received response status: 200
+[2025-09-15 05:27:07.321] [DEBUG] Response JSON (first 500 chars): {'plumber orlando': {'categories': [10004, 10282, 13462, 10009, 10404], 'competition': 0.5699999928474426, 'cpc': 21.03, 'search_volume': 4400, 'similar_keywords': [{'keyword': 'orlando plumber', 'country': 'US', 'overlapping_pages': 20, 'search_volume': 4400, 'cpc': 17.74}, {'keyword': 'orlando plumbers', 'country': 'US', 'overlapping_pages': 20, 'search_volume': 4400, 'cpc': 17.74}, {'keyword': 'plumber in orlando fl', 'country': 'US', 'overlapping_pages': 20, 'search_volume': 4400, 'cpc': 21.
+[2025-09-15 05:27:07.322] [DEBUG] Throttling for 1.36 seconds (base: 0.5-1.5, actual: 0.43-1.74).
+[2025-09-15 05:27:08.678] [INFO] Successfully fetched /keywords for batch. Received 1 entries.
+[2025-09-15 05:27:08.678] [DEBUG] Added seed 'plumber orlando' to pool_map. Current pool size: 1
+[2025-09-15 05:27:08.679] [INFO] Seed 'plumber orlando' returned 10 similar keywords (first layer).
+[2025-09-15 05:27:08.680] [DEBUG] First layer similar keywords: ['orlando plumber', 'orlando plumbers', 'plumber in orlando fl', 'plumber in orlando florida', 'plumber orlando fl']...
+[2025-09-15 05:27:08.680] [INFO] Step A: Fetching data for seed keyword: 'emergency plumber orlando'
+[2025-09-15 05:27:08.681] [INFO] Fetching keywords for batch (size: 1) for country: US)
+[2025-09-15 05:27:08.681] [DEBUG] Encoding JSON array for URL: ['emergency plumber orlando']
+[2025-09-15 05:27:08.681] [DEBUG] Encoded array: %5B%22emergency+plumber+orlando%22%5D
+[2025-09-15 05:27:08.681] [DEBUG] Making GET request to: https://db3.keywordsur.fr/api/ks/keywords?country=US&keywords=%5B%22emergency+plumber+orlando%22%5D (Attempt 1)
+[2025-09-15 05:27:08.682] [DEBUG] Request headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Origin': 'https://www.google.com', 'Referer': 'https://www.google.com/', 'Sec-CH-UA': '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"', 'Sec-CH-UA-Mobile': '?0', 'Sec-CH-UA-Platform': '"Windows"', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'cross-site', 'Priority': 'u=1, i'}
+[2025-09-15 05:27:08.867] [DEBUG] Received response status: 200
+[2025-09-15 05:27:08.867] [DEBUG] Response JSON (first 500 chars): {'emergency plumber orlando': {'categories': [10004, 10282, 13462, 10009, 10404], 'competition': 0.8500000238418579, 'cpc': 63.7, 'search_volume': 480, 'similar_keywords': [{'keyword': 'orlando plumber', 'country': 'US', 'overlapping_pages': 20, 'search_volume': 4400, 'cpc': 17.74}, {'keyword': 'orlando plumbers', 'country': 'US', 'overlapping_pages': 20, 'search_volume': 4400, 'cpc': 17.74}, {'keyword': 'orlando emergency plumber', 'country': 'US', 'overlapping_pages': 19, 'search_volume': 480,
+[2025-09-15 05:27:08.869] [DEBUG] Throttling for 1.35 seconds (base: 0.5-1.5, actual: 0.48-1.79).
+[2025-09-15 05:27:10.216] [INFO] Successfully fetched /keywords for batch. Received 1 entries.
+[2025-09-15 05:27:10.216] [DEBUG] Added seed 'emergency plumber orlando' to pool_map. Current pool size: 12
+[2025-09-15 05:27:10.216] [INFO] Seed 'emergency plumber orlando' returned 10 similar keywords (first layer).
+[2025-09-15 05:27:10.217] [DEBUG] First layer similar keywords: ['orlando plumber', 'orlando plumbers', 'orlando emergency plumber', 'plumber orlando', 'plumbers orlando']...
+[2025-09-15 05:27:10.217] [INFO] Step A: Fetching data for seed keyword: '24 hour plumber orlando'
+[2025-09-15 05:27:10.217] [INFO] Fetching keywords for batch (size: 1) for country: US)
+[2025-09-15 05:27:10.217] [DEBUG] Encoding JSON array for URL: ['24 hour plumber orlando']
+[2025-09-15 05:27:10.218] [DEBUG] Encoded array: %5B%2224+hour+plumber+orlando%22%5D
+[2025-09-15 05:27:10.218] [DEBUG] Making GET request to: https://db3.keywordsur.fr/api/ks/keywords?country=US&keywords=%5B%2224+hour+plumber+orlando%22%5D (Attempt 1)
+[2025-09-15 05:27:10.218] [DEBUG] Request headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Origin': 'https://www.google.com', 'Referer': 'https://www.google.com/', 'Sec-CH-UA': '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"', 'Sec-CH-UA-Mobile': '?0', 'Sec-CH-UA-Platform': '"Windows"', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'cross-site', 'Priority': 'u=1, i'}
+[2025-09-15 05:27:10.450] [DEBUG] Received response status: 200
+[2025-09-15 05:27:10.450] [DEBUG] Response JSON (first 500 chars): {'24 hour plumber orlando': {'categories': [10004, 10282, 13462, 10009, 10404], 'competition': 0.5899999737739563, 'cpc': 76.92, 'search_volume': 40, 'similar_keywords': [{'keyword': 'emergency plumber orlando', 'country': 'US', 'overlapping_pages': 15, 'search_volume': 480, 'cpc': 63.7}, {'keyword': 'orlando emergency plumber', 'country': 'US', 'overlapping_pages': 15, 'search_volume': 480, 'cpc': 73.41}, {'keyword': 'emergency plumber orlando fl', 'country': 'US', 'overlapping_pages': 14, 'sea
+[2025-09-15 05:27:10.452] [DEBUG] Throttling for 1.56 seconds (base: 0.5-1.5, actual: 0.47-1.84).
+[2025-09-15 05:27:12.018] [INFO] Successfully fetched /keywords for batch. Received 1 entries.
+[2025-09-15 05:27:12.018] [DEBUG] Added seed '24 hour plumber orlando' to pool_map. Current pool size: 15
+[2025-09-15 05:27:12.018] [INFO] Seed '24 hour plumber orlando' returned 10 similar keywords (first layer).
+[2025-09-15 05:27:12.019] [DEBUG] First layer similar keywords: ['emergency plumber orlando', 'orlando emergency plumber', 'emergency plumber orlando fl', 'emergency plumbing orlando', '24 hour plumber orlando fl']...
+[2025-09-15 05:27:12.019] [INFO] Step A: Fetching data for seed keyword: 'drain cleaning orlando'
+[2025-09-15 05:27:12.019] [INFO] Fetching keywords for batch (size: 1) for country: US)
+[2025-09-15 05:27:12.019] [DEBUG] Encoding JSON array for URL: ['drain cleaning orlando']
+[2025-09-15 05:27:12.020] [DEBUG] Encoded array: %5B%22drain+cleaning+orlando%22%5D
+[2025-09-15 05:27:12.020] [DEBUG] Making GET request to: https://db3.keywordsur.fr/api/ks/keywords?country=US&keywords=%5B%22drain+cleaning+orlando%22%5D (Attempt 1)
+[2025-09-15 05:27:12.020] [DEBUG] Request headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Origin': 'https://www.google.com', 'Referer': 'https://www.google.com/', 'Sec-CH-UA': '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"', 'Sec-CH-UA-Mobile': '?0', 'Sec-CH-UA-Platform': '"Windows"', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'cross-site', 'Priority': 'u=1, i'}
+[2025-09-15 05:27:12.247] [DEBUG] Received response status: 200
+[2025-09-15 05:27:12.247] [DEBUG] Response JSON (first 500 chars): {'drain cleaning orlando': {'categories': [10009, 10399, 11523], 'competition': 0.3499999940395355, 'cpc': 12.0, 'search_volume': 110, 'similar_keywords': [{'keyword': 'orlando drain cleaning', 'country': 'US', 'overlapping_pages': 17, 'search_volume': 110, 'cpc': 9.99}, {'keyword': 'orlando plumber', 'country': 'US', 'overlapping_pages': 2, 'search_volume': 4400, 'cpc': 17.74}, {'keyword': 'orlando plumbers', 'country': 'US', 'overlapping_pages': 2, 'search_volume': 4400, 'cpc': 17.74}, {'keywo
+[2025-09-15 05:27:12.248] [DEBUG] Throttling for 0.56 seconds (base: 0.5-1.5, actual: 0.38-1.75).
+[2025-09-15 05:27:12.813] [INFO] Successfully fetched /keywords for batch. Received 1 entries.
+[2025-09-15 05:27:12.813] [DEBUG] Added seed 'drain cleaning orlando' to pool_map. Current pool size: 18
+[2025-09-15 05:27:12.813] [INFO] Seed 'drain cleaning orlando' returned 10 similar keywords (first layer).
+[2025-09-15 05:27:12.814] [DEBUG] First layer similar keywords: ['orlando drain cleaning', 'orlando plumber', 'orlando plumbers', 'plumber in orlando florida', 'plumber orlando']...
+[2025-09-15 05:27:12.814] [INFO] Step A: Fetching data for seed keyword: 'water heater repair orlando'
+[2025-09-15 05:27:12.814] [INFO] Fetching keywords for batch (size: 1) for country: US)
+[2025-09-15 05:27:12.814] [DEBUG] Encoding JSON array for URL: ['water heater repair orlando']
+[2025-09-15 05:27:12.815] [DEBUG] Encoded array: %5B%22water+heater+repair+orlando%22%5D
+[2025-09-15 05:27:12.815] [INFO] Requests per window limit reached (5). Pausing for 6.14 seconds.
+[2025-09-15 05:27:18.958] [DEBUG] Making GET request to: https://db3.keywordsur.fr/api/ks/keywords?country=US&keywords=%5B%22water+heater+repair+orlando%22%5D (Attempt 1)
+[2025-09-15 05:27:18.958] [DEBUG] Request headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Origin': 'https://www.google.com', 'Referer': 'https://www.google.com/', 'Sec-CH-UA': '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"', 'Sec-CH-UA-Mobile': '?0', 'Sec-CH-UA-Platform': '"Windows"', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'cross-site', 'Priority': 'u=1, i'}
+[2025-09-15 05:27:19.202] [DEBUG] Received response status: 200
+[2025-09-15 05:27:19.203] [DEBUG] Response JSON (first 500 chars): {'water heater repair orlando': {'categories': [10009, 10418, 10004, 10282, 11284, 12584, 13462, 13191], 'competition': 0.49000000953674316, 'cpc': 29.9, 'search_volume': 140, 'similar_keywords': [{'keyword': 'orlando water heater repair', 'country': 'US', 'overlapping_pages': 16, 'search_volume': 140, 'cpc': 29.9}, {'keyword': 'water heater repair orlando fl', 'country': 'US', 'overlapping_pages': 14, 'search_volume': 110, 'cpc': 21.31}, {'keyword': 'water heater replacement orlando', 'country'
+[2025-09-15 05:27:19.204] [DEBUG] Throttling for 0.82 seconds (base: 0.5-1.5, actual: 0.38-1.65).
+[2025-09-15 05:27:20.020] [INFO] Successfully fetched /keywords for batch. Received 1 entries.
+[2025-09-15 05:27:20.020] [DEBUG] Added seed 'water heater repair orlando' to pool_map. Current pool size: 20
+[2025-09-15 05:27:20.020] [INFO] Seed 'water heater repair orlando' returned 10 similar keywords (first layer).
+[2025-09-15 05:27:20.021] [DEBUG] First layer similar keywords: ['orlando water heater repair', 'water heater repair orlando fl', 'water heater replacement orlando', 'water heater orlando fl', 'water heaters orlando']...
+[2025-09-15 05:27:20.021] [INFO] Step A: Fetching data for seed keyword: 'leak detection orlando'
+[2025-09-15 05:27:20.022] [INFO] Fetching keywords for batch (size: 1) for country: US)
+[2025-09-15 05:27:20.022] [DEBUG] Encoding JSON array for URL: ['leak detection orlando']
+[2025-09-15 05:27:20.022] [DEBUG] Encoded array: %5B%22leak+detection+orlando%22%5D
+[2025-09-15 05:27:20.022] [DEBUG] Making GET request to: https://db3.keywordsur.fr/api/ks/keywords?country=US&keywords=%5B%22leak+detection+orlando%22%5D (Attempt 1)
+[2025-09-15 05:27:20.023] [DEBUG] Request headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Origin': 'https://www.google.com', 'Referer': 'https://www.google.com/', 'Sec-CH-UA': '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"', 'Sec-CH-UA-Mobile': '?0', 'Sec-CH-UA-Platform': '"Windows"', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'cross-site', 'Priority': 'u=1, i'}
+[2025-09-15 05:27:20.247] [DEBUG] Received response status: 200
+[2025-09-15 05:27:20.247] [DEBUG] Response JSON (first 500 chars): {'leak detection orlando': {'categories': [10004, 13464, 10281, 11123, 10293, 11241], 'competition': 0.6100000143051147, 'cpc': 20.04, 'search_volume': 720, 'similar_keywords': [{'keyword': 'leak detection orlando florida', 'country': 'US', 'overlapping_pages': 18, 'search_volume': 720, 'cpc': 20.04}, {'keyword': 'leak detection orlando fl', 'country': 'US', 'overlapping_pages': 17, 'search_volume': 720, 'cpc': 20.04}, {'keyword': 'orlando water leak detection', 'country': 'US', 'overlapping_pag
+[2025-09-15 05:27:20.248] [DEBUG] Throttling for 1.19 seconds (base: 0.5-1.5, actual: 0.47-1.57).
+[2025-09-15 05:27:21.443] [INFO] Successfully fetched /keywords for batch. Received 1 entries.
+[2025-09-15 05:27:21.443] [DEBUG] Added seed 'leak detection orlando' to pool_map. Current pool size: 31
+[2025-09-15 05:27:21.443] [INFO] Seed 'leak detection orlando' returned 10 similar keywords (first layer).
+[2025-09-15 05:27:21.444] [DEBUG] First layer similar keywords: ['leak detection orlando florida', 'leak detection orlando fl', 'orlando water leak detection', 'orlando leak detection', 'water leak detection orlando']...
+[2025-09-15 05:27:21.444] [INFO] Step A: Fetching data for seed keyword: 'commercial plumbing orlando'
+[2025-09-15 05:27:21.444] [INFO] Fetching keywords for batch (size: 1) for country: US)
+[2025-09-15 05:27:21.444] [DEBUG] Encoding JSON array for URL: ['commercial plumbing orlando']
+[2025-09-15 05:27:21.445] [DEBUG] Encoded array: %5B%22commercial+plumbing+orlando%22%5D
+[2025-09-15 05:27:21.445] [DEBUG] Making GET request to: https://db3.keywordsur.fr/api/ks/keywords?country=US&keywords=%5B%22commercial+plumbing+orlando%22%5D (Attempt 1)
+[2025-09-15 05:27:21.445] [DEBUG] Request headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Origin': 'https://www.google.com', 'Referer': 'https://www.google.com/', 'Sec-CH-UA': '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"', 'Sec-CH-UA-Mobile': '?0', 'Sec-CH-UA-Platform': '"Windows"', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'cross-site', 'Priority': 'u=1, i'}
+[2025-09-15 05:27:21.673] [DEBUG] Received response status: 200
+[2025-09-15 05:27:21.674] [DEBUG] Response JSON (first 500 chars): {'commercial plumbing orlando': {'categories': [10004, 10282, 13462, 11141], 'competition': 0.6800000071525574, 'cpc': 18.06, 'search_volume': 210, 'similar_keywords': [{'keyword': 'commercial plumbers in orlando fl', 'country': 'US', 'overlapping_pages': 15, 'search_volume': 210, 'cpc': 18.06}, {'keyword': 'orlando commercial plumbing', 'country': 'US', 'overlapping_pages': 15, 'search_volume': 210, 'cpc': 18.06}, {'keyword': 'plumbing orlando', 'country': 'US', 'overlapping_pages': 14, 'search
+[2025-09-15 05:27:21.676] [DEBUG] Throttling for 0.50 seconds (base: 0.5-1.5, actual: 0.46-1.80).
+[2025-09-15 05:27:22.179] [INFO] Successfully fetched /keywords for batch. Received 1 entries.
+[2025-09-15 05:27:22.179] [DEBUG] Added seed 'commercial plumbing orlando' to pool_map. Current pool size: 42
+[2025-09-15 05:27:22.179] [INFO] Seed 'commercial plumbing orlando' returned 10 similar keywords (first layer).
+[2025-09-15 05:27:22.180] [DEBUG] First layer similar keywords: ['commercial plumbers in orlando fl', 'orlando commercial plumbing', 'plumbing orlando', 'commercial plumbers orlando', 'orlando commercial plumbers']...
+[2025-09-15 05:27:22.180] [INFO] Step A: Fetching data for seed keyword: 'affordable plumber orlando'
+[2025-09-15 05:27:22.180] [INFO] Fetching keywords for batch (size: 1) for country: US)
+[2025-09-15 05:27:22.181] [DEBUG] Encoding JSON array for URL: ['affordable plumber orlando']
+[2025-09-15 05:27:22.181] [DEBUG] Encoded array: %5B%22affordable+plumber+orlando%22%5D
+[2025-09-15 05:27:22.181] [DEBUG] Making GET request to: https://db3.keywordsur.fr/api/ks/keywords?country=US&keywords=%5B%22affordable+plumber+orlando%22%5D (Attempt 1)
+[2025-09-15 05:27:22.181] [DEBUG] Request headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Origin': 'https://www.google.com', 'Referer': 'https://www.google.com/', 'Sec-CH-UA': '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"', 'Sec-CH-UA-Mobile': '?0', 'Sec-CH-UA-Platform': '"Windows"', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'cross-site', 'Priority': 'u=1, i'}
+[2025-09-15 05:27:22.417] [DEBUG] Received response status: 200
+[2025-09-15 05:27:22.418] [DEBUG] Response JSON (first 500 chars): {}
+[2025-09-15 05:27:22.418] [DEBUG] Throttling for 1.57 seconds (base: 0.5-1.5, actual: 0.40-1.78).
+[2025-09-15 05:27:23.989] [INFO] Successfully fetched /keywords for batch. Received 0 entries.
+[2025-09-15 05:27:23.989] [ERROR] Failed to fetch seed keyword data for 'affordable plumber orlando'. Skipping this seed.
+[2025-09-15 05:27:23.989] [INFO] Step A: Fetching data for seed keyword: 'best plumber orlando'
+[2025-09-15 05:27:23.990] [INFO] Fetching keywords for batch (size: 1) for country: US)
+[2025-09-15 05:27:23.990] [DEBUG] Encoding JSON array for URL: ['best plumber orlando']
+[2025-09-15 05:27:23.990] [DEBUG] Encoded array: %5B%22best+plumber+orlando%22%5D
+[2025-09-15 05:27:23.990] [DEBUG] Making GET request to: https://db3.keywordsur.fr/api/ks/keywords?country=US&keywords=%5B%22best+plumber+orlando%22%5D (Attempt 1)
+[2025-09-15 05:27:23.991] [DEBUG] Request headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Origin': 'https://www.google.com', 'Referer': 'https://www.google.com/', 'Sec-CH-UA': '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"', 'Sec-CH-UA-Mobile': '?0', 'Sec-CH-UA-Platform': '"Windows"', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'cross-site', 'Priority': 'u=1, i'}
+[2025-09-15 05:27:24.239] [DEBUG] Received response status: 200
+[2025-09-15 05:27:24.240] [DEBUG] Response JSON (first 500 chars): {}
+[2025-09-15 05:27:24.241] [DEBUG] Throttling for 0.74 seconds (base: 0.5-1.5, actual: 0.49-1.78).
+[2025-09-15 05:27:24.982] [INFO] Successfully fetched /keywords for batch. Received 0 entries.
+[2025-09-15 05:27:24.982] [ERROR] Failed to fetch seed keyword data for 'best plumber orlando'. Skipping this seed.
+[2025-09-15 05:27:24.982] [INFO] Step A: Fetching data for seed keyword: 'local plumber orlando'
+[2025-09-15 05:27:24.983] [INFO] Fetching keywords for batch (size: 1) for country: US)
+[2025-09-15 05:27:24.983] [DEBUG] Encoding JSON array for URL: ['local plumber orlando']
+[2025-09-15 05:27:24.983] [DEBUG] Encoded array: %5B%22local+plumber+orlando%22%5D
+[2025-09-15 05:27:24.983] [INFO] Requests per window limit reached (5). Pausing for 8.54 seconds.
+[2025-09-15 05:27:33.528] [DEBUG] Making GET request to: https://db3.keywordsur.fr/api/ks/keywords?country=US&keywords=%5B%22local+plumber+orlando%22%5D (Attempt 1)
+[2025-09-15 05:27:33.528] [DEBUG] Request headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Origin': 'https://www.google.com', 'Referer': 'https://www.google.com/', 'Sec-CH-UA': '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"', 'Sec-CH-UA-Mobile': '?0', 'Sec-CH-UA-Platform': '"Windows"', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'cross-site', 'Priority': 'u=1, i'}
+[2025-09-15 05:27:33.752] [DEBUG] Received response status: 200
+[2025-09-15 05:27:33.752] [DEBUG] Response JSON (first 500 chars): {}
+[2025-09-15 05:27:33.753] [DEBUG] Throttling for 1.05 seconds (base: 0.5-1.5, actual: 0.47-1.81).
+[2025-09-15 05:27:34.799] [INFO] Successfully fetched /keywords for batch. Received 0 entries.
+[2025-09-15 05:27:34.799] [ERROR] Failed to fetch seed keyword data for 'local plumber orlando'. Skipping this seed.
+[2025-09-15 05:27:34.799] [INFO] Initial candidates for second-layer expansion: 41
+[2025-09-15 05:27:34.800] [DEBUG] Candidates list (first 5): ['orlando plumber', 'orlando plumbers', 'plumber in orlando fl', 'plumber in orlando florida', 'plumber orlando fl']...
+[2025-09-15 05:27:34.800] [DEBUG] Added 'orlando plumber' to current batch. Current batch size: 1. Current query param length: 27
+[2025-09-15 05:27:34.801] [DEBUG] Added 'orlando plumbers' to current batch. Current batch size: 2. Current query param length: 52
+[2025-09-15 05:27:34.801] [INFO] Sending final batch of 2 keywords for second-layer expansion.
+[2025-09-15 05:27:34.801] [INFO] Fetching keywords for batch (size: 2) for country: US)
+[2025-09-15 05:27:34.801] [DEBUG] Encoding JSON array for URL: ['orlando plumber', 'orlando plumbers']
+[2025-09-15 05:27:34.802] [DEBUG] Encoded array: %5B%22orlando+plumber%22%2C%22orlando+plumbers%22%5D
+[2025-09-15 05:27:34.802] [DEBUG] Making GET request to: https://db3.keywordsur.fr/api/ks/keywords?country=US&keywords=%5B%22orlando+plumber%22%2C%22orlando+plumbers%22%5D (Attempt 1)
+[2025-09-15 05:27:34.802] [DEBUG] Request headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Origin': 'https://www.google.com', 'Referer': 'https://www.google.com/', 'Sec-CH-UA': '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"', 'Sec-CH-UA-Mobile': '?0', 'Sec-CH-UA-Platform': '"Windows"', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'cross-site', 'Priority': 'u=1, i'}
+[2025-09-15 05:27:35.016] [DEBUG] Received response status: 200
+[2025-09-15 05:27:35.017] [DEBUG] Response JSON (first 500 chars): {'orlando plumbers': {'categories': [10009, 10404], 'competition': 0.5699999928474426, 'cpc': 17.74, 'search_volume': 4400, 'similar_keywords': [{'keyword': 'orlando plumber', 'country': 'US', 'overlapping_pages': 20, 'search_volume': 4400, 'cpc': 17.74}, {'keyword': 'orlando plumbing', 'country': 'US', 'overlapping_pages': 20, 'search_volume': 4400, 'cpc': 17.74}, {'keyword': 'plumber in orlando', 'country': 'US', 'overlapping_pages': 20, 'search_volume': 4400, 'cpc': 21.03}, {'keyword': 'plumb
+[2025-09-15 05:27:35.018] [DEBUG] Throttling for 1.49 seconds (base: 0.5-1.5, actual: 0.42-1.56).
+[2025-09-15 05:27:36.513] [INFO] Successfully fetched /keywords for batch. Received 2 entries.
+[2025-09-15 05:27:36.513] [DEBUG] Added 'orlando plumber' payload to pool_map. Current pool size: 48
+[2025-09-15 05:27:36.513] [DEBUG] Added new similar keyword 'plumber in orlando' to candidates.
+[2025-09-15 05:27:36.514] [DEBUG] Added 'orlando plumbers' payload to pool_map. Current pool size: 49
+[2025-09-15 05:27:36.514] [WARN] Keyword 'orlando plumbers' not found in batch response during second-layer expansion (final batch).
+[2025-09-15 05:27:36.514] [DEBUG] Current pool size after batch processing: 49. Total candidates: 42
+[2025-09-15 05:27:36.515] [DEBUG] Added 'plumber in orlando fl' to current batch. Current batch size: 1. Current query param length: 33
+[2025-09-15 05:27:36.515] [INFO] Sending final batch of 1 keywords for second-layer expansion.
+[2025-09-15 05:27:36.516] [INFO] Fetching keywords for batch (size: 1) for country: US)
+[2025-09-15 05:27:36.516] [DEBUG] Encoding JSON array for URL: ['plumber in orlando fl']
+[2025-09-15 05:27:36.516] [DEBUG] Encoded array: %5B%22plumber+in+orlando+fl%22%5D
+[2025-09-15 05:27:36.517] [DEBUG] Making GET request to: https://db3.keywordsur.fr/api/ks/keywords?country=US&keywords=%5B%22plumber+in+orlando+fl%22%5D (Attempt 1)
+[2025-09-15 05:27:36.517] [DEBUG] Request headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Origin': 'https://www.google.com', 'Referer': 'https://www.google.com/', 'Sec-CH-UA': '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"', 'Sec-CH-UA-Mobile': '?0', 'Sec-CH-UA-Platform': '"Windows"', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'cross-site', 'Priority': 'u=1, i'}
+[2025-09-15 05:27:36.796] [DEBUG] Received response status: 200
+[2025-09-15 05:27:36.796] [DEBUG] Response JSON (first 500 chars): {'plumber in orlando fl': {'categories': [10004, 10282, 13462], 'competition': 0.5699999928474426, 'cpc': 21.03, 'search_volume': 4400, 'similar_keywords': [{'keyword': 'orlando plumber', 'country': 'US', 'overlapping_pages': 20, 'search_volume': 4400, 'cpc': 17.74}, {'keyword': 'orlando plumbers', 'country': 'US', 'overlapping_pages': 20, 'search_volume': 4400, 'cpc': 17.74}, {'keyword': 'orlando plumbing', 'country': 'US', 'overlapping_pages': 20, 'search_volume': 4400, 'cpc': 17.74}, {'keywor
+[2025-09-15 05:27:36.798] [DEBUG] Throttling for 1.24 seconds (base: 0.5-1.5, actual: 0.49-1.52).
+[2025-09-15 05:27:38.037] [INFO] Successfully fetched /keywords for batch. Received 1 entries.
+[2025-09-15 05:27:38.037] [DEBUG] Added 'plumber in orlando fl' payload to pool_map. Current pool size: 49
+[2025-09-15 05:27:38.037] [WARN] Keyword 'plumber in orlando fl' not found in batch response during second-layer expansion (final batch).
+[2025-09-15 05:27:38.038] [DEBUG] Current pool size after batch processing: 49. Total candidates: 42
+[2025-09-15 05:27:38.038] [DEBUG] Added 'plumber in orlando florida' to current batch. Current batch size: 1. Current query param length: 38
+[2025-09-15 05:27:38.038] [INFO] Sending final batch of 1 keywords for second-layer expansion.
+[2025-09-15 05:27:38.038] [INFO] Fetching keywords for batch (size: 1) for country: US)
+[2025-09-15 05:27:38.039] [DEBUG] Encoding JSON array for URL: ['plumber in orlando florida']
+[2025-09-15 05:27:38.039] [DEBUG] Encoded array: %5B%22plumber+in+orlando+florida%22%5D
+[2025-09-15 05:27:38.039] [DEBUG] Making GET request to: https://db3.keywordsur.fr/api/ks/keywords?country=US&keywords=%5B%22plumber+in+orlando+florida%22%5D (Attempt 1)
+[2025-09-15 05:27:38.039] [DEBUG] Request headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Origin': 'https://www.google.com', 'Referer': 'https://www.google.com/', 'Sec-CH-UA': '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"', 'Sec-CH-UA-Mobile': '?0', 'Sec-CH-UA-Platform': '"Windows"', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'cross-site', 'Priority': 'u=1, i'}
+[2025-09-15 05:27:38.252] [DEBUG] Received response status: 200
+[2025-09-15 05:27:38.253] [DEBUG] Response JSON (first 500 chars): {'plumber in orlando florida': {'categories': [10003], 'competition': 0.5699999928474426, 'cpc': 21.03, 'search_volume': 4400, 'similar_keywords': [{'keyword': 'plumber in orlando', 'country': 'US', 'overlapping_pages': 20, 'search_volume': 4400, 'cpc': 21.03}, {'keyword': 'plumber in orlando fl', 'country': 'US', 'overlapping_pages': 20, 'search_volume': 4400, 'cpc': 21.03}, {'keyword': 'plumber orlando', 'country': 'US', 'overlapping_pages': 20, 'search_volume': 4400, 'cpc': 21.03}, {'keyword'
+[2025-09-15 05:27:38.254] [DEBUG] Throttling for 1.07 seconds (base: 0.5-1.5, actual: 0.44-1.58).
+[2025-09-15 05:27:39.320] [INFO] Successfully fetched /keywords for batch. Received 1 entries.
+[2025-09-15 05:27:39.320] [DEBUG] Added 'plumber in orlando florida' payload to pool_map. Current pool size: 49
+[2025-09-15 05:27:39.320] [DEBUG] Added new similar keyword 'plumbing in orlando' to candidates.
+[2025-09-15 05:27:39.320] [WARN] Keyword 'plumber in orlando florida' not found in batch response during second-layer expansion (final batch).
+[2025-09-15 05:27:39.321] [DEBUG] Current pool size after batch processing: 50. Total candidates: 43
+[2025-09-15 05:27:39.321] [INFO] Finished second-layer expansion loop. Current pool size: 50
+[2025-09-15 05:27:39.321] [INFO] Fetching 39 missing keyword payloads in batches to fill pool.
+[2025-09-15 05:27:39.322] [DEBUG] Added 'plumber orlando fl' to current missing batch. Current size: 1. Current query param length: 30
+[2025-09-15 05:27:39.322] [DEBUG] Added 'plumber orlando florida' to current missing batch. Current size: 2. Current query param length: 62
+[2025-09-15 05:27:39.322] [DEBUG] Added 'plumbers in orlando' to current missing batch. Current size: 3. Current query param length: 90
+[2025-09-15 05:27:39.323] [DEBUG] Added 'plumbers orlando' to current missing batch. Current size: 4. Current query param length: 115
+[2025-09-15 05:27:39.323] [DEBUG] Added 'plumbing orlando' to current missing batch. Current size: 5. Current query param length: 140
+[2025-09-15 05:27:39.323] [DEBUG] Added 'plumbing orlando fl' to current missing batch. Current size: 6. Current query param length: 168
+[2025-09-15 05:27:39.324] [INFO] Sending missing batch due to soft limit or size: ['plumber orlando fl', 'plumber orlando florida', 'plumbers in orlando', 'plumbers orlando', 'plumbing orlando', 'plumbing orlando fl']
+[2025-09-15 05:27:39.324] [INFO] Fetching keywords for batch (size: 6) for country: US)
+[2025-09-15 05:27:39.324] [DEBUG] Encoding JSON array for URL: ['plumber orlando fl', 'plumber orlando florida', 'plumbers in orlando', 'plumbers orlando', 'plumbing orlando', 'plumbing orlando fl']
+[2025-09-15 05:27:39.324] [DEBUG] Encoded array: %5B%22plumber+orlando+fl%22%2C%22plumber+orlando+florida%22%2C%22plumbers+in+orlando%22%2C%22plumbers+orlando%22%2C%22plumbing+orlando%22%2C%22plumbing+orlando+fl%22%5D
+[2025-09-15 05:27:39.325] [DEBUG] Making GET request to: https://db3.keywordsur.fr/api/ks/keywords?country=US&keywords=%5B%22plumber+orlando+fl%22%2C%22plumber+orlando+florida%22%2C%22plumbers+in+orlando%22%2C%22plumbers+orlando%22%2C%22plumbing+orlando%22%2C%22plumbing+orlando+fl%22%5D (Attempt 1)
+[2025-09-15 05:27:39.325] [DEBUG] Request headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Origin': 'https://www.google.com', 'Referer': 'https://www.google.com/', 'Sec-CH-UA': '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"', 'Sec-CH-UA-Mobile': '?0', 'Sec-CH-UA-Platform': '"Windows"', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'cross-site', 'Priority': 'u=1, i'}
+[2025-09-15 05:27:39.588] [DEBUG] Received response status: 200
+[2025-09-15 05:27:39.589] [DEBUG] Response JSON (first 500 chars): {'plumber orlando florida': {'categories': [10003], 'competition': 0.5699999928474426, 'cpc': 21.03, 'search_volume': 4400, 'similar_keywords': [{'keyword': 'orlando fl plumbers', 'country': 'US', 'overlapping_pages': 20, 'search_volume': 4400, 'cpc': 21.03}, {'keyword': 'orlando plumber', 'country': 'US', 'overlapping_pages': 20, 'search_volume': 4400, 'cpc': 17.74}, {'keyword': 'orlando plumbers', 'country': 'US', 'overlapping_pages': 20, 'search_volume': 4400, 'cpc': 17.74}, {'keyword': 'orla
+[2025-09-15 05:27:39.590] [DEBUG] Throttling for 1.20 seconds (base: 0.5-1.5, actual: 0.40-1.72).
+[2025-09-15 05:27:40.792] [INFO] Successfully fetched /keywords for batch. Received 6 entries.
+[2025-09-15 05:27:40.792] [DEBUG] Filled missing payload for 'plumber orlando fl'.
+[2025-09-15 05:27:40.792] [DEBUG] Filled missing payload for 'plumber orlando florida'.
+[2025-09-15 05:27:40.792] [DEBUG] Filled missing payload for 'plumbers in orlando'.
+[2025-09-15 05:27:40.793] [DEBUG] Filled missing payload for 'plumbers orlando'.
+[2025-09-15 05:27:40.793] [DEBUG] Filled missing payload for 'plumbing orlando'.
+[2025-09-15 05:27:40.793] [DEBUG] Filled missing payload for 'plumbing orlando fl'.
+[2025-09-15 05:27:40.793] [DEBUG] Added 'orlando emergency plumber' to current missing batch. Current size: 1. Current query param length: 37
+[2025-09-15 05:27:40.794] [DEBUG] Added 'emergency plumber orlando fl' to current missing batch. Current size: 2. Current query param length: 74
+[2025-09-15 05:27:40.794] [DEBUG] Added 'emergency plumbing orlando' to current missing batch. Current size: 3. Current query param length: 109
+[2025-09-15 05:27:40.794] [DEBUG] Added '24 hour plumber orlando fl' to current missing batch. Current size: 4. Current query param length: 144
+[2025-09-15 05:27:40.795] [DEBUG] Added 'orlando drain cleaning' to current missing batch. Current size: 5. Current query param length: 175
+[2025-09-15 05:27:40.795] [DEBUG] Added 'orlando water heater repair' to current missing batch. Current size: 6. Current query param length: 211
+[2025-09-15 05:27:40.796] [INFO] Sending missing batch due to soft limit or size: ['orlando emergency plumber', 'emergency plumber orlando fl', 'emergency plumbing orlando', '24 hour plumber orlando fl', 'orlando drain cleaning', 'orlando water heater repair']
+[2025-09-15 05:27:40.796] [INFO] Fetching keywords for batch (size: 6) for country: US)
+[2025-09-15 05:27:40.796] [DEBUG] Encoding JSON array for URL: ['orlando emergency plumber', 'emergency plumber orlando fl', 'emergency plumbing orlando', '24 hour plumber orlando fl', 'orlando drain cleaning', 'orlando water heater repair']
+[2025-09-15 05:27:40.797] [DEBUG] Encoded array: %5B%22orlando+emergency+plumber%22%2C%22emergency+plumber+orlando+fl%22%2C%22emergency+plumbing+orlando%22%2C%2224+hour+plumber+orlando+fl%22%2C%22orlando+drain+cleaning%22%2C%22orlando+water+heater+repair%22%5D
+[2025-09-15 05:27:40.798] [INFO] Requests per window limit reached (5). Pausing for 6.81 seconds.
+[2025-09-15 05:27:47.612] [DEBUG] Making GET request to: https://db3.keywordsur.fr/api/ks/keywords?country=US&keywords=%5B%22orlando+emergency+plumber%22%2C%22emergency+plumber+orlando+fl%22%2C%22emergency+plumbing+orlando%22%2C%2224+hour+plumber+orlando+fl%22%2C%22orlando+drain+cleaning%22%2C%22orlando+water+heater+repair%22%5D (Attempt 1)
+[2025-09-15 05:27:47.617] [DEBUG] Request headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Origin': 'https://www.google.com', 'Referer': 'https://www.google.com/', 'Sec-CH-UA': '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"', 'Sec-CH-UA-Mobile': '?0', 'Sec-CH-UA-Platform': '"Windows"', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'cross-site', 'Priority': 'u=1, i'}
+[2025-09-15 05:27:47.861] [DEBUG] Received response status: 200
+[2025-09-15 05:27:47.862] [DEBUG] Response JSON (first 500 chars): {'emergency plumber orlando fl': {'categories': [10004, 10282, 13462, 10009, 10404], 'competition': 0.8500000238418579, 'cpc': 63.7, 'search_volume': 480, 'similar_keywords': [{'keyword': 'plumber orlando', 'country': 'US', 'overlapping_pages': 18, 'search_volume': 4400, 'cpc': 21.03}, {'keyword': 'plumbers orlando', 'country': 'US', 'overlapping_pages': 17, 'search_volume': 4400, 'cpc': 21.03}, {'keyword': 'emergency plumber orlando', 'country': 'US', 'overlapping_pages': 17, 'search_volume': 4
+[2025-09-15 05:27:47.865] [DEBUG] Throttling for 0.58 seconds (base: 0.5-1.5, actual: 0.43-1.81).
+[2025-09-15 05:27:48.452] [INFO] Successfully fetched /keywords for batch. Received 6 entries.
+[2025-09-15 05:27:48.452] [DEBUG] Filled missing payload for 'orlando emergency plumber'.
+[2025-09-15 05:27:48.452] [DEBUG] Filled missing payload for 'emergency plumber orlando fl'.
+[2025-09-15 05:27:48.452] [DEBUG] Filled missing payload for 'emergency plumbing orlando'.
+[2025-09-15 05:27:48.453] [DEBUG] Filled missing payload for '24 hour plumber orlando fl'.
+[2025-09-15 05:27:48.453] [DEBUG] Filled missing payload for 'orlando drain cleaning'.
+[2025-09-15 05:27:48.453] [DEBUG] Filled missing payload for 'orlando water heater repair'.
+[2025-09-15 05:27:48.454] [DEBUG] Added 'water heater repair orlando fl' to current missing batch. Current size: 1. Current query param length: 42
+[2025-09-15 05:27:48.454] [DEBUG] Added 'water heater replacement orlando' to current missing batch. Current size: 2. Current query param length: 83
+[2025-09-15 05:27:48.455] [DEBUG] Added 'water heater orlando fl' to current missing batch. Current size: 3. Current query param length: 115
+[2025-09-15 05:27:48.455] [DEBUG] Added 'water heaters orlando' to current missing batch. Current size: 4. Current query param length: 145
+[2025-09-15 05:27:48.455] [DEBUG] Added 'orlando water heater installation' to current missing batch. Current size: 5. Current query param length: 187
+[2025-09-15 05:27:48.456] [DEBUG] Added 'water heater installation orlando' to current missing batch. Current size: 6. Current query param length: 229
+[2025-09-15 05:27:48.456] [INFO] Sending missing batch due to soft limit or size: ['water heater repair orlando fl', 'water heater replacement orlando', 'water heater orlando fl', 'water heaters orlando', 'orlando water heater installation', 'water heater installation orlando']
+[2025-09-15 05:27:48.456] [INFO] Fetching keywords for batch (size: 6) for country: US)
+[2025-09-15 05:27:48.456] [DEBUG] Encoding JSON array for URL: ['water heater repair orlando fl', 'water heater replacement orlando', 'water heater orlando fl', 'water heaters orlando', 'orlando water heater installation', 'water heater installation orlando']
+[2025-09-15 05:27:48.457] [DEBUG] Encoded array: %5B%22water+heater+repair+orlando+fl%22%2C%22water+heater+replacement+orlando%22%2C%22water+heater+orlando+fl%22%2C%22water+heaters+orlando%22%2C%22orlando+water+heater+installation%22%2C%22water+heater+installation+orlando%22%5D
+[2025-09-15 05:27:48.458] [DEBUG] Making GET request to: https://db3.keywordsur.fr/api/ks/keywords?country=US&keywords=%5B%22water+heater+repair+orlando+fl%22%2C%22water+heater+replacement+orlando%22%2C%22water+heater+orlando+fl%22%2C%22water+heaters+orlando%22%2C%22orlando+water+heater+installation%22%2C%22water+heater+installation+orlando%22%5D (Attempt 1)
+[2025-09-15 05:27:48.458] [DEBUG] Request headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Origin': 'https://www.google.com', 'Referer': 'https://www.google.com/', 'Sec-CH-UA': '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"', 'Sec-CH-UA-Mobile': '?0', 'Sec-CH-UA-Platform': '"Windows"', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'cross-site', 'Priority': 'u=1, i'}
+[2025-09-15 05:27:48.700] [DEBUG] Received response status: 200
+[2025-09-15 05:27:48.701] [DEBUG] Response JSON (first 500 chars): {'water heater replacement orlando': {'categories': [10001, 10024, 10183], 'competition': 0.49000000953674316, 'cpc': 12.79, 'search_volume': 50, 'similar_keywords': [{'keyword': 'water heater installation orlando', 'country': 'US', 'overlapping_pages': 16, 'search_volume': 70, 'cpc': 23.65}, {'keyword': 'orlando water heater repair', 'country': 'US', 'overlapping_pages': 15, 'search_volume': 140, 'cpc': 29.9}, {'keyword': 'orlando water heater installation', 'country': 'US', 'overlapping_pages'
+[2025-09-15 05:27:48.702] [DEBUG] Throttling for 1.45 seconds (base: 0.5-1.5, actual: 0.47-1.86).
+[2025-09-15 05:27:50.156] [INFO] Successfully fetched /keywords for batch. Received 6 entries.
+[2025-09-15 05:27:50.156] [DEBUG] Filled missing payload for 'water heater repair orlando fl'.
+[2025-09-15 05:27:50.156] [DEBUG] Filled missing payload for 'water heater replacement orlando'.
+[2025-09-15 05:27:50.156] [DEBUG] Filled missing payload for 'water heater orlando fl'.
+[2025-09-15 05:27:50.157] [DEBUG] Filled missing payload for 'water heaters orlando'.
+[2025-09-15 05:27:50.157] [DEBUG] Filled missing payload for 'orlando water heater installation'.
+[2025-09-15 05:27:50.158] [DEBUG] Filled missing payload for 'water heater installation orlando'.
+[2025-09-15 05:27:50.158] [DEBUG] Added 'orlando water heater' to current missing batch. Current size: 1. Current query param length: 32
+[2025-09-15 05:27:50.159] [DEBUG] Added 'water heater orlando' to current missing batch. Current size: 2. Current query param length: 61
+[2025-09-15 05:27:50.159] [DEBUG] Added 'hot water heater repair orlando' to current missing batch. Current size: 3. Current query param length: 101
+[2025-09-15 05:27:50.160] [DEBUG] Added 'leak detection orlando florida' to current missing batch. Current size: 4. Current query param length: 140
+[2025-09-15 05:27:50.160] [DEBUG] Added 'leak detection orlando fl' to current missing batch. Current size: 5. Current query param length: 174
+[2025-09-15 05:27:50.161] [DEBUG] Added 'orlando water leak detection' to current missing batch. Current size: 6. Current query param length: 211
+[2025-09-15 05:27:50.161] [INFO] Sending missing batch due to soft limit or size: ['orlando water heater', 'water heater orlando', 'hot water heater repair orlando', 'leak detection orlando florida', 'leak detection orlando fl', 'orlando water leak detection']
+[2025-09-15 05:27:50.162] [INFO] Fetching keywords for batch (size: 6) for country: US)
+[2025-09-15 05:27:50.162] [DEBUG] Encoding JSON array for URL: ['orlando water heater', 'water heater orlando', 'hot water heater repair orlando', 'leak detection orlando florida', 'leak detection orlando fl', 'orlando water leak detection']
+[2025-09-15 05:27:50.163] [DEBUG] Encoded array: %5B%22orlando+water+heater%22%2C%22water+heater+orlando%22%2C%22hot+water+heater+repair+orlando%22%2C%22leak+detection+orlando+florida%22%2C%22leak+detection+orlando+fl%22%2C%22orlando+water+leak+detection%22%5D
+[2025-09-15 05:27:50.163] [DEBUG] Making GET request to: https://db3.keywordsur.fr/api/ks/keywords?country=US&keywords=%5B%22orlando+water+heater%22%2C%22water+heater+orlando%22%2C%22hot+water+heater+repair+orlando%22%2C%22leak+detection+orlando+florida%22%2C%22leak+detection+orlando+fl%22%2C%22orlando+water+leak+detection%22%5D (Attempt 1)
+[2025-09-15 05:27:50.164] [DEBUG] Request headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Origin': 'https://www.google.com', 'Referer': 'https://www.google.com/', 'Sec-CH-UA': '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"', 'Sec-CH-UA-Mobile': '?0', 'Sec-CH-UA-Platform': '"Windows"', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'cross-site', 'Priority': 'u=1, i'}
+[2025-09-15 05:27:50.367] [DEBUG] Received response status: 200
+[2025-09-15 05:27:50.368] [DEBUG] Response JSON (first 500 chars): {'orlando water heater': {'categories': [10004, 10282, 13462, 13191], 'competition': 0.4000000059604645, 'cpc': 19.16, 'search_volume': 210, 'similar_keywords': [{'keyword': 'water heater orlando', 'country': 'US', 'overlapping_pages': 12, 'search_volume': 210, 'cpc': 18.0}, {'keyword': 'water heaters orlando', 'country': 'US', 'overlapping_pages': 12, 'search_volume': 210, 'cpc': 19.16}, {'keyword': 'water heater installation orlando', 'country': 'US', 'overlapping_pages': 11, 'search_volume': 
+[2025-09-15 05:27:50.370] [DEBUG] Throttling for 0.76 seconds (base: 0.5-1.5, actual: 0.44-1.73).
+[2025-09-15 05:27:51.136] [INFO] Successfully fetched /keywords for batch. Received 6 entries.
+[2025-09-15 05:27:51.136] [DEBUG] Filled missing payload for 'orlando water heater'.
+[2025-09-15 05:27:51.136] [DEBUG] Filled missing payload for 'water heater orlando'.
+[2025-09-15 05:27:51.136] [DEBUG] Filled missing payload for 'hot water heater repair orlando'.
+[2025-09-15 05:27:51.137] [DEBUG] Filled missing payload for 'leak detection orlando florida'.
+[2025-09-15 05:27:51.137] [DEBUG] Filled missing payload for 'leak detection orlando fl'.
+[2025-09-15 05:27:51.137] [DEBUG] Filled missing payload for 'orlando water leak detection'.
+[2025-09-15 05:27:51.138] [DEBUG] Added 'orlando leak detection' to current missing batch. Current size: 1. Current query param length: 34
+[2025-09-15 05:27:51.138] [DEBUG] Added 'water leak detection orlando' to current missing batch. Current size: 2. Current query param length: 71
+[2025-09-15 05:27:51.139] [DEBUG] Added 'leak doctor orlando' to current missing batch. Current size: 3. Current query param length: 99
+[2025-09-15 05:27:51.139] [DEBUG] Added 'leak detection in orlando' to current missing batch. Current size: 4. Current query param length: 133
+[2025-09-15 05:27:51.139] [DEBUG] Added 'orlando leak detection orlando fl' to current missing batch. Current size: 5. Current query param length: 175
+[2025-09-15 05:27:51.140] [DEBUG] Added 'florida leak detectors orlando' to current missing batch. Current size: 6. Current query param length: 214
+[2025-09-15 05:27:51.141] [INFO] Sending missing batch due to soft limit or size: ['orlando leak detection', 'water leak detection orlando', 'leak doctor orlando', 'leak detection in orlando', 'orlando leak detection orlando fl', 'florida leak detectors orlando']
+[2025-09-15 05:27:51.142] [INFO] Fetching keywords for batch (size: 6) for country: US)
+[2025-09-15 05:27:51.143] [DEBUG] Encoding JSON array for URL: ['orlando leak detection', 'water leak detection orlando', 'leak doctor orlando', 'leak detection in orlando', 'orlando leak detection orlando fl', 'florida leak detectors orlando']
+[2025-09-15 05:27:51.144] [DEBUG] Encoded array: %5B%22orlando+leak+detection%22%2C%22water+leak+detection+orlando%22%2C%22leak+doctor+orlando%22%2C%22leak+detection+in+orlando%22%2C%22orlando+leak+detection+orlando+fl%22%2C%22florida+leak+detectors+orlando%22%5D
+[2025-09-15 05:27:51.144] [DEBUG] Making GET request to: https://db3.keywordsur.fr/api/ks/keywords?country=US&keywords=%5B%22orlando+leak+detection%22%2C%22water+leak+detection+orlando%22%2C%22leak+doctor+orlando%22%2C%22leak+detection+in+orlando%22%2C%22orlando+leak+detection+orlando+fl%22%2C%22florida+leak+detectors+orlando%22%5D (Attempt 1)
+[2025-09-15 05:27:51.145] [DEBUG] Request headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Origin': 'https://www.google.com', 'Referer': 'https://www.google.com/', 'Sec-CH-UA': '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"', 'Sec-CH-UA-Mobile': '?0', 'Sec-CH-UA-Platform': '"Windows"', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'cross-site', 'Priority': 'u=1, i'}
+[2025-09-15 05:27:51.349] [DEBUG] Received response status: 200
+[2025-09-15 05:27:51.350] [DEBUG] Response JSON (first 500 chars): {'leak detection in orlando': {'categories': [10017, 10145, 13496], 'competition': 0.6600000262260437, 'cpc': 45.0, 'search_volume': 260, 'similar_keywords': [{'keyword': 'leak detection orlando', 'country': 'US', 'overlapping_pages': 12, 'search_volume': 720, 'cpc': 20.04}, {'keyword': 'leak doctor orlando', 'country': 'US', 'overlapping_pages': 12, 'search_volume': 590, 'cpc': 6.64}, {'keyword': 'orlando water leak detection', 'country': 'US', 'overlapping_pages': 12, 'search_volume': 90, 'cpc
+[2025-09-15 05:27:51.352] [DEBUG] Throttling for 1.07 seconds (base: 0.5-1.5, actual: 0.49-1.61).
+[2025-09-15 05:27:52.426] [INFO] Successfully fetched /keywords for batch. Received 6 entries.
+[2025-09-15 05:27:52.426] [DEBUG] Filled missing payload for 'orlando leak detection'.
+[2025-09-15 05:27:52.426] [DEBUG] Filled missing payload for 'water leak detection orlando'.
+[2025-09-15 05:27:52.426] [DEBUG] Filled missing payload for 'leak doctor orlando'.
+[2025-09-15 05:27:52.427] [DEBUG] Filled missing payload for 'leak detection in orlando'.
+[2025-09-15 05:27:52.427] [DEBUG] Filled missing payload for 'orlando leak detection orlando fl'.
+[2025-09-15 05:27:52.427] [DEBUG] Filled missing payload for 'florida leak detectors orlando'.
+[2025-09-15 05:27:52.427] [DEBUG] Added 'orlando leak locators' to current missing batch. Current size: 1. Current query param length: 33
+[2025-09-15 05:27:52.428] [DEBUG] Added 'commercial plumbers in orlando fl' to current missing batch. Current size: 2. Current query param length: 75
+[2025-09-15 05:27:52.428] [DEBUG] Added 'orlando commercial plumbing' to current missing batch. Current size: 3. Current query param length: 111
+[2025-09-15 05:27:52.428] [DEBUG] Added 'commercial plumbers orlando' to current missing batch. Current size: 4. Current query param length: 147
+[2025-09-15 05:27:52.429] [DEBUG] Added 'orlando commercial plumbers' to current missing batch. Current size: 5. Current query param length: 183
+[2025-09-15 05:27:52.429] [DEBUG] Added 'orlando plumbing' to current missing batch. Current size: 6. Current query param length: 208
+[2025-09-15 05:27:52.429] [INFO] Sending missing batch due to soft limit or size: ['orlando leak locators', 'commercial plumbers in orlando fl', 'orlando commercial plumbing', 'commercial plumbers orlando', 'orlando commercial plumbers', 'orlando plumbing']
+[2025-09-15 05:27:52.429] [INFO] Fetching keywords for batch (size: 6) for country: US)
+[2025-09-15 05:27:52.430] [DEBUG] Encoding JSON array for URL: ['orlando leak locators', 'commercial plumbers in orlando fl', 'orlando commercial plumbing', 'commercial plumbers orlando', 'orlando commercial plumbers', 'orlando plumbing']
+[2025-09-15 05:27:52.430] [DEBUG] Encoded array: %5B%22orlando+leak+locators%22%2C%22commercial+plumbers+in+orlando+fl%22%2C%22orlando+commercial+plumbing%22%2C%22commercial+plumbers+orlando%22%2C%22orlando+commercial+plumbers%22%2C%22orlando+plumbing%22%5D
+[2025-09-15 05:27:52.430] [DEBUG] Making GET request to: https://db3.keywordsur.fr/api/ks/keywords?country=US&keywords=%5B%22orlando+leak+locators%22%2C%22commercial+plumbers+in+orlando+fl%22%2C%22orlando+commercial+plumbing%22%2C%22commercial+plumbers+orlando%22%2C%22orlando+commercial+plumbers%22%2C%22orlando+plumbing%22%5D (Attempt 1)
+[2025-09-15 05:27:52.431] [DEBUG] Request headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Origin': 'https://www.google.com', 'Referer': 'https://www.google.com/', 'Sec-CH-UA': '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"', 'Sec-CH-UA-Mobile': '?0', 'Sec-CH-UA-Platform': '"Windows"', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'cross-site', 'Priority': 'u=1, i'}
+[2025-09-15 05:27:52.617] [DEBUG] Received response status: 200
+[2025-09-15 05:27:52.618] [DEBUG] Response JSON (first 500 chars): {'orlando leak locators': {'categories': [10004, 10282, 13462], 'competition': 0.28999999165534973, 'cpc': 21.44, 'search_volume': 40, 'similar_keywords': [{'keyword': 'orlando leak detection', 'country': 'US', 'overlapping_pages': 11, 'search_volume': 720, 'cpc': 20.04}, {'keyword': 'orlando leak detection orlando fl', 'country': 'US', 'overlapping_pages': 11, 'search_volume': 720, 'cpc': 18.12}, {'keyword': 'leak detection orlando fl', 'country': 'US', 'overlapping_pages': 10, 'search_volume':
+[2025-09-15 05:27:52.619] [DEBUG] Throttling for 0.68 seconds (base: 0.5-1.5, actual: 0.45-1.81).
+[2025-09-15 05:27:53.299] [INFO] Successfully fetched /keywords for batch. Received 6 entries.
+[2025-09-15 05:27:53.299] [DEBUG] Filled missing payload for 'orlando leak locators'.
+[2025-09-15 05:27:53.299] [DEBUG] Filled missing payload for 'commercial plumbers in orlando fl'.
+[2025-09-15 05:27:53.299] [DEBUG] Filled missing payload for 'orlando commercial plumbing'.
+[2025-09-15 05:27:53.300] [DEBUG] Filled missing payload for 'commercial plumbers orlando'.
+[2025-09-15 05:27:53.300] [DEBUG] Filled missing payload for 'orlando commercial plumbers'.
+[2025-09-15 05:27:53.300] [DEBUG] Filled missing payload for 'orlando plumbing'.
+[2025-09-15 05:27:53.300] [DEBUG] Added 'orlando commercial plumber' to current missing batch. Current size: 1. Current query param length: 38
+[2025-09-15 05:27:53.301] [DEBUG] Added 'plumber in orlando' to current missing batch. Current size: 2. Current query param length: 65
+[2025-09-15 05:27:53.301] [DEBUG] Added 'plumbing in orlando' to current missing batch. Current size: 3. Current query param length: 93
+[2025-09-15 05:27:53.302] [INFO] Sending final missing batch: ['orlando commercial plumber', 'plumber in orlando', 'plumbing in orlando']
+[2025-09-15 05:27:53.302] [INFO] Fetching keywords for batch (size: 3) for country: US)
+[2025-09-15 05:27:53.302] [DEBUG] Encoding JSON array for URL: ['orlando commercial plumber', 'plumber in orlando', 'plumbing in orlando']
+[2025-09-15 05:27:53.302] [DEBUG] Encoded array: %5B%22orlando+commercial+plumber%22%2C%22plumber+in+orlando%22%2C%22plumbing+in+orlando%22%5D
+[2025-09-15 05:27:53.303] [INFO] Requests per window limit reached (5). Pausing for 6.44 seconds.
+[2025-09-15 05:27:59.740] [DEBUG] Making GET request to: https://db3.keywordsur.fr/api/ks/keywords?country=US&keywords=%5B%22orlando+commercial+plumber%22%2C%22plumber+in+orlando%22%2C%22plumbing+in+orlando%22%5D (Attempt 1)
+[2025-09-15 05:27:59.740] [DEBUG] Request headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Origin': 'https://www.google.com', 'Referer': 'https://www.google.com/', 'Sec-CH-UA': '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"', 'Sec-CH-UA-Mobile': '?0', 'Sec-CH-UA-Platform': '"Windows"', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'cross-site', 'Priority': 'u=1, i'}
+[2025-09-15 05:27:59.923] [DEBUG] Received response status: 200
+[2025-09-15 05:27:59.924] [DEBUG] Response JSON (first 500 chars): {'plumbing in orlando': {'categories': [10017, 10145, 13496], 'competition': 0.5699999928474426, 'cpc': 21.03, 'search_volume': 4400, 'similar_keywords': [{'keyword': 'orlando plumber', 'country': 'US', 'overlapping_pages': 20, 'search_volume': 4400, 'cpc': 17.74}, {'keyword': 'orlando plumbers', 'country': 'US', 'overlapping_pages': 20, 'search_volume': 4400, 'cpc': 17.74}, {'keyword': 'orlando plumbing', 'country': 'US', 'overlapping_pages': 20, 'search_volume': 4400, 'cpc': 17.74}, {'keyword'
+[2025-09-15 05:27:59.925] [DEBUG] Throttling for 1.32 seconds (base: 0.5-1.5, actual: 0.42-1.80).
+[2025-09-15 05:28:01.242] [INFO] Successfully fetched /keywords for batch. Received 3 entries.
+[2025-09-15 05:28:01.242] [DEBUG] Filled missing payload for 'orlando commercial plumber'.
+[2025-09-15 05:28:01.242] [DEBUG] Filled missing payload for 'plumber in orlando'.
+[2025-09-15 05:28:01.243] [DEBUG] Filled missing payload for 'plumbing in orlando'.
+[2025-09-15 05:28:01.243] [INFO] Applying final deduplication and volume filter (MIN_VOLUME_FILTER=20).
+[2025-09-15 05:28:01.243] [DEBUG] Keyword 'plumber orlando' (volume: 4400) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.243] [DEBUG] Keyword 'orlando plumber' (volume: 4400) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.243] [DEBUG] Keyword 'orlando plumbers' (volume: 4400) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.244] [DEBUG] Keyword 'plumber in orlando fl' (volume: 4400) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.244] [DEBUG] Keyword 'plumber in orlando florida' (volume: 4400) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.244] [DEBUG] Keyword 'plumber orlando fl' (volume: 4400) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.244] [DEBUG] Keyword 'plumber orlando florida' (volume: 4400) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.244] [DEBUG] Keyword 'plumbers in orlando' (volume: 4400) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.245] [DEBUG] Keyword 'plumbers orlando' (volume: 4400) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.245] [DEBUG] Keyword 'plumbing orlando' (volume: 4400) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.245] [DEBUG] Keyword 'plumbing orlando fl' (volume: 4400) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.245] [DEBUG] Keyword 'emergency plumber orlando' (volume: 480) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.246] [DEBUG] Keyword 'orlando emergency plumber' (volume: 480) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.246] [DEBUG] Keyword 'emergency plumber orlando fl' (volume: 480) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.246] [DEBUG] Keyword '24 hour plumber orlando' (volume: 40) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.246] [DEBUG] Keyword 'emergency plumbing orlando' (volume: 480) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.246] [DEBUG] Keyword '24 hour plumber orlando fl' (volume: 40) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.247] [DEBUG] Keyword 'drain cleaning orlando' (volume: 110) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.247] [DEBUG] Keyword 'orlando drain cleaning' (volume: 110) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.247] [DEBUG] Keyword 'water heater repair orlando' (volume: 140) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.247] [DEBUG] Keyword 'orlando water heater repair' (volume: 140) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.248] [DEBUG] Keyword 'water heater repair orlando fl' (volume: 110) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.248] [DEBUG] Keyword 'water heater replacement orlando' (volume: 50) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.248] [DEBUG] Keyword 'water heater orlando fl' (volume: 210) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.249] [DEBUG] Keyword 'water heaters orlando' (volume: 210) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.249] [DEBUG] Keyword 'orlando water heater installation' (volume: 70) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.249] [DEBUG] Keyword 'water heater installation orlando' (volume: 70) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.250] [DEBUG] Keyword 'orlando water heater' (volume: 210) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.250] [DEBUG] Keyword 'water heater orlando' (volume: 210) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.250] [DEBUG] Keyword 'hot water heater repair orlando' (volume: 20) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.250] [DEBUG] Keyword 'leak detection orlando' (volume: 720) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.251] [DEBUG] Keyword 'leak detection orlando florida' (volume: 720) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.252] [DEBUG] Keyword 'leak detection orlando fl' (volume: 720) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.252] [DEBUG] Keyword 'orlando water leak detection' (volume: 90) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.253] [DEBUG] Keyword 'orlando leak detection' (volume: 720) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.253] [DEBUG] Keyword 'water leak detection orlando' (volume: 90) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.254] [DEBUG] Keyword 'leak doctor orlando' (volume: 590) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.254] [DEBUG] Keyword 'leak detection in orlando' (volume: 260) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.254] [DEBUG] Keyword 'orlando leak detection orlando fl' (volume: 720) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.255] [DEBUG] Keyword 'florida leak detectors orlando' (volume: 40) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.255] [DEBUG] Keyword 'orlando leak locators' (volume: 40) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.255] [DEBUG] Keyword 'commercial plumbing orlando' (volume: 210) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.256] [DEBUG] Keyword 'commercial plumbers in orlando fl' (volume: 210) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.256] [DEBUG] Keyword 'orlando commercial plumbing' (volume: 210) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.256] [DEBUG] Keyword 'commercial plumbers orlando' (volume: 210) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.257] [DEBUG] Keyword 'orlando commercial plumbers' (volume: 210) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.257] [DEBUG] Keyword 'orlando plumbing' (volume: 4400) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.258] [DEBUG] Keyword 'orlando commercial plumber' (volume: 210) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.258] [DEBUG] Keyword 'plumber in orlando' (volume: 4400) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.259] [DEBUG] Keyword 'plumbing in orlando' (volume: 4400) meets filter. Adding to cleaned_map.
+[2025-09-15 05:28:01.259] [INFO] Built keyword pool w/ 50 items (target was 50).
+[2025-09-15 05:28:01.260] [INFO] Exiting build_keyword_pool.
+[2025-09-15 05:28:01.260] [INFO] Keyword pool built with 50 entries.
+[2025-09-15 05:28:01.261] [INFO] Total unique keywords to evaluate: 50
+[2025-09-15 05:28:01.261] [INFO] Fetching customer domain data for: https://www.benjaminfranklinplumbing.com/...
+[2025-09-15 05:28:01.261] [INFO] Fetching domain data for: https://www.benjaminfranklinplumbing.com/
+[2025-09-15 05:28:01.262] [DEBUG] Encoding JSON array for URL: ['benjaminfranklinplumbing.com']
+[2025-09-15 05:28:01.262] [DEBUG] Encoded array: %5B%22benjaminfranklinplumbing.com%22%5D
+[2025-09-15 05:28:01.263] [DEBUG] Making GET request to: https://db3.keywordsur.fr/api/ks/domains?country=US&domains=%5B%22benjaminfranklinplumbing.com%22%5D (Attempt 1)
+[2025-09-15 05:28:01.263] [DEBUG] Request headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Origin': 'https://www.google.com', 'Referer': 'https://www.google.com/', 'Sec-CH-UA': '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"', 'Sec-CH-UA-Mobile': '?0', 'Sec-CH-UA-Platform': '"Windows"', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'cross-site', 'Priority': 'u=1, i'}
+[2025-09-15 05:28:01.690] [DEBUG] Received response status: 200
+[2025-09-15 05:28:01.690] [DEBUG] Response JSON (first 500 chars): {'benjaminfranklinplumbing.com': {'domain': 'benjaminfranklinplumbing.com', 'keyword_count_top3': 3167, 'keyword_count_top10': 10784, 'keyword_count_top50': 62329, 'keyword_count_top100': 125604, 'search_volume': 142161480, 'traffic': 730355.3}}
+[2025-09-15 05:28:01.691] [DEBUG] Throttling for 0.65 seconds (base: 0.5-1.5, actual: 0.44-1.71).
+[2025-09-15 05:28:02.348] [INFO] Successfully fetched /domains for benjaminfranklinplumbing.com.
+[2025-09-15 05:28:02.348] [INFO] Customer DA proxy: {'domain': 'https://www.benjaminfranklinplumbing.com/', 'keyword_count_top10': 10784, 'traffic': 730355.3}
+[2025-09-15 05:28:02.348] [INFO] Scoring keywords (competition-based)...
+[2025-09-15 05:28:02.348] [DEBUG] Processing keyword 'plumber orlando': volume=4400, cpc=21.03, competition=0.5699999928474426
+[2025-09-15 05:28:02.349] [DEBUG] Volume score (log10): 3.64, Adjusted CPC: 22.03, Adjusted Competition: 0.67
+[2025-09-15 05:28:02.349] [INFO] Arbitrage score calculated: 119.798900
+[2025-09-15 05:28:02.349] [DEBUG] Keyword 'plumber orlando' scored: 119.798900
+[2025-09-15 05:28:02.349] [DEBUG] Processing keyword 'orlando plumber': volume=4400, cpc=21.03, competition=0.5699999928474426
+[2025-09-15 05:28:02.350] [DEBUG] Volume score (log10): 3.64, Adjusted CPC: 22.03, Adjusted Competition: 0.67
+[2025-09-15 05:28:02.350] [INFO] Arbitrage score calculated: 119.798900
+[2025-09-15 05:28:02.350] [DEBUG] Keyword 'orlando plumber' scored: 119.798900
+[2025-09-15 05:28:02.350] [DEBUG] Processing keyword 'orlando plumbers': volume=4400, cpc=17.74, competition=0.5699999928474426
+[2025-09-15 05:28:02.350] [DEBUG] Volume score (log10): 3.64, Adjusted CPC: 18.74, Adjusted Competition: 0.67
+[2025-09-15 05:28:02.351] [INFO] Arbitrage score calculated: 101.907916
+[2025-09-15 05:28:02.351] [DEBUG] Keyword 'orlando plumbers' scored: 101.907916
+[2025-09-15 05:28:02.352] [DEBUG] Processing keyword 'plumber in orlando fl': volume=4400, cpc=21.03, competition=0.5699999928474426
+[2025-09-15 05:28:02.352] [DEBUG] Volume score (log10): 3.64, Adjusted CPC: 22.03, Adjusted Competition: 0.67
+[2025-09-15 05:28:02.352] [INFO] Arbitrage score calculated: 119.798900
+[2025-09-15 05:28:02.353] [DEBUG] Keyword 'plumber in orlando fl' scored: 119.798900
+[2025-09-15 05:28:02.354] [DEBUG] Processing keyword 'plumber in orlando florida': volume=4400, cpc=21.03, competition=0.5699999928474426
+[2025-09-15 05:28:02.355] [DEBUG] Volume score (log10): 3.64, Adjusted CPC: 22.03, Adjusted Competition: 0.67
+[2025-09-15 05:28:02.355] [INFO] Arbitrage score calculated: 119.798900
+[2025-09-15 05:28:02.355] [DEBUG] Keyword 'plumber in orlando florida' scored: 119.798900
+[2025-09-15 05:28:02.355] [DEBUG] Processing keyword 'plumber orlando fl': volume=4400, cpc=17.74, competition=0.5699999928474426
+[2025-09-15 05:28:02.356] [DEBUG] Volume score (log10): 3.64, Adjusted CPC: 18.74, Adjusted Competition: 0.67
+[2025-09-15 05:28:02.356] [INFO] Arbitrage score calculated: 101.907916
+[2025-09-15 05:28:02.356] [DEBUG] Keyword 'plumber orlando fl' scored: 101.907916
+[2025-09-15 05:28:02.357] [DEBUG] Processing keyword 'plumber orlando florida': volume=4400, cpc=21.03, competition=0.5699999928474426
+[2025-09-15 05:28:02.357] [DEBUG] Volume score (log10): 3.64, Adjusted CPC: 22.03, Adjusted Competition: 0.67
+[2025-09-15 05:28:02.357] [INFO] Arbitrage score calculated: 119.798900
+[2025-09-15 05:28:02.358] [DEBUG] Keyword 'plumber orlando florida' scored: 119.798900
+[2025-09-15 05:28:02.358] [DEBUG] Processing keyword 'plumbers in orlando': volume=4400, cpc=21.03, competition=0.5699999928474426
+[2025-09-15 05:28:02.358] [DEBUG] Volume score (log10): 3.64, Adjusted CPC: 22.03, Adjusted Competition: 0.67
+[2025-09-15 05:28:02.359] [INFO] Arbitrage score calculated: 119.798900
+[2025-09-15 05:28:02.359] [DEBUG] Keyword 'plumbers in orlando' scored: 119.798900
+[2025-09-15 05:28:02.359] [DEBUG] Processing keyword 'plumbers orlando': volume=4400, cpc=21.03, competition=0.5699999928474426
+[2025-09-15 05:28:02.360] [DEBUG] Volume score (log10): 3.64, Adjusted CPC: 22.03, Adjusted Competition: 0.67
+[2025-09-15 05:28:02.360] [INFO] Arbitrage score calculated: 119.798900
+[2025-09-15 05:28:02.360] [DEBUG] Keyword 'plumbers orlando' scored: 119.798900
+[2025-09-15 05:28:02.360] [DEBUG] Processing keyword 'plumbing orlando': volume=4400, cpc=17.74, competition=0.5699999928474426
+[2025-09-15 05:28:02.361] [DEBUG] Volume score (log10): 3.64, Adjusted CPC: 18.74, Adjusted Competition: 0.67
+[2025-09-15 05:28:02.361] [INFO] Arbitrage score calculated: 101.907916
+[2025-09-15 05:28:02.361] [DEBUG] Keyword 'plumbing orlando' scored: 101.907916
+[2025-09-15 05:28:02.361] [DEBUG] Processing keyword 'plumbing orlando fl': volume=4400, cpc=17.74, competition=0.5699999928474426
+[2025-09-15 05:28:02.362] [DEBUG] Volume score (log10): 3.64, Adjusted CPC: 18.74, Adjusted Competition: 0.67
+[2025-09-15 05:28:02.362] [INFO] Arbitrage score calculated: 101.907916
+[2025-09-15 05:28:02.362] [DEBUG] Keyword 'plumbing orlando fl' scored: 101.907916
+[2025-09-15 05:28:02.362] [DEBUG] Processing keyword 'emergency plumber orlando': volume=480, cpc=63.7, competition=0.8500000238418579
+[2025-09-15 05:28:02.362] [DEBUG] Volume score (log10): 2.68, Adjusted CPC: 64.70, Adjusted Competition: 0.95
+[2025-09-15 05:28:02.363] [INFO] Arbitrage score calculated: 182.606635
+[2025-09-15 05:28:02.363] [DEBUG] Keyword 'emergency plumber orlando' scored: 182.606635
+[2025-09-15 05:28:02.363] [DEBUG] Processing keyword 'orlando emergency plumber': volume=480, cpc=73.41, competition=0.38999998569488525
+[2025-09-15 05:28:02.364] [DEBUG] Volume score (log10): 2.68, Adjusted CPC: 74.41, Adjusted Competition: 0.49
+[2025-09-15 05:28:02.364] [INFO] Arbitrage score calculated: 407.165646
+[2025-09-15 05:28:02.364] [DEBUG] Keyword 'orlando emergency plumber' scored: 407.165646
+[2025-09-15 05:28:02.365] [DEBUG] Processing keyword 'emergency plumber orlando fl': volume=480, cpc=63.7, competition=0.8500000238418579
+[2025-09-15 05:28:02.365] [DEBUG] Volume score (log10): 2.68, Adjusted CPC: 64.70, Adjusted Competition: 0.95
+[2025-09-15 05:28:02.365] [INFO] Arbitrage score calculated: 182.606635
+[2025-09-15 05:28:02.365] [DEBUG] Keyword 'emergency plumber orlando fl' scored: 182.606635
+[2025-09-15 05:28:02.366] [DEBUG] Processing keyword '24 hour plumber orlando': volume=40, cpc=76.92, competition=0.5899999737739563
+[2025-09-15 05:28:02.366] [DEBUG] Volume score (log10): 1.60, Adjusted CPC: 77.92, Adjusted Competition: 0.69
+[2025-09-15 05:28:02.366] [INFO] Arbitrage score calculated: 180.916695
+[2025-09-15 05:28:02.366] [DEBUG] Keyword '24 hour plumber orlando' scored: 180.916695
+[2025-09-15 05:28:02.367] [DEBUG] Processing keyword 'emergency plumbing orlando': volume=480, cpc=63.7, competition=0.8500000238418579
+[2025-09-15 05:28:02.367] [DEBUG] Volume score (log10): 2.68, Adjusted CPC: 64.70, Adjusted Competition: 0.95
+[2025-09-15 05:28:02.367] [INFO] Arbitrage score calculated: 182.606635
+[2025-09-15 05:28:02.367] [DEBUG] Keyword 'emergency plumbing orlando' scored: 182.606635
+[2025-09-15 05:28:02.367] [DEBUG] Processing keyword '24 hour plumber orlando fl': volume=40, cpc=76.92, competition=0.5899999737739563
+[2025-09-15 05:28:02.368] [DEBUG] Volume score (log10): 1.60, Adjusted CPC: 77.92, Adjusted Competition: 0.69
+[2025-09-15 05:28:02.368] [INFO] Arbitrage score calculated: 180.916695
+[2025-09-15 05:28:02.369] [DEBUG] Keyword '24 hour plumber orlando fl' scored: 180.916695
+[2025-09-15 05:28:02.369] [DEBUG] Processing keyword 'drain cleaning orlando': volume=110, cpc=12.0, competition=0.3499999940395355
+[2025-09-15 05:28:02.370] [DEBUG] Volume score (log10): 2.04, Adjusted CPC: 13.00, Adjusted Competition: 0.45
+[2025-09-15 05:28:02.371] [INFO] Arbitrage score calculated: 58.973567
+[2025-09-15 05:28:02.371] [DEBUG] Keyword 'drain cleaning orlando' scored: 58.973567
+[2025-09-15 05:28:02.371] [DEBUG] Processing keyword 'orlando drain cleaning': volume=110, cpc=9.99, competition=0.44999998807907104
+[2025-09-15 05:28:02.372] [DEBUG] Volume score (log10): 2.04, Adjusted CPC: 10.99, Adjusted Competition: 0.55
+[2025-09-15 05:28:02.372] [INFO] Arbitrage score calculated: 40.790738
+[2025-09-15 05:28:02.372] [DEBUG] Keyword 'orlando drain cleaning' scored: 40.790738
+[2025-09-15 05:28:02.373] [DEBUG] Processing keyword 'water heater repair orlando': volume=140, cpc=29.9, competition=0.49000000953674316
+[2025-09-15 05:28:02.373] [DEBUG] Volume score (log10): 2.15, Adjusted CPC: 30.90, Adjusted Competition: 0.59
+[2025-09-15 05:28:02.374] [INFO] Arbitrage score calculated: 112.398907
+[2025-09-15 05:28:02.375] [DEBUG] Keyword 'water heater repair orlando' scored: 112.398907
+[2025-09-15 05:28:02.375] [DEBUG] Processing keyword 'orlando water heater repair': volume=140, cpc=29.9, competition=0.49000000953674316
+[2025-09-15 05:28:02.375] [DEBUG] Volume score (log10): 2.15, Adjusted CPC: 30.90, Adjusted Competition: 0.59
+[2025-09-15 05:28:02.376] [INFO] Arbitrage score calculated: 112.398907
+[2025-09-15 05:28:02.376] [DEBUG] Keyword 'orlando water heater repair' scored: 112.398907
+[2025-09-15 05:28:02.376] [DEBUG] Processing keyword 'water heater repair orlando fl': volume=110, cpc=21.31, competition=0.46000000834465027
+[2025-09-15 05:28:02.376] [DEBUG] Volume score (log10): 2.04, Adjusted CPC: 22.31, Adjusted Competition: 0.56
+[2025-09-15 05:28:02.377] [INFO] Arbitrage score calculated: 81.327625
+[2025-09-15 05:28:02.377] [DEBUG] Keyword 'water heater repair orlando fl' scored: 81.327625
+[2025-09-15 05:28:02.377] [DEBUG] Processing keyword 'water heater replacement orlando': volume=50, cpc=12.79, competition=0.49000000953674316
+[2025-09-15 05:28:02.377] [DEBUG] Volume score (log10): 1.70, Adjusted CPC: 13.79, Adjusted Competition: 0.59
+[2025-09-15 05:28:02.378] [INFO] Arbitrage score calculated: 39.709824
+[2025-09-15 05:28:02.378] [DEBUG] Keyword 'water heater replacement orlando' scored: 39.709824
+[2025-09-15 05:28:02.378] [DEBUG] Processing keyword 'water heater orlando fl': volume=210, cpc=19.16, competition=0.4000000059604645
+[2025-09-15 05:28:02.378] [DEBUG] Volume score (log10): 2.32, Adjusted CPC: 20.16, Adjusted Competition: 0.50
+[2025-09-15 05:28:02.378] [INFO] Arbitrage score calculated: 93.631881
+[2025-09-15 05:28:02.379] [DEBUG] Keyword 'water heater orlando fl' scored: 93.631881
+[2025-09-15 05:28:02.379] [DEBUG] Processing keyword 'water heaters orlando': volume=210, cpc=19.16, competition=0.4000000059604645
+[2025-09-15 05:28:02.379] [DEBUG] Volume score (log10): 2.32, Adjusted CPC: 20.16, Adjusted Competition: 0.50
+[2025-09-15 05:28:02.379] [INFO] Arbitrage score calculated: 93.631881
+[2025-09-15 05:28:02.379] [DEBUG] Keyword 'water heaters orlando' scored: 93.631881
+[2025-09-15 05:28:02.380] [DEBUG] Processing keyword 'orlando water heater installation': volume=70, cpc=23.65, competition=0.5600000023841858
+[2025-09-15 05:28:02.380] [DEBUG] Volume score (log10): 1.85, Adjusted CPC: 24.65, Adjusted Competition: 0.66
+[2025-09-15 05:28:02.380] [INFO] Arbitrage score calculated: 68.911616
+[2025-09-15 05:28:02.380] [DEBUG] Keyword 'orlando water heater installation' scored: 68.911616
+[2025-09-15 05:28:02.381] [DEBUG] Processing keyword 'water heater installation orlando': volume=70, cpc=23.65, competition=0.5600000023841858
+[2025-09-15 05:28:02.381] [DEBUG] Volume score (log10): 1.85, Adjusted CPC: 24.65, Adjusted Competition: 0.66
+[2025-09-15 05:28:02.381] [INFO] Arbitrage score calculated: 68.911616
+[2025-09-15 05:28:02.381] [DEBUG] Keyword 'water heater installation orlando' scored: 68.911616
+[2025-09-15 05:28:02.381] [DEBUG] Processing keyword 'orlando water heater': volume=210, cpc=19.16, competition=0.4000000059604645
+[2025-09-15 05:28:02.382] [DEBUG] Volume score (log10): 2.32, Adjusted CPC: 20.16, Adjusted Competition: 0.50
+[2025-09-15 05:28:02.382] [INFO] Arbitrage score calculated: 93.631881
+[2025-09-15 05:28:02.383] [DEBUG] Keyword 'orlando water heater' scored: 93.631881
+[2025-09-15 05:28:02.383] [DEBUG] Processing keyword 'water heater orlando': volume=210, cpc=18.0, competition=0.46000000834465027
+[2025-09-15 05:28:02.383] [DEBUG] Volume score (log10): 2.32, Adjusted CPC: 19.00, Adjusted Competition: 0.56
+[2025-09-15 05:28:02.383] [INFO] Arbitrage score calculated: 78.789582
+[2025-09-15 05:28:02.383] [DEBUG] Keyword 'water heater orlando' scored: 78.789582
+[2025-09-15 05:28:02.383] [DEBUG] Processing keyword 'hot water heater repair orlando': volume=20, cpc=32.57, competition=0.8299999833106995
+[2025-09-15 05:28:02.384] [DEBUG] Volume score (log10): 1.30, Adjusted CPC: 33.57, Adjusted Competition: 0.93
+[2025-09-15 05:28:02.384] [INFO] Arbitrage score calculated: 46.962987
+[2025-09-15 05:28:02.384] [DEBUG] Keyword 'hot water heater repair orlando' scored: 46.962987
+[2025-09-15 05:28:02.384] [DEBUG] Processing keyword 'leak detection orlando': volume=720, cpc=20.04, competition=0.6100000143051147
+[2025-09-15 05:28:02.385] [DEBUG] Volume score (log10): 2.86, Adjusted CPC: 21.04, Adjusted Competition: 0.71
+[2025-09-15 05:28:02.385] [INFO] Arbitrage score calculated: 84.673626
+[2025-09-15 05:28:02.386] [DEBUG] Keyword 'leak detection orlando' scored: 84.673626
+[2025-09-15 05:28:02.386] [DEBUG] Processing keyword 'leak detection orlando florida': volume=720, cpc=20.04, competition=0.6100000143051147
+[2025-09-15 05:28:02.387] [DEBUG] Volume score (log10): 2.86, Adjusted CPC: 21.04, Adjusted Competition: 0.71
+[2025-09-15 05:28:02.388] [INFO] Arbitrage score calculated: 84.673626
+[2025-09-15 05:28:02.388] [DEBUG] Keyword 'leak detection orlando florida' scored: 84.673626
+[2025-09-15 05:28:02.388] [DEBUG] Processing keyword 'leak detection orlando fl': volume=720, cpc=20.04, competition=0.6100000143051147
+[2025-09-15 05:28:02.388] [DEBUG] Volume score (log10): 2.86, Adjusted CPC: 21.04, Adjusted Competition: 0.71
+[2025-09-15 05:28:02.389] [INFO] Arbitrage score calculated: 84.673626
+[2025-09-15 05:28:02.389] [DEBUG] Keyword 'leak detection orlando fl' scored: 84.673626
+[2025-09-15 05:28:02.389] [DEBUG] Processing keyword 'orlando water leak detection': volume=90, cpc=39.26, competition=0.5899999737739563
+[2025-09-15 05:28:02.389] [DEBUG] Volume score (log10): 1.95, Adjusted CPC: 40.26, Adjusted Competition: 0.69
+[2025-09-15 05:28:02.389] [INFO] Arbitrage score calculated: 114.025806
+[2025-09-15 05:28:02.390] [DEBUG] Keyword 'orlando water leak detection' scored: 114.025806
+[2025-09-15 05:28:02.390] [DEBUG] Processing keyword 'orlando leak detection': volume=720, cpc=20.04, competition=0.6100000143051147
+[2025-09-15 05:28:02.390] [DEBUG] Volume score (log10): 2.86, Adjusted CPC: 21.04, Adjusted Competition: 0.71
+[2025-09-15 05:28:02.390] [INFO] Arbitrage score calculated: 84.673626
+[2025-09-15 05:28:02.391] [DEBUG] Keyword 'orlando leak detection' scored: 84.673626
+[2025-09-15 05:28:02.391] [DEBUG] Processing keyword 'water leak detection orlando': volume=90, cpc=28.24, competition=0.6399999856948853
+[2025-09-15 05:28:02.391] [DEBUG] Volume score (log10): 1.95, Adjusted CPC: 29.24, Adjusted Competition: 0.74
+[2025-09-15 05:28:02.391] [INFO] Arbitrage score calculated: 77.218989
+[2025-09-15 05:28:02.392] [DEBUG] Keyword 'water leak detection orlando' scored: 77.218989
+[2025-09-15 05:28:02.392] [DEBUG] Processing keyword 'leak doctor orlando': volume=590, cpc=6.64, competition=0.5699999928474426
+[2025-09-15 05:28:02.392] [DEBUG] Volume score (log10): 2.77, Adjusted CPC: 7.64, Adjusted Competition: 0.67
+[2025-09-15 05:28:02.392] [INFO] Arbitrage score calculated: 31.595984
+[2025-09-15 05:28:02.393] [DEBUG] Keyword 'leak doctor orlando' scored: 31.595984
+[2025-09-15 05:28:02.393] [DEBUG] Processing keyword 'leak detection in orlando': volume=260, cpc=45.0, competition=0.6600000262260437
+[2025-09-15 05:28:02.393] [DEBUG] Volume score (log10): 2.41, Adjusted CPC: 46.00, Adjusted Competition: 0.76
+[2025-09-15 05:28:02.393] [INFO] Arbitrage score calculated: 146.169434
+[2025-09-15 05:28:02.394] [DEBUG] Keyword 'leak detection in orlando' scored: 146.169434
+[2025-09-15 05:28:02.394] [DEBUG] Processing keyword 'orlando leak detection orlando fl': volume=720, cpc=18.12, competition=0.6499999761581421
+[2025-09-15 05:28:02.394] [DEBUG] Volume score (log10): 2.86, Adjusted CPC: 19.12, Adjusted Competition: 0.75
+[2025-09-15 05:28:02.394] [INFO] Arbitrage score calculated: 72.842932
+[2025-09-15 05:28:02.394] [DEBUG] Keyword 'orlando leak detection orlando fl' scored: 72.842932
+[2025-09-15 05:28:02.395] [DEBUG] Processing keyword 'florida leak detectors orlando': volume=40, cpc=0.0, competition=0.4300000071525574
+[2025-09-15 05:28:02.395] [DEBUG] Volume score (log10): 1.60, Adjusted CPC: 1.00, Adjusted Competition: 0.53
+[2025-09-15 05:28:02.396] [INFO] Arbitrage score calculated: 3.022755
+[2025-09-15 05:28:02.396] [DEBUG] Keyword 'florida leak detectors orlando' scored: 3.022755
+[2025-09-15 05:28:02.396] [DEBUG] Processing keyword 'orlando leak locators': volume=40, cpc=21.44, competition=0.28999999165534973
+[2025-09-15 05:28:02.396] [DEBUG] Volume score (log10): 1.60, Adjusted CPC: 22.44, Adjusted Competition: 0.39
+[2025-09-15 05:28:02.397] [INFO] Arbitrage score calculated: 92.180069
+[2025-09-15 05:28:02.397] [DEBUG] Keyword 'orlando leak locators' scored: 92.180069
+[2025-09-15 05:28:02.397] [DEBUG] Processing keyword 'commercial plumbing orlando': volume=210, cpc=18.06, competition=0.6800000071525574
+[2025-09-15 05:28:02.397] [DEBUG] Volume score (log10): 2.32, Adjusted CPC: 19.06, Adjusted Competition: 0.78
+[2025-09-15 05:28:02.398] [INFO] Arbitrage score calculated: 56.745512
+[2025-09-15 05:28:02.398] [DEBUG] Keyword 'commercial plumbing orlando' scored: 56.745512
+[2025-09-15 05:28:02.398] [DEBUG] Processing keyword 'commercial plumbers in orlando fl': volume=210, cpc=18.06, competition=0.6800000071525574
+[2025-09-15 05:28:02.398] [DEBUG] Volume score (log10): 2.32, Adjusted CPC: 19.06, Adjusted Competition: 0.78
+[2025-09-15 05:28:02.399] [INFO] Arbitrage score calculated: 56.745512
+[2025-09-15 05:28:02.399] [DEBUG] Keyword 'commercial plumbers in orlando fl' scored: 56.745512
+[2025-09-15 05:28:02.399] [DEBUG] Processing keyword 'orlando commercial plumbing': volume=210, cpc=18.06, competition=0.6800000071525574
+[2025-09-15 05:28:02.399] [DEBUG] Volume score (log10): 2.32, Adjusted CPC: 19.06, Adjusted Competition: 0.78
+[2025-09-15 05:28:02.399] [INFO] Arbitrage score calculated: 56.745512
+[2025-09-15 05:28:02.400] [DEBUG] Keyword 'orlando commercial plumbing' scored: 56.745512
+[2025-09-15 05:28:02.400] [DEBUG] Processing keyword 'commercial plumbers orlando': volume=210, cpc=4.9, competition=0.5699999928474426
+[2025-09-15 05:28:02.400] [DEBUG] Volume score (log10): 2.32, Adjusted CPC: 5.90, Adjusted Competition: 0.67
+[2025-09-15 05:28:02.400] [INFO] Arbitrage score calculated: 20.449394
+[2025-09-15 05:28:02.400] [DEBUG] Keyword 'commercial plumbers orlando' scored: 20.449394
+[2025-09-15 05:28:02.400] [DEBUG] Processing keyword 'orlando commercial plumbers': volume=210, cpc=18.06, competition=0.6800000071525574
+[2025-09-15 05:28:02.401] [DEBUG] Volume score (log10): 2.32, Adjusted CPC: 19.06, Adjusted Competition: 0.78
+[2025-09-15 05:28:02.401] [INFO] Arbitrage score calculated: 56.745512
+[2025-09-15 05:28:02.401] [DEBUG] Keyword 'orlando commercial plumbers' scored: 56.745512
+[2025-09-15 05:28:02.402] [DEBUG] Processing keyword 'orlando plumbing': volume=4400, cpc=17.74, competition=0.5699999928474426
+[2025-09-15 05:28:02.402] [DEBUG] Volume score (log10): 3.64, Adjusted CPC: 18.74, Adjusted Competition: 0.67
+[2025-09-15 05:28:02.403] [INFO] Arbitrage score calculated: 101.907916
+[2025-09-15 05:28:02.404] [DEBUG] Keyword 'orlando plumbing' scored: 101.907916
+[2025-09-15 05:28:02.404] [DEBUG] Processing keyword 'orlando commercial plumber': volume=210, cpc=18.06, competition=0.6800000071525574
+[2025-09-15 05:28:02.404] [DEBUG] Volume score (log10): 2.32, Adjusted CPC: 19.06, Adjusted Competition: 0.78
+[2025-09-15 05:28:02.405] [INFO] Arbitrage score calculated: 56.745512
+[2025-09-15 05:28:02.405] [DEBUG] Keyword 'orlando commercial plumber' scored: 56.745512
+[2025-09-15 05:28:02.406] [DEBUG] Processing keyword 'plumber in orlando': volume=4400, cpc=21.03, competition=0.5699999928474426
+[2025-09-15 05:28:02.406] [DEBUG] Volume score (log10): 3.64, Adjusted CPC: 22.03, Adjusted Competition: 0.67
+[2025-09-15 05:28:02.406] [INFO] Arbitrage score calculated: 119.798900
+[2025-09-15 05:28:02.407] [DEBUG] Keyword 'plumber in orlando' scored: 119.798900
+[2025-09-15 05:28:02.407] [DEBUG] Processing keyword 'plumbing in orlando': volume=4400, cpc=21.03, competition=0.5699999928474426
+[2025-09-15 05:28:02.407] [DEBUG] Volume score (log10): 3.64, Adjusted CPC: 22.03, Adjusted Competition: 0.67
+[2025-09-15 05:28:02.408] [INFO] Arbitrage score calculated: 119.798900
+[2025-09-15 05:28:02.408] [DEBUG] Keyword 'plumbing in orlando' scored: 119.798900
+[2025-09-15 05:28:02.408] [INFO] Finished scoring. 50 keywords have been scored.
+[2025-09-15 05:28:02.408] [INFO] Sorting scored keywords by arbitrage score (descending)...
+[2025-09-15 05:28:02.408] [DEBUG] Top 5 scored keywords: [{'keyword': 'orlando emergency plumber', 'search_volume': 480, 'cpc': 73.41, 'competition': 0.38999998569488525, 'arbitrage_score': 407.165646, 'blueprint': {'title_idea': 'Emergency Orlando Emergency Plumber: 24/7 Fast Response', 'content_angle': 'Comparison / listicle', 'monetization_hint': 'Service / conversion page'}, 'customer_domain_authority': {'domain': 'https://www.benjaminfranklinplumbing.com/', 'keyword_count_top10': 10784, 'traffic': 730355.3}}, {'keyword': 'emergency plumber orlando', 'search_volume': 480, 'cpc': 63.7, 'competition': 0.8500000238418579, 'arbitrage_score': 182.606635, 'blueprint': {'title_idea': 'Emergency Emergency Plumber Orlando: 24/7 Fast Response', 'content_angle': 'In-depth guide / landing page', 'monetization_hint': 'Service / conversion page'}, 'customer_domain_authority': {'domain': 'https://www.benjaminfranklinplumbing.com/', 'keyword_count_top10': 10784, 'traffic': 730355.3}}, {'keyword': 'emergency plumber orlando fl', 'search_volume': 480, 'cpc': 63.7, 'competition': 0.8500000238418579, 'arbitrage_score': 182.606635, 'blueprint': {'title_idea': 'Emergency Emergency Plumber Orlando Fl: 24/7 Fast Response', 'content_angle': 'In-depth guide / landing page', 'monetization_hint': 'Service / conversion page'}, 'customer_domain_authority': {'domain': 'https://www.benjaminfranklinplumbing.com/', 'keyword_count_top10': 10784, 'traffic': 730355.3}}, {'keyword': 'emergency plumbing orlando', 'search_volume': 480, 'cpc': 63.7, 'competition': 0.8500000238418579, 'arbitrage_score': 182.606635, 'blueprint': {'title_idea': 'Emergency Emergency Plumbing Orlando: 24/7 Fast Response', 'content_angle': 'In-depth guide / landing page', 'monetization_hint': 'Service / conversion page'}, 'customer_domain_authority': {'domain': 'https://www.benjaminfranklinplumbing.com/', 'keyword_count_top10': 10784, 'traffic': 730355.3}}, {'keyword': '24 hour plumber orlando', 'search_volume': 40, 'cpc': 76.92, 'competition': 0.5899999737739563, 'arbitrage_score': 180.916695, 'blueprint': {'title_idea': '24 Hour Plumber Orlando Services: Your Local Experts', 'content_angle': 'Comparison / listicle', 'monetization_hint': 'Service / conversion page'}, 'customer_domain_authority': {'domain': 'https://www.benjaminfranklinplumbing.com/', 'keyword_count_top10': 10784, 'traffic': 730355.3}}]
+[2025-09-15 05:28:02.410] [INFO] Clustering keywords by overlap...
+[2025-09-15 05:28:02.410] [INFO] Starting keyword clustering with 50 keywords, min_common_words=2.
+[2025-09-15 05:28:02.410] [DEBUG] New cluster started with primary: 'orlando emergency plumber'.
+[2025-09-15 05:28:02.411] [DEBUG] Added 'emergency plumber orlando' to cluster for 'orlando emergency plumber' (common words: 3).
+[2025-09-15 05:28:02.411] [DEBUG] Added 'emergency plumber orlando fl' to cluster for 'orlando emergency plumber' (common words: 3).
+[2025-09-15 05:28:02.411] [DEBUG] Added 'emergency plumbing orlando' to cluster for 'orlando emergency plumber' (common words: 2).
+[2025-09-15 05:28:02.411] [DEBUG] Added '24 hour plumber orlando' to cluster for 'orlando emergency plumber' (common words: 2).
+[2025-09-15 05:28:02.412] [DEBUG] Added '24 hour plumber orlando fl' to cluster for 'orlando emergency plumber' (common words: 2).
+[2025-09-15 05:28:02.412] [DEBUG] Candidate 'leak detection in orlando' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.412] [DEBUG] Added 'plumber orlando' to cluster for 'orlando emergency plumber' (common words: 2).
+[2025-09-15 05:28:02.412] [DEBUG] Added 'orlando plumber' to cluster for 'orlando emergency plumber' (common words: 2).
+[2025-09-15 05:28:02.412] [DEBUG] Added 'plumber in orlando fl' to cluster for 'orlando emergency plumber' (common words: 2).
+[2025-09-15 05:28:02.413] [DEBUG] Added 'plumber in orlando florida' to cluster for 'orlando emergency plumber' (common words: 2).
+[2025-09-15 05:28:02.413] [DEBUG] Added 'plumber orlando florida' to cluster for 'orlando emergency plumber' (common words: 2).
+[2025-09-15 05:28:02.413] [DEBUG] Candidate 'plumbers in orlando' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.414] [DEBUG] Candidate 'plumbers orlando' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.414] [DEBUG] Added 'plumber in orlando' to cluster for 'orlando emergency plumber' (common words: 2).
+[2025-09-15 05:28:02.414] [DEBUG] Candidate 'plumbing in orlando' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.415] [DEBUG] Candidate 'orlando water leak detection' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.415] [DEBUG] Candidate 'water heater repair orlando' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.415] [DEBUG] Candidate 'orlando water heater repair' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.415] [DEBUG] Candidate 'orlando plumbers' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.416] [DEBUG] Added 'plumber orlando fl' to cluster for 'orlando emergency plumber' (common words: 2).
+[2025-09-15 05:28:02.416] [DEBUG] Candidate 'plumbing orlando' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.416] [DEBUG] Candidate 'plumbing orlando fl' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.416] [DEBUG] Candidate 'orlando plumbing' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.416] [DEBUG] Candidate 'water heater orlando fl' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.417] [DEBUG] Candidate 'water heaters orlando' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.417] [DEBUG] Candidate 'orlando water heater' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.417] [DEBUG] Candidate 'orlando leak locators' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.417] [DEBUG] Candidate 'leak detection orlando' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.418] [DEBUG] Candidate 'leak detection orlando florida' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.418] [DEBUG] Candidate 'leak detection orlando fl' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.419] [DEBUG] Candidate 'orlando leak detection' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.419] [DEBUG] Candidate 'water heater repair orlando fl' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.421] [DEBUG] Candidate 'water heater orlando' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.421] [DEBUG] Candidate 'water leak detection orlando' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.422] [DEBUG] Candidate 'orlando leak detection orlando fl' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.422] [DEBUG] Candidate 'orlando water heater installation' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.422] [DEBUG] Candidate 'water heater installation orlando' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.423] [DEBUG] Candidate 'drain cleaning orlando' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.423] [DEBUG] Candidate 'commercial plumbing orlando' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.423] [DEBUG] Candidate 'commercial plumbers in orlando fl' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.424] [DEBUG] Candidate 'orlando commercial plumbing' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.424] [DEBUG] Candidate 'orlando commercial plumbers' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.424] [DEBUG] Added 'orlando commercial plumber' to cluster for 'orlando emergency plumber' (common words: 2).
+[2025-09-15 05:28:02.425] [DEBUG] Candidate 'hot water heater repair orlando' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.425] [DEBUG] Candidate 'orlando drain cleaning' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.425] [DEBUG] Candidate 'water heater replacement orlando' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.425] [DEBUG] Candidate 'leak doctor orlando' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.425] [DEBUG] Candidate 'commercial plumbers orlando' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.426] [DEBUG] Candidate 'florida leak detectors orlando' does not meet common word threshold for 'orlando emergency plumber'.
+[2025-09-15 05:28:02.426] [DEBUG] Cluster for 'orlando emergency plumber' finalized with 13 related keywords.
+[2025-09-15 05:28:02.426] [DEBUG] Keyword 'emergency plumber orlando' already used, skipping.
+[2025-09-15 05:28:02.426] [DEBUG] Keyword 'emergency plumber orlando fl' already used, skipping.
+[2025-09-15 05:28:02.426] [DEBUG] Keyword 'emergency plumbing orlando' already used, skipping.
+[2025-09-15 05:28:02.427] [DEBUG] Keyword '24 hour plumber orlando' already used, skipping.
+[2025-09-15 05:28:02.427] [DEBUG] Keyword '24 hour plumber orlando fl' already used, skipping.
+[2025-09-15 05:28:02.427] [DEBUG] New cluster started with primary: 'leak detection in orlando'.
+[2025-09-15 05:28:02.427] [DEBUG] Candidate 'plumber orlando' already used, skipping.
+[2025-09-15 05:28:02.427] [DEBUG] Candidate 'orlando plumber' already used, skipping.
+[2025-09-15 05:28:02.428] [DEBUG] Candidate 'plumber in orlando fl' already used, skipping.
+[2025-09-15 05:28:02.428] [DEBUG] Candidate 'plumber in orlando florida' already used, skipping.
+[2025-09-15 05:28:02.428] [DEBUG] Candidate 'plumber orlando florida' already used, skipping.
+[2025-09-15 05:28:02.429] [DEBUG] Added 'plumbers in orlando' to cluster for 'leak detection in orlando' (common words: 2).
+[2025-09-15 05:28:02.429] [DEBUG] Candidate 'plumbers orlando' does not meet common word threshold for 'leak detection in orlando'.
+[2025-09-15 05:28:02.429] [DEBUG] Candidate 'plumber in orlando' already used, skipping.
+[2025-09-15 05:28:02.430] [DEBUG] Added 'plumbing in orlando' to cluster for 'leak detection in orlando' (common words: 2).
+[2025-09-15 05:28:02.430] [DEBUG] Added 'orlando water leak detection' to cluster for 'leak detection in orlando' (common words: 3).
+[2025-09-15 05:28:02.431] [DEBUG] Candidate 'water heater repair orlando' does not meet common word threshold for 'leak detection in orlando'.
+[2025-09-15 05:28:02.431] [DEBUG] Candidate 'orlando water heater repair' does not meet common word threshold for 'leak detection in orlando'.
+[2025-09-15 05:28:02.431] [DEBUG] Candidate 'orlando plumbers' does not meet common word threshold for 'leak detection in orlando'.
+[2025-09-15 05:28:02.431] [DEBUG] Candidate 'plumber orlando fl' already used, skipping.
+[2025-09-15 05:28:02.431] [DEBUG] Candidate 'plumbing orlando' does not meet common word threshold for 'leak detection in orlando'.
+[2025-09-15 05:28:02.432] [DEBUG] Candidate 'plumbing orlando fl' does not meet common word threshold for 'leak detection in orlando'.
+[2025-09-15 05:28:02.432] [DEBUG] Candidate 'orlando plumbing' does not meet common word threshold for 'leak detection in orlando'.
+[2025-09-15 05:28:02.432] [DEBUG] Candidate 'water heater orlando fl' does not meet common word threshold for 'leak detection in orlando'.
+[2025-09-15 05:28:02.432] [DEBUG] Candidate 'water heaters orlando' does not meet common word threshold for 'leak detection in orlando'.
+[2025-09-15 05:28:02.433] [DEBUG] Candidate 'orlando water heater' does not meet common word threshold for 'leak detection in orlando'.
+[2025-09-15 05:28:02.433] [DEBUG] Added 'orlando leak locators' to cluster for 'leak detection in orlando' (common words: 2).
+[2025-09-15 05:28:02.433] [DEBUG] Added 'leak detection orlando' to cluster for 'leak detection in orlando' (common words: 3).
+[2025-09-15 05:28:02.433] [DEBUG] Added 'leak detection orlando florida' to cluster for 'leak detection in orlando' (common words: 3).
+[2025-09-15 05:28:02.434] [DEBUG] Added 'leak detection orlando fl' to cluster for 'leak detection in orlando' (common words: 3).
+[2025-09-15 05:28:02.434] [DEBUG] Added 'orlando leak detection' to cluster for 'leak detection in orlando' (common words: 3).
+[2025-09-15 05:28:02.434] [DEBUG] Candidate 'water heater repair orlando fl' does not meet common word threshold for 'leak detection in orlando'.
+[2025-09-15 05:28:02.434] [DEBUG] Candidate 'water heater orlando' does not meet common word threshold for 'leak detection in orlando'.
+[2025-09-15 05:28:02.435] [DEBUG] Added 'water leak detection orlando' to cluster for 'leak detection in orlando' (common words: 3).
+[2025-09-15 05:28:02.437] [DEBUG] Added 'orlando leak detection orlando fl' to cluster for 'leak detection in orlando' (common words: 3).
+[2025-09-15 05:28:02.437] [DEBUG] Candidate 'orlando water heater installation' does not meet common word threshold for 'leak detection in orlando'.
+[2025-09-15 05:28:02.438] [DEBUG] Candidate 'water heater installation orlando' does not meet common word threshold for 'leak detection in orlando'.
+[2025-09-15 05:28:02.438] [DEBUG] Candidate 'drain cleaning orlando' does not meet common word threshold for 'leak detection in orlando'.
+[2025-09-15 05:28:02.439] [DEBUG] Candidate 'commercial plumbing orlando' does not meet common word threshold for 'leak detection in orlando'.
+[2025-09-15 05:28:02.439] [DEBUG] Added 'commercial plumbers in orlando fl' to cluster for 'leak detection in orlando' (common words: 2).
+[2025-09-15 05:28:02.440] [DEBUG] Candidate 'orlando commercial plumbing' does not meet common word threshold for 'leak detection in orlando'.
+[2025-09-15 05:28:02.440] [DEBUG] Candidate 'orlando commercial plumbers' does not meet common word threshold for 'leak detection in orlando'.
+[2025-09-15 05:28:02.440] [DEBUG] Candidate 'orlando commercial plumber' already used, skipping.
+[2025-09-15 05:28:02.441] [DEBUG] Candidate 'hot water heater repair orlando' does not meet common word threshold for 'leak detection in orlando'.
+[2025-09-15 05:28:02.441] [DEBUG] Candidate 'orlando drain cleaning' does not meet common word threshold for 'leak detection in orlando'.
+[2025-09-15 05:28:02.441] [DEBUG] Candidate 'water heater replacement orlando' does not meet common word threshold for 'leak detection in orlando'.
+[2025-09-15 05:28:02.442] [DEBUG] Added 'leak doctor orlando' to cluster for 'leak detection in orlando' (common words: 2).
+[2025-09-15 05:28:02.442] [DEBUG] Candidate 'commercial plumbers orlando' does not meet common word threshold for 'leak detection in orlando'.
+[2025-09-15 05:28:02.442] [DEBUG] Added 'florida leak detectors orlando' to cluster for 'leak detection in orlando' (common words: 2).
+[2025-09-15 05:28:02.442] [DEBUG] Cluster for 'leak detection in orlando' finalized with 13 related keywords.
+[2025-09-15 05:28:02.442] [DEBUG] Keyword 'plumber orlando' already used, skipping.
+[2025-09-15 05:28:02.443] [DEBUG] Keyword 'orlando plumber' already used, skipping.
+[2025-09-15 05:28:02.443] [DEBUG] Keyword 'plumber in orlando fl' already used, skipping.
+[2025-09-15 05:28:02.443] [DEBUG] Keyword 'plumber in orlando florida' already used, skipping.
+[2025-09-15 05:28:02.443] [DEBUG] Keyword 'plumber orlando florida' already used, skipping.
+[2025-09-15 05:28:02.443] [DEBUG] Keyword 'plumbers in orlando' already used, skipping.
+[2025-09-15 05:28:02.443] [DEBUG] New cluster started with primary: 'plumbers orlando'.
+[2025-09-15 05:28:02.444] [DEBUG] Candidate 'plumber in orlando' already used, skipping.
+[2025-09-15 05:28:02.444] [DEBUG] Candidate 'plumbing in orlando' already used, skipping.
+[2025-09-15 05:28:02.444] [DEBUG] Candidate 'orlando water leak detection' already used, skipping.
+[2025-09-15 05:28:02.444] [DEBUG] Candidate 'water heater repair orlando' does not meet common word threshold for 'plumbers orlando'.
+[2025-09-15 05:28:02.445] [DEBUG] Candidate 'orlando water heater repair' does not meet common word threshold for 'plumbers orlando'.
+[2025-09-15 05:28:02.445] [DEBUG] Added 'orlando plumbers' to cluster for 'plumbers orlando' (common words: 2).
+[2025-09-15 05:28:02.445] [DEBUG] Candidate 'plumber orlando fl' already used, skipping.
+[2025-09-15 05:28:02.445] [DEBUG] Candidate 'plumbing orlando' does not meet common word threshold for 'plumbers orlando'.
+[2025-09-15 05:28:02.445] [DEBUG] Candidate 'plumbing orlando fl' does not meet common word threshold for 'plumbers orlando'.
+[2025-09-15 05:28:02.446] [DEBUG] Candidate 'orlando plumbing' does not meet common word threshold for 'plumbers orlando'.
+[2025-09-15 05:28:02.446] [DEBUG] Candidate 'water heater orlando fl' does not meet common word threshold for 'plumbers orlando'.
+[2025-09-15 05:28:02.447] [DEBUG] Candidate 'water heaters orlando' does not meet common word threshold for 'plumbers orlando'.
+[2025-09-15 05:28:02.447] [DEBUG] Candidate 'orlando water heater' does not meet common word threshold for 'plumbers orlando'.
+[2025-09-15 05:28:02.447] [DEBUG] Candidate 'orlando leak locators' already used, skipping.
+[2025-09-15 05:28:02.447] [DEBUG] Candidate 'leak detection orlando' already used, skipping.
+[2025-09-15 05:28:02.447] [DEBUG] Candidate 'leak detection orlando florida' already used, skipping.
+[2025-09-15 05:28:02.448] [DEBUG] Candidate 'leak detection orlando fl' already used, skipping.
+[2025-09-15 05:28:02.448] [DEBUG] Candidate 'orlando leak detection' already used, skipping.
+[2025-09-15 05:28:02.448] [DEBUG] Candidate 'water heater repair orlando fl' does not meet common word threshold for 'plumbers orlando'.
+[2025-09-15 05:28:02.448] [DEBUG] Candidate 'water heater orlando' does not meet common word threshold for 'plumbers orlando'.
+[2025-09-15 05:28:02.448] [DEBUG] Candidate 'water leak detection orlando' already used, skipping.
+[2025-09-15 05:28:02.449] [DEBUG] Candidate 'orlando leak detection orlando fl' already used, skipping.
+[2025-09-15 05:28:02.449] [DEBUG] Candidate 'orlando water heater installation' does not meet common word threshold for 'plumbers orlando'.
+[2025-09-15 05:28:02.449] [DEBUG] Candidate 'water heater installation orlando' does not meet common word threshold for 'plumbers orlando'.
+[2025-09-15 05:28:02.449] [DEBUG] Candidate 'drain cleaning orlando' does not meet common word threshold for 'plumbers orlando'.
+[2025-09-15 05:28:02.450] [DEBUG] Candidate 'commercial plumbing orlando' does not meet common word threshold for 'plumbers orlando'.
+[2025-09-15 05:28:02.450] [DEBUG] Candidate 'commercial plumbers in orlando fl' already used, skipping.
+[2025-09-15 05:28:02.450] [DEBUG] Candidate 'orlando commercial plumbing' does not meet common word threshold for 'plumbers orlando'.
+[2025-09-15 05:28:02.450] [DEBUG] Added 'orlando commercial plumbers' to cluster for 'plumbers orlando' (common words: 2).
+[2025-09-15 05:28:02.451] [DEBUG] Candidate 'orlando commercial plumber' already used, skipping.
+[2025-09-15 05:28:02.451] [DEBUG] Candidate 'hot water heater repair orlando' does not meet common word threshold for 'plumbers orlando'.
+[2025-09-15 05:28:02.451] [DEBUG] Candidate 'orlando drain cleaning' does not meet common word threshold for 'plumbers orlando'.
+[2025-09-15 05:28:02.451] [DEBUG] Candidate 'water heater replacement orlando' does not meet common word threshold for 'plumbers orlando'.
+[2025-09-15 05:28:02.452] [DEBUG] Candidate 'leak doctor orlando' already used, skipping.
+[2025-09-15 05:28:02.452] [DEBUG] Added 'commercial plumbers orlando' to cluster for 'plumbers orlando' (common words: 2).
+[2025-09-15 05:28:02.453] [DEBUG] Candidate 'florida leak detectors orlando' already used, skipping.
+[2025-09-15 05:28:02.453] [DEBUG] Cluster for 'plumbers orlando' finalized with 3 related keywords.
+[2025-09-15 05:28:02.454] [DEBUG] Keyword 'plumber in orlando' already used, skipping.
+[2025-09-15 05:28:02.454] [DEBUG] Keyword 'plumbing in orlando' already used, skipping.
+[2025-09-15 05:28:02.455] [DEBUG] Keyword 'orlando water leak detection' already used, skipping.
+[2025-09-15 05:28:02.455] [DEBUG] New cluster started with primary: 'water heater repair orlando'.
+[2025-09-15 05:28:02.456] [DEBUG] Added 'orlando water heater repair' to cluster for 'water heater repair orlando' (common words: 4).
+[2025-09-15 05:28:02.456] [DEBUG] Candidate 'orlando plumbers' already used, skipping.
+[2025-09-15 05:28:02.456] [DEBUG] Candidate 'plumber orlando fl' already used, skipping.
+[2025-09-15 05:28:02.456] [DEBUG] Candidate 'plumbing orlando' does not meet common word threshold for 'water heater repair orlando'.
+[2025-09-15 05:28:02.457] [DEBUG] Candidate 'plumbing orlando fl' does not meet common word threshold for 'water heater repair orlando'.
+[2025-09-15 05:28:02.457] [DEBUG] Candidate 'orlando plumbing' does not meet common word threshold for 'water heater repair orlando'.
+[2025-09-15 05:28:02.458] [DEBUG] Added 'water heater orlando fl' to cluster for 'water heater repair orlando' (common words: 3).
+[2025-09-15 05:28:02.458] [DEBUG] Added 'water heaters orlando' to cluster for 'water heater repair orlando' (common words: 2).
+[2025-09-15 05:28:02.458] [DEBUG] Added 'orlando water heater' to cluster for 'water heater repair orlando' (common words: 3).
+[2025-09-15 05:28:02.458] [DEBUG] Candidate 'orlando leak locators' already used, skipping.
+[2025-09-15 05:28:02.459] [DEBUG] Candidate 'leak detection orlando' already used, skipping.
+[2025-09-15 05:28:02.459] [DEBUG] Candidate 'leak detection orlando florida' already used, skipping.
+[2025-09-15 05:28:02.459] [DEBUG] Candidate 'leak detection orlando fl' already used, skipping.
+[2025-09-15 05:28:02.459] [DEBUG] Candidate 'orlando leak detection' already used, skipping.
+[2025-09-15 05:28:02.459] [DEBUG] Added 'water heater repair orlando fl' to cluster for 'water heater repair orlando' (common words: 4).
+[2025-09-15 05:28:02.460] [DEBUG] Added 'water heater orlando' to cluster for 'water heater repair orlando' (common words: 3).
+[2025-09-15 05:28:02.460] [DEBUG] Candidate 'water leak detection orlando' already used, skipping.
+[2025-09-15 05:28:02.460] [DEBUG] Candidate 'orlando leak detection orlando fl' already used, skipping.
+[2025-09-15 05:28:02.461] [DEBUG] Added 'orlando water heater installation' to cluster for 'water heater repair orlando' (common words: 3).
+[2025-09-15 05:28:02.461] [DEBUG] Added 'water heater installation orlando' to cluster for 'water heater repair orlando' (common words: 3).
+[2025-09-15 05:28:02.461] [DEBUG] Candidate 'drain cleaning orlando' does not meet common word threshold for 'water heater repair orlando'.
+[2025-09-15 05:28:02.461] [DEBUG] Candidate 'commercial plumbing orlando' does not meet common word threshold for 'water heater repair orlando'.
+[2025-09-15 05:28:02.461] [DEBUG] Candidate 'commercial plumbers in orlando fl' already used, skipping.
+[2025-09-15 05:28:02.462] [DEBUG] Candidate 'orlando commercial plumbing' does not meet common word threshold for 'water heater repair orlando'.
+[2025-09-15 05:28:02.462] [DEBUG] Candidate 'orlando commercial plumbers' already used, skipping.
+[2025-09-15 05:28:02.462] [DEBUG] Candidate 'orlando commercial plumber' already used, skipping.
+[2025-09-15 05:28:02.462] [DEBUG] Added 'hot water heater repair orlando' to cluster for 'water heater repair orlando' (common words: 4).
+[2025-09-15 05:28:02.463] [DEBUG] Candidate 'orlando drain cleaning' does not meet common word threshold for 'water heater repair orlando'.
+[2025-09-15 05:28:02.463] [DEBUG] Added 'water heater replacement orlando' to cluster for 'water heater repair orlando' (common words: 3).
+[2025-09-15 05:28:02.463] [DEBUG] Candidate 'leak doctor orlando' already used, skipping.
+[2025-09-15 05:28:02.463] [DEBUG] Candidate 'commercial plumbers orlando' already used, skipping.
+[2025-09-15 05:28:02.464] [DEBUG] Candidate 'florida leak detectors orlando' already used, skipping.
+[2025-09-15 05:28:02.464] [DEBUG] Cluster for 'water heater repair orlando' finalized with 10 related keywords.
+[2025-09-15 05:28:02.464] [DEBUG] Keyword 'orlando water heater repair' already used, skipping.
+[2025-09-15 05:28:02.465] [DEBUG] Keyword 'orlando plumbers' already used, skipping.
+[2025-09-15 05:28:02.465] [DEBUG] Keyword 'plumber orlando fl' already used, skipping.
+[2025-09-15 05:28:02.465] [DEBUG] New cluster started with primary: 'plumbing orlando'.
+[2025-09-15 05:28:02.465] [DEBUG] Added 'plumbing orlando fl' to cluster for 'plumbing orlando' (common words: 2).
+[2025-09-15 05:28:02.465] [DEBUG] Added 'orlando plumbing' to cluster for 'plumbing orlando' (common words: 2).
+[2025-09-15 05:28:02.466] [DEBUG] Candidate 'water heater orlando fl' already used, skipping.
+[2025-09-15 05:28:02.466] [DEBUG] Candidate 'water heaters orlando' already used, skipping.
+[2025-09-15 05:28:02.466] [DEBUG] Candidate 'orlando water heater' already used, skipping.
+[2025-09-15 05:28:02.466] [DEBUG] Candidate 'orlando leak locators' already used, skipping.
+[2025-09-15 05:28:02.466] [DEBUG] Candidate 'leak detection orlando' already used, skipping.
+[2025-09-15 05:28:02.466] [DEBUG] Candidate 'leak detection orlando florida' already used, skipping.
+[2025-09-15 05:28:02.467] [DEBUG] Candidate 'leak detection orlando fl' already used, skipping.
+[2025-09-15 05:28:02.467] [DEBUG] Candidate 'orlando leak detection' already used, skipping.
+[2025-09-15 05:28:02.467] [DEBUG] Candidate 'water heater repair orlando fl' already used, skipping.
+[2025-09-15 05:28:02.467] [DEBUG] Candidate 'water heater orlando' already used, skipping.
+[2025-09-15 05:28:02.467] [DEBUG] Candidate 'water leak detection orlando' already used, skipping.
+[2025-09-15 05:28:02.468] [DEBUG] Candidate 'orlando leak detection orlando fl' already used, skipping.
+[2025-09-15 05:28:02.468] [DEBUG] Candidate 'orlando water heater installation' already used, skipping.
+[2025-09-15 05:28:02.468] [DEBUG] Candidate 'water heater installation orlando' already used, skipping.
+[2025-09-15 05:28:02.468] [DEBUG] Candidate 'drain cleaning orlando' does not meet common word threshold for 'plumbing orlando'.
+[2025-09-15 05:28:02.469] [DEBUG] Added 'commercial plumbing orlando' to cluster for 'plumbing orlando' (common words: 2).
+[2025-09-15 05:28:02.469] [DEBUG] Candidate 'commercial plumbers in orlando fl' already used, skipping.
+[2025-09-15 05:28:02.470] [DEBUG] Added 'orlando commercial plumbing' to cluster for 'plumbing orlando' (common words: 2).
+[2025-09-15 05:28:02.471] [DEBUG] Candidate 'orlando commercial plumbers' already used, skipping.
+[2025-09-15 05:28:02.471] [DEBUG] Candidate 'orlando commercial plumber' already used, skipping.
+[2025-09-15 05:28:02.472] [DEBUG] Candidate 'hot water heater repair orlando' already used, skipping.
+[2025-09-15 05:28:02.472] [DEBUG] Candidate 'orlando drain cleaning' does not meet common word threshold for 'plumbing orlando'.
+[2025-09-15 05:28:02.472] [DEBUG] Candidate 'water heater replacement orlando' already used, skipping.
+[2025-09-15 05:28:02.472] [DEBUG] Candidate 'leak doctor orlando' already used, skipping.
+[2025-09-15 05:28:02.472] [DEBUG] Candidate 'commercial plumbers orlando' already used, skipping.
+[2025-09-15 05:28:02.473] [DEBUG] Candidate 'florida leak detectors orlando' already used, skipping.
+[2025-09-15 05:28:02.473] [DEBUG] Cluster for 'plumbing orlando' finalized with 4 related keywords.
+[2025-09-15 05:28:02.473] [DEBUG] Keyword 'plumbing orlando fl' already used, skipping.
+[2025-09-15 05:28:02.473] [DEBUG] Keyword 'orlando plumbing' already used, skipping.
+[2025-09-15 05:28:02.474] [DEBUG] Keyword 'water heater orlando fl' already used, skipping.
+[2025-09-15 05:28:02.474] [DEBUG] Keyword 'water heaters orlando' already used, skipping.
+[2025-09-15 05:28:02.474] [DEBUG] Keyword 'orlando water heater' already used, skipping.
+[2025-09-15 05:28:02.474] [DEBUG] Keyword 'orlando leak locators' already used, skipping.
+[2025-09-15 05:28:02.474] [DEBUG] Keyword 'leak detection orlando' already used, skipping.
+[2025-09-15 05:28:02.475] [DEBUG] Keyword 'leak detection orlando florida' already used, skipping.
+[2025-09-15 05:28:02.475] [DEBUG] Keyword 'leak detection orlando fl' already used, skipping.
+[2025-09-15 05:28:02.475] [DEBUG] Keyword 'orlando leak detection' already used, skipping.
+[2025-09-15 05:28:02.475] [DEBUG] Keyword 'water heater repair orlando fl' already used, skipping.
+[2025-09-15 05:28:02.475] [DEBUG] Keyword 'water heater orlando' already used, skipping.
+[2025-09-15 05:28:02.475] [DEBUG] Keyword 'water leak detection orlando' already used, skipping.
+[2025-09-15 05:28:02.476] [DEBUG] Keyword 'orlando leak detection orlando fl' already used, skipping.
+[2025-09-15 05:28:02.476] [DEBUG] Keyword 'orlando water heater installation' already used, skipping.
+[2025-09-15 05:28:02.477] [DEBUG] Keyword 'water heater installation orlando' already used, skipping.
+[2025-09-15 05:28:02.477] [DEBUG] New cluster started with primary: 'drain cleaning orlando'.
+[2025-09-15 05:28:02.477] [DEBUG] Candidate 'commercial plumbing orlando' already used, skipping.
+[2025-09-15 05:28:02.478] [DEBUG] Candidate 'commercial plumbers in orlando fl' already used, skipping.
+[2025-09-15 05:28:02.478] [DEBUG] Candidate 'orlando commercial plumbing' already used, skipping.
+[2025-09-15 05:28:02.479] [DEBUG] Candidate 'orlando commercial plumbers' already used, skipping.
+[2025-09-15 05:28:02.479] [DEBUG] Candidate 'orlando commercial plumber' already used, skipping.
+[2025-09-15 05:28:02.479] [DEBUG] Candidate 'hot water heater repair orlando' already used, skipping.
+[2025-09-15 05:28:02.480] [DEBUG] Added 'orlando drain cleaning' to cluster for 'drain cleaning orlando' (common words: 3).
+[2025-09-15 05:28:02.480] [DEBUG] Candidate 'water heater replacement orlando' already used, skipping.
+[2025-09-15 05:28:02.480] [DEBUG] Candidate 'leak doctor orlando' already used, skipping.
+[2025-09-15 05:28:02.480] [DEBUG] Candidate 'commercial plumbers orlando' already used, skipping.
+[2025-09-15 05:28:02.480] [DEBUG] Candidate 'florida leak detectors orlando' already used, skipping.
+[2025-09-15 05:28:02.481] [DEBUG] Cluster for 'drain cleaning orlando' finalized with 1 related keywords.
+[2025-09-15 05:28:02.481] [DEBUG] Keyword 'commercial plumbing orlando' already used, skipping.
+[2025-09-15 05:28:02.481] [DEBUG] Keyword 'commercial plumbers in orlando fl' already used, skipping.
+[2025-09-15 05:28:02.481] [DEBUG] Keyword 'orlando commercial plumbing' already used, skipping.
+[2025-09-15 05:28:02.481] [DEBUG] Keyword 'orlando commercial plumbers' already used, skipping.
+[2025-09-15 05:28:02.482] [DEBUG] Keyword 'orlando commercial plumber' already used, skipping.
+[2025-09-15 05:28:02.482] [DEBUG] Keyword 'hot water heater repair orlando' already used, skipping.
+[2025-09-15 05:28:02.482] [DEBUG] Keyword 'orlando drain cleaning' already used, skipping.
+[2025-09-15 05:28:02.482] [DEBUG] Keyword 'water heater replacement orlando' already used, skipping.
+[2025-09-15 05:28:02.482] [DEBUG] Keyword 'leak doctor orlando' already used, skipping.
+[2025-09-15 05:28:02.483] [DEBUG] Keyword 'commercial plumbers orlando' already used, skipping.
+[2025-09-15 05:28:02.483] [DEBUG] Keyword 'florida leak detectors orlando' already used, skipping.
+[2025-09-15 05:28:02.483] [INFO] Finished clustering. Generated 6 clusters.
+[2025-09-15 05:28:02.483] [INFO] Generated 6 keyword clusters.
+[2025-09-15 05:28:02.483] [DEBUG] First 3 clusters: [{'primary': 'orlando emergency plumber', 'related': ['emergency plumber orlando', 'emergency plumber orlando fl', 'emergency plumbing orlando', '24 hour plumber orlando', '24 hour plumber orlando fl', 'plumber orlando', 'orlando plumber', 'plumber in orlando fl', 'plumber in orlando florida', 'plumber orlando florida', 'plumber in orlando', 'plumber orlando fl', 'orlando commercial plumber']}, {'primary': 'leak detection in orlando', 'related': ['plumbers in orlando', 'plumbing in orlando', 'orlando water leak detection', 'orlando leak locators', 'leak detection orlando', 'leak detection orlando florida', 'leak detection orlando fl', 'orlando leak detection', 'water leak detection orlando', 'orlando leak detection orlando fl', 'commercial plumbers in orlando fl', 'leak doctor orlando', 'florida leak detectors orlando']}, {'primary': 'plumbers orlando', 'related': ['orlando plumbers', 'orlando commercial plumbers', 'commercial plumbers orlando']}]
+[2025-09-15 05:28:02.484] [INFO] Prospecting run summary generated.
+[2025-09-15 05:28:02.484] [INFO] Writing outputs to surfer_prospecting_output.json and surfer_prospecting_output.csv...
+[2025-09-15 05:28:02.494] [DEBUG] JSON output written to surfer_prospecting_output.json.
+[2025-09-15 05:28:02.499] [DEBUG] CSV output written to surfer_prospecting_output.csv.
+[2025-09-15 05:28:02.499] [DONE] Surfer prospecting run completed. Outputs written: surfer_prospecting_output.json, surfer_prospecting_output.csv
+[2025-09-15 05:28:02.499] [INFO] 
+--- Top 10 Opportunities ---
+[2025-09-15 05:28:02.500] [INFO] 01. orlando emergency plumber | vol=480 | cpc=73.41 | comp=0.38999998569488525 | score=407.165646
+[2025-09-15 05:28:02.500] [INFO]    Blueprint: Title='Emergency Orlando Emergency Plumber: 24/7 Fast Response', Angle='Comparison / listicle', Monetization='Service / conversion page'
+[2025-09-15 05:28:02.501] [INFO]    Customer DA: Domain='https://www.benjaminfranklinplumbing.com/', KeywordsTop10=10784, Traffic=730355.3
+[2025-09-15 05:28:02.501] [INFO] 02. emergency plumber orlando | vol=480 | cpc=63.7 | comp=0.8500000238418579 | score=182.606635
+[2025-09-15 05:28:02.502] [INFO]    Blueprint: Title='Emergency Emergency Plumber Orlando: 24/7 Fast Response', Angle='In-depth guide / landing page', Monetization='Service / conversion page'
+[2025-09-15 05:28:02.504] [INFO]    Customer DA: Domain='https://www.benjaminfranklinplumbing.com/', KeywordsTop10=10784, Traffic=730355.3
+[2025-09-15 05:28:02.505] [INFO] 03. emergency plumber orlando fl | vol=480 | cpc=63.7 | comp=0.8500000238418579 | score=182.606635
+[2025-09-15 05:28:02.506] [INFO]    Blueprint: Title='Emergency Emergency Plumber Orlando Fl: 24/7 Fast Response', Angle='In-depth guide / landing page', Monetization='Service / conversion page'
+[2025-09-15 05:28:02.506] [INFO]    Customer DA: Domain='https://www.benjaminfranklinplumbing.com/', KeywordsTop10=10784, Traffic=730355.3
+[2025-09-15 05:28:02.507] [INFO] 04. emergency plumbing orlando | vol=480 | cpc=63.7 | comp=0.8500000238418579 | score=182.606635
+[2025-09-15 05:28:02.507] [INFO]    Blueprint: Title='Emergency Emergency Plumbing Orlando: 24/7 Fast Response', Angle='In-depth guide / landing page', Monetization='Service / conversion page'
+[2025-09-15 05:28:02.508] [INFO]    Customer DA: Domain='https://www.benjaminfranklinplumbing.com/', KeywordsTop10=10784, Traffic=730355.3
+[2025-09-15 05:28:02.508] [INFO] 05. 24 hour plumber orlando | vol=40 | cpc=76.92 | comp=0.5899999737739563 | score=180.916695
+[2025-09-15 05:28:02.508] [INFO]    Blueprint: Title='24 Hour Plumber Orlando Services: Your Local Experts', Angle='Comparison / listicle', Monetization='Service / conversion page'
+[2025-09-15 05:28:02.509] [INFO]    Customer DA: Domain='https://www.benjaminfranklinplumbing.com/', KeywordsTop10=10784, Traffic=730355.3
+[2025-09-15 05:28:02.509] [INFO] 06. 24 hour plumber orlando fl | vol=40 | cpc=76.92 | comp=0.5899999737739563 | score=180.916695
+[2025-09-15 05:28:02.509] [INFO]    Blueprint: Title='24 Hour Plumber Orlando Fl Services: Your Local Experts', Angle='Comparison / listicle', Monetization='Service / conversion page'
+[2025-09-15 05:28:02.509] [INFO]    Customer DA: Domain='https://www.benjaminfranklinplumbing.com/', KeywordsTop10=10784, Traffic=730355.3
+[2025-09-15 05:28:02.510] [INFO] 07. leak detection in orlando | vol=260 | cpc=45.0 | comp=0.6600000262260437 | score=146.169434
+[2025-09-15 05:28:02.510] [INFO]    Blueprint: Title='Leak Detection In Orlando Services: Your Local Experts', Angle='In-depth guide / landing page', Monetization='Service / conversion page'
+[2025-09-15 05:28:02.510] [INFO]    Customer DA: Domain='https://www.benjaminfranklinplumbing.com/', KeywordsTop10=10784, Traffic=730355.3
+[2025-09-15 05:28:02.511] [INFO] 08. plumber orlando | vol=4400 | cpc=21.03 | comp=0.5699999928474426 | score=119.7989
+[2025-09-15 05:28:02.512] [INFO]    Blueprint: Title='Plumber Orlando Services: Your Local Experts', Angle='Comparison / listicle', Monetization='Service / conversion page'
+[2025-09-15 05:28:02.512] [INFO]    Customer DA: Domain='https://www.benjaminfranklinplumbing.com/', KeywordsTop10=10784, Traffic=730355.3
+[2025-09-15 05:28:02.513] [INFO] 09. orlando plumber | vol=4400 | cpc=21.03 | comp=0.5699999928474426 | score=119.7989
+[2025-09-15 05:28:02.513] [INFO]    Blueprint: Title='Orlando Plumber Services: Your Local Experts', Angle='Comparison / listicle', Monetization='Service / conversion page'
+[2025-09-15 05:28:02.513] [INFO]    Customer DA: Domain='https://www.benjaminfranklinplumbing.com/', KeywordsTop10=10784, Traffic=730355.3
+[2025-09-15 05:28:02.514] [INFO] 10. plumber in orlando fl | vol=4400 | cpc=21.03 | comp=0.5699999928474426 | score=119.7989
+[2025-09-15 05:28:02.514] [INFO]    Blueprint: Title='Plumber In Orlando Fl Services: Your Local Experts', Angle='Comparison / listicle', Monetization='Service / conversion page'
+[2025-09-15 05:28:02.514] [INFO]    Customer DA: Domain='https://www.benjaminfranklinplumbing.com/', KeywordsTop10=10784, Traffic=730355.3
+[2025-09-15 05:28:02.515] [INFO] 
+--- Script Finished ---

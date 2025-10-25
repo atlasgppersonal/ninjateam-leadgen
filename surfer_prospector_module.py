@@ -347,6 +347,7 @@ async def build_keyword_pool(seed_keywords: List[str], target_size: int, country
                     )
                     logger.debug(f"Checking geographical relevance for '{sim_kw_normalized}' against {normalized_service_radius_cities}: {is_geographically_relevant}")
 
+                    # Filter: any returned keywords MUST HAVE ONE OF THE CITIES in it
                     if sim_kw_normalized and is_geographically_relevant and sim_kw_normalized not in processed_keywords and len(pool_map) < target_size:
                         await keywords_to_process_queue.put(sim_kw_normalized)
                         processed_keywords.add(sim_kw_normalized)

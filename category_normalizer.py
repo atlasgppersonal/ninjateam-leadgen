@@ -26,79 +26,62 @@ MAX_LLM_RETRIES = 2 # Max retries for LLM calls if validation fails
 # New function to generate city-specific keywords via LLM with proper validation
 async def generate_city_specific_keywords(category: str, batch_cities: List[str], llm_model: Any) -> Dict[str, List[str]]:
     """
-    Generate 5 high-quality, short-tail SEO keywords for each city in the batch for a given category.
-    These keywords should represent what a human would search for when looking for services
-    related to the category in that specific city, considering the nature of the business.
+    Generate 10 high-quality, short-tail SEO keywords for each city in the batch for a given category.
+    These keywords should represent what a human would search for with the highest probability
+    when looking for services related to the category in that specific city.
     """
 
     keywords_prompt = f"""
-You are a professional SEO keyword researcher. Your task is to generate exactly 5 high-quality, short-tail SEO keywords and 10 additional most probable search terms for each city in the category '{category}'. These keywords MUST be highly relevant and represent what a human would search for for services related to '{category}' in that specific city.
+You are a professional SEO keyword researcher. Your task is to generate exactly 10 high-quality, short-tail SEO keywords for each city in the category '{category}'. These keywords MUST be highly relevant and represent what a human would search for with the highest probability for services related to '{category}' in that specific city.
 
 CRITICAL INSTRUCTIONS - READ CAREFULLY:
 1. You MUST return ONLY a valid JSON object.
 2. You MUST include ALL requested cities as keys in the JSON object.
-3. Each city MUST have an object containing two arrays: "primaryKeywords" and "additionalKeywords".
-4. "primaryKeywords" MUST contain exactly 5 keyword strings.
-5. "additionalKeywords" MUST contain exactly 10 keyword strings.
-6. ALL keywords (both primary and additional) MUST be short-tail (1-2 words) and mid-tail (2-4 words) only.
-7. NO long phrases, questions, or conversational language.
-8. ALL keywords (both primary and additional) MUST explicitly include the city name (e.g., "moving Portland", "best movers Portland"). Do NOT generate keywords without the city name.
-9. AVOID generic terms that don't clearly link the service to the city.
-10. AVOID keywords that are not directly related to the service or are too broad.
-11. Consider the nature of the business (service vs. non-service) and return the most logical search terms.
+3. Each city MUST have an array called "keywords" containing exactly 10 keyword strings.
+4. ALL keywords MUST be short-tail (1-2 words) and mid-tail (2-4 words) only.
+5. NO long phrases, questions, or conversational language.
+6. ALL keywords MUST explicitly include the city name (e.g., "moving Portland", "best movers Portland"). Do NOT generate keywords without the city name.
+7. AVOID generic terms that don't clearly link the service to the city.
+8. AVOID keywords that are not directly related to the service or are too broad.
+9. Consider the nature of the business (service vs. non-service) and return the most logical search terms.
 
 VERIFICATION CHECKLIST - CONFIRM BEFORE RESPONDING:
 - [ ] Response is a valid JSON object (not array, not string).
-- [ ] Each city key exists and has an object with "primaryKeywords" and "additionalKeywords".
-- [ ] "primaryKeywords" array contains exactly 5 keyword strings.
-- [ ] "additionalKeywords" array contains exactly 10 keyword strings.
+- [ ] Each city key exists and has an array called "keywords".
+- [ ] "keywords" array contains exactly 10 keyword strings.
 - [ ] All keywords are 1-4 words maximum.
 - [ ] No keywords contain questions or long phrases.
-- [ ] ALL keywords (both primary and additional) MUST follow the format: "service city" or "adjective service city".
-- [ ] ALL keywords (both primary and additional) MUST be highly relevant to the category and city.
+- [ ] ALL keywords MUST follow the format: "service city" or "adjective service city".
+- [ ] ALL keywords MUST be highly relevant to the category and city.
 
 EXPECTED JSON FORMAT:
 {{
   "Portland": {{
-    "primaryKeywords": [
+    "keywords": [
       "{category} portland",
       "best {category} portland",
       "local {category} portland",
       "moving service portland",
-      "24 hour {category} portland"
-    ],
-    "additionalKeywords": [
-      "{category} company portland",
+      "24 hour {category} portland",
+      "top rated {category} portland",
       "affordable {category} portland",
-      "moving quotes portland",
-      "portland {category} reviews",
-      "hire {category} portland",
       "residential {category} portland",
       "commercial {category} portland",
-      "long distance {category} portland",
-      "packing services portland",
-      "junk removal portland"
+      "long distance {category} portland"
     ]
   }},
   "Beaverton": {{
-    "primaryKeywords": [
+    "keywords": [
       "{category} beaverton",
       "best {category} beaverton",
       "local {category} beaverton",
       "moving service beaverton",
-      "24 hour {category} beaverton"
-    ],
-    "additionalKeywords": [
-      "{category} company beaverton",
+      "24 hour {category} beaverton",
+      "top rated {category} beaverton",
       "affordable {category} beaverton",
-      "moving quotes beaverton",
-      "beaverton {category} reviews",
-      "hire {category} beaverton",
       "residential {category} beaverton",
       "commercial {category} beaverton",
-      "long distance {category} beaverton",
-      "packing services beaverton",
-      "junk removal beaverton"
+      "long distance {category} beaverton"
     ]
   }}
 }}
@@ -131,16 +114,13 @@ Return ONLY the JSON object. No explanations, no markdown, no additional text.
             else:
                 for city, keywords_obj in city_keywords_data.items():
                     if not isinstance(keywords_obj, dict) or \
-                       "primaryKeywords" not in keywords_obj or \
-                       "additionalKeywords" not in keywords_obj or \
-                       not isinstance(keywords_obj["primaryKeywords"], list) or \
-                       not isinstance(keywords_obj["additionalKeywords"], list) or \
-                       len(keywords_obj["primaryKeywords"]) != 5 or \
-                       len(keywords_obj["additionalKeywords"]) != 10:
+                       "keywords" not in keywords_obj or \
+                       not isinstance(keywords_obj["keywords"], list) or \
+                       len(keywords_obj["keywords"]) != 10:
                         is_valid_structure = False
                         break
-                    for kw_list in [keywords_obj["primaryKeywords"], keywords_obj["additionalKeywords"]]:
-                        if not all(isinstance(kw, str) and 1 <= len(kw.split()) <= 7 for kw in kw_list):
+                    for kw in keywords_obj["keywords"]:
+                        if not (isinstance(kw, str) and 1 <= len(kw.split()) <= 7):
                             is_valid_structure = False
                             break
                     if not is_valid_structure:
@@ -507,11 +487,10 @@ Here is the batch of leads to process: {batch_llm_input_json}
                 try:
                     city_keywords_data = await generate_city_specific_keywords(canonical_category_id, batch_of_cities, llm_model)
                     for city_name, keywords_obj in city_keywords_data.items():
-                        for kw_list in [keywords_obj.get("primaryKeywords", []), keywords_obj.get("additionalKeywords", [])]:
-                            for kw in kw_list:
-                                normalized_kw = _normalize_keyword(kw) # Normalize LLM generated keywords
-                                all_city_specific_keywords.append(normalized_kw)
-                                logging.debug(f"    [Category Normalizer] Normalized LLM keyword: '{kw}' -> '{normalized_kw}'")
+                        for kw in keywords_obj.get("keywords", []):
+                            normalized_kw = _normalize_keyword(kw) # Normalize LLM generated keywords
+                            all_city_specific_keywords.append(normalized_kw)
+                            logging.debug(f"    [Category Normalizer] Normalized LLM keyword: '{kw}' -> '{normalized_kw}'")
                 except Exception as e:
                     logging.error(f"!!! [Category Normalizer] Lead {post_id}: Error generating keywords for batch of cities {batch_of_cities}: {e}")
             
@@ -524,7 +503,7 @@ Here is the batch of leads to process: {batch_llm_input_json}
                 updated_leads_batch.append(lead)
                 continue
 
-            surfer_target_pool_size = max(1000, int(len(unique_all_city_specific_keywords) * 1.2))
+            surfer_target_pool_size = 510
 
             try:
                 serp_data = await run_prospecting_async(
@@ -682,20 +661,28 @@ Here is the batch of leads to process: {batch_llm_input_json}
         combined_json_metadata = _arbitrage_data_cache.get(category_location_id)
 
         if combined_json_metadata:
+            # Create the arbitrageData object for the Firebase payload
+            # It should be the entire combined_json_metadata, but without the 'location' field
+            # as 'location' is a separate top-level field in the Firebase Callable Function payload.
+            arbitrage_data_for_firebase = combined_json_metadata.copy()
+            if "location" in arbitrage_data_for_firebase:
+                del arbitrage_data_for_firebase["location"]
+            
+            # The Firebase Callable Function expects the payload to be directly sent,
+            # and the SDK wraps it in a 'data' field.
+            # So, our Python script should send the structure expected *inside* the 'data' field.
             firebase_payload = {
-                "data": {
-                    "category": canonical_category_id,
-                    "location": combined_json_metadata["location"],
-                    "arbitrageData": combined_json_metadata
-                }
+                "location": combined_json_metadata["location"],
+                "arbitrageData": arbitrage_data_for_firebase
             }
             try:
                 async with httpx.AsyncClient() as client:
-                    firebase_response = await client.post(firebase_arbitrage_sync_url, json=firebase_payload, timeout=30.0)
-                    if firebase_response.is_success:
+                    # The Firebase Callable Function expects a POST request with the JSON payload
+                    response = await client.post(firebase_arbitrage_sync_url, json=firebase_payload, timeout=30.0)
+                    if response.is_success:
                         logging.info(f"    [Category Normalizer] Lead {post_id}: Successfully pushed '{category_location_id}' to Firebase.")
                     else:
-                        logging.warning(f"!!! [Category Normalizer] Lead {post_id}: FAILED to push '{category_location_id}' to Firebase. Status: {firebase_response.status_code}, Body: {firebase_response.text}")
+                        logging.warning(f"!!! [Category Normalizer] Lead {post_id}: FAILED to push '{category_location_id}' to Firebase. Status: {response.status_code}, Body: {response.text}")
             except httpx.RequestError as e:
                 logging.error(f"!!! [Category Normalizer] Lead {post_id}: HTTPX error pushing '{category_location_id}' to Firebase: {e}")
             except Exception as e:

@@ -1,8 +1,8 @@
---- Test Log started at 2025-10-07 11:13:38 ---
---- All test output redirected to C:\Users\GIO PLUGLIESE\Documents\Work\ags site\leadgen\test_category_arbitrage_log.txt ---
+--- Test Log started at 2025-10-25 07:28:01 ---
+--- All test output redirected to C:\Users\JOSE ESCOBAR\Documents\WORK\AGS-Site\Ninjateam-Leadgen\test_category_arbitrage_log.txt ---
 
 --- Starting test_category_arbitrage.py ---
-    [Test] Attempting to load config from: C:\Users\GIO PLUGLIESE\Documents\Work\ags site\leadgen\config.json
+    [Test] Attempting to load config from: C:\Users\JOSE ESCOBAR\Documents\WORK\AGS-Site\Ninjateam-Leadgen\config.json
     [Test] Config loaded successfully.
     [Test] LLM Model configured: gemini-2.0-flash-lite
     [Test] Master DB Path: master_contacts.db
@@ -44,5 +44,2814 @@
   }
 ]
 --- End of Normalized Leads Results ---
+
+--- Cached Arbitrage Data (including SERP) ---
+{
+  "id": "movers",
+  "displayName": "",
+  "aliases": [],
+  "description": "",
+  "examplePhrases": [],
+  "parent": null,
+  "confidence": 0.98,
+  "avgJobAmount": 1200,
+  "suggestedAt": "2025-10-25T12:29:00.057836+00:00",
+  "createdBy": "llm_fallback",
+  "lastUpdated": "2025-10-25T12:29:00.057836+00:00",
+  "location": "portland-or",
+  "arbitrageData": {
+    "scored_keywords": [
+      {
+        "keyword": "long distance movers portland",
+        "search_volume": 30,
+        "cpc": 8.24,
+        "competition": 0.5,
+        "arbitrage_score": 484.7058823529412,
+        "velocity_score": 3.9840637450199203,
+        "time_impact": 0.6,
+        "estimated_time": 70.71360380799146,
+        "estimated_velocity": 33,
+        "base_value_score": 247.20000000000002,
+        "long_term_arbitrage_score": 379.47447866765293,
+        "competition_band": 5,
+        "content_angle": "Comparison / listicle",
+        "monetization": "Service / conversion page",
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.5,
+          "cpc": 8.24,
+          "search_volume": 30,
+          "similar_keywords": [
+            {
+              "keyword": "long distance moving companies portland",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 50,
+              "cpc": 64.52
+            },
+            {
+              "keyword": "long distance moving company portland",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 50,
+              "cpc": 64.52
+            },
+            {
+              "keyword": "long distance movers portland oregon",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 30,
+              "cpc": 193.81
+            },
+            {
+              "keyword": "long distance moving companies portland oregon",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 50,
+              "cpc": 64.52
+            },
+            {
+              "keyword": "long distance moving portland",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 50,
+              "cpc": 27.68
+            },
+            {
+              "keyword": "portland long distance movers",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 50,
+              "cpc": 27.68
+            },
+            {
+              "keyword": "long distance movers portland or",
+              "country": "US",
+              "overlapping_pages": 8,
+              "search_volume": 30,
+              "cpc": 76.0
+            },
+            {
+              "keyword": "moving companies portland oregon",
+              "country": "US",
+              "overlapping_pages": 6,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "movers pdx",
+              "country": "US",
+              "overlapping_pages": 4,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "portland movers",
+              "country": "US",
+              "overlapping_pages": 4,
+              "search_volume": 9900,
+              "cpc": 19.84
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "long distance movers portland"
+        }
+      },
+      {
+        "keyword": "vancouver moving companies",
+        "search_volume": 1900,
+        "cpc": 13.67,
+        "competition": 0.25,
+        "arbitrage_score": 99896.15384615384,
+        "velocity_score": 15.748031496062993,
+        "time_impact": 0.6,
+        "estimated_time": 42.91524809761493,
+        "estimated_velocity": 61,
+        "base_value_score": 25973.0,
+        "long_term_arbitrage_score": 75103.26673254865,
+        "competition_band": 3,
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization": "Service / conversion page",
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.25,
+          "cpc": 13.67,
+          "search_volume": 1900,
+          "similar_keywords": [
+            {
+              "keyword": "moving companies vancouver",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "moving company vancouver",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving service vancouver",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "moving services vancouver",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving companies in vancouver",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "mover vancouver",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving companies in vancouver bc",
+              "country": "US",
+              "overlapping_pages": 15,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "moving companies vancouver bc",
+              "country": "US",
+              "overlapping_pages": 15,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving company in vancouver",
+              "country": "US",
+              "overlapping_pages": 15,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving companies in vancouver canada",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 1900,
+              "cpc": 13.67
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "vancouver moving companies"
+        }
+      },
+      {
+        "keyword": "movers sandy",
+        "search_volume": 70,
+        "cpc": 8.31,
+        "competition": 0.7300000190734863,
+        "arbitrage_score": 786.0810608198564,
+        "velocity_score": 1.8730098292596953,
+        "time_impact": 0.6,
+        "estimated_time": 106.02939200287598,
+        "estimated_velocity": 1,
+        "base_value_score": 581.7,
+        "long_term_arbitrage_score": 610.9916720675352,
+        "competition_band": 5,
+        "content_angle": "In-depth guide / landing page",
+        "monetization": "Service / conversion page",
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.7300000190734863,
+          "cpc": 8.31,
+          "search_volume": 70,
+          "similar_keywords": [
+            {
+              "keyword": "moving company sandy utah",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 70,
+              "cpc": 21.95
+            },
+            {
+              "keyword": "sandy movers",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 70,
+              "cpc": 8.31
+            },
+            {
+              "keyword": "movers sandy utah",
+              "country": "US",
+              "overlapping_pages": 13,
+              "search_volume": 70,
+              "cpc": 21.95
+            },
+            {
+              "keyword": "moving companies in sandy",
+              "country": "US",
+              "overlapping_pages": 13,
+              "search_volume": 70,
+              "cpc": 34.61
+            },
+            {
+              "keyword": "moving companies sandy utah",
+              "country": "US",
+              "overlapping_pages": 13,
+              "search_volume": 70,
+              "cpc": 21.95
+            },
+            {
+              "keyword": "movers in sandy utah",
+              "country": "US",
+              "overlapping_pages": 9,
+              "search_volume": 50,
+              "cpc": 28.03
+            },
+            {
+              "keyword": "movers sandy ut",
+              "country": "US",
+              "overlapping_pages": 8,
+              "search_volume": 50,
+              "cpc": 28.03
+            },
+            {
+              "keyword": "best of utah moving company sandy",
+              "country": "US",
+              "overlapping_pages": 3,
+              "search_volume": 20,
+              "cpc": 0.0
+            },
+            {
+              "keyword": "helping hand movers",
+              "country": "US",
+              "overlapping_pages": 2,
+              "search_volume": 1600,
+              "cpc": 12.16
+            },
+            {
+              "keyword": "helping hands move",
+              "country": "US",
+              "overlapping_pages": 2,
+              "search_volume": 1600,
+              "cpc": 12.16
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "movers sandy"
+        }
+      },
+      {
+        "keyword": "local movers portland",
+        "search_volume": 390,
+        "cpc": 21.28,
+        "competition": 0.14000000059604645,
+        "arbitrage_score": 55327.99978014628,
+        "velocity_score": 48.543688927106686,
+        "time_impact": 0.6708205313031859,
+        "estimated_time": 24.458973434840708,
+        "estimated_velocity": 80,
+        "base_value_score": 8299.2,
+        "long_term_arbitrage_score": 41721.72549402508,
+        "competition_band": 2,
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization": "Service / conversion page",
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.14000000059604645,
+          "cpc": 21.28,
+          "search_volume": 390,
+          "similar_keywords": [
+            {
+              "keyword": "moving portland",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 14800,
+              "cpc": 0.67
+            },
+            {
+              "keyword": "movers pdx",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "movers portland oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "portland movers",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "movers portland",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving companies portland",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving companies portland oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland moving companies",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland mover",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 260,
+              "cpc": 6.97
+            },
+            {
+              "keyword": "local movers portland or",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 390,
+              "cpc": 21.28
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "local movers portland"
+        }
+      },
+      {
+        "keyword": "stevenson moving",
+        "search_volume": 170,
+        "cpc": 18.85,
+        "competition": 0.4000000059604645,
+        "arbitrage_score": 7815.85354491191,
+        "velocity_score": 6.211179940265751,
+        "time_impact": 0.6,
+        "estimated_time": 67.08463830584981,
+        "estimated_velocity": 37,
+        "base_value_score": 3204.5000000000005,
+        "long_term_arbitrage_score": 5888.792518484431,
+        "competition_band": 5,
+        "content_angle": "Comparison / listicle",
+        "monetization": "Service / conversion page",
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.4000000059604645,
+          "cpc": 18.85,
+          "search_volume": 170,
+          "similar_keywords": [
+            {
+              "keyword": "stevenson transfer ottawa il",
+              "country": "US",
+              "overlapping_pages": 6,
+              "search_volume": 20,
+              "cpc": 0.0
+            },
+            {
+              "keyword": "stevenson transfer",
+              "country": "US",
+              "overlapping_pages": 4,
+              "search_volume": 110,
+              "cpc": 1.9
+            },
+            {
+              "keyword": "stevenson",
+              "country": "US",
+              "overlapping_pages": 2,
+              "search_volume": 40500,
+              "cpc": 2.89
+            },
+            {
+              "keyword": "stevenson crane",
+              "country": "US",
+              "overlapping_pages": 2,
+              "search_volume": 1000,
+              "cpc": 1.93
+            },
+            {
+              "keyword": "movers ottawa il",
+              "country": "US",
+              "overlapping_pages": 2,
+              "search_volume": 20,
+              "cpc": 2.64
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "stevenson moving"
+        }
+      },
+      {
+        "keyword": "movers portland",
+        "search_volume": 8100,
+        "cpc": 16.72,
+        "competition": 0.28999999165534973,
+        "arbitrage_score": 451440.0125570301,
+        "velocity_score": 11.750881984407279,
+        "time_impact": 0.6,
+        "estimated_time": 53.266860148814864,
+        "estimated_velocity": 51,
+        "base_value_score": 135432.0,
+        "long_term_arbitrage_score": 333138.42374692,
+        "competition_band": 3,
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization": "Service / conversion page",
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.28999999165534973,
+          "cpc": 16.72,
+          "search_volume": 8100,
+          "similar_keywords": [
+            {
+              "keyword": "moving portland",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 14800,
+              "cpc": 0.67
+            },
+            {
+              "keyword": "movers pdx",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "movers portland oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "portland movers",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "moving companies portland",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving companies portland oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland moving companies",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland mover",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 260,
+              "cpc": 6.97
+            },
+            {
+              "keyword": "movers in portland",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "portland oregon movers",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 9900,
+              "cpc": 19.84
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "movers portland"
+        }
+      },
+      {
+        "keyword": "movers hillsboro",
+        "search_volume": 480,
+        "cpc": 16.36,
+        "competition": 0.6299999952316284,
+        "arbitrage_score": 12270.000091418624,
+        "velocity_score": 2.513194307865403,
+        "time_impact": 0.6,
+        "estimated_time": 106.74139025373,
+        "estimated_velocity": 1,
+        "base_value_score": 7852.799999999999,
+        "long_term_arbitrage_score": 9200.888668432388,
+        "competition_band": 5,
+        "content_angle": "Comparison / listicle",
+        "monetization": "Service / conversion page",
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.6299999952316284,
+          "cpc": 16.36,
+          "search_volume": 480,
+          "similar_keywords": [
+            {
+              "keyword": "hillsboro moving company",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 480,
+              "cpc": 16.36
+            },
+            {
+              "keyword": "movers hillsboro or",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 480,
+              "cpc": 16.36
+            },
+            {
+              "keyword": "movers in hillsboro",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 480,
+              "cpc": 16.36
+            },
+            {
+              "keyword": "hillsboro movers",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 480,
+              "cpc": 16.36
+            },
+            {
+              "keyword": "hillsboro moving companies",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 480,
+              "cpc": 14.86
+            },
+            {
+              "keyword": "hillsboro oregon movers",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 480,
+              "cpc": 14.86
+            },
+            {
+              "keyword": "moving companies hillsboro or",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 480,
+              "cpc": 16.36
+            },
+            {
+              "keyword": "moving companies hillsboro oregon",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 480,
+              "cpc": 14.86
+            },
+            {
+              "keyword": "moving companies in hillsboro oregon",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 480,
+              "cpc": 14.86
+            },
+            {
+              "keyword": "moving companies hillsboro",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 480,
+              "cpc": 16.36
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "movers hillsboro"
+        }
+      },
+      {
+        "keyword": "movers vancouver",
+        "search_volume": 1900,
+        "cpc": 13.67,
+        "competition": 0.25,
+        "arbitrage_score": 99896.15384615384,
+        "velocity_score": 15.748031496062993,
+        "time_impact": 0.6,
+        "estimated_time": 42.91524809761493,
+        "estimated_velocity": 61,
+        "base_value_score": 25973.0,
+        "long_term_arbitrage_score": 75103.26673254865,
+        "competition_band": 3,
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization": "Service / conversion page",
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.25,
+          "cpc": 13.67,
+          "search_volume": 1900,
+          "similar_keywords": [
+            {
+              "keyword": "moving companies vancouver",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "moving company vancouver",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving service vancouver",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "moving services vancouver",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "vancouver moving companies",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "vancouver moving company",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "vancouver moving service",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "moving.company vancouver",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "vancouver moving services",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "vancouver washington movers",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 1000,
+              "cpc": 18.67
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "movers vancouver"
+        }
+      },
+      {
+        "keyword": "hillsboro moving companies",
+        "search_volume": 480,
+        "cpc": 14.86,
+        "competition": 0.6800000071525574,
+        "arbitrage_score": 10337.391197190167,
+        "velocity_score": 2.157962837739456,
+        "time_impact": 0.6,
+        "estimated_time": 113.6570565060603,
+        "estimated_velocity": 1,
+        "base_value_score": 7132.799999999999,
+        "long_term_arbitrage_score": 7775.74425510806,
+        "competition_band": 5,
+        "content_angle": "In-depth guide / landing page",
+        "monetization": "Service / conversion page",
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.6800000071525574,
+          "cpc": 14.86,
+          "search_volume": 480,
+          "similar_keywords": [
+            {
+              "keyword": "hillsboro movers",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 480,
+              "cpc": 16.36
+            },
+            {
+              "keyword": "hillsboro moving company",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 480,
+              "cpc": 16.36
+            },
+            {
+              "keyword": "movers hillsboro oregon",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 480,
+              "cpc": 16.36
+            },
+            {
+              "keyword": "movers in hillsboro oregon",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 480,
+              "cpc": 14.86
+            },
+            {
+              "keyword": "moving companies hillsboro",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 480,
+              "cpc": 16.36
+            },
+            {
+              "keyword": "moving companies hillsboro or",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 480,
+              "cpc": 16.36
+            },
+            {
+              "keyword": "moving companies hillsboro oregon",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 480,
+              "cpc": 14.86
+            },
+            {
+              "keyword": "moving company hillsboro",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 480,
+              "cpc": 14.86
+            },
+            {
+              "keyword": "movers hillsboro",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 480,
+              "cpc": 16.36
+            },
+            {
+              "keyword": "movers in hillsboro",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 480,
+              "cpc": 16.36
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "hillsboro moving companies"
+        }
+      },
+      {
+        "keyword": "moving portland",
+        "search_volume": 14800,
+        "cpc": 0.87,
+        "competition": 0.1599999964237213,
+        "arbitrage_score": 75741.17806395036,
+        "velocity_score": 37.59398657980838,
+        "time_impact": 0.7629071800949666,
+        "estimated_time": 19.854640995251668,
+        "estimated_velocity": 84,
+        "base_value_score": 12876.0,
+        "long_term_arbitrage_score": 61399.286180208495,
+        "competition_band": 2,
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization": "Top-of-funnel explainer",
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.1599999964237213,
+          "cpc": 0.87,
+          "search_volume": 14800,
+          "similar_keywords": [
+            {
+              "keyword": "movers pdx",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "movers portland oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "portland movers",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "movers portland",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving companies portland",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving companies portland oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland moving companies",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland mover",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 260,
+              "cpc": 6.97
+            },
+            {
+              "keyword": "portland oregon movers",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "movers in portland oregon",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 8100,
+              "cpc": 16.72
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "moving portland"
+        }
+      },
+      {
+        "keyword": "movers gresham",
+        "search_volume": 140,
+        "cpc": 26.36,
+        "competition": 0.5600000023841858,
+        "arbitrage_score": 6474.3859378313355,
+        "velocity_score": 3.1786395152959845,
+        "time_impact": 0.6,
+        "estimated_time": 97.7743741228205,
+        "estimated_velocity": 6,
+        "base_value_score": 3690.4,
+        "long_term_arbitrage_score": 4820.594373596535,
+        "competition_band": 5,
+        "content_angle": "Comparison / listicle",
+        "monetization": "Service / conversion page",
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.5600000023841858,
+          "cpc": 26.36,
+          "search_volume": 140,
+          "similar_keywords": [
+            {
+              "keyword": "gresham movers",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 140,
+              "cpc": 17.29
+            },
+            {
+              "keyword": "movers gresham oregon",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 140,
+              "cpc": 26.36
+            },
+            {
+              "keyword": "moving companies gresham or",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 140,
+              "cpc": 26.36
+            },
+            {
+              "keyword": "moving companies gresham oregon",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 140,
+              "cpc": 17.29
+            },
+            {
+              "keyword": "moving companies gresham",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 90,
+              "cpc": 22.65
+            },
+            {
+              "keyword": "gresham moving companies",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 140,
+              "cpc": 26.36
+            },
+            {
+              "keyword": "moving company gresham",
+              "country": "US",
+              "overlapping_pages": 13,
+              "search_volume": 90,
+              "cpc": 22.65
+            },
+            {
+              "keyword": "moving companies portland",
+              "country": "US",
+              "overlapping_pages": 2,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving companies portland oregon",
+              "country": "US",
+              "overlapping_pages": 2,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland moving companies",
+              "country": "US",
+              "overlapping_pages": 2,
+              "search_volume": 8100,
+              "cpc": 16.72
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "movers gresham"
+        }
+      },
+      {
+        "keyword": "movers lake oswego",
+        "search_volume": 90,
+        "cpc": 16.76,
+        "competition": 0.7599999904632568,
+        "arbitrage_score": 1958.9610632235176,
+        "velocity_score": 1.7283097564004808,
+        "time_impact": 0.6,
+        "estimated_time": 123.05185328293778,
+        "estimated_velocity": 1,
+        "base_value_score": 1508.4,
+        "long_term_arbitrage_score": 1484.4941558723146,
+        "competition_band": 5,
+        "content_angle": "In-depth guide / landing page",
+        "monetization": "Service / conversion page",
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.7599999904632568,
+          "cpc": 16.76,
+          "search_volume": 90,
+          "similar_keywords": [
+            {
+              "keyword": "movers in lake oswego",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 70,
+              "cpc": 17.09
+            },
+            {
+              "keyword": "lake oswego movers",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 70,
+              "cpc": 17.09
+            },
+            {
+              "keyword": "lake oswego moving companies",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 90,
+              "cpc": 16.76
+            },
+            {
+              "keyword": "movers lake oswego oregon",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 90,
+              "cpc": 16.76
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "movers lake oswego"
+        }
+      },
+      {
+        "keyword": "cheap movers portland",
+        "search_volume": 390,
+        "cpc": 21.2,
+        "competition": 0.5699999928474426,
+        "arbitrage_score": 14255.172589587826,
+        "velocity_score": 3.0684259742856264,
+        "time_impact": 0.6,
+        "estimated_time": 99.53135586502212,
+        "estimated_velocity": 4,
+        "base_value_score": 8268.0,
+        "long_term_arbitrage_score": 10612.75292915482,
+        "competition_band": 5,
+        "content_angle": "Comparison / listicle",
+        "monetization": "Service / conversion page",
+        "raw_data": {
+          "categories": [
+            10017
+          ],
+          "competition": 0.5699999928474426,
+          "cpc": 21.2,
+          "search_volume": 390,
+          "similar_keywords": [
+            {
+              "keyword": "cheap movers portland or",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 480,
+              "cpc": 21.32
+            },
+            {
+              "keyword": "affordable movers portland",
+              "country": "US",
+              "overlapping_pages": 15,
+              "search_volume": 480,
+              "cpc": 21.32
+            },
+            {
+              "keyword": "cheap movers in portland or",
+              "country": "US",
+              "overlapping_pages": 15,
+              "search_volume": 390,
+              "cpc": 21.2
+            },
+            {
+              "keyword": "cheap movers portland oregon",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 480,
+              "cpc": 21.32
+            },
+            {
+              "keyword": "movers portland oregon",
+              "country": "US",
+              "overlapping_pages": 13,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "moving companies portland",
+              "country": "US",
+              "overlapping_pages": 13,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving companies portland oregon",
+              "country": "US",
+              "overlapping_pages": 13,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "movers pdx",
+              "country": "US",
+              "overlapping_pages": 12,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "movers portland",
+              "country": "US",
+              "overlapping_pages": 12,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland moving companies",
+              "country": "US",
+              "overlapping_pages": 12,
+              "search_volume": 8100,
+              "cpc": 16.72
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "cheap movers portland"
+        }
+      },
+      {
+        "keyword": "movers beaverton",
+        "search_volume": 1900,
+        "cpc": 12.66,
+        "competition": 0.27000001072883606,
+        "arbitrage_score": 85907.13956541565,
+        "velocity_score": 13.53179866850549,
+        "time_impact": 0.6,
+        "estimated_time": 45.841657430170066,
+        "estimated_velocity": 58,
+        "base_value_score": 24054.0,
+        "long_term_arbitrage_score": 64716.381779760086,
+        "competition_band": 3,
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization": "Service / conversion page",
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.27000001072883606,
+          "cpc": 12.66,
+          "search_volume": 1900,
+          "similar_keywords": [
+            {
+              "keyword": "moving companies beaverton",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 12.66
+            },
+            {
+              "keyword": "moving company beaverton oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 12.66
+            },
+            {
+              "keyword": "beaverton movers",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1600,
+              "cpc": 12.08
+            },
+            {
+              "keyword": "movers beaverton oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1600,
+              "cpc": 12.08
+            },
+            {
+              "keyword": "moving company beaverton",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1600,
+              "cpc": 12.08
+            },
+            {
+              "keyword": "movers beaverton or",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 1600,
+              "cpc": 12.08
+            },
+            {
+              "keyword": "movers in beaverton",
+              "country": "US",
+              "overlapping_pages": 15,
+              "search_volume": 1900,
+              "cpc": 12.66
+            },
+            {
+              "keyword": "moving company in beaverton",
+              "country": "US",
+              "overlapping_pages": 15,
+              "search_volume": 1900,
+              "cpc": 12.66
+            },
+            {
+              "keyword": "beaverton oregon moving companies",
+              "country": "US",
+              "overlapping_pages": 15,
+              "search_volume": 1600,
+              "cpc": 12.08
+            },
+            {
+              "keyword": "moving companies in beaverton",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 1900,
+              "cpc": 12.66
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "movers beaverton"
+        }
+      },
+      {
+        "keyword": "movers tigard",
+        "search_volume": 320,
+        "cpc": 20.28,
+        "competition": 0.9399999976158142,
+        "arbitrage_score": 6831.1579118807895,
+        "velocity_score": 1.1304544484139738,
+        "time_impact": 0.6,
+        "estimated_time": 162.21201097694762,
+        "estimated_velocity": 1,
+        "base_value_score": 6489.6,
+        "long_term_arbitrage_score": 5092.182743221615,
+        "competition_band": 5,
+        "content_angle": "In-depth guide / landing page",
+        "monetization": "Service / conversion page",
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.9399999976158142,
+          "cpc": 20.28,
+          "search_volume": 320,
+          "similar_keywords": [
+            {
+              "keyword": "movers tigard oregon",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 320,
+              "cpc": 20.28
+            },
+            {
+              "keyword": "moving companies tigard",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 390,
+              "cpc": 17.73
+            },
+            {
+              "keyword": "tigard movers",
+              "country": "US",
+              "overlapping_pages": 15,
+              "search_volume": 320,
+              "cpc": 20.28
+            },
+            {
+              "keyword": "moving companies tigard oregon",
+              "country": "US",
+              "overlapping_pages": 13,
+              "search_volume": 320,
+              "cpc": 20.28
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "movers tigard"
+        }
+      },
+      {
+        "keyword": "commercial movers portland",
+        "search_volume": 40,
+        "cpc": 0.55,
+        "competition": 0.4099999964237213,
+        "arbitrage_score": 52.380952826973534,
+        "velocity_score": 5.913660658439365,
+        "time_impact": 0.6,
+        "estimated_time": 41.26095624889967,
+        "estimated_velocity": 63,
+        "base_value_score": 22.0,
+        "long_term_arbitrage_score": 43.77918576170131,
+        "competition_band": 5,
+        "content_angle": "Comparison / listicle",
+        "monetization": "Top-of-funnel explainer",
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.4099999964237213,
+          "cpc": 0.55,
+          "search_volume": 40,
+          "similar_keywords": [
+            {
+              "keyword": "commercial movers portland oregon",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 40,
+              "cpc": 0.55
+            },
+            {
+              "keyword": "commercial moving companies portland",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 40,
+              "cpc": 0.55
+            },
+            {
+              "keyword": "commercial moving companies portland oregon",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 40,
+              "cpc": 0.55
+            },
+            {
+              "keyword": "portland commercial movers",
+              "country": "US",
+              "overlapping_pages": 12,
+              "search_volume": 30,
+              "cpc": 51.56
+            },
+            {
+              "keyword": "local commercial moving companies",
+              "country": "US",
+              "overlapping_pages": 2,
+              "search_volume": 30,
+              "cpc": 51.28
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "commercial movers portland"
+        }
+      },
+      {
+        "keyword": "rainier moving company",
+        "search_volume": 20,
+        "cpc": 25.39,
+        "competition": 0.550000011920929,
+        "arbitrage_score": 906.7856949826288,
+        "velocity_score": 3.2948927736210827,
+        "time_impact": 0.6,
+        "estimated_time": 90.14962186316153,
+        "estimated_velocity": 14,
+        "base_value_score": 507.8,
+        "long_term_arbitrage_score": 685.9388228832199,
+        "competition_band": 5,
+        "content_angle": "Comparison / listicle",
+        "monetization": "Service / conversion page",
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.550000011920929,
+          "cpc": 25.39,
+          "search_volume": 20,
+          "similar_keywords": [
+            {
+              "keyword": "rainier moving",
+              "country": "US",
+              "overlapping_pages": 12,
+              "search_volume": 20,
+              "cpc": 19.05
+            },
+            {
+              "keyword": "rainier movers",
+              "country": "US",
+              "overlapping_pages": 8,
+              "search_volume": 210,
+              "cpc": 6.17
+            },
+            {
+              "keyword": "rainier international movers",
+              "country": "US",
+              "overlapping_pages": 7,
+              "search_volume": 210,
+              "cpc": 6.17
+            },
+            {
+              "keyword": "rainier shipping",
+              "country": "US",
+              "overlapping_pages": 5,
+              "search_volume": 20,
+              "cpc": 8.21
+            },
+            {
+              "keyword": "rainier overseas movers",
+              "country": "US",
+              "overlapping_pages": 4,
+              "search_volume": 210,
+              "cpc": 6.17
+            },
+            {
+              "keyword": "rainier overseas movers reviews",
+              "country": "US",
+              "overlapping_pages": 4,
+              "search_volume": 30,
+              "cpc": 9.09
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "rainier moving company"
+        }
+      },
+      {
+        "keyword": "portland moving companies",
+        "search_volume": 8100,
+        "cpc": 16.72,
+        "competition": 0.28999999165534973,
+        "arbitrage_score": 451440.0125570301,
+        "velocity_score": 11.750881984407279,
+        "time_impact": 0.6,
+        "estimated_time": 53.266860148814864,
+        "estimated_velocity": 51,
+        "base_value_score": 135432.0,
+        "long_term_arbitrage_score": 333138.42374692,
+        "competition_band": 3,
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization": "Service / conversion page",
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.28999999165534973,
+          "cpc": 16.72,
+          "search_volume": 8100,
+          "similar_keywords": [
+            {
+              "keyword": "moving portland",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 14800,
+              "cpc": 0.67
+            },
+            {
+              "keyword": "movers pdx",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "movers portland oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "portland movers",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "movers portland",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving companies portland",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving companies portland oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland mover",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 260,
+              "cpc": 6.97
+            },
+            {
+              "keyword": "moving companies in portland oregon",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "moving companies portland or",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 9900,
+              "cpc": 19.84
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "portland moving companies"
+        }
+      },
+      {
+        "keyword": "best movers vancouver",
+        "search_volume": 20,
+        "cpc": 0.0,
+        "competition": 0.0,
+        "arbitrage_score": 0.0,
+        "velocity_score": 100.0,
+        "time_impact": 1.15,
+        "estimated_time": 0.884622034862971,
+        "estimated_velocity": 100,
+        "base_value_score": 0.0,
+        "long_term_arbitrage_score": 0.0,
+        "competition_band": 1,
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization": "Top-of-funnel explainer",
+        "raw_data": {
+          "categories": [
+            10003,
+            10017,
+            10035,
+            10146,
+            10782,
+            13575,
+            13842
+          ],
+          "competition": 0.0,
+          "cpc": 0.0,
+          "search_volume": 20,
+          "similar_keywords": [
+            {
+              "keyword": "best vancouver movers",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 20,
+              "cpc": 0.0
+            },
+            {
+              "keyword": "best movers in vancouver",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 20,
+              "cpc": 0.0
+            },
+            {
+              "keyword": "moving services vancouver",
+              "country": "US",
+              "overlapping_pages": 8,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "vancouver moving companies",
+              "country": "US",
+              "overlapping_pages": 8,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving company vancouver",
+              "country": "US",
+              "overlapping_pages": 7,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving service vancouver",
+              "country": "US",
+              "overlapping_pages": 7,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "local movers vancouver",
+              "country": "US",
+              "overlapping_pages": 7,
+              "search_volume": 20,
+              "cpc": 0.0
+            },
+            {
+              "keyword": "mover vancouver",
+              "country": "US",
+              "overlapping_pages": 4,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving companies vancouver bc",
+              "country": "US",
+              "overlapping_pages": 4,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "vancouver moving",
+              "country": "US",
+              "overlapping_pages": 4,
+              "search_volume": 1900,
+              "cpc": 13.67
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "best movers vancouver"
+        }
+      },
+      {
+        "keyword": "moving vancouver",
+        "search_volume": 1900,
+        "cpc": 13.67,
+        "competition": 0.25,
+        "arbitrage_score": 99896.15384615384,
+        "velocity_score": 15.748031496062993,
+        "time_impact": 0.6,
+        "estimated_time": 42.91524809761493,
+        "estimated_velocity": 61,
+        "base_value_score": 25973.0,
+        "long_term_arbitrage_score": 75103.26673254865,
+        "competition_band": 3,
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization": "Service / conversion page",
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.25,
+          "cpc": 13.67,
+          "search_volume": 1900,
+          "similar_keywords": [
+            {
+              "keyword": "moving companies vancouver",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "moving company vancouver",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving service vancouver",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "moving services vancouver",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "vancouver moving companies",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "vancouver moving company",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "vancouver moving services",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "movers vancouver",
+              "country": "US",
+              "overlapping_pages": 13,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving.company vancouver",
+              "country": "US",
+              "overlapping_pages": 13,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "vancouver moving",
+              "country": "US",
+              "overlapping_pages": 13,
+              "search_volume": 1900,
+              "cpc": 13.67
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "moving vancouver"
+        }
+      },
+      {
+        "keyword": "beaverton moving companies",
+        "search_volume": 1600,
+        "cpc": 12.08,
+        "competition": 0.20999999344348907,
+        "arbitrage_score": 87854.54807281501,
+        "velocity_score": 22.172950356062515,
+        "time_impact": 0.6,
+        "estimated_time": 35.24744495814189,
+        "estimated_velocity": 69,
+        "base_value_score": 19328.0,
+        "long_term_arbitrage_score": 66534.73471359772,
+        "competition_band": 5,
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization": "Service / conversion page",
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.20999999344348907,
+          "cpc": 12.08,
+          "search_volume": 1600,
+          "similar_keywords": [
+            {
+              "keyword": "moving companies beaverton",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 12.66
+            },
+            {
+              "keyword": "moving company beaverton oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 12.66
+            },
+            {
+              "keyword": "beaverton movers",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1600,
+              "cpc": 12.08
+            },
+            {
+              "keyword": "movers beaverton oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1600,
+              "cpc": 12.08
+            },
+            {
+              "keyword": "moving company beaverton",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1600,
+              "cpc": 12.08
+            },
+            {
+              "keyword": "moving companies beaverton oregon",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 1900,
+              "cpc": 12.66
+            },
+            {
+              "keyword": "moving companies in beaverton oregon",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 1900,
+              "cpc": 12.66
+            },
+            {
+              "keyword": "moving company in beaverton",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 1900,
+              "cpc": 12.66
+            },
+            {
+              "keyword": "movers beaverton or",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 1600,
+              "cpc": 12.08
+            },
+            {
+              "keyword": "moving companies beaverton or",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 1600,
+              "cpc": 12.08
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "beaverton moving companies"
+        }
+      },
+      {
+        "keyword": "best movers portland",
+        "search_volume": 480,
+        "cpc": 8.52,
+        "competition": 0.36000001430511475,
+        "arbitrage_score": 11052.972545637727,
+        "velocity_score": 7.6569672368734,
+        "time_impact": 0.6,
+        "estimated_time": 55.519098417514456,
+        "estimated_velocity": 48,
+        "base_value_score": 4089.6,
+        "long_term_arbitrage_score": 8501.611525427348,
+        "competition_band": 4,
+        "content_angle": "Comparison / listicle",
+        "monetization": "Service / conversion page",
+        "raw_data": {
+          "categories": [
+            10017
+          ],
+          "competition": 0.36000001430511475,
+          "cpc": 8.52,
+          "search_volume": 480,
+          "similar_keywords": [
+            {
+              "keyword": "movers portland oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "movers portland",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving companies portland",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland moving companies",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving portland",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 14800,
+              "cpc": 0.67
+            },
+            {
+              "keyword": "movers pdx",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "moving companies portland oregon",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland mover",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 260,
+              "cpc": 6.97
+            },
+            {
+              "keyword": "portland movers",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "best moving company portland",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 590,
+              "cpc": 10.48
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "best movers portland"
+        }
+      },
+      {
+        "keyword": "local movers vancouver",
+        "search_volume": 20,
+        "cpc": 0.0,
+        "competition": 0.10999999940395355,
+        "arbitrage_score": 0.0,
+        "velocity_score": 76.335878626713,
+        "time_impact": 0.965383153384698,
+        "estimated_time": 9.730842330765098,
+        "estimated_velocity": 94,
+        "base_value_score": 0.0,
+        "long_term_arbitrage_score": 0.0,
+        "competition_band": 5,
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization": "Top-of-funnel explainer",
+        "raw_data": {
+          "categories": [
+            10003,
+            10017,
+            10035,
+            10146,
+            10782,
+            13575,
+            13842
+          ],
+          "competition": 0.10999999940395355,
+          "cpc": 0.0,
+          "search_volume": 20,
+          "similar_keywords": [
+            {
+              "keyword": "moving companies vancouver",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "moving company vancouver",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "vancouver moving companies",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving services vancouver",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving service vancouver",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "movers vancouver washington",
+              "country": "US",
+              "overlapping_pages": 12,
+              "search_volume": 480,
+              "cpc": 27.02
+            },
+            {
+              "keyword": "home movers vancouver wa",
+              "country": "US",
+              "overlapping_pages": 12,
+              "search_volume": 10,
+              "cpc": 0.0
+            },
+            {
+              "keyword": "moving companies in vancouver wa",
+              "country": "US",
+              "overlapping_pages": 11,
+              "search_volume": 1000,
+              "cpc": 16.68
+            },
+            {
+              "keyword": "moving companies vancouver wa",
+              "country": "US",
+              "overlapping_pages": 11,
+              "search_volume": 1000,
+              "cpc": 16.68
+            },
+            {
+              "keyword": "vancouver wa moving companies",
+              "country": "US",
+              "overlapping_pages": 11,
+              "search_volume": 1000,
+              "cpc": 16.68
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "local movers vancouver"
+        }
+      },
+      {
+        "keyword": "furniture movers portland",
+        "search_volume": 50,
+        "cpc": 25.62,
+        "competition": 0.3700000047683716,
+        "arbitrage_score": 3371.0525892778123,
+        "velocity_score": 7.25163143155859,
+        "time_impact": 0.6,
+        "estimated_time": 62.41294160703876,
+        "estimated_velocity": 42,
+        "base_value_score": 1281.0,
+        "long_term_arbitrage_score": 2537.508536100541,
+        "competition_band": 4,
+        "content_angle": "Comparison / listicle",
+        "monetization": "Service / conversion page",
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.3700000047683716,
+          "cpc": 25.62,
+          "search_volume": 50,
+          "similar_keywords": [
+            {
+              "keyword": "moving portland",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 14800,
+              "cpc": 0.67
+            },
+            {
+              "keyword": "movers portland",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving companies portland",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland moving companies",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "movers pdx",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "movers portland oregon",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "portland mover",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 260,
+              "cpc": 6.97
+            },
+            {
+              "keyword": "portland movers",
+              "country": "US",
+              "overlapping_pages": 15,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "furniture moving portland oregon",
+              "country": "US",
+              "overlapping_pages": 15,
+              "search_volume": 50,
+              "cpc": 19.89
+            },
+            {
+              "keyword": "moving companies portland oregon",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 8100,
+              "cpc": 16.72
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "furniture movers portland"
+        }
+      },
+      {
+        "keyword": "movers oregon city",
+        "search_volume": 110,
+        "cpc": 19.33,
+        "competition": 0.7200000286102295,
+        "arbitrage_score": 2912.7396118710285,
+        "velocity_score": 1.9252982685409203,
+        "time_impact": 0.6,
+        "estimated_time": 119.63147864444811,
+        "estimated_velocity": 1,
+        "base_value_score": 2126.2999999999997,
+        "long_term_arbitrage_score": 2193.728669033577,
+        "competition_band": 5,
+        "content_angle": "In-depth guide / landing page",
+        "monetization": "Service / conversion page",
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.7200000286102295,
+          "cpc": 19.33,
+          "search_volume": 110,
+          "similar_keywords": [
+            {
+              "keyword": "movers in oregon city",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 110,
+              "cpc": 19.33
+            },
+            {
+              "keyword": "moving companies oregon city",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 110,
+              "cpc": 19.53
+            },
+            {
+              "keyword": "moving company oregon city",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 110,
+              "cpc": 19.33
+            },
+            {
+              "keyword": "oregon city moving company",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 110,
+              "cpc": 19.33
+            },
+            {
+              "keyword": "oregon city movers",
+              "country": "US",
+              "overlapping_pages": 15,
+              "search_volume": 110,
+              "cpc": 19.33
+            },
+            {
+              "keyword": "movers oregon",
+              "country": "US",
+              "overlapping_pages": 3,
+              "search_volume": 1000,
+              "cpc": 6.46
+            },
+            {
+              "keyword": "portland mover",
+              "country": "US",
+              "overlapping_pages": 2,
+              "search_volume": 260,
+              "cpc": 6.97
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "movers oregon city"
+        }
+      },
+      {
+        "keyword": "gresham moving companies",
+        "search_volume": 140,
+        "cpc": 26.36,
+        "competition": 0.5600000023841858,
+        "arbitrage_score": 6474.3859378313355,
+        "velocity_score": 3.1786395152959845,
+        "time_impact": 0.6,
+        "estimated_time": 97.7743741228205,
+        "estimated_velocity": 6,
+        "base_value_score": 3690.4,
+        "long_term_arbitrage_score": 4820.594373596535,
+        "competition_band": 5,
+        "content_angle": "Comparison / listicle",
+        "monetization": "Service / conversion page",
+        "raw_data": {
+          "categories": [
+            10108,
+            10573,
+            11868
+          ],
+          "competition": 0.5600000023841858,
+          "cpc": 26.36,
+          "search_volume": 140,
+          "similar_keywords": [
+            {
+              "keyword": "moving companies gresham",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 90,
+              "cpc": 22.65
+            },
+            {
+              "keyword": "moving companies gresham or",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 140,
+              "cpc": 26.36
+            },
+            {
+              "keyword": "moving companies gresham oregon",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 140,
+              "cpc": 17.29
+            },
+            {
+              "keyword": "moving company gresham",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 90,
+              "cpc": 22.65
+            },
+            {
+              "keyword": "gresham movers",
+              "country": "US",
+              "overlapping_pages": 15,
+              "search_volume": 140,
+              "cpc": 17.29
+            },
+            {
+              "keyword": "movers gresham",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 140,
+              "cpc": 26.36
+            },
+            {
+              "keyword": "movers gresham oregon",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 140,
+              "cpc": 26.36
+            },
+            {
+              "keyword": "moving companies portland",
+              "country": "US",
+              "overlapping_pages": 2,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving companies portland oregon",
+              "country": "US",
+              "overlapping_pages": 2,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland moving companies",
+              "country": "US",
+              "overlapping_pages": 2,
+              "search_volume": 8100,
+              "cpc": 16.72
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "gresham moving companies"
+        }
+      }
+    ],
+    "customer_domain_data": {}
+  },
+  "serviceRadiusCities": [
+    "Portland",
+    "Vancouver",
+    "Gresham",
+    "Hillsboro",
+    "Beaverton",
+    "Happy Valley",
+    "Lake Oswego",
+    "Oregon City",
+    "Milwaukie",
+    "Tigard",
+    "Troutdale",
+    "Fairview",
+    "Wood Village",
+    "Clackamas",
+    "Wilsonville",
+    "Sherwood",
+    "Canby",
+    "Forest Grove",
+    "Cornelius",
+    "Banks",
+    "North Plains",
+    "Gaston",
+    "St. Helens",
+    "Scappoose",
+    "Columbia City",
+    "Rainier",
+    "Vernonia",
+    "Estacada",
+    "Sandy",
+    "Welches",
+    "Government Camp",
+    "Brightwood",
+    "Rhododendron",
+    "Zigzag",
+    "Mount Hood Village",
+    "Parkdale",
+    "Hood River",
+    "The Dalles",
+    "White Salmon",
+    "Bingen",
+    "Stevenson",
+    "Carson",
+    "North Bonneville",
+    "Skamania",
+    "Underwood",
+    "Lyle",
+    "Goldendale",
+    "Klickitat",
+    "Wishram",
+    "Dufur",
+    "Maupin"
+  ],
+  "cityClusters": {
+    "Portland": [
+      {
+        "cluster_id": "Portland-0",
+        "keywords": [
+          "long distance movers portland",
+          "local movers portland",
+          "movers portland",
+          "cheap movers portland",
+          "commercial movers portland",
+          "best movers portland",
+          "furniture movers portland"
+        ],
+        "cluster_value_score": 22611.808113107865,
+        "content_ideas": {
+          "title": "Portland Long Distance Moving: Your Ultimate Guide to a Stress-Free Relocation",
+          "content_angle": "Comprehensive guide for individuals and businesses planning a long-distance move to or from Portland, focusing on planning, cost-saving tips, and choosing the right movers, specifically highlighting the value and expertise provided by STRONGMANMOVER.com.",
+          "target_audience": "Individuals and businesses in Portland, OR, and surrounding areas, planning a long-distance move. Specifically targeting those seeking reliable, professional moving services and are willing to invest in quality service.",
+          "key_questions": [
+            "How much does long-distance moving typically cost in Portland?",
+            "What are the key steps involved in planning a long-distance move?",
+            "How can I find reliable and affordable long-distance movers in Portland (and what should I look for)?",
+            "What are the benefits of hiring professional movers vs. DIY options?",
+            "How does STRONGMANMOVER.com simplify the long-distance moving process?"
+          ]
+        },
+        "title": "Portland Long Distance Movers: Top-Rated Moving Companies"
+      },
+      {
+        "cluster_id": "Portland-1",
+        "keywords": [
+          "moving portland",
+          "portland moving companies"
+        ],
+        "cluster_value_score": 22455.319718485684,
+        "content_ideas": {
+          "title": "Moving to Portland: Your Ultimate Guide to a Smooth Transition",
+          "content_angle": "Comprehensive guide for individuals and families planning a move to Portland, focusing on practical advice, cost considerations, and choosing the right moving company.",
+          "target_audience": "Individuals and families planning a local or long-distance move to Portland, Oregon, seeking reliable information and moving resources.",
+          "key_questions": [
+            "What are the key steps involved in planning a move to Portland?",
+            "How much does it cost to move within or to Portland?",
+            "What factors should I consider when choosing Portland moving companies?",
+            "What are the best neighborhoods to live in Portland?",
+            "How can I prepare for my move to Portland to make the process easier?"
+          ]
+        },
+        "title": "Moving to Portland: Your Ultimate Guide"
+      }
+    ],
+    "Vancouver": [
+      {
+        "cluster_id": "Vancouver-0",
+        "keywords": [
+          "vancouver moving companies",
+          "moving vancouver"
+        ],
+        "cluster_value_score": 31546.153846153844,
+        "content_ideas": {
+          "title": "Moving in Vancouver? Your Ultimate Guide to Choosing the Right Mover (2024)",
+          "content_angle": "A comprehensive guide providing practical advice and tips for Vancouver residents looking to hire a moving company, focusing on key considerations like cost, reliability, and service offerings.",
+          "target_audience": "Vancouver residents planning a local move, particularly those seeking a stress-free and reliable moving experience, with a budget of approximately $1200.",
+          "key_questions": [
+            "How much does it cost to hire movers in Vancouver, and what factors influence the price?",
+            "What should I look for when choosing a reputable moving company in Vancouver?",
+            "What services do Vancouver moving companies typically offer (packing, storage, etc.)?",
+            "How can I prepare for my move to ensure a smooth and efficient process?",
+            "What are the best tips for avoiding moving scams and protecting my belongings?"
+          ]
+        },
+        "title": "Vancouver Moving Companies: Top-Rated Movers & Services"
+      },
+      {
+        "cluster_id": "Vancouver-1",
+        "keywords": [
+          "movers vancouver",
+          "best movers vancouver",
+          "local movers vancouver"
+        ],
+        "cluster_value_score": 21030.769262911064,
+        "content_ideas": {
+          "title": "Moving in Vancouver? Your Guide to the Best Movers & a Stress-Free Relocation",
+          "content_angle": "A comprehensive guide comparing top Vancouver movers, offering tips for a smooth move, and highlighting value for money.",
+          "target_audience": "Vancouver residents planning a local move or relocating to the city, seeking reliable and trustworthy moving services, and looking for cost-effective solutions.",
+          "key_questions": [
+            "What are the top-rated moving companies in Vancouver, and what services do they offer?",
+            "How can I compare moving quotes and ensure I'm getting a fair price?",
+            "What steps can I take to prepare for a move and minimize stress?",
+            "What are the average costs associated with moving in Vancouver?",
+            "How do I choose the right mover for my specific needs and budget, considering factors like distance, items, and packing needs?"
+          ]
+        },
+        "title": "Vancouver Movers: Top-Rated Moving Companies & Services"
+      }
+    ],
+    "Gresham": [
+      {
+        "cluster_id": "Gresham-0",
+        "keywords": [
+          "movers gresham"
+        ],
+        "cluster_value_score": 6474.3859378313355,
+        "content_ideas": {
+          "title": "Gresham Movers: Your Stress-Free Guide to a Smooth Relocation",
+          "content_angle": "A comprehensive guide providing practical tips, cost considerations, and a step-by-step process for a successful move within Gresham.",
+          "target_audience": "Homeowners and businesses in Gresham, Oregon, planning a local move and seeking a reliable and professional moving service.",
+          "key_questions": [
+            "What are the key steps involved in planning a move in Gresham?",
+            "How much does it typically cost to hire movers in Gresham?",
+            "What factors should I consider when choosing a moving company in Gresham?",
+            "How can I prepare for moving day to ensure a smooth process?",
+            "What are the benefits of hiring professional movers versus DIY moving in Gresham?"
+          ]
+        },
+        "title": "Gresham Movers: Top-Rated Moving Services & Free Quotes"
+      },
+      {
+        "cluster_id": "Gresham-1",
+        "keywords": [
+          "gresham moving companies"
+        ],
+        "cluster_value_score": 6474.3859378313355,
+        "content_ideas": {
+          "title": "Moving in Gresham, OR? Your Guide to Stress-Free Relocation",
+          "content_angle": "A comprehensive guide for residents of Gresham looking for moving services, highlighting the benefits of professional movers and providing tips for a smooth moving experience.",
+          "target_audience": "Homeowners and renters in Gresham, OR, planning a local move who are seeking a reliable and efficient moving company.",
+          "key_questions": [
+            "What are the benefits of hiring professional moving companies in Gresham?",
+            "How much does it cost to hire movers in Gresham, and what factors influence the price?",
+            "How can I prepare for my move to ensure a smooth process?",
+            "What should I look for when choosing a moving company in Gresham?",
+            "How do I get a free, accurate moving quote?"
+          ]
+        },
+        "title": "Gresham Moving Companies: Top-Rated Movers & Affordable Prices"
+      }
+    ],
+    "Hillsboro": [
+      {
+        "cluster_id": "Hillsboro-0",
+        "keywords": [
+          "movers hillsboro"
+        ],
+        "cluster_value_score": 12270.000091418624,
+        "content_ideas": {
+          "title": "Hillsboro Moving Guide: Expert Tips for a Stress-Free Move with STRONGMAN MOVERS",
+          "content_angle": "Provide a comprehensive guide for people planning a move in Hillsboro, Oregon, emphasizing the benefits of professional moving services, particularly from a company like STRONGMAN MOVERS, and offering practical advice to reduce stress.",
+          "target_audience": "Individuals and families residing in or planning to move to Hillsboro, OR, who are seeking professional moving services.",
+          "key_questions": [
+            "What are the key steps to planning a move in Hillsboro?",
+            "How can I choose the best moving company in Hillsboro?",
+            "What services does STRONGMAN MOVERS offer to make my move easier?",
+            "What are the average costs associated with moving in Hillsboro, and how can I budget effectively?",
+            "How can I prepare my belongings for a move to Hillsboro?"
+          ]
+        },
+        "title": "Hillsboro Movers: Expert Moving Services & Affordable Rates"
+      },
+      {
+        "cluster_id": "Hillsboro-1",
+        "keywords": [
+          "hillsboro moving companies"
+        ],
+        "cluster_value_score": 10337.391197190167,
+        "content_ideas": {
+          "title": "Hillsboro Moving Companies: Choosing the Right Movers for Your Stress-Free Relocation",
+          "content_angle": "A comprehensive guide to selecting the best moving company in Hillsboro, OR, focusing on factors like experience, pricing, services offered, and customer reviews to ensure a smooth and successful move, tailored for those with an average job value of $1200.",
+          "target_audience": "Homeowners and renters in the Hillsboro, OR area planning a local or long-distance move, particularly those who value quality service and are willing to invest in a reliable moving company.",
+          "key_questions": [
+            "What are the key factors to consider when hiring Hillsboro moving companies?",
+            "How do I get accurate moving quotes and avoid hidden fees?",
+            "What services should I expect from a reputable moving company?",
+            "How can I compare different Hillsboro moving companies and read customer reviews?",
+            "What are the benefits of hiring professional movers versus DIY moving?"
+          ]
+        },
+        "title": "Hillsboro Moving Companies: Top-Rated Movers & Services"
+      }
+    ],
+    "Beaverton": [
+      {
+        "cluster_id": "Beaverton-0",
+        "keywords": [
+          "movers beaverton"
+        ],
+        "cluster_value_score": 27128.570389078628,
+        "content_ideas": {
+          "title": "Stress-Free Moving in Beaverton: Your Ultimate Guide to Choosing the Right Movers",
+          "content_angle": "A comprehensive guide providing Beaverton residents with everything they need to know to find reliable, professional movers and ensure a smooth relocation experience.",
+          "target_audience": "Homeowners and renters in Beaverton, Oregon, planning a local move or relocation, and seeking a trusted moving company.",
+          "key_questions": [
+            "What should I look for when choosing movers in Beaverton?",
+            "How much does it cost to hire movers in Beaverton, and what factors influence the price?",
+            "What services do movers typically offer, and which ones do I need?",
+            "How can I prepare for my move to make it easier for the movers?",
+            "What are some common moving scams, and how can I avoid them?"
+          ]
+        },
+        "title": "Beaverton Movers: Top-Rated Moving Services & Free Quotes"
+      },
+      {
+        "cluster_id": "Beaverton-1",
+        "keywords": [
+          "beaverton moving companies"
+        ],
+        "cluster_value_score": 32945.45552730563,
+        "content_ideas": {
+          "title": "Choosing the Best Beaverton Moving Company: A Guide to Stress-Free Relocation",
+          "content_angle": "A comprehensive guide providing practical advice and tips for residents of Beaverton, OR, on how to choose a reliable and affordable moving company. This includes what to look for, how to avoid scams, and how to prepare for moving day.",
+          "target_audience": "Homeowners and renters in Beaverton, OR, planning a local or long-distance move, with a focus on those looking for quality and value, and potentially willing to spend around $1200 on their move.",
+          "key_questions": [
+            "What are the key factors to consider when choosing a moving company in Beaverton?",
+            "How can I get accurate moving quotes and avoid hidden fees?",
+            "What services do Beaverton moving companies typically offer, and which are essential for me?",
+            "How can I prepare for moving day to ensure a smooth and efficient move?",
+            "What questions should I ask a moving company before hiring them?"
+          ]
+        },
+        "title": "Top Beaverton Moving Companies: Get a Free Quote Today!"
+      }
+    ],
+    "Lake Oswego": [
+      {
+        "cluster_id": "Lake Oswego-0",
+        "keywords": [
+          "movers lake oswego"
+        ],
+        "cluster_value_score": 1958.9610632235176,
+        "content_ideas": {
+          "title": "Lake Oswego Moving Guide: Expert Tips for a Smooth Relocation",
+          "content_angle": "Provide a comprehensive guide to moving in Lake Oswego, focusing on local expertise and value-added services offered by a reputable moving company.",
+          "target_audience": "Homeowners and renters in Lake Oswego planning a local or long-distance move, looking for professional moving services.",
+          "key_questions": [
+            "How do I choose the right moving company in Lake Oswego?",
+            "What services do professional movers offer to make my move easier?",
+            "What are the typical costs associated with moving in Lake Oswego?",
+            "How can I prepare for my move to ensure a smooth transition?",
+            "What are the benefits of hiring local movers versus doing it myself?"
+          ]
+        },
+        "title": "Lake Oswego Movers: Your Stress-Free Moving Solution"
+      }
+    ],
+    "Oregon City": [
+      {
+        "cluster_id": "Oregon City-0",
+        "keywords": [
+          "movers oregon city"
+        ],
+        "cluster_value_score": 2912.7396118710285,
+        "content_ideas": {
+          "title": "Oregon City Moving Guide: Your Stress-Free Move with STRONGMANMOVER",
+          "content_angle": "A comprehensive guide providing practical tips and advice for a smooth move in Oregon City, specifically highlighting the services offered by STRONGMANMOVER and addressing common moving concerns.",
+          "target_audience": "Homeowners and renters in Oregon City planning a local move or looking for professional moving services.",
+          "key_questions": [
+            "How do I choose the right moving company in Oregon City?",
+            "What services do professional movers offer and which ones do I need?",
+            "How can I prepare for a move to minimize stress and potential damage?",
+            "How much does it cost to move in Oregon City, and what factors affect the price?",
+            "Why choose STRONGMANMOVER for your Oregon City move?"
+          ]
+        },
+        "title": "Oregon City Movers: Find Top-Rated Moving Companies"
+      }
+    ],
+    "Tigard": [
+      {
+        "cluster_id": "Tigard-0",
+        "keywords": [
+          "movers tigard"
+        ],
+        "cluster_value_score": 6831.1579118807895,
+        "content_ideas": {
+          "title": "Tigard Moving Made Easy: Your Guide to a Stress-Free Move with [Your Company Name]",
+          "content_angle": "Providing a comprehensive guide for residents of Tigard, Oregon, covering all aspects of a local move, emphasizing ease, and highlighting the benefits of professional movers.",
+          "target_audience": "Homeowners and renters in Tigard, OR, planning a local move and seeking a reliable and efficient moving service.",
+          "key_questions": [
+            "What are the key steps involved in planning a move in Tigard?",
+            "How can professional movers in Tigard streamline the moving process and reduce stress?",
+            "What services do Tigard moving companies offer, and how do I choose the right one for my needs?",
+            "What are the typical costs associated with moving in Tigard, and how can I get an accurate estimate?",
+            "How can I prepare my belongings for a move to ensure their safety and minimize potential damage?"
+          ]
+        },
+        "title": "Tigard Movers: Get a Stress-Free Move Today"
+      }
+    ],
+    "Rainier": [
+      {
+        "cluster_id": "Rainier-0",
+        "keywords": [
+          "rainier moving company"
+        ],
+        "cluster_value_score": 906.7856949826288,
+        "content_ideas": {
+          "title": "Moving to Rainier, WA? Your Complete Guide to a Smooth Move with Strongman Movers",
+          "content_angle": "A comprehensive guide providing valuable information and tips for individuals and families planning a move to Rainier, WA, emphasizing the benefits of hiring a professional moving company like Strongman Movers.",
+          "target_audience": "Individuals and families residing in or planning to move to Rainier, WA, who are seeking a reliable and professional moving service.",
+          "key_questions": [
+            "What are the key considerations when planning a move to Rainier, WA?",
+            "Why should I hire a professional moving company, and what are the benefits of choosing Strongman Movers?",
+            "How much does it typically cost to move within or to Rainier, WA, and what factors influence the price?",
+            "What services does Strongman Movers offer, and how can they help with my specific moving needs?",
+            "What steps can I take to prepare for my move and ensure a smooth and stress-free experience?"
+          ]
+        },
+        "title": "Rainier Moving Company: Your Seamless Seattle Relocation Experts"
+      }
+    ],
+    "Sandy": [
+      {
+        "cluster_id": "Sandy-0",
+        "keywords": [
+          "movers sandy"
+        ],
+        "cluster_value_score": 786.0810608198564,
+        "content_ideas": {
+          "title": "Moving to Sandy, UT? Your Ultimate Guide to a Stress-Free Move (Strongman Mover's Secrets)",
+          "content_angle": "A comprehensive guide providing practical tips, local insights, and expert advice for residents of Sandy, UT, planning a move. It positions Strongman Mover as the go-to local moving expert.",
+          "target_audience": "Homeowners and renters in Sandy, UT, planning a local or long-distance move, and looking for reliable and professional moving services.",
+          "key_questions": [
+            "What are the key factors to consider when hiring movers in Sandy, UT?",
+            "How can I prepare for a move to minimize stress and costs?",
+            "What are the average moving costs in Sandy, and how can I get the best value?",
+            "What are the benefits of choosing a local moving company like Strongman Mover?",
+            "What services does Strongman Mover offer to make my move easier?"
+          ]
+        },
+        "title": "Sandy Movers: Find the Best Moving Company in Sandy, Utah"
+      }
+    ],
+    "Stevenson": [
+      {
+        "cluster_id": "Stevenson-0",
+        "keywords": [
+          "stevenson moving"
+        ],
+        "cluster_value_score": 7815.85354491191,
+        "content_ideas": {
+          "title": "Moving to Stevenson? Your Ultimate Guide to a Stress-Free Relocation",
+          "content_angle": "A comprehensive guide providing practical advice, local insights, and expert tips for a smooth move to Stevenson, tailored for families and individuals.",
+          "target_audience": "Families, individuals, and professionals planning a move to the Stevenson area, seeking a reliable and stress-free moving experience.",
+          "key_questions": [
+            "What are the key considerations when planning a move to Stevenson?",
+            "How can I find reliable and affordable movers in the Stevenson area?",
+            "What services do professional movers typically offer, and how do I choose the right ones?",
+            "What are some tips for packing, unpacking, and organizing your belongings for a move?",
+            "What are the average costs associated with moving to Stevenson, and how can I budget effectively?"
+          ]
+        },
+        "title": "Stevenson Moving: Your Stress-Free Relocation Solution"
+      }
+    ]
+  }
+}
+--- End of Cached Arbitrage Data ---
 
 --- Test Script Finished ---

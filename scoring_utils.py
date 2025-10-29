@@ -31,10 +31,9 @@ __all__ = [
     "get_competition_band",
     "classify_content_angle",
     "classify_monetization",
-    "generate_content_ideas_with_llm",
-    "generate_title",
     "cluster_keywords_by_overlap",
     "_normalize_keyword", # Add to __all__
+    "generate_batched_content_and_titles_with_llm", # Add to __all__
 ]
 
 def _normalize_keyword(keyword: str) -> str:
@@ -223,104 +222,6 @@ def classify_monetization(cpc: float) -> str:
         return "Top-of-funnel explainer"
 
 
-async def generate_content_ideas_with_llm(
-    cluster: Dict[str, Any],
-    customer_domain: str,
-    avg_job_amount: float,
-    avg_conversion_rate: float,
-    llm_model: Any,
-) -> Dict[str, Any]:
-    """
-    Generates content ideas (title, content angle, target audience, key questions) for a cluster using an LLM.
-    Expects llm_model to have an async method generate_content_async(prompt) returning an object with .text.
-    """
-    primary_keyword = cluster.get("primary", "")
-    related_keywords = ", ".join(cluster.get("related", [])) if cluster.get("related") else "None"
-    aggregate_volume = cluster.get("aggregate_search_volume", 0)
-    average_cpc = cluster.get("average_cpc", 0.0)
-    average_competition = cluster.get("average_competition", 0.0)
-    value_score = cluster.get("value_score", 0.0)
-
-    system_prompt = """You are a helpful assistant that generates content ideas for SEO clusters.
-Your output must be a JSON object with the following keys:
-- "title": A compelling article title (string).
-- "content_angle": Suggested content angle (string).
-- "target_audience": Primary target audience (string).
-- "key_questions": A list of 3-5 key questions the article should answer (list of strings).
-"""
-
-    user_prompt = f"""Generate content ideas for the following keyword cluster:
-
-Primary Keyword: {primary_keyword}
-Related Keywords: {related_keywords}
-Aggregate Search Volume: {aggregate_volume}
-Average CPC: {average_cpc}
-Average Competition: {average_competition}
-Value Score: {value_score}
-
-Context:
-Customer Domain: {customer_domain}
-Average Job Amount: ${avg_job_amount:.2f}
-Average Conversion Rate: {avg_conversion_rate:.2f}%
-
-Consider the target audience for a business operating on '{customer_domain}' with an average job value of ${avg_job_amount:.2f}.
-Focus on creating a title that is engaging and relevant to the keywords, a suitable content angle, a clear target audience, and 3-5 key questions the article should address.
-"""
-
-    full_prompt = f"<|system|>\n{system_prompt}</s>\n<|user|>\n{user_prompt}</s>\n<|assistant|>\n"
-
-    try:
-        response = await llm_model.generate_content_async(full_prompt)
-        raw_response_text = getattr(response, "text", "") or str(response)
-        cleaned_text = raw_response_text.strip().replace("```json", "").replace("```", "").strip()
-        try:
-            llm_output = json.loads(cleaned_text)
-            return llm_output
-        except json.JSONDecodeError:
-            logger.error("LLM response not valid JSON for keyword '%s'. Raw: %s", primary_keyword, cleaned_text)
-            return {
-                "title": f"Error: Could not generate title for {primary_keyword}",
-                "content_angle": "N/A",
-                "target_audience": "N/A",
-                "key_questions": ["LLM JSON parsing error."]
-            }
-    except Exception as e:
-        logger.exception("Error calling LLM for '%s': %s", primary_keyword, e)
-        return {
-            "title": f"Error: LLM call failed for {primary_keyword}",
-            "content_angle": "N/A",
-            "target_audience": "N/A",
-            "key_questions": [f"LLM call error: {e}"]
-        }
-
-
-async def generate_title(keyword: str, llm_model: Any) -> str:
-    """
-    Generates a compelling title for a keyword using an LLM.
-    """
-    system_prompt = """You are a creative content writer. Your task is to generate a compelling and SEO-friendly title for a given keyword.
-    The title should be concise, engaging, and accurately reflect the keyword's intent.
-    Return ONLY the title string, no extra text or markdown.
-    """
-    user_prompt = f"Generate a title for the keyword: '{keyword}'"
-    full_prompt = f"<|system|>\n{system_prompt}</s>\n<|user|>\n{user_prompt}</s>\n<|assistant|>\n"
-
-    try:
-        response = await llm_model.generate_content_async(full_prompt)
-        return response.text.strip()
-    except Exception as e:
-        logger.error(f"Error generating title for '{keyword}' with LLM: {e}")
-        # Fallback to heuristic-based title generation
-        if "emergency" in keyword.lower():
-            return f"Emergency {keyword.title()}: 24/7 Fast Response"
-        elif "cheap" in keyword.lower() or "affordable" in keyword.lower():
-            return f"Affordable {keyword.title()}: Save on Quality Repairs"
-        elif "best" in keyword.lower():
-            return f"Best {keyword.title()}: Top Rated Services"
-        else:
-            return f"{keyword.title()} Services: Your Local Experts"
-
-
 def cluster_keywords_by_overlap(keywords: List[str], min_common_words: int = 2) -> List[Dict[str, Any]]:
     """
     Clusters keywords by overlapping words. Returns list of clusters:
@@ -350,3 +251,113 @@ def cluster_keywords_by_overlap(keywords: List[str], min_common_words: int = 2) 
         clusters.append(cluster)
 
     return clusters
+
+
+async def generate_batched_content_and_titles_with_llm(
+    clusters_data: List[Dict[str, Any]],
+    customer_domain: str,
+    avg_job_amount: float,
+    avg_conversion_rate: float,
+    llm_model: Any,
+) -> Dict[str, Dict[str, Any]]:
+    """
+    Generates content ideas and titles for a batch of clusters using a single LLM call.
+    Returns a dictionary mapping cluster_id to its generated content ideas and title.
+    """
+    if not clusters_data:
+        return {}
+
+    batch_input_for_llm = []
+    for i, cluster in enumerate(clusters_data):
+        primary_keyword = cluster.get("primary", "")
+        related_keywords = ", ".join(cluster.get("related", [])) if cluster.get("related") else "None"
+        aggregate_volume = cluster.get("aggregate_search_volume", 0)
+        average_cpc = cluster.get("average_cpc", 0.0)
+        average_competition = cluster.get("average_competition", 0.0)
+        value_score = cluster.get("value_score", 0.0)
+
+        batch_input_for_llm.append({
+            "cluster_id": cluster.get("cluster_id", f"cluster_{i}"), # Ensure cluster_id is present
+            "primary_keyword": primary_keyword,
+            "related_keywords": related_keywords,
+            "aggregate_search_volume": aggregate_volume,
+            "average_cpc": average_cpc,
+            "average_competition": average_competition,
+            "value_score": value_score,
+            "customer_domain": customer_domain,
+            "avg_job_amount": avg_job_amount,
+            "avg_conversion_rate": avg_conversion_rate
+        })
+
+    system_prompt = """You are a helpful assistant that generates content ideas and titles for SEO keyword clusters.
+You will receive a JSON array of objects, where each object represents a keyword cluster.
+For each cluster, you need to generate:
+- A compelling article title.
+- Suggested content angle.
+- Primary target audience.
+- A list of 3-5 key questions the article should answer.
+
+CRITICAL INSTRUCTIONS - READ CAREFULLY:
+1. You MUST return ONLY a valid JSON array.
+2. The response array MUST contain one object for every object in the input array.
+3. Each object in your response array MUST include the original 'cluster_id'.
+4. Each object MUST have the following keys: 'cluster_id', 'title', 'content_angle', 'target_audience', 'key_questions'.
+5. 'key_questions' MUST be a list of 3-5 strings.
+6. Maintain the exact same order as the input array.
+
+EXPECTED JSON FORMAT (example for one cluster):
+[
+  {{
+    "cluster_id": "cluster_123",
+    "title": "Compelling Article Title for Cluster",
+    "content_angle": "Suggested content angle for the cluster.",
+    "target_audience": "Primary target audience for the content.",
+    "key_questions": [
+      "Question 1?",
+      "Question 2?",
+      "Question 3?"
+    ]
+  }}
+]
+
+Here is the batch of keyword clusters to process: {batch_input_json}
+
+Return ONLY the JSON array. No explanations, no markdown, no additional text.
+"""
+
+    full_prompt = system_prompt.format(batch_input_json=json.dumps(batch_input_for_llm, separators=(',', ':')))
+
+    try:
+        response = await llm_model.generate_content_async(full_prompt)
+        raw_response_text = getattr(response, "text", "") or str(response)
+        cleaned_text = raw_response_text.strip().replace("```json", "").replace("```", "").strip()
+        
+        batched_llm_output = json.loads(cleaned_text)
+        
+        # Validate the response structure
+        if not isinstance(batched_llm_output, list):
+            logger.error("Batched LLM response is not a list.")
+            return {}
+        
+        results_map = {}
+        for item in batched_llm_output:
+            if "cluster_id" in item and "title" in item and "content_angle" in item and "target_audience" in item and "key_questions" in item:
+                results_map[item["cluster_id"]] = {
+                    "content_ideas": {
+                        "title": item["title"],
+                        "content_angle": item["content_angle"],
+                        "target_audience": item["target_audience"],
+                        "key_questions": item["key_questions"]
+                    },
+                    "title": item["title"] # Title is also part of content_ideas, but also returned separately for convenience
+                }
+            else:
+                logger.warning(f"Malformed item in batched LLM response: {item}")
+        return results_map
+
+    except json.JSONDecodeError as e:
+        logger.error(f"LLM response not valid JSON for batched clusters. Error: {e}. Raw: {raw_response_text[:500] if 'raw_response_text' in locals() else 'No text found'}...")
+        return {}
+    except Exception as e:
+        logger.exception(f"Error calling LLM for batched clusters: {e}")
+        return {}

@@ -40,9 +40,8 @@ from scoring_utils import (
     get_competition_band,
     classify_content_angle,
     classify_monetization,
-    generate_content_ideas_with_llm,
-    generate_title,
     cluster_keywords_by_overlap,
+    generate_batched_content_and_titles_with_llm, # Import the new batched function
 )
 
 # Configure logging
@@ -496,6 +495,10 @@ async def run_prospecting_async(
         content_angle = classify_content_angle(competition)
         monetization = classify_monetization(cpc)
 
+        # Calculate ROI
+        # ROI = search_volume * avg_job_amount * avg_conversion_rate
+        roi = search_volume * avg_job_amount * avg_conversion_rate
+
         scored_keywords.append({
             "keyword": keyword,
             "search_volume": search_volume,
@@ -511,14 +514,42 @@ async def run_prospecting_async(
             "competition_band": comp_band,
             "content_angle": content_angle,
             "monetization": monetization,
+            "roi": roi, # Add ROI to the scored keyword
             "raw_data": data # Include raw data for completeness
         })
     
     logger.info(f"Finished scoring {len(scored_keywords)} keywords.")
 
+    # --- Implement Top 4 Short-Term Strategy ---
+    short_term_strategy = {
+        "top_4_clusters": [],
+        "max_time_to_implement": 0.0
+    }
+
+    if scored_keywords:
+        # 1. Sort all keywords by estimated_time (least to most)
+        time_sorted_keywords = sorted(scored_keywords, key=lambda x: x.get("estimated_time", float('inf')))
+        
+        # 2. Grab the top 4 quickest-to-implement keywords
+        top_4_by_time = time_sorted_keywords[:4]
+
+        if top_4_by_time:
+            # 3. Re-sort these selected 4 keywords by their ROI (descending)
+            top_4_by_roi = sorted(top_4_by_time, key=lambda x: x.get("roi", 0.0), reverse=True)
+            
+            # 4. Calculate max_time_to_implement
+            max_time = max([kw.get("estimated_time", 0.0) for kw in top_4_by_roi])
+            
+            short_term_strategy["top_4_clusters"] = top_4_by_roi
+            short_term_strategy["max_time_to_implement"] = max_time
+            logger.info(f"Generated Top 4 Short-Term Strategy. Max time to implement: {max_time:.2f} weeks.")
+        else:
+            logger.warning("No keywords available to form Top 4 Short-Term Strategy.")
+
     return {
         "scored_keywords": scored_keywords,
-        "customer_domain_data": customer_domain_data
+        "customer_domain_data": customer_domain_data,
+        "short_term_strategy": short_term_strategy # Add the new strategy data
     }
 
 async def generate_city_specific_clusters(
@@ -558,6 +589,7 @@ async def generate_city_specific_clusters(
         clusters = cluster_keywords_by_overlap(list(city_relevant_keywords_data.keys()))
         
         city_clusters_output[city] = []
+        all_clusters_for_llm = [] # Collect cluster data for batched LLM call
         for i, cluster_dict in enumerate(clusters): # Iterate over the list of cluster dictionaries
             primary_keyword_for_cluster = cluster_dict["primary"]
             cluster_keywords_list = [primary_keyword_for_cluster] + cluster_dict["related"]
@@ -596,26 +628,50 @@ async def generate_city_specific_clusters(
                 "value_score": cluster_value_score
             }
 
-            # Generate content ideas and title using LLM
-            content_ideas = await generate_content_ideas_with_llm(
-                cluster_data_for_llm,
+            # Store cluster data for batched LLM call
+            cluster_data_for_llm["cluster_id"] = f"{city}-{i}" # Ensure unique ID for mapping results
+            all_clusters_for_llm.append(cluster_data_for_llm)
+
+            # Append a placeholder to city_clusters_output[city] for now
+            # This will be filled with actual content ideas and titles after the batched LLM call
+            city_clusters_output[city].append({
+                "cluster_id": cluster_data_for_llm["cluster_id"],
+                "keywords": cluster_keywords_list,
+                "cluster_value_score": cluster_value_score,
+                "content_ideas": {}, # Placeholder
+                "title": "" # Placeholder
+            })
+        
+        # Perform batched LLM call for content ideas and titles for all clusters in this city
+        if all_clusters_for_llm:
+            batched_llm_results = await generate_batched_content_and_titles_with_llm(
+                all_clusters_for_llm,
                 customer_domain,
                 avg_job_amount,
                 avg_conversion_rate,
                 llm_model
             )
-            title = await generate_title(primary_keyword_for_cluster, llm_model)
 
-            city_clusters_output[city].append({
-                "cluster_id": f"{city}-{i}", # Generate a unique cluster_id
-                "keywords": cluster_keywords_list,
-                "cluster_value_score": cluster_value_score,
-                "content_ideas": content_ideas,
-                "title": title
-            })
+            # Map results back to city_clusters_output
+            for cluster_output_item in city_clusters_output[city]:
+                cluster_id = cluster_output_item["cluster_id"]
+                if cluster_id in batched_llm_results:
+                    llm_generated_data = batched_llm_results[cluster_id]
+                    cluster_output_item["content_ideas"] = llm_generated_data["content_ideas"]
+                    cluster_output_item["title"] = llm_generated_data["title"]
+                else:
+                    logger.warning(f"LLM results missing for cluster_id: {cluster_id}. Filling with error placeholders.")
+                    cluster_output_item["content_ideas"] = {
+                        "title": f"Error: Content ideas failed for {cluster_id}",
+                        "content_angle": "N/A",
+                        "target_audience": "N/A",
+                        "key_questions": ["LLM call error or malformed response."]
+                    }
+                    cluster_output_item["title"] = f"Error: Title failed for {cluster_id}"
     
     logger.info("Finished generate_city_specific_clusters.")
     return city_clusters_output
 
 # If desired, add more helper entrypoints here that call scoring_utils functions
 # e.g., a convenience wrapper to compute arbitrage for a set of keywords, etc.
+

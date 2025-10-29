@@ -1,16 +1,10 @@
-import json
-import sqlite3
-import httpx
-import asyncio
-from datetime import datetime, timedelta, timezone
-from typing import List, Dict, Any, Tuple, Set
-import json
-import sqlite3
 import httpx
 import asyncio
 from datetime import datetime, timedelta, timezone
 from typing import List, Dict, Any, Tuple, Set
 import logging
+import sqlite3 # Added for queue interaction
+import json # Added for serializing/deserializing queue data
 
 # Import the refactored surfer prospecting module
 from surfer_prospector_module import run_prospecting_async
@@ -22,6 +16,53 @@ _arbitrage_data_cache: Dict[str, Dict[str, Any]] = {}
 _cache_initialized = False
 
 MAX_LLM_RETRIES = 2 # Max retries for LLM calls if validation fails
+
+def push_to_surfer_queue(
+    db_path: str,
+    seed_keywords: List[str],
+    customer_domain: str,
+    avg_job_amount: float,
+    avg_conversion_rate: float,
+    category: str,
+    state: str,
+    service_radius_cities: List[str],
+    target_pool_size: int,
+    min_volume_filter: int,
+    country: str
+):
+    """
+    Pushes a new task to the surfer_prospector_queue table.
+    """
+    conn = None
+    try:
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
+
+        cursor.execute("""
+            INSERT INTO surfer_prospector_queue (
+                seed_keywords, customer_domain, avg_job_amount, avg_conversion_rate,
+                category, state, service_radius_cities,
+                target_pool_size, min_volume_filter, country
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, (
+            json.dumps(seed_keywords),
+            customer_domain,
+            avg_job_amount,
+            avg_conversion_rate,
+            category,
+            state,
+            json.dumps(service_radius_cities),
+            target_pool_size,
+            min_volume_filter,
+            country
+        ))
+        conn.commit()
+        logging.info(f"    [Category Normalizer] Pushed task for category '{category}' to surfer_prospector_queue.")
+    except sqlite3.Error as e:
+        logging.error(f"!!! [Category Normalizer] ERROR pushing to surfer_prospector_queue: {e}")
+    finally:
+        if conn:
+            conn.close()
 
 # New function to generate city-specific keywords via LLM with proper validation
 async def generate_city_specific_keywords(category: str, batch_cities: List[str], llm_model: Any) -> Dict[str, List[str]]:
@@ -505,24 +546,26 @@ Here is the batch of leads to process: {batch_llm_input_json}
 
             surfer_target_pool_size = 510
 
-            try:
-                serp_data = await run_prospecting_async(
-                    seed_keywords=unique_all_city_specific_keywords,
-                    customer_domain=customer_domain_for_surfer,
-                    avg_job_amount=avg_job_amount,
-                    avg_conversion_rate=avg_conversion_rate,
-                    llm_model=llm_model,
-                    category=canonical_category_id, # Pass category
-                    state=lead.get("state", ""), # Pass state
-                    service_radius_cities=service_radius_cities, # Pass service_radius_cities
-                    target_pool_size=surfer_target_pool_size,
-                    min_volume_filter=20,
-                    country="US"
-                )
-                logging.info(f"    [Category Normalizer] Lead {post_id}: Surfer Prospecting completed for '{canonical_category_id}'.")
-            except Exception as e:
-                logging.error(f"!!! [Category Normalizer] Lead {post_id}: ERROR during Surfer Prospecting call: {e}")
-                serp_data = {"error": str(e)}
+            # Instead of running directly, push to queue
+            push_to_surfer_queue(
+                db_path=master_db_path,
+                seed_keywords=unique_all_city_specific_keywords,
+                customer_domain=customer_domain_for_surfer,
+                avg_job_amount=avg_job_amount,
+                avg_conversion_rate=avg_conversion_rate,
+                category=canonical_category_id,
+                state=lead.get("state", ""),
+                service_radius_cities=service_radius_cities,
+                target_pool_size=surfer_target_pool_size,
+                min_volume_filter=20,
+                country="US"
+            )
+            logging.info(f"    [Category Normalizer] Lead {post_id}: Pushed Surfer Prospecting task for '{canonical_category_id}' to queue.")
+
+            # Since we are queuing, we don't have serp_data immediately.
+            # We will need to update the cache and Firebase push logic to reflect this.
+            # For now, we'll set serp_data to a placeholder or handle it as None.
+            serp_data = {"status": "queued", "message": "Surfer prospecting task queued."}
 
             current_utc_timestamp = datetime.now(timezone.utc).isoformat().replace('Z', '+00:00')
             
@@ -562,6 +605,11 @@ Here is the batch of leads to process: {batch_llm_input_json}
             combined_json_metadata["location"] = location_slug
             combined_json_metadata["arbitrageData"] = serp_data
             combined_json_metadata["serviceRadiusCities"] = service_radius_cities # Store the generated cities
+            
+            # Add the new short_term_strategy data
+            if serp_data and "short_term_strategy" in serp_data:
+                combined_json_metadata["short_term_strategy"] = serp_data["short_term_strategy"]
+                logging.info(f"    [Category Normalizer] Lead {post_id}: Added short_term_strategy to combined_json_metadata.")
 
             # 🆕 NEW: Generate city-specific clusters for landing page creation
             city_clusters = {}

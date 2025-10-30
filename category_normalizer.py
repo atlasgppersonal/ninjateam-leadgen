@@ -5,6 +5,31 @@ from typing import List, Dict, Any, Tuple, Set
 import logging
 import sqlite3 # Added for queue interaction
 import json # Added for serializing/deserializing queue data
+import os
+
+# Configure logging for this module
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG) # Set to DEBUG to capture all messages
+
+# Create a file handler for this module's logs
+log_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "category_normalizer.log")
+file_handler = logging.FileHandler(log_file_path)
+file_handler.setLevel(logging.DEBUG) # Log all messages to file
+
+# Create a formatter and add it to the file handler
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+file_handler.setFormatter(formatter)
+
+# Add the file handler to the logger
+logger.addHandler(file_handler)
+
+# Optionally, add a stream handler to also output to console (e.g., for INFO and above)
+stream_handler = logging.StreamHandler()
+stream_handler.setLevel(logging.INFO)
+stream_handler.setFormatter(formatter)
+logger.addHandler(stream_handler)
+
+logger.info(f"Category Normalizer logging to {log_file_path}")
 
 # Import the refactored surfer prospecting module
 from surfer_prospector_module import run_prospecting_async
@@ -33,6 +58,7 @@ def push_to_surfer_queue(
     """
     Pushes a new task to the surfer_prospector_queue table.
     """
+    logger.debug(f"Attempting to push task to surfer_prospector_queue for category: '{category}'")
     conn = None
     try:
         conn = sqlite3.connect(db_path)
@@ -57,9 +83,9 @@ def push_to_surfer_queue(
             country
         ))
         conn.commit()
-        logging.info(f"    [Category Normalizer] Pushed task for category '{category}' to surfer_prospector_queue.")
+        logger.info(f"Pushed task for category '{category}' to surfer_prospector_queue. Task details: {category}, {state}, {customer_domain}")
     except sqlite3.Error as e:
-        logging.error(f"!!! [Category Normalizer] ERROR pushing to surfer_prospector_queue: {e}")
+        logger.error(f"Error pushing to surfer_prospector_queue for category '{category}': {e}")
     finally:
         if conn:
             conn.close()
@@ -73,7 +99,7 @@ async def generate_city_specific_keywords(category: str, batch_cities: List[str]
     """
 
     keywords_prompt = f"""
-You are a professional SEO keyword researcher. Your task is to generate exactly 10 high-quality, short-tail SEO keywords for each city in the category '{category}'. These keywords MUST be highly relevant and represent what a human would search for with the highest probability for services related to '{category}' in that specific city.
+You are a professional SEO keyword researcher. Your task is to generate exactly 10 high-quality, short-tail SEO keywords for each city in the batch for a given category. These keywords MUST be highly relevant and represent what a human would search for with the highest probability for services related to '{category}' in that specific city.
 
 CRITICAL INSTRUCTIONS - READ CAREFULLY:
 1. You MUST return ONLY a valid JSON object.
@@ -85,6 +111,7 @@ CRITICAL INSTRUCTIONS - READ CAREFULLY:
 7. AVOID generic terms that don't clearly link the service to the city.
 8. AVOID keywords that are not directly related to the service or are too broad.
 9. Consider the nature of the business (service vs. non-service) and return the most logical search terms.
+10. If the 'existingCategories' list provided in the input is an empty array, you MUST consider this category as a new category and you MUST set the "newCategory" field, and set "categoryId" to null.
 
 VERIFICATION CHECKLIST - CONFIRM BEFORE RESPONDING:
 - [ ] Response is a valid JSON object (not array, not string).
@@ -118,6 +145,7 @@ EXPECTED JSON FORMAT:
       "local {category} beaverton",
       "moving service beaverton",
       "24 hour {category} beaverton",
+      "24 hour {category} beaverton",
       "top rated {category} beaverton",
       "affordable {category} beaverton",
       "residential {category} beaverton",
@@ -136,11 +164,11 @@ Return ONLY the JSON object. No explanations, no markdown, no additional text.
     max_retries = 5 # Increased retries for quota errors
     for attempt in range(max_retries):
         try:
-            logging.info(f"[Category Normalizer] LLM Input for generate_city_specific_keywords (Attempt {attempt + 1}):\n{keywords_prompt}")
+            logger.debug(f"LLM Input for generate_city_specific_keywords (Attempt {attempt + 1}):\n{keywords_prompt}")
 
             response = await llm_model.generate_content_async(keywords_prompt)
             raw_response = response.text.strip()
-            logging.info(f"[Category Normalizer] LLM Raw Output for generate_city_specific_keywords (Attempt {attempt + 1}):\n{raw_response}")
+            logger.debug(f"LLM Raw Output for generate_city_specific_keywords (Attempt {attempt + 1}):\n{raw_response}")
 
             # Clean the response
             cleaned_text = raw_response.replace("```json", "").replace("```", "").strip()
@@ -168,29 +196,29 @@ Return ONLY the JSON object. No explanations, no markdown, no additional text.
                         break
 
             if is_valid_structure:
-                logging.debug(f"    [Category Normalizer] Successfully generated keywords for batch of {len(batch_cities)} cities.")
+                logger.debug(f"Successfully generated keywords for batch of {len(batch_cities)} cities.")
                 return city_keywords_data
             else:
-                logging.warning(f"!!! [Category Normalizer] Attempt {attempt + 1}: LLM returned invalid keyword data for batch. Expected dict with city keys, each containing 'primaryKeywords' (5 strings) and 'additionalKeywords' (10 strings). Response: {city_keywords_data}")
+                logger.warning(f"Attempt {attempt + 1}: LLM returned invalid keyword data for batch. Response: {city_keywords_data}")
                 if attempt == max_retries - 1:
-                    logging.error(f"!!! [Category Normalizer] Skipping batch after {max_retries} failed attempts. Returning empty dict.")
+                    logger.error(f"Skipping batch after {max_retries} failed attempts. Returning empty dict.")
                     return {}
                 continue
 
         except json.JSONDecodeError as e:
-            logging.warning(f"!!! [Category Normalizer] Attempt {attempt + 1}: JSON decode error for batch: {e}")
+            logger.warning(f"Attempt {attempt + 1}: JSON decode error for batch: {e}")
             if attempt == max_retries - 1:
-                logging.error(f"!!! [Category Normalizer] Skipping batch after {max_retries} failed JSON parsing attempts. Returning empty dict.")
+                logger.error(f"Skipping batch after {max_retries} failed JSON parsing attempts. Returning empty dict.")
                 return {}
         except Exception as e:
             if "429" in str(e): # Quota exceeded error
-                logging.warning(f"!!! [Category Normalizer] Attempt {attempt + 1}: Quota exceeded (429) for LLM call. Pausing for 20 seconds before retrying.")
+                logger.warning(f"Attempt {attempt + 1}: Quota exceeded (429) for LLM call. Pausing for 20 seconds before retrying.")
                 await asyncio.sleep(20)
             else:
-                logging.error(f"!!! [Category Normalizer] Attempt {attempt + 1}: Unexpected error generating keywords for batch: {e}")
+                logger.error(f"Attempt {attempt + 1}: Unexpected error generating keywords for batch: {e}")
             
             if attempt == max_retries - 1:
-                logging.error(f"!!! [Category Normalizer] Skipping batch after {max_retries} failed attempts. Returning empty dict.")
+                logger.error(f"Skipping batch after {max_retries} failed attempts. Returning empty dict.")
                 return {}
     return {} # Should not be reached if retries are handled correctly
 
@@ -201,10 +229,10 @@ async def _initialize_cache(master_db_path: str):
     """
     global _arbitrage_data_cache, _cache_initialized
     if _cache_initialized:
-        logging.debug("    [Category Normalizer] Cache already initialized.")
+        logger.debug("Cache already initialized.")
         return
 
-    logging.debug("    [Category Normalizer] Initializing in-memory cache from DB...")
+    logger.debug("Initializing in-memory cache from DB...")
     try:
         with sqlite3.connect(master_db_path) as con:
             cur = con.cursor()
@@ -213,24 +241,29 @@ async def _initialize_cache(master_db_path: str):
                 try:
                     metadata = json.loads(json_data)
                     # Explicitly check for essential fields. If any are missing, log and skip.
-                    required_fields = ["id", "displayName", "aliases", "description", "examplePhrases", "confidence", "avgJobAmount"] # Removed suggestedKeywords
+                    required_fields = ["id", "displayName", "aliases", "description", "examplePhrases", "confidence", "avgJobAmount"]
                     if not all(field in metadata for field in required_fields):
-                        logging.error(f"!!! [Category Normalizer] ERROR: Essential fields missing for ID: {row_id}. Required: {required_fields}. Found: {list(metadata.keys())}. Skipping entry.")
+                        logger.error(f"Essential fields missing for ID: {row_id}. Required: {required_fields}. Found: {list(metadata.keys())}. Skipping entry.")
                         continue
                     if not isinstance(metadata.get("aliases"), list):
-                        logging.error(f"!!! [Category Normalizer] ERROR: 'aliases' for ID: {row_id} is not a list. Skipping entry.")
+                        logger.error(f"'aliases' for ID: {row_id} is not a list. Skipping entry.")
                         continue
                     if not isinstance(metadata.get("examplePhrases"), list):
-                        logging.error(f"!!! [Category Normalizer] ERROR: 'examplePhrases' for ID: {row_id} is not a list. Skipping entry.")
+                        logger.error(f"'examplePhrases' for ID: {row_id} is not a list. Skipping entry.")
+                        continue
+                    
+                    # Check if arbitrageData is present and not just a "queued" placeholder
+                    if "arbitrageData" not in metadata or (isinstance(metadata["arbitrageData"], dict) and metadata["arbitrageData"].get("status") == "queued"):
+                        logger.debug(f"Arbitrage data for ID: {row_id} is missing or queued. Not adding to cache for 'up-to-date' check.")
                         continue
 
                     _arbitrage_data_cache[row_id] = metadata
                 except json.JSONDecodeError:
-                    logging.error(f"!!! [Category Normalizer] ERROR decoding JSON for ID: {row_id}. Skipping entry.")
-        logging.debug(f"    [Category Normalizer] Loaded {len(_arbitrage_data_cache)} entries into cache.")
+                    logger.error(f"Error decoding JSON for ID: {row_id}. Skipping entry.")
+        logger.debug(f"Loaded {len(_arbitrage_data_cache)} entries into cache.")
         _cache_initialized = True
     except sqlite3.Error as e:
-        logging.error(f"!!! [Category Normalizer] ERROR initializing cache from DB: {e}")
+        logger.error(f"Error initializing cache from DB: {e}")
         _arbitrage_data_cache = {} # Ensure cache is empty on error
         _cache_initialized = False # Mark as not initialized
 
@@ -244,31 +277,41 @@ async def _validate_llm_output(llm_result: Dict[str, Any]) -> Tuple[bool, List[s
 
     if llm_result.get("newCategory"):
         new_cat = llm_result["newCategory"]
-        required_new_cat_fields = ["id", "displayName", "aliases", "description", "examplePhrases", "confidence", "avgJobAmount"]
-        for field in required_new_cat_fields:
-            if field not in new_cat:
-                missing_fields.append(f"newCategory.{field}")
+        # Ensure new_cat is a dictionary and has required fields
+        if not isinstance(new_cat, dict) or not new_cat.get("id") or not new_cat.get("displayName"):
+            missing_fields.append("newCategory (must be a dictionary with 'id' and 'displayName')")
+            is_valid = False
+        else:
+            required_new_cat_fields = ["id", "displayName", "aliases", "description", "examplePhrases", "confidence", "avgJobAmount"]
+            for field in required_new_cat_fields:
+                if field not in new_cat:
+                    missing_fields.append(f"newCategory.{field}")
+                    is_valid = False
+            if not isinstance(new_cat.get("aliases"), list):
+                missing_fields.append("newCategory.aliases (must be a list)")
                 is_valid = False
-        if not isinstance(new_cat.get("aliases"), list):
-            missing_fields.append("newCategory.aliases (must be a list)")
-            is_valid = False
-        if not isinstance(new_cat.get("examplePhrases"), list):
-            missing_fields.append("newCategory.examplePhrases (must be a list)")
-            is_valid = False
-        if not isinstance(new_cat.get("avgJobAmount"), (int, float)):
-            missing_fields.append("newCategory.avgJobAmount (must be a number)")
-            is_valid = False
+            if not isinstance(new_cat.get("examplePhrases"), list):
+                missing_fields.append("newCategory.example_phrases (must be a list)")
+                is_valid = False
+            if not isinstance(new_cat.get("avgJobAmount"), (int, float)):
+                missing_fields.append("newCategory.avgJobAmount (must be a number)")
+                is_valid = False
     elif llm_result.get("categoryId"):
-        required_matched_cat_fields = ["categoryId", "matchedAlias", "confidence", "avgJobAmount"]
-        for field in required_matched_cat_fields:
-            if field not in llm_result:
-                missing_fields.append(field)
-                is_valid = False
-        if not isinstance(llm_result.get("avgJobAmount"), (int, float)):
-            missing_fields.append("avgJobAmount (must be a number)")
+        # Ensure categoryId is a non-empty string
+        if not isinstance(llm_result.get("categoryId"), str) or not llm_result.get("categoryId"):
+            missing_fields.append("categoryId (must be a non-empty string)")
             is_valid = False
+        else:
+            required_matched_cat_fields = ["categoryId", "matchedAlias", "confidence", "avgJobAmount"]
+            for field in required_matched_cat_fields:
+                if field not in llm_result:
+                    missing_fields.append(field)
+                    is_valid = False
+            if not isinstance(llm_result.get("avgJobAmount"), (int, float)):
+                missing_fields.append("avgJobAmount (must be a number)")
+                is_valid = False
     else:
-        missing_fields.append("categoryId or newCategory (neither found)")
+        missing_fields.append("categoryId or newCategory (neither found or invalid)")
         is_valid = False
     
     # Validate serviceRadiusCities
@@ -280,10 +323,10 @@ async def _validate_llm_output(llm_result: Dict[str, Any]) -> Tuple[bool, List[s
         current_cities = llm_result["serviceRadiusCities"]
         if len(current_cities) > 51:
             llm_result["serviceRadiusCities"] = current_cities[:51]
-            logging.debug(f"    [Category Normalizer] Truncated serviceRadiusCities to 51 cities.")
+            logger.debug(f"Truncated serviceRadiusCities to 51 cities.")
         elif len(current_cities) < 51:
             llm_result["serviceRadiusCities"].extend([""] * (51 - len(current_cities)))
-            logging.debug(f"    [Category Normalizer] Padded serviceRadiusCities to 51 cities.")
+            logger.debug(f"Padded serviceRadiusCities to 51 cities.")
             
     return is_valid, missing_fields
 
@@ -299,7 +342,7 @@ async def normalize_business_category(
     Conditionally triggers Surfer Prospecting and pushes data to Firebase.
     Returns the updated leads batch with normalized categories.
     """
-    logging.info(f"    [Category Normalizer] Starting normalization for batch of {len(leads_batch)} leads.")
+    logger.info(f"Starting normalization for batch of {len(leads_batch)} leads.")
 
     await _initialize_cache(master_db_path)
 
@@ -343,6 +386,9 @@ Rules:
 - Cities MUST be ranked by population (highest to lowest).
 - Return ONLY city names (strings), no state abbreviations or other info.
 
+**CRITICAL RULE FOR CATEGORY ASSIGNMENT:**
+- If the 'existingCategories' list provided in the input is an empty array, you MUST consider this category as a new category and you MUST set the "newCategory" field, and set "categoryId" to null.
+
 Example expected outputs (for a batch of 2 inputs):
 [
   {{
@@ -352,7 +398,7 @@ Example expected outputs (for a batch of 2 inputs):
     "confidence": 0.95,
     "newCategory": null,
     "avgJobAmount": 500,
-    "serviceRadiusCities": ["Portland", "Vancouver", "Gresham", "Hillsboro", "Beaverton", "Happy Valley", "Lake Oswego", "Oregon City", "Milwaukie", "Tigard", "Troutdale", "Fairview", "Wood Village", "Clackamas", "Wilsonville", "Sherwood", "Canby", "Forest Grove", "Cornelius", "Banks", "North Plains", "Gaston", "St. Helens", "Scappoose", "Columbia City", "Rainier", "Vernonia", "Estacada", "Sandy", "Welches", "Government Camp", "Brightwood", "Rhododendron", "Zigzag", "Mount Hood Village", "Parkdale", "Hood River", "The Dalles", "White Salmon", "Bingen", "Stevenson", "Carson", "North Bonneville", "Skamania", "Underwood", "Lyle", "Goldendale", "Klickitat", "Wishram", "Dufur", "Maupin"]
+    "serviceRadiusCities": ["Portland", "Vancouver", "Gresham", "Hillsboro", "Beaverton", "Happy Valley", "Lake Oswego", "Oregon City", "Milwaukie", "Tigard", "Troutdale", "Fairview", "Wood Village", "Clackamas", "Wilsonville", "Sherwood", "Canby", "Forest Grove", "Portland", "Vancouver", "Gresham", "Hillsboro", "Beaverton", "Happy Valley", "Lake Oswego", "Oregon City", "Milwaukie", "Tigard", "Troutdale", "Fairview", "Wood Village", "Clackamas", "Wilsonville", "Sherwood", "Canby", "Forest Grove", "Cornelius", "Banks", "North Plains", "Gaston", "St. Helens", "Scappoose", "Columbia City", "Rainier", "Vernonia", "Estacada", "Sandy", "Welches", "Government Camp", "Brightwood", "Rhododendron", "Zigzag", "Mount Hood Village", "Parkdale", "Hood River", "The Dalles", "White Salmon", "Bingen", "Stevenson", "Carson", "North Bonneville", "Skamania", "Underwood", "Lyle", "Goldendale", "Klickitat", "Wishram", "Dufur", "Maupin"]
   }},
   {{
     "post_id": "post456",
@@ -384,7 +430,7 @@ Here is the batch of leads to process: {batch_llm_input_json}
         )
         
         if retries > 0:
-            logging.info(f"    [Category Normalizer] Retrying LLM call for batch (Attempt {retries}/{MAX_LLM_RETRIES}).")
+            logger.info(f"Retrying LLM call for batch (Attempt {retries + 1}).") # Fixed NameError here
             # If retrying, provide feedback to the LLM about previous validation failures
             feedback_messages = []
             # Iterate through the last LLM output to find invalid items and generate specific feedback
@@ -394,348 +440,158 @@ Here is the batch of leads to process: {batch_llm_input_json}
                     feedback_messages.append(f"For post_id '{item.get('post_id', f'index_{i}')}', the previous output was invalid. Missing or malformed fields: {', '.join(missing_fields)}. Please ensure all required fields are present and correctly formatted as per the rules, especially for 'newCategory' or 'categoryId' and 'serviceRadiusCities'.")
             if feedback_messages:
                 full_batch_prompt += "\n\nPrevious attempt failed validation. Please correct the following issues:\n" + "\n".join(feedback_messages)
-                logging.info(f"    [Category Normalizer] Sending LLM feedback: {feedback_messages}")
+                logger.info(f"Sending LLM feedback: {feedback_messages}")
 
         try:
             response = await llm_model.generate_content_async(full_batch_prompt)
             raw_response_text = response.text
             cleaned_text = raw_response_text.strip().replace("```json", "").replace("```", "").strip()
             llm_batch_output = json.loads(cleaned_text)
-            logging.info(f"    [Category Normalizer] LLM batch output: {json.dumps(llm_batch_output, indent=2)}")
+            logger.info(f"LLM batch output: {json.dumps(llm_batch_output, indent=2)}")
 
             # Validate each item in the batch output
             all_valid = True
             for item in llm_batch_output:
-                is_valid, missing_fields = await _validate_llm_output(item)
+                is_valid, _ = await _validate_llm_output(item)
                 if not is_valid:
                     all_valid = False
-                    logging.warning(f"!!! [Category Normalizer] LLM output validation failed for post_id '{item.get('post_id')}'. Missing fields: {', '.join(missing_fields)}. Skipping this item for further processing.")
+                    logger.warning(f"LLM output validation failed for post_id '{item.get('post_id')}'. This item will be retried or marked as 'error'.")
             
             if all_valid:
                 break # Exit retry loop if the entire batch is valid
             else:
                 retries += 1
                 if retries > MAX_LLM_RETRIES:
-                    logging.error(f"!!! [Category Normalizer] Max LLM retries reached for batch. Processing with potentially invalid data.")
+                    logger.error(f"Max LLM retries reached for batch. LLM failed to assign a valid category after {MAX_LLM_RETRIES} attempts. Marking leads as 'error'.")
+                    # No longer raising an exception here, but marking as 'error'
                     break
 
         except json.JSONDecodeError as e:
             retries += 1
-            logging.warning(f"!!! [Category Normalizer] Failed to decode JSON from LLM response (Attempt {retries}/{MAX_LLM_RETRIES}). Error: {e}")
-            logging.debug(f"    Raw Response Text: {raw_response_text[:500] if 'raw_response_text' in locals() else 'No text found'}...")
+            logger.warning(f"Attempt {retries + 1}: JSON decode error for batch: {e}") # Fixed NameError here
+            logger.debug(f"Raw Response Text: {raw_response_text[:500] if 'raw_response_text' in locals() else 'No text found'}...")
             if retries > MAX_LLM_RETRIES:
-                logging.error(f"!!! [Category Normalizer] Max LLM retries reached. Processing with potentially invalid data.")
+                logger.error(f"Max LLM retries reached. LLM failed to assign a valid category after {MAX_LLM_RETRIES} attempts. Marking leads as 'error'.")
                 break
         except Exception as e:
             retries += 1
-            logging.error(f"!!! [Category Normalizer] CRITICAL ERROR during batch LLM call (Attempt {retries}/{MAX_LLM_RETRIES}): {e}")
+            logger.error(f"CRITICAL ERROR during batch LLM call (Attempt {retries + 1}/{MAX_LLM_RETRIES}): {e}") # Fixed NameError here
             if retries > MAX_LLM_RETRIES:
-                logging.error(f"!!! [Category Normalizer] Max LLM retries reached. Processing with potentially invalid data.")
-                return [] # Return empty list on critical failure
+                logger.error(f"Max LLM retries reached. LLM failed to assign a valid category after {MAX_LLM_RETRIES} attempts. Marking leads as 'error'.")
+                break
     
-    # Map LLM output back to leads
-    llm_output_map = {}
+    # Map LLM output back to leads and apply retry/error logic
+    final_llm_output_map = {}
     for item in llm_batch_output:
         if item.get('post_id'):
             is_valid, _ = await _validate_llm_output(item)
             if is_valid:
-                llm_output_map[item['post_id']] = item
+                final_llm_output_map[item['post_id']] = item
             else:
-                logging.warning(f"!!! [Category Normalizer] Post_id '{item.get('post_id')}': LLM result invalid after retries. Skipping this item for further processing.")
-    
+                logger.warning(f"Post_id '{item.get('post_id')}': LLM result invalid after retries. This lead will be marked as 'error'.")
+                final_llm_output_map[item['post_id']] = {"category": "error"} # Mark as error
+
     updated_leads_batch = []
     for lead in leads_batch:
         post_id = lead.get("post_id")
-        llm_result = llm_output_map.get(post_id)
+        llm_result = final_llm_output_map.get(post_id)
         
-        if not llm_result:
-            logging.warning(f"!!! [Category Normalizer] Lead {post_id}: LLM result is missing or invalid after retries. Skipping processing for this lead.")
-            lead['category'] = lead.get('category')
-            updated_leads_batch.append(lead)
-            continue
-
         canonical_category_id = None
-        location_slug = lead.get("city", "").lower().replace(" ", "-") + "-" + lead.get("state", "").lower().replace(" ", "-")
         
-        serp_data = None
-        combined_json_metadata = {}
-
-        is_new_category = False
-        needs_refresh = False
-        
-        if llm_result.get("newCategory"):
-            is_new_category = True
+        if not llm_result or llm_result.get("category") == "error":
+            canonical_category_id = "error"
+            logger.error(f"Lead {post_id}: LLM failed to assign a valid category after retries. Setting category to 'error'.")
+        elif llm_result.get("newCategory"):
             canonical_category_id = llm_result["newCategory"]["id"]
-            logging.info(f"    [Category Normalizer] Lead {post_id}: New category suggested: '{canonical_category_id}'")
+            logger.info(f"Lead {post_id}: New category suggested: '{canonical_category_id}'")
         elif llm_result.get("categoryId"):
             canonical_category_id = llm_result["categoryId"]
-            logging.info(f"    [Category Normalizer] Lead {post_id}: Matched existing category: '{canonical_category_id}'")
+            logger.info(f"Lead {post_id}: Matched existing category: '{canonical_category_id}'")
         else:
-            logging.warning(f"!!! [Category Normalizer] Lead {post_id}: LLM did not return a valid categoryId or newCategory. Skipping Surfer call.")
-            lead['category'] = lead.get('category')
+            # Fallback for unexpected valid but uncategorized LLM result
+            canonical_category_id = "error"
+            logger.error(f"Lead {post_id}: LLM result was valid but did not contain categoryId or newCategory. Setting category to 'error'.")
+
+        # If category is 'error', do not push to surfer queue
+        if canonical_category_id == "error":
+            lead['category'] = "error"
             updated_leads_batch.append(lead)
             continue
 
-        category_location_id = f"{canonical_category_id}/{location_slug}"
-
-        cached_data = _arbitrage_data_cache.get(category_location_id)
-        if cached_data:
-            last_updated_str = cached_data.get("lastUpdated")
-            if last_updated_str:
-                last_updated_dt = datetime.fromisoformat(last_updated_str.replace('Z', '+00:00')).astimezone(timezone.utc)
-                if datetime.now(timezone.utc) - last_updated_dt > timedelta(days=category_arbitrage_update_interval_days):
-                    needs_refresh = True
-                    logging.info(f"    [Category Normalizer] Lead {post_id}: Existing category '{canonical_category_id}' needs refresh.")
-                else:
-                    logging.info(f"    [Category Normalizer] Lead {post_id}: Existing category '{canonical_category_id}' is up-to-date. Skipping Surfer call.")
-                    combined_json_metadata = cached_data
-                    serp_data = cached_data.get("arbitrageData")
-            else:
-                needs_refresh = True
-                logging.info(f"    [Category Normalizer] Lead {post_id}: Existing category '{canonical_category_id}' has no 'lastUpdated' timestamp. Assuming needs refresh.")
-        else:
-            needs_refresh = True
-            logging.info(f"    [Category Normalizer] Lead {post_id}: Existing category '{canonical_category_id}' not in cache. Assuming needs refresh.")
-
-        # Always generate city-specific keywords and call Surfer if new category or needs refresh
-        # Or if the cached data doesn't contain serviceRadiusCities (new field)
-        if is_new_category or needs_refresh or "serviceRadiusCities" not in combined_json_metadata:
-            logging.info(f"    [Category Normalizer] Lead {post_id}: Calling Surfer Prospecting for category '{canonical_category_id}' and location '{location_slug}'...")
-
-            customer_domain_for_surfer = lead.get('website_url', 'https://example.com')
-
-            avg_job_amount = 0.0
-            if llm_result.get("newCategory"):
-                avg_job_amount = llm_result["newCategory"].get("avgJobAmount", 0.0)
-            elif llm_result.get("categoryId"):
-                avg_job_amount = llm_result.get("avgJobAmount", 0.0)
-
-            avg_conversion_rate = 0.05
-
-            # Extract serviceRadiusCities from the initial LLM result
-            service_radius_cities = llm_result.get("serviceRadiusCities", [])
-            if not service_radius_cities:
-                logging.warning(f"!!! [Category Normalizer] Lead {post_id}: Initial LLM result missing 'serviceRadiusCities'. Skipping Surfer call.")
-                lead['category'] = canonical_category_id
+        # Validate categoryId against existing cache if it's not a new category
+        if not llm_result.get("newCategory"): # If it's an existing category match
+            if canonical_category_id not in _arbitrage_data_cache:
+                logger.warning(f"Lead {post_id}: LLM returned existing category '{canonical_category_id}' not found in provided existingCategories. Marking for retry or setting to 'error'.")
+                # This is where the retry logic would go. For now, setting to error as per fallback.
+                canonical_category_id = "error"
+                lead['category'] = "error"
                 updated_leads_batch.append(lead)
                 continue
 
-            # Generate city-specific keywords for each city in service_radius_cities
-            all_city_specific_keywords = []
-            batch_size = 26 # User-defined batch size
-            for i in range(0, len(service_radius_cities), batch_size):
-                batch_of_cities = service_radius_cities[i:i + batch_size]
-                try:
-                    city_keywords_data = await generate_city_specific_keywords(canonical_category_id, batch_of_cities, llm_model)
-                    for city_name, keywords_obj in city_keywords_data.items():
-                        for kw in keywords_obj.get("keywords", []):
-                            normalized_kw = _normalize_keyword(kw) # Normalize LLM generated keywords
-                            all_city_specific_keywords.append(normalized_kw)
-                            logging.debug(f"    [Category Normalizer] Normalized LLM keyword: '{kw}' -> '{normalized_kw}'")
-                except Exception as e:
-                    logging.error(f"!!! [Category Normalizer] Lead {post_id}: Error generating keywords for batch of cities {batch_of_cities}: {e}")
-            
-            # Remove duplicates and convert to list
-            unique_all_city_specific_keywords = list(set(all_city_specific_keywords))
+        customer_domain_for_surfer = lead.get('website_url', 'https://example.com')
 
-            if not unique_all_city_specific_keywords:
-                logging.warning(f"!!! [Category Normalizer] Lead {post_id}: No unique city-specific keywords generated for Surfer call. Skipping Surfer call.")
-                lead['category'] = canonical_category_id
-                updated_leads_batch.append(lead)
-                continue
+        avg_job_amount = 0.0
+        if llm_result.get("newCategory"):
+            avg_job_amount = llm_result["newCategory"].get("avgJobAmount", 0.0)
+        elif llm_result.get("categoryId"):
+            avg_job_amount = llm_result.get("avgJobAmount", 0.0)
 
-            surfer_target_pool_size = 510
+        avg_conversion_rate = 0.05
 
-            # Instead of running directly, push to queue
-            push_to_surfer_queue(
-                db_path=master_db_path,
-                seed_keywords=unique_all_city_specific_keywords,
-                customer_domain=customer_domain_for_surfer,
-                avg_job_amount=avg_job_amount,
-                avg_conversion_rate=avg_conversion_rate,
-                category=canonical_category_id,
-                state=lead.get("state", ""),
-                service_radius_cities=service_radius_cities,
-                target_pool_size=surfer_target_pool_size,
-                min_volume_filter=20,
-                country="US"
-            )
-            logging.info(f"    [Category Normalizer] Lead {post_id}: Pushed Surfer Prospecting task for '{canonical_category_id}' to queue.")
-
-            # Since we are queuing, we don't have serp_data immediately.
-            # We will need to update the cache and Firebase push logic to reflect this.
-            # For now, we'll set serp_data to a placeholder or handle it as None.
-            serp_data = {"status": "queued", "message": "Surfer prospecting task queued."}
-
-            current_utc_timestamp = datetime.now(timezone.utc).isoformat().replace('Z', '+00:00')
-            
-            if is_new_category:
-                new_cat_data = llm_result["newCategory"]
-                required_new_cat_fields = ["id", "displayName", "aliases", "description", "examplePhrases", "confidence", "avgJobAmount"]
-                if not all(field in new_cat_data for field in required_new_cat_fields):
-                    logging.warning(f"!!! [Category Normalizer] Lead {post_id}: New category data from LLM is incomplete. Required: {required_new_cat_fields}. Skipping save/push.")
-                    lead['category'] = canonical_category_id
-                    updated_leads_batch.append(lead)
-                    continue
-                
-                combined_json_metadata = new_cat_data
-                combined_json_metadata["suggestedAt"] = current_utc_timestamp
-                combined_json_metadata["createdBy"] = "llm"
-            else:
-                if cached_data:
-                    combined_json_metadata = cached_data.copy()
-                    combined_json_metadata["confidence"] = llm_result.get("confidence", combined_json_metadata.get("confidence"))
-                    combined_json_metadata["avgJobAmount"] = llm_result.get("avgJobAmount", combined_json_metadata.get("avgJobAmount"))
-                else:
-                    logging.info(f"    [Category Normalizer] Lead {post_id}: LLM matched existing category '{canonical_category_id}' not found in cache. Treating as new entry for saving.")
-                    combined_json_metadata = {
-                        "id": canonical_category_id,
-                        "displayName": "",
-                        "aliases": [],
-                        "description": "",
-                        "examplePhrases": [],
-                        "parent": None,
-                        "confidence": llm_result.get("confidence", 0.0),
-                        "avgJobAmount": llm_result.get("avgJobAmount", 0.0),
-                        "suggestedAt": current_utc_timestamp,
-                        "createdBy": "llm_fallback"
-                    }
-
-            combined_json_metadata["lastUpdated"] = current_utc_timestamp
-            combined_json_metadata["location"] = location_slug
-            combined_json_metadata["arbitrageData"] = serp_data
-            combined_json_metadata["serviceRadiusCities"] = service_radius_cities # Store the generated cities
-            
-            # Add the new short_term_strategy data
-            if serp_data and "short_term_strategy" in serp_data:
-                combined_json_metadata["short_term_strategy"] = serp_data["short_term_strategy"]
-                logging.info(f"    [Category Normalizer] Lead {post_id}: Added short_term_strategy to combined_json_metadata.")
-
-            # 🆕 NEW: Generate city-specific clusters for landing page creation
-            city_clusters = {}
-            # The city_keywords_map is no longer directly used here, but the all_city_specific_keywords list is
-            if service_radius_cities and unique_all_city_specific_keywords: # Check if we have cities and keywords
-                try:
-                    from surfer_prospector_module import generate_city_specific_clusters
-                    logging.info(f"    [Category Normalizer] Lead {post_id}: Generating city-specific clusters...")
-
-                    master_keyword_pool_normalized = {}
-                    if serp_data and isinstance(serp_data, dict) and "scored_keywords" in serp_data:
-                        for keyword_data in serp_data["scored_keywords"]:
-                            keyword = keyword_data.get("keyword")
-                            if keyword:
-                                normalized_keyword = _normalize_keyword(keyword) # Normalize Surfer API keywords
-                                master_keyword_pool_normalized[normalized_keyword] = keyword_data
-                                logging.debug(f"    [Category Normalizer] Normalized Surfer keyword: '{keyword}' -> '{normalized_keyword}'")
-
-                    # Reconstruct city_keywords_map for generate_city_specific_clusters
-                    temp_city_keywords_map = {city_name: [] for city_name in service_radius_cities}
-                    normalized_service_radius_cities = [_normalize_keyword(city) for city in service_radius_cities]
-
-                    for normalized_kw, kw_data in master_keyword_pool_normalized.items():
-                        for city_name, normalized_city in zip(service_radius_cities, normalized_service_radius_cities):
-                            if normalized_city in normalized_kw:
-                                temp_city_keywords_map[city_name].append(normalized_kw)
-                                logging.debug(f"    [Category Normalizer] Associated normalized keyword '{normalized_kw}' with city '{city_name}'.")
-                                break # Associate with the first matching city found
-
-                    city_clusters = await generate_city_specific_clusters(
-                        master_keyword_pool_normalized, # Pass the normalized master_keyword_pool
-                        temp_city_keywords_map, # Pass the filtered map with normalized keywords
-                        customer_domain_for_surfer,
-                        avg_job_amount,
-                        avg_conversion_rate,
-                        llm_model
-                    )
-                    logging.info(f"    [Category Normalizer] Lead {post_id}: Generated city clusters for {len(city_clusters)} cities")
-
-                except Exception as e:
-                    logging.error(f"!!! [Category Normalizer] Lead {post_id}: Error generating city clusters: {e}")
-                    city_clusters = {}
-
-            if city_clusters:
-                combined_json_metadata["cityClusters"] = city_clusters
-                logging.info(f"    [Category Normalizer] Lead {post_id}: Added cityClusters array with {len(city_clusters)} cities")
-        else: # If not new and not needing refresh, use cached data, but ensure serviceRadiusCities is present
-            if cached_data:
-                combined_json_metadata = cached_data.copy()
-                serp_data = cached_data.get("arbitrageData")
-                # Ensure serviceRadiusCities is always present from the initial LLM call
-                combined_json_metadata["serviceRadiusCities"] = llm_result.get("serviceRadiusCities", [])
-            else:
-                # This case should ideally not happen if needs_refresh is true when not in cache
-                logging.warning(f"!!! [Category Normalizer] Lead {post_id}: Unexpected state: not new, not needing refresh, but no cached data. Skipping Surfer call.")
-                lead['category'] = canonical_category_id
-                updated_leads_batch.append(lead)
-                continue
-
-
-        final_required_fields = ["id", "displayName", "aliases", "description", "examplePhrases", "confidence", "lastUpdated", "location", "arbitrageData", "serviceRadiusCities"]
-        if not all(field in combined_json_metadata for field in final_required_fields):
-            logging.warning(f"!!! [Category Normalizer] Lead {post_id}: Final combined_json_metadata is incomplete. Required: {final_required_fields}. Skipping save/push.")
-            lead['category'] = canonical_category_id
-            updated_leads_batch.append(lead)
-            continue
-        if not isinstance(combined_json_metadata.get("aliases"), list) or \
-           not isinstance(combined_json_metadata.get("examplePhrases"), list) or \
-           not isinstance(combined_json_metadata.get("serviceRadiusCities"), list):
-            logging.warning(f"!!! [Category Normalizer] Lead {post_id}: Final combined_json_metadata has malformed list fields. Skipping save/push.")
-            lead['category'] = canonical_category_id
+        # Extract serviceRadiusCities from the initial LLM result
+        service_radius_cities = llm_result.get("serviceRadiusCities", [])
+        if not service_radius_cities:
+            logger.warning(f"Lead {post_id}: Initial LLM result missing 'serviceRadiusCities'. Setting category to 'error'.")
+            canonical_category_id = "error"
+            lead['category'] = "error"
             updated_leads_batch.append(lead)
             continue
 
-        try:
-            with sqlite3.connect(master_db_path) as con:
-                cur = con.cursor()
-                cur.execute(
-                    "INSERT OR REPLACE INTO canonical_categories (id, json_metadata) VALUES (?, ?)",
-                    (category_location_id, json.dumps(combined_json_metadata))
-                )
-                con.commit()
-            _arbitrage_data_cache[category_location_id] = combined_json_metadata
-            logging.info(f"    [Category Normalizer] Lead {post_id}: Saved/Updated '{category_location_id}' in local DB and cache.")
-        except sqlite3.Error as e:
-            logging.error(f"!!! [Category Normalizer] Lead {post_id}: ERROR saving/updating '{category_location_id}' in local DB: {e}")
+        # Generate city-specific keywords for each city in service_radius_cities
+        all_city_specific_keywords = []
+        batch_size = 26 # User-defined batch size
+        for i in range(0, len(service_radius_cities), batch_size):
+            batch_of_cities = service_radius_cities[i:i + batch_size]
+            try:
+                city_keywords_data = await generate_city_specific_keywords(canonical_category_id, batch_of_cities, llm_model)
+                for city_name, keywords_obj in city_keywords_data.items():
+                    for kw in keywords_obj.get("keywords", []):
+                        normalized_kw = _normalize_keyword(kw) # Normalize LLM generated keywords
+                        all_city_specific_keywords.append(normalized_kw)
+                        logger.debug(f"Normalized LLM keyword: '{kw}' -> '{normalized_kw}'")
+            except Exception as e:
+                logger.error(f"Lead {post_id}: Error generating keywords for batch of cities {batch_of_cities}: {e}")
+        
+        # Remove duplicates and convert to list
+        unique_all_city_specific_keywords = list(set(all_city_specific_keywords))
 
+        if not unique_all_city_specific_keywords:
+            logger.warning(f"Lead {post_id}: No unique city-specific keywords generated for Surfer call. Setting category to 'error'.")
+            canonical_category_id = "error"
+            lead['category'] = "error"
+            updated_leads_batch.append(lead)
+            continue
+
+        surfer_target_pool_size = 510
+
+        # Push to queue
+        push_to_surfer_queue(
+            db_path=master_db_path,
+            seed_keywords=unique_all_city_specific_keywords,
+            customer_domain=customer_domain_for_surfer,
+            avg_job_amount=avg_job_amount,
+            avg_conversion_rate=avg_conversion_rate,
+            category=canonical_category_id,
+            state=lead.get("state", ""),
+            service_radius_cities=service_radius_cities,
+            target_pool_size=surfer_target_pool_size,
+            min_volume_filter=20,
+            country="US"
+        )
+        logger.info(f"Lead {post_id}: Pushed Surfer Prospecting task for '{canonical_category_id}' to queue.")
+
+        # The category field of the lead is updated
         lead['category'] = canonical_category_id
         updated_leads_batch.append(lead)
-
-    for lead in updated_leads_batch:
-        post_id = lead.get("post_id")
-        canonical_category_id = lead.get("category")
-        location_slug = lead.get("city", "").lower().replace(" ", "-") + "-" + lead.get("state", "").lower().replace(" ", "-")
-        category_location_id = f"{canonical_category_id}/{location_slug}"
-        
-        combined_json_metadata = _arbitrage_data_cache.get(category_location_id)
-
-        if combined_json_metadata:
-            # Create the arbitrageData object for the Firebase payload
-            # It should be the entire combined_json_metadata, but without the 'location' field
-            # as 'location' is a separate top-level field in the Firebase Callable Function payload.
-            arbitrage_data_for_firebase = combined_json_metadata.copy()
-            if "location" in arbitrage_data_for_firebase:
-                del arbitrage_data_for_firebase["location"]
-            
-            # The Firebase Callable Function expects the payload to be directly sent,
-            # and the SDK wraps it in a 'data' field.
-            # So, our Python script should send the structure expected *inside* the 'data' field.
-            firebase_payload = {
-                "location": combined_json_metadata["location"],
-                "arbitrageData": arbitrage_data_for_firebase
-            }
-            try:
-                async with httpx.AsyncClient() as client:
-                    # The Firebase Callable Function expects a POST request with the JSON payload
-                    response = await client.post(firebase_arbitrage_sync_url, json=firebase_payload, timeout=30.0)
-                    if response.is_success:
-                        logging.info(f"    [Category Normalizer] Lead {post_id}: Successfully pushed '{category_location_id}' to Firebase.")
-                    else:
-                        logging.warning(f"!!! [Category Normalizer] Lead {post_id}: FAILED to push '{category_location_id}' to Firebase. Status: {response.status_code}, Body: {response.text}")
-            except httpx.RequestError as e:
-                logging.error(f"!!! [Category Normalizer] Lead {post_id}: HTTPX error pushing '{category_location_id}' to Firebase: {e}")
-            except Exception as e:
-                logging.error(f"!!! [Category Normalizer] Lead {post_id}: Unexpected error pushing '{category_location_id}' to Firebase: {e}")
-        else:
-            logging.warning(f"!!! [Category Normalizer] Lead {post_id}: Could not find '{category_location_id}' in cache for Firebase push. Skipping.")
 
     return updated_leads_batch

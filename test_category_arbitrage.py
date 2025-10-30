@@ -3,55 +3,144 @@ import json
 import os
 import sys
 import sqlite3
+import logging
 from datetime import datetime, timedelta
 import google.generativeai as genai
 import httpx
+import subprocess
+import psutil # For process checking
 
 # Add the directory containing category_normalizer.py and surfer_prospector_module.py to the Python path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from category_normalizer import normalize_business_category
-from surfer_prospector_module import run_prospecting_async # Import the function
 
-# --- Logging Setup (similar to contact-extractor.py for consistency) ---
+# --- Logging Setup ---
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG) # Set to DEBUG to capture all messages
+
 log_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "test_category_arbitrage_log.txt")
-class Logger(object):
-    def __init__(self, filename):
-        self.terminal = sys.__stdout__  # original console
-        self.log = open(filename, "w", buffering=1)
+file_handler = logging.FileHandler(log_file_path)
+file_handler.setLevel(logging.DEBUG) # Log all messages to file
 
-    def write(self, message):
-        self.terminal.write(message)   # write to console
-        self.log.write(message)        # also write to file
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+file_handler.setFormatter(formatter)
 
-    def flush(self):
-        self.terminal.flush()
-        self.log.flush()
+logger.addHandler(file_handler)
 
-sys.stdout = Logger(log_file_path)
-sys.stderr = sys.stdout
-print(f"--- Test Log started at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ---")
-print(f"--- All test output redirected to {log_file_path} ---")
+# Optionally, add a stream handler to also output to console (e.g., for INFO and above)
+stream_handler = logging.StreamHandler()
+stream_handler.setLevel(logging.INFO)
+stream_handler.setFormatter(formatter)
+logger.addHandler(stream_handler)
+
+logger.info(f"--- Test Log started at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ---")
+logger.info(f"--- All test output redirected to {log_file_path} ---")
+
+CONSUMER_SCRIPT_NAME = "surfer_queue_consumer.py"
+LOCK_FILE_NAME = "surfer_consumer.lock" # Must match the consumer's lock file
+
+def is_consumer_running() -> bool:
+    """Checks if the surfer_queue_consumer.py script is currently running."""
+    for process in psutil.process_iter(['pid', 'name', 'cmdline']):
+        try:
+            cmdline = process.cmdline()
+            if CONSUMER_SCRIPT_NAME in " ".join(cmdline):
+                # Further check for the lock file to be more robust
+                if os.path.exists(LOCK_FILE_NAME):
+                    with open(LOCK_FILE_NAME, 'r') as f:
+                        lock_pid = int(f.read().strip())
+                    if lock_pid == process.pid:
+                        logger.info(f"    [Test] Consumer script {CONSUMER_SCRIPT_NAME} is running with PID {process.pid}.")
+                        return True
+        except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+            pass
+    logger.info(f"    [Test] Consumer script {CONSUMER_SCRIPT_NAME} is NOT running.")
+    return False
+
+def launch_consumer_script():
+    """Launches the surfer_queue_consumer.py script as a detached background process."""
+    if is_consumer_running():
+        logger.info(f"    [Test] Consumer script {CONSUMER_SCRIPT_NAME} is already running. Skipping launch.")
+        return
+
+    script_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), CONSUMER_SCRIPT_NAME)
+    if not os.path.exists(script_path):
+        logger.error(f"!!! [Test] ERROR: Consumer script not found at {script_path}. Cannot launch.")
+        return
+
+    logger.info(f"    [Test] Launching consumer script: {CONSUMER_SCRIPT_NAME}...")
+
+    try:
+        # Inherit and ensure venv environment variables
+        env = os.environ.copy()
+        # Determine the virtual environment path dynamically
+        # Assumes .venv is in the project root, or script is run from within venv
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        project_root = os.path.abspath(os.path.join(script_dir, os.pardir))
+        venv_path = os.path.join(project_root, ".venv")
+        
+        # Fallback if .venv is not in the project root, try current script's directory
+        if not os.path.exists(venv_path):
+            venv_path = os.path.join(script_dir, ".venv")
+
+        if os.path.exists(venv_path):
+            env["VIRTUAL_ENV"] = venv_path
+            # Add venv's bin/Scripts directory to PATH
+            if sys.platform == "win32":
+                env["PATH"] = os.path.join(venv_path, "Scripts") + os.pathsep + env["PATH"]
+            else: # Unix-like systems
+                env["PATH"] = os.path.join(venv_path, "bin") + os.pathsep + env["PATH"]
+            logger.info(f"    [Test] Virtual environment detected at {venv_path}. Setting VIRTUAL_ENV and PATH.")
+        else:
+            logger.warning(f"    [Test] Virtual environment not found at {venv_path}. Proceeding without explicit venv activation for subprocess.")
+
+        # Always use current interpreter from this environment
+        python_executable = sys.executable
+
+        if sys.platform == "win32":
+            subprocess.Popen(
+                [python_executable, script_path],
+                creationflags=subprocess.DETACHED_PROCESS | subprocess.CREATE_NEW_PROCESS_GROUP,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+                env=env  # Pass the virtualenv environment
+            )
+        else:
+            subprocess.Popen(
+                [python_executable, script_path],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+                preexec_fn=os.setsid,
+                env=env  # Pass the virtualenv environment
+            )
+        logger.info(f"    [Test] Consumer script {CONSUMER_SCRIPT_NAME} launched successfully in background.")
+        time.sleep(2) # Give it a moment to start up and create its lock file
+    except Exception as e:
+        logger.error(f"!!! [Test] ERROR launching consumer script: {e}")
 
 async def main_test():
-    print("\n--- Starting test_category_arbitrage.py ---")
+    logger.info("\n--- Starting test_category_arbitrage.py ---")
 
+    # --- Ensure consumer is running ---
+    launch_consumer_script()
+    
     # --- 1. Load Configuration ---
     script_dir = os.path.dirname(os.path.abspath(__file__))
     config_filename = os.path.join(script_dir, 'config.json')
     
     from category_normalizer import _arbitrage_data_cache, _cache_initialized
 
-    print(f"    [Test] Attempting to load config from: {config_filename}")
+    logger.info(f"    [Test] Attempting to load config from: {config_filename}")
     try:
         with open(config_filename, 'r') as f:
             config = json.load(f)
-        print("    [Test] Config loaded successfully.")
+        logger.info("    [Test] Config loaded successfully.")
     except FileNotFoundError:
-        print(f"!!! [Test] CRITICAL ERROR: '{config_filename}' file not found. Exiting.")
+        logger.critical(f"!!! [Test] CRITICAL ERROR: '{config_filename}' file not found. Exiting.")
         return
     except json.JSONDecodeError:
-        print("!!! [Test] CRITICAL ERROR: Could not parse config file. Ensure it's valid JSON. Exiting.")
+        logger.critical("!!! [Test] CRITICAL ERROR: Could not parse config file. Ensure it's valid JSON. Exiting.")
         return
 
     producer_cfg = config['producer_settings']
@@ -60,18 +149,18 @@ async def main_test():
     # Configure LLM
     genai.configure(api_key=global_cfg['google_api_key'])
     llm_model_instance = genai.GenerativeModel(global_cfg['llm_model'])
-    print(f"    [Test] LLM Model configured: {global_cfg['llm_model']}")
+    logger.info(f"    [Test] LLM Model configured: {global_cfg['llm_model']}")
 
     master_db_path = producer_cfg['master_database_file']
     firebase_arbitrage_sync_url = producer_cfg['firebase_category_arbitrage_sync_url']
     category_arbitrage_update_interval_days = producer_cfg['category_arbitrage_update_interval_days']
 
-    print(f"    [Test] Master DB Path: {master_db_path}")
-    print(f"    [Test] Firebase Arbitrage Sync URL: {firebase_arbitrage_sync_url}")
-    print(f"    [Test] Arbitrage Update Interval: {category_arbitrage_update_interval_days} days")
+    logger.info(f"    [Test] Master DB Path: {master_db_path}")
+    logger.info(f"    [Test] Firebase Arbitrage Sync URL: {firebase_arbitrage_sync_url}")
+    logger.info(f"    [Test] Arbitrage Update Interval: {category_arbitrage_update_interval_days} days")
 
     # --- Ensure master_contacts.db and canonical_categories table exist ---
-    print(f"    [Test] Ensuring master_contacts.db and canonical_categories table exist...")
+    logger.info(f"    [Test] Ensuring master_contacts.db and canonical_categories table exist...")
     try:
         conn = sqlite3.connect(master_db_path)
         cursor = conn.cursor()
@@ -83,9 +172,9 @@ async def main_test():
         ''')
         conn.commit()
         conn.close()
-        print("    [Test] canonical_categories table checked/created successfully.")
+        logger.info("    [Test] canonical_categories table checked/created successfully.")
     except sqlite3.Error as e:
-        print(f"!!! [Test] ERROR ensuring canonical_categories table: {e}")
+        logger.error(f"!!! [Test] ERROR ensuring canonical_categories table: {e}")
         return
 
     # --- Define Test Data for normalize_business_category call ---
@@ -116,10 +205,10 @@ async def main_test():
     }
     leads_batch = [raw_contact] # Wrap the single contact in a list for leads_batch
 
-    print(f"    [Test] Preparing to call normalize_business_category with a batch of {len(leads_batch)} leads.")
+    logger.info(f"    [Test] Preparing to call normalize_business_category with a batch of {len(leads_batch)} leads.")
 
     # --- Call normalize_business_category ---
-    print("\n--- Calling normalize_business_category ---")
+    logger.info("\n--- Calling normalize_business_category ---")
     normalized_leads = await normalize_business_category(
         leads_batch=leads_batch,
         llm_model=llm_model_instance,
@@ -127,11 +216,11 @@ async def main_test():
         firebase_arbitrage_sync_url=firebase_arbitrage_sync_url,
         category_arbitrage_update_interval_days=category_arbitrage_update_interval_days
     )
-    print("\n--- normalize_business_category completed ---")
+    logger.info("\n--- normalize_business_category completed ---")
 
-    print("\n--- Normalized Leads Results ---")
-    print(json.dumps(normalized_leads, indent=2))
-    print("--- End of Normalized Leads Results ---")
+    logger.info("\n--- Normalized Leads Results ---")
+    logger.info(json.dumps(normalized_leads, indent=2))
+    logger.info("--- End of Normalized Leads Results ---")
 
     # --- Retrieve and print arbitrageData from cache for the test lead ---
     if normalized_leads and normalized_leads[0].get("category") and normalized_leads[0].get("city") and normalized_leads[0].get("state"):
@@ -142,15 +231,15 @@ async def main_test():
         from category_normalizer import _arbitrage_data_cache
         cached_arbitrage_data = _arbitrage_data_cache.get(category_location_id)
 
-        print("\n--- Cached Arbitrage Data (including SERP) ---")
+        logger.info("\n--- Cached Arbitrage Data (including SERP) ---")
         if cached_arbitrage_data:
-            print(json.dumps(cached_arbitrage_data, indent=2))
+            logger.info(json.dumps(cached_arbitrage_data, indent=2))
         else:
-            print(f"No arbitrage data found in cache for {category_location_id}")
-        print("--- End of Cached Arbitrage Data ---")
+            logger.info(f"No arbitrage data found in cache for {category_location_id}")
+        logger.info("--- End of Cached Arbitrage Data ---")
 
 
-    print("\n--- Test Script Finished ---")
+    logger.info("\n--- Test Script Finished ---")
 
 if __name__ == "__main__":
     asyncio.run(main_test())

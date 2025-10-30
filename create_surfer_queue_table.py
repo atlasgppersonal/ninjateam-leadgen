@@ -1,11 +1,17 @@
 import sqlite3
 import json
 from datetime import datetime
+import logging
+
+# Configure logging for this script
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+logger = logging.getLogger(__name__)
 
 def create_surfer_queue_table(db_path="master_contacts.db"):
     """
     Creates the surfer_prospector_queue table in the specified SQLite database.
     """
+    logger.info(f"Attempting to create/verify 'surfer_prospector_queue' table in {db_path}...")
     conn = None
     try:
         conn = sqlite3.connect(db_path)
@@ -31,12 +37,13 @@ def create_surfer_queue_table(db_path="master_contacts.db"):
             )
         """)
         conn.commit()
-        print(f"Table 'surfer_prospector_queue' created or already exists in {db_path}")
+        logger.info(f"Table 'surfer_prospector_queue' created or already exists in {db_path}")
     except sqlite3.Error as e:
-        print(f"Error creating table: {e}")
+        logger.error(f"Error creating table 'surfer_prospector_queue': {e}")
     finally:
         if conn:
             conn.close()
+            logger.info("Database connection closed.")
 
 if __name__ == "__main__":
     create_surfer_queue_table()

@@ -24,6 +24,31 @@ from typing import List, Dict, Any, Tuple, Set
 import httpx  # Async HTTP client
 import asyncio
 import logging
+import os
+
+# Configure logging for this module
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG) # Set to DEBUG to capture all messages
+
+# Create a file handler for this module's logs
+log_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "surfer_prospector_module.log")
+file_handler = logging.FileHandler(log_file_path)
+file_handler.setLevel(logging.DEBUG) # Log all messages to file
+
+# Create a formatter and add it to the file handler
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+file_handler.setFormatter(formatter)
+
+# Add the file handler to the logger
+logger.addHandler(file_handler)
+
+# Optionally, add a stream handler to also output to console (e.g., for INFO and above)
+stream_handler = logging.StreamHandler()
+stream_handler.setLevel(logging.INFO)
+stream_handler.setFormatter(formatter)
+logger.addHandler(stream_handler)
+
+logger.info(f"Surfer Prospector Module logging to {log_file_path}")
 
 # Import scoring and clustering utilities from the new module
 from scoring_utils import (
@@ -43,10 +68,6 @@ from scoring_utils import (
     cluster_keywords_by_overlap,
     generate_batched_content_and_titles_with_llm, # Import the new batched function
 )
-
-# Configure logging
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
-logger = logging.getLogger(__name__)
 
 # Import the keyword normalization utility
 from scoring_utils import _normalize_keyword
@@ -262,7 +283,7 @@ async def fetch_customer_domain_data(domain: str, country: str, retry_attempt: i
 async def build_keyword_pool(seed_keywords: List[str], target_size: int, country: str, min_volume_filter: int, service_radius_cities: List[str]) -> Dict[str, Dict[str, Any]]:
     """
     Build a keyword pool by expanding seed keywords via Surfer's similar_keywords
-    and applying geographic filtering and minimum volume filter.
+    and applying geographical filtering and minimum volume filter.
     Returns a cleaned_map mapping keyword -> payload.
     """
     pool_map: Dict[str, Dict[str, Any]] = {}
@@ -439,6 +460,7 @@ async def run_prospecting_async(
     # 1. Build Keyword Pool
     keyword_pool = await build_keyword_pool(seed_keywords, target_pool_size, country, min_volume_filter, service_radius_cities)
     logger.info(f"Built keyword pool with {len(keyword_pool)} keywords.")
+    logger.debug(f"Keyword pool details: {json.dumps(keyword_pool, indent=2)}")
 
     if not keyword_pool:
         logger.warning("Keyword pool is empty. Cannot proceed with scoring.")
@@ -447,6 +469,7 @@ async def run_prospecting_async(
     # 2. Fetch Customer Domain Data
     customer_domain_data = await fetch_customer_domain_data(customer_domain, country)
     logger.info(f"Fetched customer domain data for {customer_domain}.")
+    logger.debug(f"Customer domain data: {json.dumps(customer_domain_data, indent=2)}")
 
     # 3. Score Keywords
     scored_keywords = []
@@ -466,9 +489,11 @@ async def run_prospecting_async(
             cpc=cpc,
             competition=competition
         )
+        logger.debug(f"Keyword '{keyword}': Arbitrage score = {arbitrage_score}")
 
         # Calculate velocity and time impact
         velocity_score = calculate_velocity(competition)
+        logger.debug(f"Keyword '{keyword}': Velocity score = {velocity_score}")
         
         # Estimate time and velocity
         # Assuming customer_domain_data contains 'domain_authority' for 'A'
@@ -477,9 +502,11 @@ async def run_prospecting_async(
             C=competition, P=cpc, Vol=search_volume, A=domain_authority
         )
         time_impact = calculate_time_impact_multiplier(estimated_time)
+        logger.debug(f"Keyword '{keyword}': Estimated time = {estimated_time}, Estimated velocity = {estimated_velocity}, Time impact = {time_impact}")
 
         # Calculate base value score
         base_value_score = calculate_base_value_score(search_volume, cpc)
+        logger.debug(f"Keyword '{keyword}': Base value score = {base_value_score}")
 
         # Calculate long-term arbitrage score
         long_term_arbitrage_score = calculate_long_term_arbitrage_score(
@@ -487,17 +514,25 @@ async def run_prospecting_async(
             competition=competition,
             T=estimated_time
         )
+        logger.debug(f"Keyword '{keyword}': Long-term arbitrage score = {long_term_arbitrage_score}")
 
         # Get competition band
         comp_band = get_competition_band(competition)
+        logger.debug(f"Keyword '{keyword}': Competition band = {comp_band}")
 
         # Classify content angle and monetization
         content_angle = classify_content_angle(competition)
         monetization = classify_monetization(cpc)
+        logger.debug(f"Keyword '{keyword}': Content angle = {content_angle}, Monetization = {monetization}")
 
         # Calculate ROI
-        # ROI = search_volume * avg_job_amount * avg_conversion_rate
-        roi = search_volume * avg_job_amount * avg_conversion_rate
+        LOW_CONVERSION_RATE = 0.01
+        HIGH_CONVERSION_RATE = 0.03
+
+        # Calculate low and high ROI
+        low_roi = search_volume * avg_job_amount * LOW_CONVERSION_RATE
+        high_roi = search_volume * avg_job_amount * HIGH_CONVERSION_RATE
+        logger.debug(f"Keyword '{keyword}': Low ROI = {low_roi}, High ROI = {high_roi}")
 
         scored_keywords.append({
             "keyword": keyword,
@@ -514,7 +549,9 @@ async def run_prospecting_async(
             "competition_band": comp_band,
             "content_angle": content_angle,
             "monetization": monetization,
-            "roi": roi, # Add ROI to the scored keyword
+            "low_roi": low_roi, # Add low ROI
+            "high_roi": high_roi, # Add high ROI
+            "roi": high_roi, # Set primary ROI to high_roi as per user's implied preference for ranking
             "raw_data": data # Include raw data for completeness
         })
     
@@ -543,6 +580,7 @@ async def run_prospecting_async(
             short_term_strategy["top_4_clusters"] = top_4_by_roi
             short_term_strategy["max_time_to_implement"] = max_time
             logger.info(f"Generated Top 4 Short-Term Strategy. Max time to implement: {max_time:.2f} weeks.")
+            logger.debug(f"Short-term strategy details: {json.dumps(short_term_strategy, indent=2)}")
         else:
             logger.warning("No keywords available to form Top 4 Short-Term Strategy.")
 
@@ -567,6 +605,7 @@ async def generate_city_specific_clusters(
     city_clusters_output = {}
 
     for city, keywords_for_city in city_keywords_map.items():
+        logger.debug(f"Processing city: {city} with {len(keywords_for_city)} keywords.")
         if not keywords_for_city:
             logger.info(f"No keywords for city: {city}. Skipping clustering.")
             continue
@@ -587,12 +626,14 @@ async def generate_city_specific_clusters(
 
         # Perform clustering for the city's keywords
         clusters = cluster_keywords_by_overlap(list(city_relevant_keywords_data.keys()))
+        logger.debug(f"Generated {len(clusters)} clusters for city: {city}.")
         
         city_clusters_output[city] = []
         all_clusters_for_llm = [] # Collect cluster data for batched LLM call
         for i, cluster_dict in enumerate(clusters): # Iterate over the list of cluster dictionaries
             primary_keyword_for_cluster = cluster_dict["primary"]
             cluster_keywords_list = [primary_keyword_for_cluster] + cluster_dict["related"]
+            logger.debug(f"City '{city}', Cluster {i}: Primary keyword '{primary_keyword_for_cluster}', Related: {cluster_dict['related']}")
 
             # Calculate aggregate metrics for the cluster
             aggregate_volume = 0
@@ -617,6 +658,7 @@ async def generate_city_specific_clusters(
                 average_cpc,
                 average_competition
             )
+            logger.debug(f"City '{city}', Cluster {i}: Aggregate Volume={aggregate_volume}, Avg CPC={average_cpc}, Avg Competition={average_competition}, Value Score={cluster_value_score}")
 
             # Prepare cluster data for LLM content generation
             cluster_data_for_llm = {
@@ -644,6 +686,7 @@ async def generate_city_specific_clusters(
         
         # Perform batched LLM call for content ideas and titles for all clusters in this city
         if all_clusters_for_llm:
+            logger.info(f"Calling batched LLM for {len(all_clusters_for_llm)} clusters in city: {city}.")
             batched_llm_results = await generate_batched_content_and_titles_with_llm(
                 all_clusters_for_llm,
                 customer_domain,
@@ -651,6 +694,7 @@ async def generate_city_specific_clusters(
                 avg_conversion_rate,
                 llm_model
             )
+            logger.debug(f"Batched LLM results for city {city}: {json.dumps(batched_llm_results, indent=2)}")
 
             # Map results back to city_clusters_output
             for cluster_output_item in city_clusters_output[city]:
@@ -674,4 +718,3 @@ async def generate_city_specific_clusters(
 
 # If desired, add more helper entrypoints here that call scoring_utils functions
 # e.g., a convenience wrapper to compute arbitrage for a set of keywords, etc.
-

@@ -14,8 +14,31 @@ import math
 import logging
 import re # Import re for regex operations
 from typing import List, Dict, Any, Tuple
+import os
 
+# Configure logging for this module
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG) # Set to DEBUG to capture all messages
+
+# Create a file handler for this module's logs
+log_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "scoring_utils.log")
+file_handler = logging.FileHandler(log_file_path)
+file_handler.setLevel(logging.DEBUG) # Log all messages to file
+
+# Create a formatter and add it to the file handler
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+file_handler.setFormatter(formatter)
+
+# Add the file handler to the logger
+logger.addHandler(file_handler)
+
+# Optionally, add a stream handler to also output to console (e.g., for INFO and above)
+stream_handler = logging.StreamHandler()
+stream_handler.setLevel(logging.INFO)
+stream_handler.setFormatter(formatter)
+logger.addHandler(stream_handler)
+
+logger.info(f"Scoring Utils logging to {log_file_path}")
 
 __all__ = [
     "calculate_keyword_arbitrage_score",
@@ -42,9 +65,12 @@ def _normalize_keyword(keyword: str) -> str:
     standardizing internal spacing.
     """
     if not isinstance(keyword, str):
+        logger.debug(f"Keyword normalization received non-string input: {keyword}")
         return ""
     # Convert to lowercase, strip leading/trailing whitespace, and replace multiple spaces with a single space
-    return re.sub(r'\s+', ' ', keyword.lower().strip())
+    normalized = re.sub(r'\s+', ' ', keyword.lower().strip())
+    logger.debug(f"Normalized keyword '{keyword}' to '{normalized}'")
+    return normalized
 
 
 def calculate_keyword_arbitrage_score(volume: float, cpc: float, competition: float) -> float:
@@ -64,7 +90,9 @@ def calculate_velocity(competition: float) -> float:
     Calculates a velocity score based on competition. Lower competition means higher velocity.
     The formula ensures a higher score for lower competition, capped at 100.0.
     """
-    return min(100.0, 1.0 / (competition**2 + 0.001))
+    velocity = min(100.0, 1.0 / (competition**2 + 0.001))
+    logger.debug(f"Competition: {competition} => Velocity: {velocity}")
+    return velocity
 
 
 def calculate_time_impact_multiplier(T: float) -> float:
@@ -82,30 +110,38 @@ def calculate_time_impact_multiplier(T: float) -> float:
     MIN_MULTIPLIER_FLOOR = 0.6  # Don't penalize below 60%
 
     if T <= IDEAL_MIN_WEEKS:
-        return MAX_BOOST_MULTIPLIER
+        multiplier = MAX_BOOST_MULTIPLIER
     elif T <= IDEAL_MAX_WEEKS:
         slope = (NEUTRAL_MULTIPLIER - MAX_BOOST_MULTIPLIER) / (IDEAL_MAX_WEEKS - IDEAL_MIN_WEEKS)
-        return MAX_BOOST_MULTIPLIER + slope * (T - IDEAL_MIN_WEEKS)
+        multiplier = MAX_BOOST_MULTIPLIER + slope * (T - IDEAL_MIN_WEEKS)
     else:
         penalty = (T - IDEAL_MAX_WEEKS) * PENALTY_PER_WEEK_AFTER_IDEAL
-        return max(MIN_MULTIPLIER_FLOOR, NEUTRAL_MULTIPLIER - penalty)
+        multiplier = max(MIN_MULTIPLIER_FLOOR, NEUTRAL_MULTIPLIER - penalty)
+    logger.debug(f"Estimated time (T): {T} => Time Impact Multiplier: {multiplier}")
+    return multiplier
 
 
 def estimate_time_and_velocity(
-    C: float, P: float, Vol: float, A: float, K: float = 20, b: float = 0.6, d: float = 0.08, s: float = 0.25
+    C: float, P: float = 0.0, Vol: float = 0.0, A: float = 0.0
 ) -> Tuple[float, float]:
     """
-    Estimate time to rank (T in weeks) and baseline velocity (V 1-100).
+    Estimate time to rank (T in weeks) and baseline velocity (V 1-100) using the new exponential formula.
     C: Competition (0-1)
-    P: CPC
-    Vol: Search Volume
-    A: Authority (0-1)
-    K, b, d, s: tuning parameters
+    P: CPC (retained for compatibility, but not used in T calculation)
+    Vol: Search Volume (retained for compatibility, but not used in T calculation)
+    A: Authority (retained for compatibility, but not used in T calculation)
     """
-    adjusted_C = max(0.01, C)
-    T = (K * adjusted_C * (1 + b * math.log10(P + 1)) * (1 + d * math.log10(Vol + 1))) / (A + s)
+    # New formula: T(C) = a * e^(bC)
+    # Where a = 4 (minimum baseline time at C=0)
+    # And b = 3.26 (growth factor)
+    a = 4.0
+    b = 3.26
+    
+    T = a * math.exp(b * C)
+    
+    # Velocity calculation remains the same, derived from T
     V = round(max(1, min(100, 104 - T)))
-    logger.debug("estimate_time_and_velocity: C=%s P=%s Vol=%s A=%s => T=%s V=%s", C, P, Vol, A, T, V)
+    logger.debug("estimate_time_and_velocity: C=%s => T=%s V=%s", C, T, V)
     return T, V
 
 
@@ -116,6 +152,7 @@ def time_range(T: float) -> Dict[str, float]:
     margin = max(0.1, min(0.2, 0.2 - 0.02 * math.log10(T + 1)))
     low = round((1 - margin) * T, 1)
     high = round((1 + margin) * T, 1)
+    logger.debug(f"Time (T): {T} => Range: low={low}, high={high}, base={round(T, 1)}")
     return {"low": low, "high": high, "base": round(T, 1)}
 
 
@@ -127,6 +164,7 @@ def velocity_range(t_range: Dict[str, float]) -> Dict[str, float]:
     v_low = round(max(1, min(100, 104 - t_range["high"])))
     v_high = round(max(1, min(100, 104 - t_range["low"])))
     v_base = round(max(1, min(100, 104 - t_range["base"])))
+    logger.debug(f"Time Range: {t_range} => Velocity Range: low={v_low}, high={v_high}, base={v_base}")
     return {"low": v_low, "high": v_high, "base": v_base}
 
 
@@ -151,7 +189,7 @@ def estimate_from_array(
         v_rng = velocity_range(t_rng)
 
         results[stage_keys[i]] = {"v": v_rng, "t": t_rng}
-
+    logger.debug(f"Estimated from array results: {json.dumps(results, indent=2)}")
     return results
 
 
@@ -159,7 +197,9 @@ def calculate_base_value_score(volume: float, cpc: float) -> float:
     """
     Calculates a base value score based purely on volume and CPC.
     """
-    return volume * cpc
+    score = volume * cpc
+    logger.debug(f"Volume: {volume}, CPC: {cpc} => Base Value Score: {score}")
+    return score
 
 
 def calculate_long_term_arbitrage_score(base_value_score: float, competition: float, T: float) -> float:
@@ -169,6 +209,7 @@ def calculate_long_term_arbitrage_score(base_value_score: float, competition: fl
     TIME_WEIGHT_FOR_LONG_TERM = 0.002
     adjusted_competition = competition + 0.01
     score = base_value_score / (adjusted_competition + (T * TIME_WEIGHT_FOR_LONG_TERM))
+    logger.debug(f"Base Value Score: {base_value_score}, Competition: {competition}, T: {T} => Long-Term Arbitrage Score: {score}")
     return score
 
 
@@ -179,6 +220,7 @@ def compute_cluster_value_score(aggregate_volume: float, average_cpc: float, ave
     capped_volume = min(aggregate_volume, 600.0)
     adjusted_competition = average_competition + 0.01
     score = (capped_volume * average_cpc) / adjusted_competition
+    logger.debug(f"Aggregate Volume: {aggregate_volume}, Avg CPC: {average_cpc}, Avg Competition: {average_competition} => Cluster Value Score: {score}")
     return score
 
 
@@ -187,15 +229,17 @@ def get_competition_band(competition: float) -> int:
     Classifies competition into defined bands.
     """
     if 0.00 <= competition <= 0.10:
-        return 1
+        band = 1
     elif 0.11 <= competition <= 0.20:
-        return 2
+        band = 2
     elif 0.21 <= competition <= 0.30:
-        return 3
+        band = 3
     elif 0.31 <= competition <= 0.40:
-        return 4
+        band = 4
     else:
-        return 5
+        band = 5
+    logger.debug(f"Competition: {competition} => Competition Band: {band}")
+    return band
 
 
 def classify_content_angle(competition: float) -> str:
@@ -203,11 +247,13 @@ def classify_content_angle(competition: float) -> str:
     Classifies content angle based on competition.
     """
     if competition < 0.33:
-        return "Quick wins / long-tail blog"
+        angle = "Quick wins / long-tail blog"
     elif 0.33 <= competition < 0.66:
-        return "Comparison / listicle"
+        angle = "Comparison / listicle"
     else:
-        return "In-depth guide / landing page"
+        angle = "In-depth guide / landing page"
+    logger.debug(f"Competition: {competition} => Content Angle: {angle}")
+    return angle
 
 
 def classify_monetization(cpc: float) -> str:
@@ -215,11 +261,13 @@ def classify_monetization(cpc: float) -> str:
     Classifies monetization strategy based on CPC.
     """
     if cpc > 5.0:
-        return "Service / conversion page"
+        monetization = "Service / conversion page"
     elif 1.0 <= cpc <= 5.0:
-        return "Lead gen blog post"
+        monetization = "Lead gen blog post"
     else:
-        return "Top-of-funnel explainer"
+        monetization = "Top-of-funnel explainer"
+    logger.debug(f"CPC: {cpc} => Monetization: {monetization}")
+    return monetization
 
 
 def cluster_keywords_by_overlap(keywords: List[str], min_common_words: int = 2) -> List[Dict[str, Any]]:
@@ -229,6 +277,7 @@ def cluster_keywords_by_overlap(keywords: List[str], min_common_words: int = 2) 
     """
     clusters: List[Dict[str, Any]] = []
     used = set()
+    logger.debug(f"Starting keyword clustering for {len(keywords)} keywords with min_common_words={min_common_words}")
 
     for i, kw in enumerate(keywords):
         if kw in used:
@@ -249,7 +298,7 @@ def cluster_keywords_by_overlap(keywords: List[str], min_common_words: int = 2) 
                 used.add(cand)
 
         clusters.append(cluster)
-
+    logger.debug(f"Finished keyword clustering. Generated {len(clusters)} clusters.")
     return clusters
 
 
@@ -265,6 +314,7 @@ async def generate_batched_content_and_titles_with_llm(
     Returns a dictionary mapping cluster_id to its generated content ideas and title.
     """
     if not clusters_data:
+        logger.info("No clusters data provided for batched LLM content generation.")
         return {}
 
     batch_input_for_llm = []
@@ -288,6 +338,7 @@ async def generate_batched_content_and_titles_with_llm(
             "avg_job_amount": avg_job_amount,
             "avg_conversion_rate": avg_conversion_rate
         })
+    logger.debug(f"Prepared batch input for LLM: {json.dumps(batch_input_for_llm, indent=2)}")
 
     system_prompt = """You are a helpful assistant that generates content ideas and titles for SEO keyword clusters.
 You will receive a JSON array of objects, where each object represents a keyword cluster.
@@ -326,11 +377,13 @@ Return ONLY the JSON array. No explanations, no markdown, no additional text.
 """
 
     full_prompt = system_prompt.format(batch_input_json=json.dumps(batch_input_for_llm, separators=(',', ':')))
+    logger.debug(f"Full LLM prompt for batched content generation: {full_prompt}")
 
     try:
         response = await llm_model.generate_content_async(full_prompt)
         raw_response_text = getattr(response, "text", "") or str(response)
         cleaned_text = raw_response_text.strip().replace("```json", "").replace("```", "").strip()
+        logger.debug(f"Raw LLM response for batched content generation: {raw_response_text}")
         
         batched_llm_output = json.loads(cleaned_text)
         
@@ -353,6 +406,7 @@ Return ONLY the JSON array. No explanations, no markdown, no additional text.
                 }
             else:
                 logger.warning(f"Malformed item in batched LLM response: {item}")
+        logger.debug(f"Processed LLM results map: {json.dumps(results_map, indent=2)}")
         return results_map
 
     except json.JSONDecodeError as e:

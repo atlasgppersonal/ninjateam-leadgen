@@ -3677,3 +3677,4424 @@
 --- End of Cached Arbitrage Data ---
 
 --- Test Script Finished ---
+2025-10-29 13:22:38,621 - __main__ - INFO - --- Test Log started at 2025-10-29 13:22:38 ---
+2025-10-29 13:22:38,622 - __main__ - INFO - --- All test output redirected to C:\Users\Gio\Documents\Work\AGS-Site\Ninja-Team-Leadgen\test_category_arbitrage_log.txt ---
+2025-10-29 13:22:38,627 - __main__ - INFO - 
+--- Starting test_category_arbitrage.py ---
+2025-10-29 13:22:42,101 - __main__ - INFO -     [Test] Consumer script surfer_queue_consumer.py is NOT running.
+2025-10-29 13:22:42,101 - __main__ - INFO -     [Test] Launching consumer script: surfer_queue_consumer.py...
+2025-10-29 13:22:42,120 - __main__ - INFO -     [Test] Consumer script surfer_queue_consumer.py launched successfully in background.
+2025-10-29 13:22:42,123 - __main__ - ERROR - !!! [Test] ERROR launching consumer script: name 'time' is not defined
+2025-10-29 13:22:42,124 - __main__ - INFO -     [Test] Attempting to load config from: C:\Users\Gio\Documents\Work\AGS-Site\Ninja-Team-Leadgen\config.json
+2025-10-29 13:22:42,128 - __main__ - INFO -     [Test] Config loaded successfully.
+2025-10-29 13:22:42,135 - __main__ - INFO -     [Test] LLM Model configured: gemini-2.0-flash-lite
+2025-10-29 13:22:42,140 - __main__ - INFO -     [Test] Master DB Path: master_contacts.db
+2025-10-29 13:22:42,143 - __main__ - INFO -     [Test] Firebase Arbitrage Sync URL: https://us-central1-fourth-outpost-470409-u3.cloudfunctions.net/saveArbitrageData
+2025-10-29 13:22:42,145 - __main__ - INFO -     [Test] Arbitrage Update Interval: 7 days
+2025-10-29 13:22:42,145 - __main__ - INFO -     [Test] Ensuring master_contacts.db and canonical_categories table exist...
+2025-10-29 13:22:42,156 - __main__ - INFO -     [Test] canonical_categories table checked/created successfully.
+2025-10-29 13:22:42,158 - __main__ - INFO -     [Test] Preparing to call normalize_business_category with a batch of 1 leads.
+2025-10-29 13:22:42,178 - __main__ - INFO - 
+--- Calling normalize_business_category ---
+2025-10-29 13:22:45,242 - __main__ - INFO - 
+--- normalize_business_category completed ---
+2025-10-29 13:22:45,243 - __main__ - INFO - 
+--- Normalized Leads Results ---
+2025-10-29 13:22:45,244 - __main__ - INFO - [
+  {
+    "body_text": "QR Code Link to This Post Your Last-Minute Go-To: Movers, Laborers, Long-Distance Moving, Junk Removal, Hauling & Cleaning Services! Looking for reliable, professional movers? Strongman Mover is here for all your moving needs \u2013 big or small, local or long-distance. We handle everything with speed, care, and reliability! Why Choose Strongman Mover? Experienced Crews - Over 3 years of experience per crew ensures a smooth move. Any Move, Any Distance - Residential or commercial, local or long-distance \u2013 we do it all! Specialty Item Experts - Safes, pianos, hot tubs? No problem! We move large and delicate items with care. Last-Minute & Same-Day Service - Need to move now? We're available anytime, anywhere, even for last-minute jobs. Flexible Scheduling - No extra charges for date or time changes. Our Services: (For any move - Big or Small) Residential Moves: Apartments, homes, condos. Commercial Moves: Offices, businesses. Labor Only: Packing, loading, and unloading. Junk Removal: Clearing out unwanted items Residential & Commercial Cleaning: Thorough cleaning and sanitization for homes and businesses, perfect for pre-move-in or post-move-out. Availability & Contact: \u2022 7 Days a Week: 8 AM - 6 PM \u2022 After-Hours/Emergencies: Call us directly at (503) 433-5602. Simple Terms of Service:: \u2022 Deposit Policy: No refunds or cancellations once processed. Reschedule requests are based on availability. \u2022 Guaranteed Completion: Your move will be completed within 72 hours of the estimated time of arrival. Call/Text Now: (503) 433-5602 Visit Us Online: www.STRONGMANMOVER.com STRONGMAN MOVER - Your Trusted Partner for a Stress-Free Move! Thank you for choosing STRONGMAN MOVER for your Movers and Laborers!",
+    "business_name": "Strongman Mover",
+    "cant_text": 1,
+    "category": "movers",
+    "city": "portland",
+    "email": null,
+    "image_hash": "04Q03d",
+    "name": null,
+    "name_confidence": 0,
+    "original_category": "labor & moving",
+    "phone": "5034335602",
+    "post_id": "7881623662",
+    "services_rendered": [
+      "Residential Moves: Apartments, homes, condos.",
+      "Commercial Moves: Offices, businesses.",
+      "Labor Only: Packing, loading, and unloading.",
+      "Junk Removal: Clearing out unwanted items",
+      "Residential & Commercial Cleaning: Thorough cleaning and sanitization for homes and businesses, perfect for pre-move-in or post-move-out."
+    ],
+    "state": "OR",
+    "url": "https://portland.craigslist.org/lbs/d/portland-your-last-minute-local-move/7881623662.html",
+    "website_url": "https://www.STRONGMANMOVER.com"
+  }
+]
+2025-10-29 13:22:45,309 - __main__ - INFO - --- End of Normalized Leads Results ---
+2025-10-29 13:22:45,313 - __main__ - INFO - 
+--- Cached Arbitrage Data (including SERP) ---
+2025-10-29 13:22:45,346 - __main__ - INFO - {
+  "id": "movers",
+  "displayName": "",
+  "aliases": [],
+  "description": "",
+  "examplePhrases": [],
+  "parent": null,
+  "confidence": 0.95,
+  "avgJobAmount": 800,
+  "suggestedAt": "2025-10-29T15:52:19.939875+00:00",
+  "createdBy": "llm_fallback",
+  "lastUpdated": "2025-10-29T15:52:19.939875+00:00",
+  "location": "portland-or",
+  "arbitrageData": {
+    "scored_keywords": [
+      {
+        "keyword": "professional movers portland",
+        "search_volume": 20,
+        "cpc": 19.93,
+        "competition": 0.5299999713897705,
+        "arbitrage_score": 738.1481872566463,
+        "velocity_score": 3.54735760049718,
+        "time_impact": 0.6,
+        "estimated_time": 84.03949699411784,
+        "estimated_velocity": 20,
+        "base_value_score": 398.6,
+        "long_term_arbitrage_score": 562.93156482513,
+        "competition_band": 5,
+        "content_angle": "Comparison / listicle",
+        "monetization": "Service / conversion page",
+        "roi": 800.0,
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.5299999713897705,
+          "cpc": 19.93,
+          "search_volume": 20,
+          "similar_keywords": [
+            {
+              "keyword": "portland movers",
+              "country": "US",
+              "overlapping_pages": 15,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "movers portland",
+              "country": "US",
+              "overlapping_pages": 15,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland mover",
+              "country": "US",
+              "overlapping_pages": 15,
+              "search_volume": 260,
+              "cpc": 6.97
+            },
+            {
+              "keyword": "moving companies portland",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving companies portland oregon",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving portland",
+              "country": "US",
+              "overlapping_pages": 13,
+              "search_volume": 14800,
+              "cpc": 0.67
+            },
+            {
+              "keyword": "movers pdx",
+              "country": "US",
+              "overlapping_pages": 13,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "movers portland oregon",
+              "country": "US",
+              "overlapping_pages": 13,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "portland moving companies",
+              "country": "US",
+              "overlapping_pages": 13,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "pdx movers",
+              "country": "US",
+              "overlapping_pages": 10,
+              "search_volume": 1600,
+              "cpc": 11.0
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "professional movers portland"
+        }
+      },
+      {
+        "keyword": "moving companies beaverton",
+        "search_volume": 1900,
+        "cpc": 12.66,
+        "competition": 0.27000001072883606,
+        "arbitrage_score": 85907.13956541565,
+        "velocity_score": 13.53179866850549,
+        "time_impact": 0.6,
+        "estimated_time": 45.841657430170066,
+        "estimated_velocity": 58,
+        "base_value_score": 24054.0,
+        "long_term_arbitrage_score": 64716.381779760086,
+        "competition_band": 3,
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization": "Service / conversion page",
+        "roi": 76000.0,
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.27000001072883606,
+          "cpc": 12.66,
+          "search_volume": 1900,
+          "similar_keywords": [
+            {
+              "keyword": "moving company beaverton oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 12.66
+            },
+            {
+              "keyword": "beaverton movers",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1600,
+              "cpc": 12.08
+            },
+            {
+              "keyword": "movers beaverton oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1600,
+              "cpc": 12.08
+            },
+            {
+              "keyword": "moving company beaverton",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1600,
+              "cpc": 12.08
+            },
+            {
+              "keyword": "moving companies beaverton oregon",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 1900,
+              "cpc": 12.66
+            },
+            {
+              "keyword": "moving companies in beaverton",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 1900,
+              "cpc": 12.66
+            },
+            {
+              "keyword": "moving companies in beaverton oregon",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 1900,
+              "cpc": 12.66
+            },
+            {
+              "keyword": "moving company in beaverton",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 1900,
+              "cpc": 12.66
+            },
+            {
+              "keyword": "beaverton moving companies",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 1600,
+              "cpc": 12.08
+            },
+            {
+              "keyword": "moving companies beaverton or",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 1600,
+              "cpc": 12.08
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "moving companies beaverton"
+        }
+      },
+      {
+        "keyword": "movers tigard",
+        "search_volume": 320,
+        "cpc": 20.28,
+        "competition": 0.9399999976158142,
+        "arbitrage_score": 6831.1579118807895,
+        "velocity_score": 1.1304544484139738,
+        "time_impact": 0.6,
+        "estimated_time": 162.21201097694762,
+        "estimated_velocity": 1,
+        "base_value_score": 6489.6,
+        "long_term_arbitrage_score": 5092.182743221615,
+        "competition_band": 5,
+        "content_angle": "In-depth guide / landing page",
+        "monetization": "Service / conversion page",
+        "roi": 12800.0,
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.9399999976158142,
+          "cpc": 20.28,
+          "search_volume": 320,
+          "similar_keywords": [
+            {
+              "keyword": "movers tigard oregon",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 320,
+              "cpc": 20.28
+            },
+            {
+              "keyword": "moving companies tigard",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 390,
+              "cpc": 17.73
+            },
+            {
+              "keyword": "tigard movers",
+              "country": "US",
+              "overlapping_pages": 15,
+              "search_volume": 320,
+              "cpc": 20.28
+            },
+            {
+              "keyword": "moving companies tigard oregon",
+              "country": "US",
+              "overlapping_pages": 13,
+              "search_volume": 320,
+              "cpc": 20.28
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "movers tigard"
+        }
+      },
+      {
+        "keyword": "moving companies portland",
+        "search_volume": 8100,
+        "cpc": 16.72,
+        "competition": 0.28999999165534973,
+        "arbitrage_score": 451440.0125570301,
+        "velocity_score": 11.750881984407279,
+        "time_impact": 0.6,
+        "estimated_time": 53.266860148814864,
+        "estimated_velocity": 51,
+        "base_value_score": 135432.0,
+        "long_term_arbitrage_score": 333138.42374692,
+        "competition_band": 3,
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization": "Service / conversion page",
+        "roi": 324000.0,
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.28999999165534973,
+          "cpc": 16.72,
+          "search_volume": 8100,
+          "similar_keywords": [
+            {
+              "keyword": "moving portland",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 14800,
+              "cpc": 0.67
+            },
+            {
+              "keyword": "movers pdx",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "movers portland oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "portland movers",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "movers portland",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving companies portland oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland moving companies",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland mover",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 260,
+              "cpc": 6.97
+            },
+            {
+              "keyword": "moving companies portland or",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "moving companies in portland",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 8100,
+              "cpc": 16.72
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "moving companies portland"
+        }
+      },
+      {
+        "keyword": "movers lake oswego",
+        "search_volume": 90,
+        "cpc": 16.76,
+        "competition": 0.7599999904632568,
+        "arbitrage_score": 1958.9610632235176,
+        "velocity_score": 1.7283097564004808,
+        "time_impact": 0.6,
+        "estimated_time": 123.05185328293778,
+        "estimated_velocity": 1,
+        "base_value_score": 1508.4,
+        "long_term_arbitrage_score": 1484.4941558723146,
+        "competition_band": 5,
+        "content_angle": "In-depth guide / landing page",
+        "monetization": "Service / conversion page",
+        "roi": 3600.0,
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.7599999904632568,
+          "cpc": 16.76,
+          "search_volume": 90,
+          "similar_keywords": [
+            {
+              "keyword": "movers in lake oswego",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 70,
+              "cpc": 17.09
+            },
+            {
+              "keyword": "lake oswego movers",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 70,
+              "cpc": 17.09
+            },
+            {
+              "keyword": "lake oswego moving companies",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 90,
+              "cpc": 16.76
+            },
+            {
+              "keyword": "movers lake oswego oregon",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 90,
+              "cpc": 16.76
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "movers lake oswego"
+        }
+      },
+      {
+        "keyword": "moving vancouver",
+        "search_volume": 1900,
+        "cpc": 13.67,
+        "competition": 0.25,
+        "arbitrage_score": 99896.15384615384,
+        "velocity_score": 15.748031496062993,
+        "time_impact": 0.6,
+        "estimated_time": 42.91524809761493,
+        "estimated_velocity": 61,
+        "base_value_score": 25973.0,
+        "long_term_arbitrage_score": 75103.26673254865,
+        "competition_band": 3,
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization": "Service / conversion page",
+        "roi": 76000.0,
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.25,
+          "cpc": 13.67,
+          "search_volume": 1900,
+          "similar_keywords": [
+            {
+              "keyword": "moving companies vancouver",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "moving company vancouver",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving service vancouver",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "moving services vancouver",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "vancouver moving companies",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "vancouver moving company",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "vancouver moving services",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "movers vancouver",
+              "country": "US",
+              "overlapping_pages": 13,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving.company vancouver",
+              "country": "US",
+              "overlapping_pages": 13,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "vancouver moving",
+              "country": "US",
+              "overlapping_pages": 13,
+              "search_volume": 1900,
+              "cpc": 13.67
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "moving vancouver"
+        }
+      },
+      {
+        "keyword": "moving companies vancouver",
+        "search_volume": 1900,
+        "cpc": 13.67,
+        "competition": 0.25,
+        "arbitrage_score": 99896.15384615384,
+        "velocity_score": 15.748031496062993,
+        "time_impact": 0.6,
+        "estimated_time": 42.91524809761493,
+        "estimated_velocity": 61,
+        "base_value_score": 25973.0,
+        "long_term_arbitrage_score": 75103.26673254865,
+        "competition_band": 3,
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization": "Service / conversion page",
+        "roi": 76000.0,
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.25,
+          "cpc": 13.67,
+          "search_volume": 1900,
+          "similar_keywords": [
+            {
+              "keyword": "moving company vancouver",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving service vancouver",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "moving services vancouver",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "vancouver moving companies",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving.company vancouver",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "movers vancouver",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving companies in vancouver",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "vancouver moving company",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "moving company in vancouver",
+              "country": "US",
+              "overlapping_pages": 15,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "vancouver moving services",
+              "country": "US",
+              "overlapping_pages": 15,
+              "search_volume": 1900,
+              "cpc": 26.27
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "moving companies vancouver"
+        }
+      },
+      {
+        "keyword": "commercial movers portland",
+        "search_volume": 40,
+        "cpc": 0.55,
+        "competition": 0.4099999964237213,
+        "arbitrage_score": 52.380952826973534,
+        "velocity_score": 5.913660658439365,
+        "time_impact": 0.6,
+        "estimated_time": 41.26095624889967,
+        "estimated_velocity": 63,
+        "base_value_score": 22.0,
+        "long_term_arbitrage_score": 43.77918576170131,
+        "competition_band": 5,
+        "content_angle": "Comparison / listicle",
+        "monetization": "Top-of-funnel explainer",
+        "roi": 1600.0,
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.4099999964237213,
+          "cpc": 0.55,
+          "search_volume": 40,
+          "similar_keywords": [
+            {
+              "keyword": "commercial movers portland oregon",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 40,
+              "cpc": 0.55
+            },
+            {
+              "keyword": "commercial moving companies portland",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 40,
+              "cpc": 0.55
+            },
+            {
+              "keyword": "commercial moving companies portland oregon",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 40,
+              "cpc": 0.55
+            },
+            {
+              "keyword": "portland commercial movers",
+              "country": "US",
+              "overlapping_pages": 12,
+              "search_volume": 30,
+              "cpc": 51.56
+            },
+            {
+              "keyword": "local commercial moving companies",
+              "country": "US",
+              "overlapping_pages": 2,
+              "search_volume": 30,
+              "cpc": 51.28
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "commercial movers portland"
+        }
+      },
+      {
+        "keyword": "movers portland",
+        "search_volume": 8100,
+        "cpc": 16.72,
+        "competition": 0.28999999165534973,
+        "arbitrage_score": 451440.0125570301,
+        "velocity_score": 11.750881984407279,
+        "time_impact": 0.6,
+        "estimated_time": 53.266860148814864,
+        "estimated_velocity": 51,
+        "base_value_score": 135432.0,
+        "long_term_arbitrage_score": 333138.42374692,
+        "competition_band": 3,
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization": "Service / conversion page",
+        "roi": 324000.0,
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.28999999165534973,
+          "cpc": 16.72,
+          "search_volume": 8100,
+          "similar_keywords": [
+            {
+              "keyword": "moving portland",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 14800,
+              "cpc": 0.67
+            },
+            {
+              "keyword": "movers pdx",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "movers portland oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "portland movers",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "moving companies portland",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving companies portland oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland moving companies",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland mover",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 260,
+              "cpc": 6.97
+            },
+            {
+              "keyword": "movers in portland",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "portland oregon movers",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 9900,
+              "cpc": 19.84
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "movers portland"
+        }
+      },
+      {
+        "keyword": "movers beaverton",
+        "search_volume": 1900,
+        "cpc": 12.66,
+        "competition": 0.27000001072883606,
+        "arbitrage_score": 85907.13956541565,
+        "velocity_score": 13.53179866850549,
+        "time_impact": 0.6,
+        "estimated_time": 45.841657430170066,
+        "estimated_velocity": 58,
+        "base_value_score": 24054.0,
+        "long_term_arbitrage_score": 64716.381779760086,
+        "competition_band": 3,
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization": "Service / conversion page",
+        "roi": 76000.0,
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.27000001072883606,
+          "cpc": 12.66,
+          "search_volume": 1900,
+          "similar_keywords": [
+            {
+              "keyword": "moving companies beaverton",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 12.66
+            },
+            {
+              "keyword": "moving company beaverton oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 12.66
+            },
+            {
+              "keyword": "beaverton movers",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1600,
+              "cpc": 12.08
+            },
+            {
+              "keyword": "movers beaverton oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1600,
+              "cpc": 12.08
+            },
+            {
+              "keyword": "moving company beaverton",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1600,
+              "cpc": 12.08
+            },
+            {
+              "keyword": "movers beaverton or",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 1600,
+              "cpc": 12.08
+            },
+            {
+              "keyword": "movers in beaverton",
+              "country": "US",
+              "overlapping_pages": 15,
+              "search_volume": 1900,
+              "cpc": 12.66
+            },
+            {
+              "keyword": "moving company in beaverton",
+              "country": "US",
+              "overlapping_pages": 15,
+              "search_volume": 1900,
+              "cpc": 12.66
+            },
+            {
+              "keyword": "beaverton oregon moving companies",
+              "country": "US",
+              "overlapping_pages": 15,
+              "search_volume": 1600,
+              "cpc": 12.08
+            },
+            {
+              "keyword": "moving companies in beaverton",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 1900,
+              "cpc": 12.66
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "movers beaverton"
+        }
+      },
+      {
+        "keyword": "moving companies oregon city",
+        "search_volume": 110,
+        "cpc": 19.53,
+        "competition": 0.8799999952316284,
+        "arbitrage_score": 2413.8202376516765,
+        "velocity_score": 1.2896569652092236,
+        "time_impact": 0.6,
+        "estimated_time": 146.4252163874561,
+        "estimated_velocity": 1,
+        "base_value_score": 2148.3,
+        "long_term_arbitrage_score": 1816.2059624229355,
+        "competition_band": 5,
+        "content_angle": "In-depth guide / landing page",
+        "monetization": "Service / conversion page",
+        "roi": 4400.0,
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.8799999952316284,
+          "cpc": 19.53,
+          "search_volume": 110,
+          "similar_keywords": [
+            {
+              "keyword": "movers in oregon city",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 110,
+              "cpc": 19.33
+            },
+            {
+              "keyword": "movers oregon city",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 110,
+              "cpc": 19.33
+            },
+            {
+              "keyword": "moving company oregon city",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 110,
+              "cpc": 19.33
+            },
+            {
+              "keyword": "oregon city moving company",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 110,
+              "cpc": 19.33
+            },
+            {
+              "keyword": "oregon city movers",
+              "country": "US",
+              "overlapping_pages": 15,
+              "search_volume": 110,
+              "cpc": 19.33
+            },
+            {
+              "keyword": "movers oregon",
+              "country": "US",
+              "overlapping_pages": 2,
+              "search_volume": 1000,
+              "cpc": 6.46
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "moving companies oregon city"
+        }
+      },
+      {
+        "keyword": "moving portland",
+        "search_volume": 14800,
+        "cpc": 0.87,
+        "competition": 0.1599999964237213,
+        "arbitrage_score": 75741.17806395036,
+        "velocity_score": 37.59398657980838,
+        "time_impact": 0.7629071800949666,
+        "estimated_time": 19.854640995251668,
+        "estimated_velocity": 84,
+        "base_value_score": 12876.0,
+        "long_term_arbitrage_score": 61399.286180208495,
+        "competition_band": 2,
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization": "Top-of-funnel explainer",
+        "roi": 592000.0,
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.1599999964237213,
+          "cpc": 0.87,
+          "search_volume": 14800,
+          "similar_keywords": [
+            {
+              "keyword": "movers pdx",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "movers portland oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "portland movers",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "movers portland",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving companies portland",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving companies portland oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland moving companies",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland mover",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 260,
+              "cpc": 6.97
+            },
+            {
+              "keyword": "portland oregon movers",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "movers in portland oregon",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 8100,
+              "cpc": 16.72
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "moving portland"
+        }
+      },
+      {
+        "keyword": "movers sandy",
+        "search_volume": 70,
+        "cpc": 8.31,
+        "competition": 0.7300000190734863,
+        "arbitrage_score": 786.0810608198564,
+        "velocity_score": 1.8730098292596953,
+        "time_impact": 0.6,
+        "estimated_time": 106.02939200287598,
+        "estimated_velocity": 1,
+        "base_value_score": 581.7,
+        "long_term_arbitrage_score": 610.9916720675352,
+        "competition_band": 5,
+        "content_angle": "In-depth guide / landing page",
+        "monetization": "Service / conversion page",
+        "roi": 2800.0,
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.7300000190734863,
+          "cpc": 8.31,
+          "search_volume": 70,
+          "similar_keywords": [
+            {
+              "keyword": "moving company sandy utah",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 70,
+              "cpc": 21.95
+            },
+            {
+              "keyword": "sandy movers",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 70,
+              "cpc": 8.31
+            },
+            {
+              "keyword": "movers sandy utah",
+              "country": "US",
+              "overlapping_pages": 13,
+              "search_volume": 70,
+              "cpc": 21.95
+            },
+            {
+              "keyword": "moving companies in sandy",
+              "country": "US",
+              "overlapping_pages": 13,
+              "search_volume": 70,
+              "cpc": 34.61
+            },
+            {
+              "keyword": "moving companies sandy utah",
+              "country": "US",
+              "overlapping_pages": 13,
+              "search_volume": 70,
+              "cpc": 21.95
+            },
+            {
+              "keyword": "movers in sandy utah",
+              "country": "US",
+              "overlapping_pages": 9,
+              "search_volume": 50,
+              "cpc": 28.03
+            },
+            {
+              "keyword": "movers sandy ut",
+              "country": "US",
+              "overlapping_pages": 8,
+              "search_volume": 50,
+              "cpc": 28.03
+            },
+            {
+              "keyword": "best of utah moving company sandy",
+              "country": "US",
+              "overlapping_pages": 3,
+              "search_volume": 20,
+              "cpc": 0.0
+            },
+            {
+              "keyword": "helping hand movers",
+              "country": "US",
+              "overlapping_pages": 2,
+              "search_volume": 1600,
+              "cpc": 12.16
+            },
+            {
+              "keyword": "helping hands move",
+              "country": "US",
+              "overlapping_pages": 2,
+              "search_volume": 1600,
+              "cpc": 12.16
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "movers sandy"
+        }
+      },
+      {
+        "keyword": "moving companies hillsboro",
+        "search_volume": 480,
+        "cpc": 16.36,
+        "competition": 0.6299999952316284,
+        "arbitrage_score": 12270.000091418624,
+        "velocity_score": 2.513194307865403,
+        "time_impact": 0.6,
+        "estimated_time": 106.74139025373,
+        "estimated_velocity": 1,
+        "base_value_score": 7852.799999999999,
+        "long_term_arbitrage_score": 9200.888668432388,
+        "competition_band": 5,
+        "content_angle": "Comparison / listicle",
+        "monetization": "Service / conversion page",
+        "roi": 19200.0,
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.6299999952316284,
+          "cpc": 16.36,
+          "search_volume": 480,
+          "similar_keywords": [
+            {
+              "keyword": "movers hillsboro oregon",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 480,
+              "cpc": 16.36
+            },
+            {
+              "keyword": "movers in hillsboro oregon",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 480,
+              "cpc": 14.86
+            },
+            {
+              "keyword": "moving companies hillsboro or",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 480,
+              "cpc": 16.36
+            },
+            {
+              "keyword": "moving companies hillsboro oregon",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 480,
+              "cpc": 14.86
+            },
+            {
+              "keyword": "moving company hillsboro",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 480,
+              "cpc": 14.86
+            },
+            {
+              "keyword": "hillsboro movers",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 480,
+              "cpc": 16.36
+            },
+            {
+              "keyword": "hillsboro moving companies",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 480,
+              "cpc": 14.86
+            },
+            {
+              "keyword": "hillsboro moving company",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 480,
+              "cpc": 16.36
+            },
+            {
+              "keyword": "hillsboro or movers",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 480,
+              "cpc": 16.36
+            },
+            {
+              "keyword": "movers in hillsboro",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 480,
+              "cpc": 16.36
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "moving companies hillsboro"
+        }
+      },
+      {
+        "keyword": "best movers portland",
+        "search_volume": 480,
+        "cpc": 8.52,
+        "competition": 0.36000001430511475,
+        "arbitrage_score": 11052.972545637727,
+        "velocity_score": 7.6569672368734,
+        "time_impact": 0.6,
+        "estimated_time": 55.519098417514456,
+        "estimated_velocity": 48,
+        "base_value_score": 4089.6,
+        "long_term_arbitrage_score": 8501.611525427348,
+        "competition_band": 4,
+        "content_angle": "Comparison / listicle",
+        "monetization": "Service / conversion page",
+        "roi": 19200.0,
+        "raw_data": {
+          "categories": [
+            10017
+          ],
+          "competition": 0.36000001430511475,
+          "cpc": 8.52,
+          "search_volume": 480,
+          "similar_keywords": [
+            {
+              "keyword": "movers portland oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "movers portland",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving companies portland",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland moving companies",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving portland",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 14800,
+              "cpc": 0.67
+            },
+            {
+              "keyword": "movers pdx",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "moving companies portland oregon",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland mover",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 260,
+              "cpc": 6.97
+            },
+            {
+              "keyword": "portland movers",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "best moving company portland",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 590,
+              "cpc": 10.48
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "best movers portland"
+        }
+      },
+      {
+        "keyword": "moving companies tigard",
+        "search_volume": 390,
+        "cpc": 17.73,
+        "competition": 0.20999999344348907,
+        "arbitrage_score": 31430.45548215511,
+        "velocity_score": 22.172950356062515,
+        "time_impact": 0.6,
+        "estimated_time": 35.7710908348285,
+        "estimated_velocity": 68,
+        "base_value_score": 6914.7,
+        "long_term_arbitrage_score": 23717.666225534744,
+        "competition_band": 5,
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization": "Service / conversion page",
+        "roi": 15600.0,
+        "raw_data": {
+          "categories": [
+            10003,
+            10035,
+            10251
+          ],
+          "competition": 0.20999999344348907,
+          "cpc": 17.73,
+          "search_volume": 390,
+          "similar_keywords": [
+            {
+              "keyword": "tigard movers",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 320,
+              "cpc": 20.28
+            },
+            {
+              "keyword": "movers tigard",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 320,
+              "cpc": 20.28
+            },
+            {
+              "keyword": "movers tigard oregon",
+              "country": "US",
+              "overlapping_pages": 15,
+              "search_volume": 320,
+              "cpc": 20.28
+            },
+            {
+              "keyword": "moving companies tigard oregon",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 320,
+              "cpc": 20.28
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "moving companies tigard"
+        }
+      },
+      {
+        "keyword": "movers oregon city",
+        "search_volume": 110,
+        "cpc": 19.33,
+        "competition": 0.7200000286102295,
+        "arbitrage_score": 2912.7396118710285,
+        "velocity_score": 1.9252982685409203,
+        "time_impact": 0.6,
+        "estimated_time": 119.63147864444811,
+        "estimated_velocity": 1,
+        "base_value_score": 2126.2999999999997,
+        "long_term_arbitrage_score": 2193.728669033577,
+        "competition_band": 5,
+        "content_angle": "In-depth guide / landing page",
+        "monetization": "Service / conversion page",
+        "roi": 4400.0,
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.7200000286102295,
+          "cpc": 19.33,
+          "search_volume": 110,
+          "similar_keywords": [
+            {
+              "keyword": "movers in oregon city",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 110,
+              "cpc": 19.33
+            },
+            {
+              "keyword": "moving companies oregon city",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 110,
+              "cpc": 19.53
+            },
+            {
+              "keyword": "moving company oregon city",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 110,
+              "cpc": 19.33
+            },
+            {
+              "keyword": "oregon city moving company",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 110,
+              "cpc": 19.33
+            },
+            {
+              "keyword": "oregon city movers",
+              "country": "US",
+              "overlapping_pages": 15,
+              "search_volume": 110,
+              "cpc": 19.33
+            },
+            {
+              "keyword": "movers oregon",
+              "country": "US",
+              "overlapping_pages": 3,
+              "search_volume": 1000,
+              "cpc": 6.46
+            },
+            {
+              "keyword": "portland mover",
+              "country": "US",
+              "overlapping_pages": 2,
+              "search_volume": 260,
+              "cpc": 6.97
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "movers oregon city"
+        }
+      },
+      {
+        "keyword": "cheap movers portland",
+        "search_volume": 390,
+        "cpc": 21.2,
+        "competition": 0.5699999928474426,
+        "arbitrage_score": 14255.172589587826,
+        "velocity_score": 3.0684259742856264,
+        "time_impact": 0.6,
+        "estimated_time": 99.53135586502212,
+        "estimated_velocity": 4,
+        "base_value_score": 8268.0,
+        "long_term_arbitrage_score": 10612.75292915482,
+        "competition_band": 5,
+        "content_angle": "Comparison / listicle",
+        "monetization": "Service / conversion page",
+        "roi": 15600.0,
+        "raw_data": {
+          "categories": [
+            10017
+          ],
+          "competition": 0.5699999928474426,
+          "cpc": 21.2,
+          "search_volume": 390,
+          "similar_keywords": [
+            {
+              "keyword": "cheap movers portland or",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 480,
+              "cpc": 21.32
+            },
+            {
+              "keyword": "affordable movers portland",
+              "country": "US",
+              "overlapping_pages": 15,
+              "search_volume": 480,
+              "cpc": 21.32
+            },
+            {
+              "keyword": "cheap movers in portland or",
+              "country": "US",
+              "overlapping_pages": 15,
+              "search_volume": 390,
+              "cpc": 21.2
+            },
+            {
+              "keyword": "cheap movers portland oregon",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 480,
+              "cpc": 21.32
+            },
+            {
+              "keyword": "movers portland oregon",
+              "country": "US",
+              "overlapping_pages": 13,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "moving companies portland",
+              "country": "US",
+              "overlapping_pages": 13,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving companies portland oregon",
+              "country": "US",
+              "overlapping_pages": 13,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "movers pdx",
+              "country": "US",
+              "overlapping_pages": 12,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "movers portland",
+              "country": "US",
+              "overlapping_pages": 12,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland moving companies",
+              "country": "US",
+              "overlapping_pages": 12,
+              "search_volume": 8100,
+              "cpc": 16.72
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "cheap movers portland"
+        }
+      },
+      {
+        "keyword": "moving companies gresham",
+        "search_volume": 90,
+        "cpc": 22.65,
+        "competition": 0.5299999713897705,
+        "arbitrage_score": 3775.000200006707,
+        "velocity_score": 3.54735760049718,
+        "time_impact": 0.6,
+        "estimated_time": 89.47284906325568,
+        "estimated_velocity": 15,
+        "base_value_score": 2038.4999999999998,
+        "long_term_arbitrage_score": 2835.4020149694134,
+        "competition_band": 5,
+        "content_angle": "Comparison / listicle",
+        "monetization": "Service / conversion page",
+        "roi": 3600.0,
+        "raw_data": {
+          "categories": [
+            10108,
+            10573,
+            11868
+          ],
+          "competition": 0.5299999713897705,
+          "cpc": 22.65,
+          "search_volume": 90,
+          "similar_keywords": [
+            {
+              "keyword": "gresham moving companies",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 140,
+              "cpc": 26.36
+            },
+            {
+              "keyword": "moving companies gresham or",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 140,
+              "cpc": 26.36
+            },
+            {
+              "keyword": "moving companies gresham oregon",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 140,
+              "cpc": 17.29
+            },
+            {
+              "keyword": "gresham movers",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 140,
+              "cpc": 17.29
+            },
+            {
+              "keyword": "movers gresham",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 140,
+              "cpc": 26.36
+            },
+            {
+              "keyword": "movers gresham oregon",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 140,
+              "cpc": 26.36
+            },
+            {
+              "keyword": "moving company gresham",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 90,
+              "cpc": 22.65
+            },
+            {
+              "keyword": "moving companies portland",
+              "country": "US",
+              "overlapping_pages": 2,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving companies portland oregon",
+              "country": "US",
+              "overlapping_pages": 2,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland moving companies",
+              "country": "US",
+              "overlapping_pages": 2,
+              "search_volume": 8100,
+              "cpc": 16.72
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "moving companies gresham"
+        }
+      },
+      {
+        "keyword": "movers vancouver",
+        "search_volume": 1900,
+        "cpc": 13.67,
+        "competition": 0.25,
+        "arbitrage_score": 99896.15384615384,
+        "velocity_score": 15.748031496062993,
+        "time_impact": 0.6,
+        "estimated_time": 42.91524809761493,
+        "estimated_velocity": 61,
+        "base_value_score": 25973.0,
+        "long_term_arbitrage_score": 75103.26673254865,
+        "competition_band": 3,
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization": "Service / conversion page",
+        "roi": 76000.0,
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.25,
+          "cpc": 13.67,
+          "search_volume": 1900,
+          "similar_keywords": [
+            {
+              "keyword": "moving companies vancouver",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "moving company vancouver",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving service vancouver",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "moving services vancouver",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "vancouver moving companies",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "vancouver moving company",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "vancouver moving service",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "moving.company vancouver",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "vancouver moving services",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "vancouver washington movers",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 1000,
+              "cpc": 18.67
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "movers vancouver"
+        }
+      },
+      {
+        "keyword": "vancouver moving service",
+        "search_volume": 1900,
+        "cpc": 26.27,
+        "competition": 0.3199999928474426,
+        "arbitrage_score": 151251.51842980352,
+        "velocity_score": 9.671180312100093,
+        "time_impact": 0.6,
+        "estimated_time": 60.152159294641905,
+        "estimated_velocity": 44,
+        "base_value_score": 49913.0,
+        "long_term_arbitrage_score": 110842.82058226177,
+        "competition_band": 4,
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization": "Service / conversion page",
+        "roi": 76000.0,
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.3199999928474426,
+          "cpc": 26.27,
+          "search_volume": 1900,
+          "similar_keywords": [
+            {
+              "keyword": "moving companies vancouver",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "moving company vancouver",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving service vancouver",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "moving services vancouver",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "vancouver moving companies",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "movers vancouver",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "vancouver moving company",
+              "country": "US",
+              "overlapping_pages": 15,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "vancouver moving services",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "moving company vancouver wa",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 1000,
+              "cpc": 18.67
+            },
+            {
+              "keyword": "moving.company vancouver",
+              "country": "US",
+              "overlapping_pages": 13,
+              "search_volume": 1900,
+              "cpc": 13.67
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "vancouver moving service"
+        }
+      },
+      {
+        "keyword": "local movers vancouver",
+        "search_volume": 20,
+        "cpc": 0.0,
+        "competition": 0.10999999940395355,
+        "arbitrage_score": 0.0,
+        "velocity_score": 76.335878626713,
+        "time_impact": 0.965383153384698,
+        "estimated_time": 9.730842330765098,
+        "estimated_velocity": 94,
+        "base_value_score": 0.0,
+        "long_term_arbitrage_score": 0.0,
+        "competition_band": 5,
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization": "Top-of-funnel explainer",
+        "roi": 800.0,
+        "raw_data": {
+          "categories": [
+            10003,
+            10017,
+            10035,
+            10146,
+            10782,
+            13575,
+            13842
+          ],
+          "competition": 0.10999999940395355,
+          "cpc": 0.0,
+          "search_volume": 20,
+          "similar_keywords": [
+            {
+              "keyword": "moving companies vancouver",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "moving company vancouver",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "vancouver moving companies",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving services vancouver",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving service vancouver",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "movers vancouver washington",
+              "country": "US",
+              "overlapping_pages": 12,
+              "search_volume": 480,
+              "cpc": 27.02
+            },
+            {
+              "keyword": "home movers vancouver wa",
+              "country": "US",
+              "overlapping_pages": 12,
+              "search_volume": 10,
+              "cpc": 0.0
+            },
+            {
+              "keyword": "moving companies in vancouver wa",
+              "country": "US",
+              "overlapping_pages": 11,
+              "search_volume": 1000,
+              "cpc": 16.68
+            },
+            {
+              "keyword": "moving companies vancouver wa",
+              "country": "US",
+              "overlapping_pages": 11,
+              "search_volume": 1000,
+              "cpc": 16.68
+            },
+            {
+              "keyword": "vancouver wa moving companies",
+              "country": "US",
+              "overlapping_pages": 11,
+              "search_volume": 1000,
+              "cpc": 16.68
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "local movers vancouver"
+        }
+      },
+      {
+        "keyword": "local movers portland",
+        "search_volume": 390,
+        "cpc": 21.28,
+        "competition": 0.14000000059604645,
+        "arbitrage_score": 55327.99978014628,
+        "velocity_score": 48.543688927106686,
+        "time_impact": 0.6708205313031859,
+        "estimated_time": 24.458973434840708,
+        "estimated_velocity": 80,
+        "base_value_score": 8299.2,
+        "long_term_arbitrage_score": 41721.72549402508,
+        "competition_band": 2,
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization": "Service / conversion page",
+        "roi": 15600.0,
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.14000000059604645,
+          "cpc": 21.28,
+          "search_volume": 390,
+          "similar_keywords": [
+            {
+              "keyword": "moving portland",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 14800,
+              "cpc": 0.67
+            },
+            {
+              "keyword": "movers pdx",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "movers portland oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "portland movers",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "movers portland",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving companies portland",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving companies portland oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland moving companies",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland mover",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 260,
+              "cpc": 6.97
+            },
+            {
+              "keyword": "local movers portland or",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 390,
+              "cpc": 21.28
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "local movers portland"
+        }
+      },
+      {
+        "keyword": "best movers vancouver",
+        "search_volume": 20,
+        "cpc": 0.0,
+        "competition": 0.0,
+        "arbitrage_score": 0.0,
+        "velocity_score": 100.0,
+        "time_impact": 1.15,
+        "estimated_time": 0.884622034862971,
+        "estimated_velocity": 100,
+        "base_value_score": 0.0,
+        "long_term_arbitrage_score": 0.0,
+        "competition_band": 1,
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization": "Top-of-funnel explainer",
+        "roi": 800.0,
+        "raw_data": {
+          "categories": [
+            10003,
+            10017,
+            10035,
+            10146,
+            10782,
+            13575,
+            13842
+          ],
+          "competition": 0.0,
+          "cpc": 0.0,
+          "search_volume": 20,
+          "similar_keywords": [
+            {
+              "keyword": "best vancouver movers",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 20,
+              "cpc": 0.0
+            },
+            {
+              "keyword": "best movers in vancouver",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 20,
+              "cpc": 0.0
+            },
+            {
+              "keyword": "moving services vancouver",
+              "country": "US",
+              "overlapping_pages": 8,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "vancouver moving companies",
+              "country": "US",
+              "overlapping_pages": 8,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving company vancouver",
+              "country": "US",
+              "overlapping_pages": 7,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving service vancouver",
+              "country": "US",
+              "overlapping_pages": 7,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "local movers vancouver",
+              "country": "US",
+              "overlapping_pages": 7,
+              "search_volume": 20,
+              "cpc": 0.0
+            },
+            {
+              "keyword": "mover vancouver",
+              "country": "US",
+              "overlapping_pages": 4,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving companies vancouver bc",
+              "country": "US",
+              "overlapping_pages": 4,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "vancouver moving",
+              "country": "US",
+              "overlapping_pages": 4,
+              "search_volume": 1900,
+              "cpc": 13.67
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "best movers vancouver"
+        }
+      },
+      {
+        "keyword": "movers hillsboro",
+        "search_volume": 480,
+        "cpc": 16.36,
+        "competition": 0.6299999952316284,
+        "arbitrage_score": 12270.000091418624,
+        "velocity_score": 2.513194307865403,
+        "time_impact": 0.6,
+        "estimated_time": 106.74139025373,
+        "estimated_velocity": 1,
+        "base_value_score": 7852.799999999999,
+        "long_term_arbitrage_score": 9200.888668432388,
+        "competition_band": 5,
+        "content_angle": "Comparison / listicle",
+        "monetization": "Service / conversion page",
+        "roi": 19200.0,
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.6299999952316284,
+          "cpc": 16.36,
+          "search_volume": 480,
+          "similar_keywords": [
+            {
+              "keyword": "hillsboro moving company",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 480,
+              "cpc": 16.36
+            },
+            {
+              "keyword": "movers hillsboro or",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 480,
+              "cpc": 16.36
+            },
+            {
+              "keyword": "movers in hillsboro",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 480,
+              "cpc": 16.36
+            },
+            {
+              "keyword": "hillsboro movers",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 480,
+              "cpc": 16.36
+            },
+            {
+              "keyword": "hillsboro moving companies",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 480,
+              "cpc": 14.86
+            },
+            {
+              "keyword": "hillsboro oregon movers",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 480,
+              "cpc": 14.86
+            },
+            {
+              "keyword": "moving companies hillsboro or",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 480,
+              "cpc": 16.36
+            },
+            {
+              "keyword": "moving companies hillsboro oregon",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 480,
+              "cpc": 14.86
+            },
+            {
+              "keyword": "moving companies in hillsboro oregon",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 480,
+              "cpc": 14.86
+            },
+            {
+              "keyword": "moving companies hillsboro",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 480,
+              "cpc": 16.36
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "movers hillsboro"
+        }
+      },
+      {
+        "keyword": "movers gresham",
+        "search_volume": 140,
+        "cpc": 26.36,
+        "competition": 0.5600000023841858,
+        "arbitrage_score": 6474.3859378313355,
+        "velocity_score": 3.1786395152959845,
+        "time_impact": 0.6,
+        "estimated_time": 97.7743741228205,
+        "estimated_velocity": 6,
+        "base_value_score": 3690.4,
+        "long_term_arbitrage_score": 4820.594373596535,
+        "competition_band": 5,
+        "content_angle": "Comparison / listicle",
+        "monetization": "Service / conversion page",
+        "roi": 5600.0,
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.5600000023841858,
+          "cpc": 26.36,
+          "search_volume": 140,
+          "similar_keywords": [
+            {
+              "keyword": "gresham movers",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 140,
+              "cpc": 17.29
+            },
+            {
+              "keyword": "movers gresham oregon",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 140,
+              "cpc": 26.36
+            },
+            {
+              "keyword": "moving companies gresham or",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 140,
+              "cpc": 26.36
+            },
+            {
+              "keyword": "moving companies gresham oregon",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 140,
+              "cpc": 17.29
+            },
+            {
+              "keyword": "moving companies gresham",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 90,
+              "cpc": 22.65
+            },
+            {
+              "keyword": "gresham moving companies",
+              "country": "US",
+              "overlapping_pages": 14,
+              "search_volume": 140,
+              "cpc": 26.36
+            },
+            {
+              "keyword": "moving company gresham",
+              "country": "US",
+              "overlapping_pages": 13,
+              "search_volume": 90,
+              "cpc": 22.65
+            },
+            {
+              "keyword": "moving companies portland",
+              "country": "US",
+              "overlapping_pages": 2,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving companies portland oregon",
+              "country": "US",
+              "overlapping_pages": 2,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland moving companies",
+              "country": "US",
+              "overlapping_pages": 2,
+              "search_volume": 8100,
+              "cpc": 16.72
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "movers gresham"
+        }
+      }
+    ],
+    "customer_domain_data": {},
+    "short_term_strategy": {
+      "top_4_clusters": [
+        {
+          "keyword": "moving portland",
+          "search_volume": 14800,
+          "cpc": 0.87,
+          "competition": 0.1599999964237213,
+          "arbitrage_score": 75741.17806395036,
+          "velocity_score": 37.59398657980838,
+          "time_impact": 0.7629071800949666,
+          "estimated_time": 19.854640995251668,
+          "estimated_velocity": 84,
+          "base_value_score": 12876.0,
+          "long_term_arbitrage_score": 61399.286180208495,
+          "competition_band": 2,
+          "content_angle": "Quick wins / long-tail blog",
+          "monetization": "Top-of-funnel explainer",
+          "roi": 592000.0,
+          "raw_data": {
+            "categories": [
+              10003,
+              10035
+            ],
+            "competition": 0.1599999964237213,
+            "cpc": 0.87,
+            "search_volume": 14800,
+            "similar_keywords": [
+              {
+                "keyword": "movers pdx",
+                "country": "US",
+                "overlapping_pages": 20,
+                "search_volume": 9900,
+                "cpc": 19.84
+              },
+              {
+                "keyword": "movers portland oregon",
+                "country": "US",
+                "overlapping_pages": 20,
+                "search_volume": 9900,
+                "cpc": 19.84
+              },
+              {
+                "keyword": "portland movers",
+                "country": "US",
+                "overlapping_pages": 20,
+                "search_volume": 9900,
+                "cpc": 19.84
+              },
+              {
+                "keyword": "movers portland",
+                "country": "US",
+                "overlapping_pages": 20,
+                "search_volume": 8100,
+                "cpc": 16.72
+              },
+              {
+                "keyword": "moving companies portland",
+                "country": "US",
+                "overlapping_pages": 20,
+                "search_volume": 8100,
+                "cpc": 16.72
+              },
+              {
+                "keyword": "moving companies portland oregon",
+                "country": "US",
+                "overlapping_pages": 20,
+                "search_volume": 8100,
+                "cpc": 16.72
+              },
+              {
+                "keyword": "portland moving companies",
+                "country": "US",
+                "overlapping_pages": 20,
+                "search_volume": 8100,
+                "cpc": 16.72
+              },
+              {
+                "keyword": "portland mover",
+                "country": "US",
+                "overlapping_pages": 20,
+                "search_volume": 260,
+                "cpc": 6.97
+              },
+              {
+                "keyword": "portland oregon movers",
+                "country": "US",
+                "overlapping_pages": 19,
+                "search_volume": 9900,
+                "cpc": 19.84
+              },
+              {
+                "keyword": "movers in portland oregon",
+                "country": "US",
+                "overlapping_pages": 19,
+                "search_volume": 8100,
+                "cpc": 16.72
+              }
+            ],
+            "overlapping_pages": null,
+            "keyword": "moving portland"
+          }
+        },
+        {
+          "keyword": "local movers portland",
+          "search_volume": 390,
+          "cpc": 21.28,
+          "competition": 0.14000000059604645,
+          "arbitrage_score": 55327.99978014628,
+          "velocity_score": 48.543688927106686,
+          "time_impact": 0.6708205313031859,
+          "estimated_time": 24.458973434840708,
+          "estimated_velocity": 80,
+          "base_value_score": 8299.2,
+          "long_term_arbitrage_score": 41721.72549402508,
+          "competition_band": 2,
+          "content_angle": "Quick wins / long-tail blog",
+          "monetization": "Service / conversion page",
+          "roi": 15600.0,
+          "raw_data": {
+            "categories": [
+              10003,
+              10035
+            ],
+            "competition": 0.14000000059604645,
+            "cpc": 21.28,
+            "search_volume": 390,
+            "similar_keywords": [
+              {
+                "keyword": "moving portland",
+                "country": "US",
+                "overlapping_pages": 20,
+                "search_volume": 14800,
+                "cpc": 0.67
+              },
+              {
+                "keyword": "movers pdx",
+                "country": "US",
+                "overlapping_pages": 20,
+                "search_volume": 9900,
+                "cpc": 19.84
+              },
+              {
+                "keyword": "movers portland oregon",
+                "country": "US",
+                "overlapping_pages": 20,
+                "search_volume": 9900,
+                "cpc": 19.84
+              },
+              {
+                "keyword": "portland movers",
+                "country": "US",
+                "overlapping_pages": 20,
+                "search_volume": 9900,
+                "cpc": 19.84
+              },
+              {
+                "keyword": "movers portland",
+                "country": "US",
+                "overlapping_pages": 20,
+                "search_volume": 8100,
+                "cpc": 16.72
+              },
+              {
+                "keyword": "moving companies portland",
+                "country": "US",
+                "overlapping_pages": 20,
+                "search_volume": 8100,
+                "cpc": 16.72
+              },
+              {
+                "keyword": "moving companies portland oregon",
+                "country": "US",
+                "overlapping_pages": 20,
+                "search_volume": 8100,
+                "cpc": 16.72
+              },
+              {
+                "keyword": "portland moving companies",
+                "country": "US",
+                "overlapping_pages": 20,
+                "search_volume": 8100,
+                "cpc": 16.72
+              },
+              {
+                "keyword": "portland mover",
+                "country": "US",
+                "overlapping_pages": 20,
+                "search_volume": 260,
+                "cpc": 6.97
+              },
+              {
+                "keyword": "local movers portland or",
+                "country": "US",
+                "overlapping_pages": 17,
+                "search_volume": 390,
+                "cpc": 21.28
+              }
+            ],
+            "overlapping_pages": null,
+            "keyword": "local movers portland"
+          }
+        },
+        {
+          "keyword": "best movers vancouver",
+          "search_volume": 20,
+          "cpc": 0.0,
+          "competition": 0.0,
+          "arbitrage_score": 0.0,
+          "velocity_score": 100.0,
+          "time_impact": 1.15,
+          "estimated_time": 0.884622034862971,
+          "estimated_velocity": 100,
+          "base_value_score": 0.0,
+          "long_term_arbitrage_score": 0.0,
+          "competition_band": 1,
+          "content_angle": "Quick wins / long-tail blog",
+          "monetization": "Top-of-funnel explainer",
+          "roi": 800.0,
+          "raw_data": {
+            "categories": [
+              10003,
+              10017,
+              10035,
+              10146,
+              10782,
+              13575,
+              13842
+            ],
+            "competition": 0.0,
+            "cpc": 0.0,
+            "search_volume": 20,
+            "similar_keywords": [
+              {
+                "keyword": "best vancouver movers",
+                "country": "US",
+                "overlapping_pages": 18,
+                "search_volume": 20,
+                "cpc": 0.0
+              },
+              {
+                "keyword": "best movers in vancouver",
+                "country": "US",
+                "overlapping_pages": 16,
+                "search_volume": 20,
+                "cpc": 0.0
+              },
+              {
+                "keyword": "moving services vancouver",
+                "country": "US",
+                "overlapping_pages": 8,
+                "search_volume": 1900,
+                "cpc": 13.67
+              },
+              {
+                "keyword": "vancouver moving companies",
+                "country": "US",
+                "overlapping_pages": 8,
+                "search_volume": 1900,
+                "cpc": 13.67
+              },
+              {
+                "keyword": "moving company vancouver",
+                "country": "US",
+                "overlapping_pages": 7,
+                "search_volume": 1900,
+                "cpc": 13.67
+              },
+              {
+                "keyword": "moving service vancouver",
+                "country": "US",
+                "overlapping_pages": 7,
+                "search_volume": 1900,
+                "cpc": 26.27
+              },
+              {
+                "keyword": "local movers vancouver",
+                "country": "US",
+                "overlapping_pages": 7,
+                "search_volume": 20,
+                "cpc": 0.0
+              },
+              {
+                "keyword": "mover vancouver",
+                "country": "US",
+                "overlapping_pages": 4,
+                "search_volume": 1900,
+                "cpc": 13.67
+              },
+              {
+                "keyword": "moving companies vancouver bc",
+                "country": "US",
+                "overlapping_pages": 4,
+                "search_volume": 1900,
+                "cpc": 13.67
+              },
+              {
+                "keyword": "vancouver moving",
+                "country": "US",
+                "overlapping_pages": 4,
+                "search_volume": 1900,
+                "cpc": 13.67
+              }
+            ],
+            "overlapping_pages": null,
+            "keyword": "best movers vancouver"
+          }
+        },
+        {
+          "keyword": "local movers vancouver",
+          "search_volume": 20,
+          "cpc": 0.0,
+          "competition": 0.10999999940395355,
+          "arbitrage_score": 0.0,
+          "velocity_score": 76.335878626713,
+          "time_impact": 0.965383153384698,
+          "estimated_time": 9.730842330765098,
+          "estimated_velocity": 94,
+          "base_value_score": 0.0,
+          "long_term_arbitrage_score": 0.0,
+          "competition_band": 5,
+          "content_angle": "Quick wins / long-tail blog",
+          "monetization": "Top-of-funnel explainer",
+          "roi": 800.0,
+          "raw_data": {
+            "categories": [
+              10003,
+              10017,
+              10035,
+              10146,
+              10782,
+              13575,
+              13842
+            ],
+            "competition": 0.10999999940395355,
+            "cpc": 0.0,
+            "search_volume": 20,
+            "similar_keywords": [
+              {
+                "keyword": "moving companies vancouver",
+                "country": "US",
+                "overlapping_pages": 19,
+                "search_volume": 1900,
+                "cpc": 26.27
+              },
+              {
+                "keyword": "moving company vancouver",
+                "country": "US",
+                "overlapping_pages": 19,
+                "search_volume": 1900,
+                "cpc": 13.67
+              },
+              {
+                "keyword": "vancouver moving companies",
+                "country": "US",
+                "overlapping_pages": 18,
+                "search_volume": 1900,
+                "cpc": 13.67
+              },
+              {
+                "keyword": "moving services vancouver",
+                "country": "US",
+                "overlapping_pages": 17,
+                "search_volume": 1900,
+                "cpc": 13.67
+              },
+              {
+                "keyword": "moving service vancouver",
+                "country": "US",
+                "overlapping_pages": 16,
+                "search_volume": 1900,
+                "cpc": 26.27
+              },
+              {
+                "keyword": "movers vancouver washington",
+                "country": "US",
+                "overlapping_pages": 12,
+                "search_volume": 480,
+                "cpc": 27.02
+              },
+              {
+                "keyword": "home movers vancouver wa",
+                "country": "US",
+                "overlapping_pages": 12,
+                "search_volume": 10,
+                "cpc": 0.0
+              },
+              {
+                "keyword": "moving companies in vancouver wa",
+                "country": "US",
+                "overlapping_pages": 11,
+                "search_volume": 1000,
+                "cpc": 16.68
+              },
+              {
+                "keyword": "moving companies vancouver wa",
+                "country": "US",
+                "overlapping_pages": 11,
+                "search_volume": 1000,
+                "cpc": 16.68
+              },
+              {
+                "keyword": "vancouver wa moving companies",
+                "country": "US",
+                "overlapping_pages": 11,
+                "search_volume": 1000,
+                "cpc": 16.68
+              }
+            ],
+            "overlapping_pages": null,
+            "keyword": "local movers vancouver"
+          }
+        }
+      ],
+      "max_time_to_implement": 24.458973434840708
+    }
+  },
+  "serviceRadiusCities": [
+    "Portland",
+    "Vancouver",
+    "Gresham",
+    "Hillsboro",
+    "Beaverton",
+    "Happy Valley",
+    "Lake Oswego",
+    "Oregon City",
+    "Milwaukie",
+    "Tigard",
+    "Troutdale",
+    "Fairview",
+    "Wood Village",
+    "Clackamas",
+    "Wilsonville",
+    "Sherwood",
+    "Canby",
+    "Forest Grove",
+    "Cornelius",
+    "Banks",
+    "North Plains",
+    "Gaston",
+    "St. Helens",
+    "Scappoose",
+    "Columbia City",
+    "Rainier",
+    "Vernonia",
+    "Estacada",
+    "Sandy",
+    "Welches",
+    "Government Camp",
+    "Brightwood",
+    "Rhododendron",
+    "Zigzag",
+    "Mount Hood Village",
+    "Parkdale",
+    "Hood River",
+    "The Dalles",
+    "White Salmon",
+    "Bingen",
+    "Stevenson",
+    "Carson",
+    "North Bonneville",
+    "Skamania",
+    "Underwood",
+    "Lyle",
+    "Goldendale",
+    "Klickitat",
+    "Wishram",
+    "Dufur",
+    "Maupin"
+  ],
+  "short_term_strategy": {
+    "top_4_clusters": [
+      {
+        "keyword": "moving portland",
+        "search_volume": 14800,
+        "cpc": 0.87,
+        "competition": 0.1599999964237213,
+        "arbitrage_score": 75741.17806395036,
+        "velocity_score": 37.59398657980838,
+        "time_impact": 0.7629071800949666,
+        "estimated_time": 19.854640995251668,
+        "estimated_velocity": 84,
+        "base_value_score": 12876.0,
+        "long_term_arbitrage_score": 61399.286180208495,
+        "competition_band": 2,
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization": "Top-of-funnel explainer",
+        "roi": 592000.0,
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.1599999964237213,
+          "cpc": 0.87,
+          "search_volume": 14800,
+          "similar_keywords": [
+            {
+              "keyword": "movers pdx",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "movers portland oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "portland movers",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "movers portland",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving companies portland",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving companies portland oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland moving companies",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland mover",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 260,
+              "cpc": 6.97
+            },
+            {
+              "keyword": "portland oregon movers",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "movers in portland oregon",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 8100,
+              "cpc": 16.72
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "moving portland"
+        }
+      },
+      {
+        "keyword": "local movers portland",
+        "search_volume": 390,
+        "cpc": 21.28,
+        "competition": 0.14000000059604645,
+        "arbitrage_score": 55327.99978014628,
+        "velocity_score": 48.543688927106686,
+        "time_impact": 0.6708205313031859,
+        "estimated_time": 24.458973434840708,
+        "estimated_velocity": 80,
+        "base_value_score": 8299.2,
+        "long_term_arbitrage_score": 41721.72549402508,
+        "competition_band": 2,
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization": "Service / conversion page",
+        "roi": 15600.0,
+        "raw_data": {
+          "categories": [
+            10003,
+            10035
+          ],
+          "competition": 0.14000000059604645,
+          "cpc": 21.28,
+          "search_volume": 390,
+          "similar_keywords": [
+            {
+              "keyword": "moving portland",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 14800,
+              "cpc": 0.67
+            },
+            {
+              "keyword": "movers pdx",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "movers portland oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "portland movers",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 9900,
+              "cpc": 19.84
+            },
+            {
+              "keyword": "movers portland",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving companies portland",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "moving companies portland oregon",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland moving companies",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 8100,
+              "cpc": 16.72
+            },
+            {
+              "keyword": "portland mover",
+              "country": "US",
+              "overlapping_pages": 20,
+              "search_volume": 260,
+              "cpc": 6.97
+            },
+            {
+              "keyword": "local movers portland or",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 390,
+              "cpc": 21.28
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "local movers portland"
+        }
+      },
+      {
+        "keyword": "best movers vancouver",
+        "search_volume": 20,
+        "cpc": 0.0,
+        "competition": 0.0,
+        "arbitrage_score": 0.0,
+        "velocity_score": 100.0,
+        "time_impact": 1.15,
+        "estimated_time": 0.884622034862971,
+        "estimated_velocity": 100,
+        "base_value_score": 0.0,
+        "long_term_arbitrage_score": 0.0,
+        "competition_band": 1,
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization": "Top-of-funnel explainer",
+        "roi": 800.0,
+        "raw_data": {
+          "categories": [
+            10003,
+            10017,
+            10035,
+            10146,
+            10782,
+            13575,
+            13842
+          ],
+          "competition": 0.0,
+          "cpc": 0.0,
+          "search_volume": 20,
+          "similar_keywords": [
+            {
+              "keyword": "best vancouver movers",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 20,
+              "cpc": 0.0
+            },
+            {
+              "keyword": "best movers in vancouver",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 20,
+              "cpc": 0.0
+            },
+            {
+              "keyword": "moving services vancouver",
+              "country": "US",
+              "overlapping_pages": 8,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "vancouver moving companies",
+              "country": "US",
+              "overlapping_pages": 8,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving company vancouver",
+              "country": "US",
+              "overlapping_pages": 7,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving service vancouver",
+              "country": "US",
+              "overlapping_pages": 7,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "local movers vancouver",
+              "country": "US",
+              "overlapping_pages": 7,
+              "search_volume": 20,
+              "cpc": 0.0
+            },
+            {
+              "keyword": "mover vancouver",
+              "country": "US",
+              "overlapping_pages": 4,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving companies vancouver bc",
+              "country": "US",
+              "overlapping_pages": 4,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "vancouver moving",
+              "country": "US",
+              "overlapping_pages": 4,
+              "search_volume": 1900,
+              "cpc": 13.67
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "best movers vancouver"
+        }
+      },
+      {
+        "keyword": "local movers vancouver",
+        "search_volume": 20,
+        "cpc": 0.0,
+        "competition": 0.10999999940395355,
+        "arbitrage_score": 0.0,
+        "velocity_score": 76.335878626713,
+        "time_impact": 0.965383153384698,
+        "estimated_time": 9.730842330765098,
+        "estimated_velocity": 94,
+        "base_value_score": 0.0,
+        "long_term_arbitrage_score": 0.0,
+        "competition_band": 5,
+        "content_angle": "Quick wins / long-tail blog",
+        "monetization": "Top-of-funnel explainer",
+        "roi": 800.0,
+        "raw_data": {
+          "categories": [
+            10003,
+            10017,
+            10035,
+            10146,
+            10782,
+            13575,
+            13842
+          ],
+          "competition": 0.10999999940395355,
+          "cpc": 0.0,
+          "search_volume": 20,
+          "similar_keywords": [
+            {
+              "keyword": "moving companies vancouver",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "moving company vancouver",
+              "country": "US",
+              "overlapping_pages": 19,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "vancouver moving companies",
+              "country": "US",
+              "overlapping_pages": 18,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving services vancouver",
+              "country": "US",
+              "overlapping_pages": 17,
+              "search_volume": 1900,
+              "cpc": 13.67
+            },
+            {
+              "keyword": "moving service vancouver",
+              "country": "US",
+              "overlapping_pages": 16,
+              "search_volume": 1900,
+              "cpc": 26.27
+            },
+            {
+              "keyword": "movers vancouver washington",
+              "country": "US",
+              "overlapping_pages": 12,
+              "search_volume": 480,
+              "cpc": 27.02
+            },
+            {
+              "keyword": "home movers vancouver wa",
+              "country": "US",
+              "overlapping_pages": 12,
+              "search_volume": 10,
+              "cpc": 0.0
+            },
+            {
+              "keyword": "moving companies in vancouver wa",
+              "country": "US",
+              "overlapping_pages": 11,
+              "search_volume": 1000,
+              "cpc": 16.68
+            },
+            {
+              "keyword": "moving companies vancouver wa",
+              "country": "US",
+              "overlapping_pages": 11,
+              "search_volume": 1000,
+              "cpc": 16.68
+            },
+            {
+              "keyword": "vancouver wa moving companies",
+              "country": "US",
+              "overlapping_pages": 11,
+              "search_volume": 1000,
+              "cpc": 16.68
+            }
+          ],
+          "overlapping_pages": null,
+          "keyword": "local movers vancouver"
+        }
+      }
+    ],
+    "max_time_to_implement": 24.458973434840708
+  },
+  "cityClusters": {
+    "Portland": [
+      {
+        "cluster_id": "Portland-0",
+        "keywords": [
+          "professional movers portland",
+          "commercial movers portland",
+          "movers portland",
+          "best movers portland",
+          "cheap movers portland",
+          "local movers portland"
+        ],
+        "cluster_value_score": 22423.72912504539,
+        "content_ideas": {
+          "title": "Finding the Best Professional Movers in Portland: A Comprehensive Guide",
+          "content_angle": "A detailed guide comparing Portland's top professional movers, focusing on services, pricing, and customer reviews.",
+          "target_audience": "Individuals and businesses in Portland, OR, planning a move and seeking reliable moving services.",
+          "key_questions": [
+            "What are the key factors to consider when choosing a professional mover in Portland?",
+            "How do moving costs vary between different Portland moving companies?",
+            "What services do professional movers offer in Portland, and which are essential?",
+            "What are the best professional movers in Portland based on customer reviews and ratings?"
+          ]
+        },
+        "title": "Finding the Best Professional Movers in Portland: A Comprehensive Guide"
+      },
+      {
+        "cluster_id": "Portland-1",
+        "keywords": [
+          "moving companies portland",
+          "moving portland"
+        ],
+        "cluster_value_score": 22455.319718485684,
+        "content_ideas": {
+          "title": "Portland Moving Companies: Your Ultimate Guide to a Smooth Move",
+          "content_angle": "An informative guide for anyone moving in or out of Portland, covering choosing a moving company, packing tips, and cost-saving strategies.",
+          "target_audience": "Individuals and families planning a residential move in the Portland metro area.",
+          "key_questions": [
+            "How do I choose the right moving company for my needs in Portland?",
+            "What are the typical costs associated with moving in Portland?",
+            "What are the essential steps to take when preparing for a move?",
+            "How can I save money on my move with Portland moving companies?"
+          ]
+        },
+        "title": "Portland Moving Companies: Your Ultimate Guide to a Smooth Move"
+      }
+    ],
+    "Vancouver": [
+      {
+        "cluster_id": "Vancouver-0",
+        "keywords": [
+          "moving vancouver",
+          "moving companies vancouver",
+          "vancouver moving service"
+        ],
+        "cluster_value_score": 37842.3532596113,
+        "content_ideas": {
+          "title": "Stress-Free Moving in Vancouver: Your Guide to Top Moving Companies",
+          "content_angle": "A comprehensive guide to finding the best moving services in Vancouver, focusing on planning, cost, and choosing the right company.",
+          "target_audience": "Individuals and families planning a move within or to Vancouver.",
+          "key_questions": [
+            "How much does it cost to hire a moving company in Vancouver?",
+            "What are the different types of moving services available?",
+            "How can I find reputable moving companies in Vancouver?",
+            "What should I consider when comparing moving quotes?",
+            "What steps should I take to prepare for my move?"
+          ]
+        },
+        "title": "Stress-Free Moving in Vancouver: Your Guide to Top Moving Companies"
+      },
+      {
+        "cluster_id": "Vancouver-1",
+        "keywords": [
+          "movers vancouver",
+          "local movers vancouver",
+          "best movers vancouver"
+        ],
+        "cluster_value_score": 21030.769262911064,
+        "content_ideas": {
+          "title": "Top-Rated Movers in Vancouver: Local Experts for a Smooth Relocation",
+          "content_angle": "A guide highlighting the best local movers in Vancouver, focusing on their services, reviews, and how to choose the right one for your needs.",
+          "target_audience": "People looking for reliable and professional movers in the Vancouver area.",
+          "key_questions": [
+            "What are the best local movers in Vancouver?",
+            "What services do Vancouver movers typically offer?",
+            "How can I read and understand mover reviews?",
+            "How do I get a quote from a Vancouver moving company?",
+            "What is the difference between local and long-distance moving?"
+          ]
+        },
+        "title": "Top-Rated Movers in Vancouver: Local Experts for a Smooth Relocation"
+      }
+    ],
+    "Gresham": [
+      {
+        "cluster_id": "Gresham-0",
+        "keywords": [
+          "moving companies gresham"
+        ],
+        "cluster_value_score": 3775.000200006707,
+        "content_ideas": {
+          "title": "Top Moving Companies in Gresham: Your Stress-Free Guide",
+          "content_angle": "A comprehensive guide to selecting the best moving company in Gresham, focusing on reliability, cost, and customer service.",
+          "target_audience": "Individuals and families planning a move in the Gresham area.",
+          "key_questions": [
+            "How do I choose the right moving company in Gresham?",
+            "What are the average costs for moving services in Gresham?",
+            "What services do moving companies in Gresham typically offer?",
+            "How can I avoid moving scams in Gresham?",
+            "What are the best moving companies in Gresham according to customer reviews?"
+          ]
+        },
+        "title": "Top Moving Companies in Gresham: Your Stress-Free Guide"
+      },
+      {
+        "cluster_id": "Gresham-1",
+        "keywords": [
+          "movers gresham"
+        ],
+        "cluster_value_score": 6474.3859378313355,
+        "content_ideas": {
+          "title": "Gresham Movers: Everything You Need to Know for a Smooth Move",
+          "content_angle": "An informative article covering all aspects of hiring movers in Gresham, from finding reputable companies to packing tips and cost estimations.",
+          "target_audience": "People looking to hire movers in Gresham, OR.",
+          "key_questions": [
+            "What are the benefits of hiring professional movers in Gresham?",
+            "How much does it cost to hire movers in Gresham?",
+            "What should I look for when comparing moving quotes in Gresham?",
+            "How far in advance should I book my movers in Gresham?",
+            "What are some tips for a successful move with movers in Gresham?"
+          ]
+        },
+        "title": "Gresham Movers: Everything You Need to Know for a Smooth Move"
+      }
+    ],
+    "Hillsboro": [
+      {
+        "cluster_id": "Hillsboro-0",
+        "keywords": [
+          "moving companies hillsboro"
+        ],
+        "cluster_value_score": 12270.000091418624,
+        "content_ideas": {
+          "title": "Top Moving Companies in Hillsboro: Your Ultimate Guide",
+          "content_angle": "A comprehensive guide to choosing the best moving company in Hillsboro, covering services, pricing, and tips.",
+          "target_audience": "Individuals and families planning a move in or out of Hillsboro.",
+          "key_questions": [
+            "How much do moving companies in Hillsboro typically cost?",
+            "What services do Hillsboro moving companies offer?",
+            "How can I find a reputable moving company in Hillsboro?",
+            "What are the best tips for a smooth move in Hillsboro?"
+          ]
+        },
+        "title": "Top Moving Companies in Hillsboro: Your Ultimate Guide"
+      },
+      {
+        "cluster_id": "Hillsboro-1",
+        "keywords": [
+          "movers hillsboro"
+        ],
+        "cluster_value_score": 12270.000091418624,
+        "content_ideas": {
+          "title": "Hillsboro Movers: Find the Best Moving Services for Your Needs",
+          "content_angle": "An informative article highlighting the best moving services available in Hillsboro, focusing on different types of moves and customer needs.",
+          "target_audience": "People looking to hire movers in Hillsboro, OR.",
+          "key_questions": [
+            "What types of moving services are available in Hillsboro?",
+            "How do I compare different Hillsboro movers?",
+            "What should I look for in a Hillsboro moving company?",
+            "How can I get a quote from a Hillsboro mover?"
+          ]
+        },
+        "title": "Hillsboro Movers: Find the Best Moving Services for Your Needs"
+      }
+    ],
+    "Beaverton": [
+      {
+        "cluster_id": "Beaverton-0",
+        "keywords": [
+          "moving companies beaverton"
+        ],
+        "cluster_value_score": 27128.570389078628,
+        "content_ideas": {
+          "title": "Top Moving Companies in Beaverton: Your Ultimate Guide",
+          "content_angle": "A comprehensive guide to selecting the best moving company in Beaverton, focusing on value, services, and customer reviews.",
+          "target_audience": "Individuals and families planning a move in or out of Beaverton, Oregon.",
+          "key_questions": [
+            "How do I choose the right moving company in Beaverton?",
+            "What services do moving companies in Beaverton offer?",
+            "How much does it cost to hire movers in Beaverton?",
+            "What are the best tips for a smooth move in Beaverton?"
+          ]
+        },
+        "title": "Top Moving Companies in Beaverton: Your Ultimate Guide"
+      },
+      {
+        "cluster_id": "Beaverton-1",
+        "keywords": [
+          "movers beaverton"
+        ],
+        "cluster_value_score": 27128.570389078628,
+        "content_ideas": {
+          "title": "Beaverton Movers: Everything You Need to Know for a Stress-Free Move",
+          "content_angle": "A practical and informative article providing essential information about hiring movers in Beaverton, including cost estimations, packing tips, and service comparisons.",
+          "target_audience": "People looking to hire movers in Beaverton, Oregon.",
+          "key_questions": [
+            "What are the typical costs for movers in Beaverton?",
+            "How can I prepare for my move with movers in Beaverton?",
+            "What types of moving services are available in Beaverton?",
+            "How do I get a reliable quote from movers in Beaverton?",
+            "What are the benefits of hiring professional movers in Beaverton?"
+          ]
+        },
+        "title": "Beaverton Movers: Everything You Need to Know for a Stress-Free Move"
+      }
+    ],
+    "Lake Oswego": [
+      {
+        "cluster_id": "Lake Oswego-0",
+        "keywords": [
+          "movers lake oswego"
+        ],
+        "cluster_value_score": 1958.9610632235176,
+        "content_ideas": {
+          "title": "Choosing the Best Movers in Lake Oswego: A Comprehensive Guide",
+          "content_angle": "A detailed guide helping residents of Lake Oswego find and select the right moving company for their needs.",
+          "target_audience": "Residents of Lake Oswego planning a local or long-distance move.",
+          "key_questions": [
+            "How do I find reputable movers in Lake Oswego?",
+            "What factors should I consider when comparing moving quotes?",
+            "What services do movers typically offer, and which ones do I need?",
+            "How can I prepare for a smooth and efficient move in Lake Oswego?",
+            "What are the average costs of moving services in Lake Oswego?"
+          ]
+        },
+        "title": "Choosing the Best Movers in Lake Oswego: A Comprehensive Guide"
+      }
+    ],
+    "Oregon City": [
+      {
+        "cluster_id": "Oregon City-0",
+        "keywords": [
+          "moving companies oregon city",
+          "movers oregon city"
+        ],
+        "cluster_value_score": 5277.283872950462,
+        "content_ideas": {
+          "title": "Oregon City Moving Guide: Find the Best Movers & Simplify Your Move",
+          "content_angle": "A comprehensive guide to finding and hiring reputable moving companies in Oregon City, covering costs, services, and tips for a smooth relocation.",
+          "target_audience": "Individuals and families planning a move to, from, or within Oregon City.",
+          "key_questions": [
+            "How much do movers in Oregon City cost?",
+            "What services do moving companies in Oregon City offer?",
+            "How do I choose the best moving company in Oregon City?",
+            "What are the key steps for a successful move in Oregon City?",
+            "How can I save money on my move in Oregon City?"
+          ]
+        },
+        "title": "Oregon City Moving Guide: Find the Best Movers & Simplify Your Move"
+      }
+    ],
+    "Tigard": [
+      {
+        "cluster_id": "Tigard-0",
+        "keywords": [
+          "movers tigard"
+        ],
+        "cluster_value_score": 6831.1579118807895,
+        "content_ideas": {
+          "title": "Top-Rated Movers in Tigard: Your Stress-Free Moving Guide",
+          "content_angle": "A comprehensive guide to finding and hiring the best movers in Tigard, focusing on quality, reliability, and affordability.",
+          "target_audience": "Individuals and families planning a move in or out of Tigard, OR.",
+          "key_questions": [
+            "How do I find reputable movers in Tigard?",
+            "What services do movers in Tigard offer?",
+            "How much does it cost to hire movers in Tigard?",
+            "What are the benefits of hiring professional movers in Tigard?",
+            "How can I prepare for a move with Tigard movers?"
+          ]
+        },
+        "title": "Top-Rated Movers in Tigard: Your Stress-Free Moving Guide"
+      },
+      {
+        "cluster_id": "Tigard-1",
+        "keywords": [
+          "moving companies tigard"
+        ],
+        "cluster_value_score": 31430.45548215511,
+        "content_ideas": {
+          "title": "Tigard Moving Companies: Choosing the Right One for Your Needs",
+          "content_angle": "A detailed comparison of moving companies in Tigard, highlighting their specialties, pricing, and customer reviews.",
+          "target_audience": "People looking to hire a moving company in Tigard, focusing on informed decision-making.",
+          "key_questions": [
+            "What are the different types of moving services offered by Tigard companies?",
+            "How do I compare moving companies in Tigard?",
+            "What questions should I ask a moving company before hiring them?",
+            "How can I get a reliable moving quote in Tigard?",
+            "What are the average costs associated with moving in Tigard?"
+          ]
+        },
+        "title": "Tigard Moving Companies: Choosing the Right One for Your Needs"
+      }
+    ],
+    "Sandy": [
+      {
+        "cluster_id": "Sandy-0",
+        "keywords": [
+          "movers sandy"
+        ],
+        "cluster_value_score": 786.0810608198564,
+        "content_ideas": {
+          "title": "Finding the Best Movers in Sandy: Your Ultimate Guide",
+          "content_angle": "A comprehensive guide to choosing and hiring the best moving company in Sandy, Utah.",
+          "target_audience": "Individuals and families planning a move in or out of Sandy, Utah.",
+          "key_questions": [
+            "How do I find reputable movers in Sandy?",
+            "What services do moving companies in Sandy offer?",
+            "How much does it cost to hire movers in Sandy?",
+            "What questions should I ask before hiring a moving company?",
+            "What are the benefits of hiring professional movers?"
+          ]
+        },
+        "title": "Finding the Best Movers in Sandy: Your Ultimate Guide"
+      }
+    ]
+  }
+}
+2025-10-29 13:22:47,210 - __main__ - INFO - --- End of Cached Arbitrage Data ---
+2025-10-29 13:22:47,212 - __main__ - INFO - 
+--- Test Script Finished ---
+2025-10-29 13:23:30,829 - __main__ - INFO - --- Test Log started at 2025-10-29 13:23:30 ---
+2025-10-29 13:23:30,830 - __main__ - INFO - --- All test output redirected to C:\Users\Gio\Documents\Work\AGS-Site\Ninja-Team-Leadgen\test_category_arbitrage_log.txt ---
+2025-10-29 13:23:30,835 - __main__ - INFO - 
+--- Starting test_category_arbitrage.py ---
+2025-10-29 13:23:36,538 - __main__ - INFO -     [Test] Consumer script surfer_queue_consumer.py is running with PID 15496.
+2025-10-29 13:23:36,539 - __main__ - INFO -     [Test] Consumer script surfer_queue_consumer.py is already running. Skipping launch.
+2025-10-29 13:23:36,539 - __main__ - INFO -     [Test] Attempting to load config from: C:\Users\Gio\Documents\Work\AGS-Site\Ninja-Team-Leadgen\config.json
+2025-10-29 13:23:36,540 - __main__ - INFO -     [Test] Config loaded successfully.
+2025-10-29 13:23:36,546 - __main__ - INFO -     [Test] LLM Model configured: gemini-2.0-flash-lite
+2025-10-29 13:23:36,547 - __main__ - INFO -     [Test] Master DB Path: master_contacts.db
+2025-10-29 13:23:36,550 - __main__ - INFO -     [Test] Firebase Arbitrage Sync URL: https://us-central1-fourth-outpost-470409-u3.cloudfunctions.net/saveArbitrageData
+2025-10-29 13:23:36,554 - __main__ - INFO -     [Test] Arbitrage Update Interval: 7 days
+2025-10-29 13:23:36,555 - __main__ - INFO -     [Test] Ensuring master_contacts.db and canonical_categories table exist...
+2025-10-29 13:23:36,566 - __main__ - INFO -     [Test] canonical_categories table checked/created successfully.
+2025-10-29 13:23:36,570 - __main__ - INFO -     [Test] Preparing to call normalize_business_category with a batch of 1 leads.
+2025-10-29 13:23:36,572 - __main__ - INFO - 
+--- Calling normalize_business_category ---
+2025-10-29 13:24:04,786 - __main__ - INFO - 
+--- normalize_business_category completed ---
+2025-10-29 13:24:04,789 - __main__ - INFO - 
+--- Normalized Leads Results ---
+2025-10-29 13:24:04,791 - __main__ - INFO - [
+  {
+    "body_text": "QR Code Link to This Post Your Last-Minute Go-To: Movers, Laborers, Long-Distance Moving, Junk Removal, Hauling & Cleaning Services! Looking for reliable, professional movers? Strongman Mover is here for all your moving needs \u2013 big or small, local or long-distance. We handle everything with speed, care, and reliability! Why Choose Strongman Mover? Experienced Crews - Over 3 years of experience per crew ensures a smooth move. Any Move, Any Distance - Residential or commercial, local or long-distance \u2013 we do it all! Specialty Item Experts - Safes, pianos, hot tubs? No problem! We move large and delicate items with care. Last-Minute & Same-Day Service - Need to move now? We're available anytime, anywhere, even for last-minute jobs. Flexible Scheduling - No extra charges for date or time changes. Our Services: (For any move - Big or Small) Residential Moves: Apartments, homes, condos. Commercial Moves: Offices, businesses. Labor Only: Packing, loading, and unloading. Junk Removal: Clearing out unwanted items Residential & Commercial Cleaning: Thorough cleaning and sanitization for homes and businesses, perfect for pre-move-in or post-move-out. Availability & Contact: \u2022 7 Days a Week: 8 AM - 6 PM \u2022 After-Hours/Emergencies: Call us directly at (503) 433-5602. Simple Terms of Service:: \u2022 Deposit Policy: No refunds or cancellations once processed. Reschedule requests are based on availability. \u2022 Guaranteed Completion: Your move will be completed within 72 hours of the estimated time of arrival. Call/Text Now: (503) 433-5602 Visit Us Online: www.STRONGMANMOVER.com STRONGMAN MOVER - Your Trusted Partner for a Stress-Free Move! Thank you for choosing STRONGMAN MOVER for your Movers and Laborers!",
+    "business_name": "Strongman Mover",
+    "cant_text": 1,
+    "category": "movers",
+    "city": "portland",
+    "email": null,
+    "image_hash": "04Q03d",
+    "name": null,
+    "name_confidence": 0,
+    "original_category": "labor & moving",
+    "phone": "5034335602",
+    "post_id": "7881623662",
+    "services_rendered": [
+      "Residential Moves: Apartments, homes, condos.",
+      "Commercial Moves: Offices, businesses.",
+      "Labor Only: Packing, loading, and unloading.",
+      "Junk Removal: Clearing out unwanted items",
+      "Residential & Commercial Cleaning: Thorough cleaning and sanitization for homes and businesses, perfect for pre-move-in or post-move-out."
+    ],
+    "state": "OR",
+    "url": "https://portland.craigslist.org/lbs/d/portland-your-last-minute-local-move/7881623662.html",
+    "website_url": "https://www.STRONGMANMOVER.com"
+  }
+]
+2025-10-29 13:24:04,850 - __main__ - INFO - --- End of Normalized Leads Results ---
+2025-10-29 13:24:04,861 - __main__ - INFO - 
+--- Cached Arbitrage Data (including SERP) ---
+2025-10-29 13:24:04,867 - __main__ - INFO - {
+  "id": "movers",
+  "displayName": "",
+  "aliases": [],
+  "description": "",
+  "examplePhrases": [],
+  "parent": null,
+  "confidence": 0.95,
+  "avgJobAmount": 800,
+  "suggestedAt": "2025-10-29T18:24:04.768933+00:00",
+  "createdBy": "llm_fallback",
+  "lastUpdated": "2025-10-29T18:24:04.768933+00:00",
+  "location": "portland-or",
+  "arbitrageData": {
+    "status": "queued",
+    "message": "Surfer prospecting task queued."
+  },
+  "serviceRadiusCities": [
+    "Portland",
+    "Vancouver",
+    "Gresham",
+    "Hillsboro",
+    "Beaverton",
+    "Happy Valley",
+    "Lake Oswego",
+    "Oregon City",
+    "Milwaukie",
+    "Tigard",
+    "Troutdale",
+    "Fairview",
+    "Wood Village",
+    "Clackamas",
+    "Wilsonville",
+    "Sherwood",
+    "Canby",
+    "Forest Grove",
+    "Cornelius",
+    "Banks",
+    "North Plains",
+    "Gaston",
+    "St. Helens",
+    "Scappoose",
+    "Columbia City",
+    "Rainier",
+    "Vernonia",
+    "Estacada",
+    "Sandy",
+    "Welches",
+    "Government Camp",
+    "Brightwood",
+    "Rhododendron",
+    "Zigzag",
+    "Mount Hood Village",
+    "Parkdale",
+    "Hood River",
+    "The Dalles",
+    "White Salmon",
+    "Bingen",
+    "Stevenson",
+    "Carson",
+    "North Bonneville",
+    "Skamania",
+    "Underwood",
+    "Lyle",
+    "Goldendale",
+    "Klickitat",
+    "Wishram",
+    "Dufur",
+    "Maupin"
+  ]
+}
+2025-10-29 13:24:04,915 - __main__ - INFO - --- End of Cached Arbitrage Data ---
+2025-10-29 13:24:04,915 - __main__ - INFO - 
+--- Test Script Finished ---
+2025-10-29 13:39:28,361 - __main__ - INFO - --- Test Log started at 2025-10-29 13:39:28 ---
+2025-10-29 13:39:28,364 - __main__ - INFO - --- All test output redirected to C:\Users\Gio\Documents\Work\AGS-Site\Ninja-Team-Leadgen\test_category_arbitrage_log.txt ---
+2025-10-29 13:39:28,370 - __main__ - INFO - 
+--- Starting test_category_arbitrage.py ---
+2025-10-29 13:39:31,794 - __main__ - INFO -     [Test] Consumer script surfer_queue_consumer.py is running with PID 15496.
+2025-10-29 13:39:31,794 - __main__ - INFO -     [Test] Consumer script surfer_queue_consumer.py is already running. Skipping launch.
+2025-10-29 13:39:31,795 - __main__ - INFO -     [Test] Attempting to load config from: C:\Users\Gio\Documents\Work\AGS-Site\Ninja-Team-Leadgen\config.json
+2025-10-29 13:39:31,797 - __main__ - INFO -     [Test] Config loaded successfully.
+2025-10-29 13:39:31,797 - __main__ - INFO -     [Test] LLM Model configured: gemini-2.0-flash-lite
+2025-10-29 13:39:31,798 - __main__ - INFO -     [Test] Master DB Path: master_contacts.db
+2025-10-29 13:39:31,798 - __main__ - INFO -     [Test] Firebase Arbitrage Sync URL: https://us-central1-fourth-outpost-470409-u3.cloudfunctions.net/saveArbitrageData
+2025-10-29 13:39:31,798 - __main__ - INFO -     [Test] Arbitrage Update Interval: 7 days
+2025-10-29 13:39:31,799 - __main__ - INFO -     [Test] Ensuring master_contacts.db and canonical_categories table exist...
+2025-10-29 13:39:31,803 - __main__ - INFO -     [Test] canonical_categories table checked/created successfully.
+2025-10-29 13:39:31,803 - __main__ - INFO -     [Test] Preparing to call normalize_business_category with a batch of 1 leads.
+2025-10-29 13:39:31,804 - __main__ - INFO - 
+--- Calling normalize_business_category ---
+2025-10-29 13:39:34,577 - __main__ - INFO - 
+--- normalize_business_category completed ---
+2025-10-29 13:39:34,577 - __main__ - INFO - 
+--- Normalized Leads Results ---
+2025-10-29 13:39:34,578 - __main__ - INFO - [
+  {
+    "body_text": "QR Code Link to This Post Your Last-Minute Go-To: Movers, Laborers, Long-Distance Moving, Junk Removal, Hauling & Cleaning Services! Looking for reliable, professional movers? Strongman Mover is here for all your moving needs \u2013 big or small, local or long-distance. We handle everything with speed, care, and reliability! Why Choose Strongman Mover? Experienced Crews - Over 3 years of experience per crew ensures a smooth move. Any Move, Any Distance - Residential or commercial, local or long-distance \u2013 we do it all! Specialty Item Experts - Safes, pianos, hot tubs? No problem! We move large and delicate items with care. Last-Minute & Same-Day Service - Need to move now? We're available anytime, anywhere, even for last-minute jobs. Flexible Scheduling - No extra charges for date or time changes. Our Services: (For any move - Big or Small) Residential Moves: Apartments, homes, condos. Commercial Moves: Offices, businesses. Labor Only: Packing, loading, and unloading. Junk Removal: Clearing out unwanted items Residential & Commercial Cleaning: Thorough cleaning and sanitization for homes and businesses, perfect for pre-move-in or post-move-out. Availability & Contact: \u2022 7 Days a Week: 8 AM - 6 PM \u2022 After-Hours/Emergencies: Call us directly at (503) 433-5602. Simple Terms of Service:: \u2022 Deposit Policy: No refunds or cancellations once processed. Reschedule requests are based on availability. \u2022 Guaranteed Completion: Your move will be completed within 72 hours of the estimated time of arrival. Call/Text Now: (503) 433-5602 Visit Us Online: www.STRONGMANMOVER.com STRONGMAN MOVER - Your Trusted Partner for a Stress-Free Move! Thank you for choosing STRONGMAN MOVER for your Movers and Laborers!",
+    "business_name": "Strongman Mover",
+    "cant_text": 1,
+    "category": "movers",
+    "city": "portland",
+    "email": null,
+    "image_hash": "04Q03d",
+    "name": null,
+    "name_confidence": 0,
+    "original_category": "labor & moving",
+    "phone": "5034335602",
+    "post_id": "7881623662",
+    "services_rendered": [
+      "Residential Moves: Apartments, homes, condos.",
+      "Commercial Moves: Offices, businesses.",
+      "Labor Only: Packing, loading, and unloading.",
+      "Junk Removal: Clearing out unwanted items",
+      "Residential & Commercial Cleaning: Thorough cleaning and sanitization for homes and businesses, perfect for pre-move-in or post-move-out."
+    ],
+    "state": "OR",
+    "url": "https://portland.craigslist.org/lbs/d/portland-your-last-minute-local-move/7881623662.html",
+    "website_url": "https://www.STRONGMANMOVER.com"
+  }
+]
+2025-10-29 13:39:34,597 - __main__ - INFO - --- End of Normalized Leads Results ---
+2025-10-29 13:39:34,598 - __main__ - INFO - 
+--- Cached Arbitrage Data (including SERP) ---
+2025-10-29 13:39:34,600 - __main__ - INFO - {
+  "id": "movers",
+  "displayName": "",
+  "aliases": [],
+  "description": "",
+  "examplePhrases": [],
+  "parent": null,
+  "confidence": 0.95,
+  "avgJobAmount": 800,
+  "suggestedAt": "2025-10-29T18:24:04.768933+00:00",
+  "createdBy": "llm_fallback",
+  "lastUpdated": "2025-10-29T18:24:04.768933+00:00",
+  "location": "portland-or",
+  "arbitrageData": {
+    "status": "queued",
+    "message": "Surfer prospecting task queued."
+  },
+  "serviceRadiusCities": [
+    "Portland",
+    "Vancouver",
+    "Gresham",
+    "Hillsboro",
+    "Beaverton",
+    "Happy Valley",
+    "Lake Oswego",
+    "Oregon City",
+    "Milwaukie",
+    "Tigard",
+    "Troutdale",
+    "Fairview",
+    "Wood Village",
+    "Clackamas",
+    "Wilsonville",
+    "Sherwood",
+    "Canby",
+    "Forest Grove",
+    "Cornelius",
+    "Banks",
+    "North Plains",
+    "Gaston",
+    "St. Helens",
+    "Scappoose",
+    "Columbia City",
+    "Rainier",
+    "Vernonia",
+    "Estacada",
+    "Sandy",
+    "Welches",
+    "Government Camp",
+    "Brightwood",
+    "Rhododendron",
+    "Zigzag",
+    "Mount Hood Village",
+    "Parkdale",
+    "Hood River",
+    "The Dalles",
+    "White Salmon",
+    "Bingen",
+    "Stevenson",
+    "Carson",
+    "North Bonneville",
+    "Skamania",
+    "Underwood",
+    "Lyle",
+    "Goldendale",
+    "Klickitat",
+    "Wishram",
+    "Dufur",
+    "Maupin"
+  ]
+}
+2025-10-29 13:39:34,630 - __main__ - INFO - --- End of Cached Arbitrage Data ---
+2025-10-29 13:39:34,630 - __main__ - INFO - 
+--- Test Script Finished ---
+2025-10-29 13:40:21,509 - __main__ - INFO - --- Test Log started at 2025-10-29 13:40:21 ---
+2025-10-29 13:40:21,509 - __main__ - INFO - --- All test output redirected to C:\Users\Gio\Documents\Work\AGS-Site\Ninja-Team-Leadgen\test_category_arbitrage_log.txt ---
+2025-10-29 13:40:21,511 - __main__ - INFO - 
+--- Starting test_category_arbitrage.py ---
+2025-10-29 13:40:23,940 - __main__ - INFO -     [Test] Consumer script surfer_queue_consumer.py is running with PID 15496.
+2025-10-29 13:40:23,941 - __main__ - INFO -     [Test] Consumer script surfer_queue_consumer.py is already running. Skipping launch.
+2025-10-29 13:40:23,941 - __main__ - INFO -     [Test] Attempting to load config from: C:\Users\Gio\Documents\Work\AGS-Site\Ninja-Team-Leadgen\config.json
+2025-10-29 13:40:23,943 - __main__ - INFO -     [Test] Config loaded successfully.
+2025-10-29 13:40:23,944 - __main__ - INFO -     [Test] LLM Model configured: gemini-2.0-flash-lite
+2025-10-29 13:40:23,944 - __main__ - INFO -     [Test] Master DB Path: master_contacts.db
+2025-10-29 13:40:23,944 - __main__ - INFO -     [Test] Firebase Arbitrage Sync URL: https://us-central1-fourth-outpost-470409-u3.cloudfunctions.net/saveArbitrageData
+2025-10-29 13:40:23,945 - __main__ - INFO -     [Test] Arbitrage Update Interval: 7 days
+2025-10-29 13:40:23,946 - __main__ - INFO -     [Test] Ensuring master_contacts.db and canonical_categories table exist...
+2025-10-29 13:40:23,949 - __main__ - INFO -     [Test] canonical_categories table checked/created successfully.
+2025-10-29 13:40:23,950 - __main__ - INFO -     [Test] Preparing to call normalize_business_category with a batch of 1 leads.
+2025-10-29 13:40:23,950 - __main__ - INFO - 
+--- Calling normalize_business_category ---
+2025-10-29 13:40:50,222 - __main__ - INFO - 
+--- normalize_business_category completed ---
+2025-10-29 13:40:50,223 - __main__ - INFO - 
+--- Normalized Leads Results ---
+2025-10-29 13:40:50,224 - __main__ - INFO - [
+  {
+    "body_text": "QR Code Link to This Post Your Last-Minute Go-To: Movers, Laborers, Long-Distance Moving, Junk Removal, Hauling & Cleaning Services! Looking for reliable, professional movers? Strongman Mover is here for all your moving needs \u2013 big or small, local or long-distance. We handle everything with speed, care, and reliability! Why Choose Strongman Mover? Experienced Crews - Over 3 years of experience per crew ensures a smooth move. Any Move, Any Distance - Residential or commercial, local or long-distance \u2013 we do it all! Specialty Item Experts - Safes, pianos, hot tubs? No problem! We move large and delicate items with care. Last-Minute & Same-Day Service - Need to move now? We're available anytime, anywhere, even for last-minute jobs. Flexible Scheduling - No extra charges for date or time changes. Our Services: (For any move - Big or Small) Residential Moves: Apartments, homes, condos. Commercial Moves: Offices, businesses. Labor Only: Packing, loading, and unloading. Junk Removal: Clearing out unwanted items Residential & Commercial Cleaning: Thorough cleaning and sanitization for homes and businesses, perfect for pre-move-in or post-move-out. Availability & Contact: \u2022 7 Days a Week: 8 AM - 6 PM \u2022 After-Hours/Emergencies: Call us directly at (503) 433-5602. Simple Terms of Service:: \u2022 Deposit Policy: No refunds or cancellations once processed. Reschedule requests are based on availability. \u2022 Guaranteed Completion: Your move will be completed within 72 hours of the estimated time of arrival. Call/Text Now: (503) 433-5602 Visit Us Online: www.STRONGMANMOVER.com STRONGMAN MOVER - Your Trusted Partner for a Stress-Free Move! Thank you for choosing STRONGMAN MOVER for your Movers and Laborers!",
+    "business_name": "Strongman Mover",
+    "cant_text": 1,
+    "category": "moving",
+    "city": "portland",
+    "email": null,
+    "image_hash": "04Q03d",
+    "name": null,
+    "name_confidence": 0,
+    "original_category": "labor & moving",
+    "phone": "5034335602",
+    "post_id": "7881623662",
+    "services_rendered": [
+      "Residential Moves: Apartments, homes, condos.",
+      "Commercial Moves: Offices, businesses.",
+      "Labor Only: Packing, loading, and unloading.",
+      "Junk Removal: Clearing out unwanted items",
+      "Residential & Commercial Cleaning: Thorough cleaning and sanitization for homes and businesses, perfect for pre-move-in or post-move-out."
+    ],
+    "state": "OR",
+    "url": "https://portland.craigslist.org/lbs/d/portland-your-last-minute-local-move/7881623662.html",
+    "website_url": "https://www.STRONGMANMOVER.com"
+  }
+]
+2025-10-29 13:40:50,337 - __main__ - INFO - --- End of Normalized Leads Results ---
+2025-10-29 13:40:50,369 - __main__ - INFO - 
+--- Cached Arbitrage Data (including SERP) ---
+2025-10-29 13:40:50,382 - __main__ - INFO - {
+  "id": "moving",
+  "displayName": "",
+  "aliases": [],
+  "description": "",
+  "examplePhrases": [],
+  "parent": null,
+  "confidence": 0.98,
+  "avgJobAmount": 800,
+  "suggestedAt": "2025-10-29T18:40:50.202477+00:00",
+  "createdBy": "llm_fallback",
+  "lastUpdated": "2025-10-29T18:40:50.202477+00:00",
+  "location": "portland-or",
+  "arbitrageData": {
+    "status": "queued",
+    "message": "Surfer prospecting task queued."
+  },
+  "serviceRadiusCities": [
+    "Portland",
+    "Vancouver",
+    "Gresham",
+    "Hillsboro",
+    "Beaverton",
+    "Happy Valley",
+    "Lake Oswego",
+    "Oregon City",
+    "Milwaukie",
+    "Tigard",
+    "Troutdale",
+    "Fairview",
+    "Wood Village",
+    "Clackamas",
+    "Wilsonville",
+    "Sherwood",
+    "Canby",
+    "Forest Grove",
+    "Cornelius",
+    "Banks",
+    "North Plains",
+    "Gaston",
+    "St. Helens",
+    "Scappoose",
+    "Columbia City",
+    "Rainier",
+    "Vernonia",
+    "Estacada",
+    "Sandy",
+    "Welches",
+    "Government Camp",
+    "Brightwood",
+    "Rhododendron",
+    "Zigzag",
+    "Mount Hood Village",
+    "Parkdale",
+    "Hood River",
+    "The Dalles",
+    "White Salmon",
+    "Bingen",
+    "Stevenson",
+    "Carson",
+    "North Bonneville",
+    "Skamania",
+    "Underwood",
+    "Lyle",
+    "Goldendale",
+    "Klickitat",
+    "Wishram",
+    "Dufur",
+    "Maupin"
+  ]
+}
+2025-10-29 13:40:50,424 - __main__ - INFO - --- End of Cached Arbitrage Data ---
+2025-10-29 13:40:50,427 - __main__ - INFO - 
+--- Test Script Finished ---
+2025-10-29 14:23:34,123 - __main__ - INFO - --- Test Log started at 2025-10-29 14:23:34 ---
+2025-10-29 14:23:34,123 - __main__ - INFO - --- All test output redirected to C:\Users\Gio\Documents\Work\AGS-Site\Ninja-Team-Leadgen\test_category_arbitrage_log.txt ---
+2025-10-29 14:23:34,127 - __main__ - INFO - 
+--- Starting test_category_arbitrage.py ---
+2025-10-29 14:23:36,954 - __main__ - INFO -     [Test] Consumer script surfer_queue_consumer.py is running with PID 15496.
+2025-10-29 14:23:36,955 - __main__ - INFO -     [Test] Consumer script surfer_queue_consumer.py is already running. Skipping launch.
+2025-10-29 14:23:36,955 - __main__ - INFO -     [Test] Attempting to load config from: C:\Users\Gio\Documents\Work\AGS-Site\Ninja-Team-Leadgen\config.json
+2025-10-29 14:23:36,956 - __main__ - INFO -     [Test] Config loaded successfully.
+2025-10-29 14:23:36,956 - __main__ - INFO -     [Test] LLM Model configured: gemini-2.0-flash-lite
+2025-10-29 14:23:36,957 - __main__ - INFO -     [Test] Master DB Path: master_contacts.db
+2025-10-29 14:23:36,958 - __main__ - INFO -     [Test] Firebase Arbitrage Sync URL: https://us-central1-fourth-outpost-470409-u3.cloudfunctions.net/saveArbitrageData
+2025-10-29 14:23:36,959 - __main__ - INFO -     [Test] Arbitrage Update Interval: 7 days
+2025-10-29 14:23:36,962 - __main__ - INFO -     [Test] Ensuring master_contacts.db and canonical_categories table exist...
+2025-10-29 14:23:36,966 - __main__ - INFO -     [Test] canonical_categories table checked/created successfully.
+2025-10-29 14:23:36,969 - __main__ - INFO -     [Test] Preparing to call normalize_business_category with a batch of 1 leads.
+2025-10-29 14:23:36,970 - __main__ - INFO - 
+--- Calling normalize_business_category ---
+2025-10-29 15:29:30,985 - __main__ - INFO - --- Test Log started at 2025-10-29 15:29:30 ---
+2025-10-29 15:29:30,987 - __main__ - INFO - --- All test output redirected to C:\Users\Gio\Documents\Work\AGS-Site\Ninja-Team-Leadgen\test_category_arbitrage_log.txt ---
+2025-10-29 15:29:30,990 - __main__ - INFO - 
+--- Starting test_category_arbitrage.py ---
+2025-10-29 15:29:33,353 - __main__ - INFO -     [Test] Consumer script surfer_queue_consumer.py is running with PID 15496.
+2025-10-29 15:29:33,353 - __main__ - INFO -     [Test] Consumer script surfer_queue_consumer.py is already running. Skipping launch.
+2025-10-29 15:29:33,353 - __main__ - INFO -     [Test] Attempting to load config from: C:\Users\Gio\Documents\Work\AGS-Site\Ninja-Team-Leadgen\config.json
+2025-10-29 15:29:33,355 - __main__ - INFO -     [Test] Config loaded successfully.
+2025-10-29 15:29:33,356 - __main__ - INFO -     [Test] LLM Model configured: gemini-2.0-flash-lite
+2025-10-29 15:29:33,356 - __main__ - INFO -     [Test] Master DB Path: master_contacts.db
+2025-10-29 15:29:33,357 - __main__ - INFO -     [Test] Firebase Arbitrage Sync URL: https://us-central1-fourth-outpost-470409-u3.cloudfunctions.net/saveArbitrageData
+2025-10-29 15:29:33,358 - __main__ - INFO -     [Test] Arbitrage Update Interval: 7 days
+2025-10-29 15:29:33,360 - __main__ - INFO -     [Test] Ensuring master_contacts.db and canonical_categories table exist...
+2025-10-29 15:29:33,363 - __main__ - INFO -     [Test] canonical_categories table checked/created successfully.
+2025-10-29 15:29:33,367 - __main__ - INFO -     [Test] Preparing to call normalize_business_category with a batch of 1 leads.
+2025-10-29 15:29:33,370 - __main__ - INFO - 
+--- Calling normalize_business_category ---
+2025-10-29 15:30:01,090 - __main__ - INFO - 
+--- normalize_business_category completed ---
+2025-10-29 15:30:01,095 - __main__ - INFO - 
+--- Normalized Leads Results ---
+2025-10-29 15:30:01,096 - __main__ - INFO - [
+  {
+    "body_text": "QR Code Link to This Post Your Last-Minute Go-To: Movers, Laborers, Long-Distance Moving, Junk Removal, Hauling & Cleaning Services! Looking for reliable, professional movers? Strongman Mover is here for all your moving needs \u2013 big or small, local or long-distance. We handle everything with speed, care, and reliability! Why Choose Strongman Mover? Experienced Crews - Over 3 years of experience per crew ensures a smooth move. Any Move, Any Distance - Residential or commercial, local or long-distance \u2013 we do it all! Specialty Item Experts - Safes, pianos, hot tubs? No problem! We move large and delicate items with care. Last-Minute & Same-Day Service - Need to move now? We're available anytime, anywhere, even for last-minute jobs. Flexible Scheduling - No extra charges for date or time changes. Our Services: (For any move - Big or Small) Residential Moves: Apartments, homes, condos. Commercial Moves: Offices, businesses. Labor Only: Packing, loading, and unloading. Junk Removal: Clearing out unwanted items Residential & Commercial Cleaning: Thorough cleaning and sanitization for homes and businesses, perfect for pre-move-in or post-move-out. Availability & Contact: \u2022 7 Days a Week: 8 AM - 6 PM \u2022 After-Hours/Emergencies: Call us directly at (503) 433-5602. Simple Terms of Service:: \u2022 Deposit Policy: No refunds or cancellations once processed. Reschedule requests are based on availability. \u2022 Guaranteed Completion: Your move will be completed within 72 hours of the estimated time of arrival. Call/Text Now: (503) 433-5602 Visit Us Online: www.STRONGMANMOVER.com STRONGMAN MOVER - Your Trusted Partner for a Stress-Free Move! Thank you for choosing STRONGMAN MOVER for your Movers and Laborers!",
+    "business_name": "Strongman Mover",
+    "cant_text": 1,
+    "category": "moving",
+    "city": "portland",
+    "email": null,
+    "image_hash": "04Q03d",
+    "name": null,
+    "name_confidence": 0,
+    "original_category": "labor & moving",
+    "phone": "5034335602",
+    "post_id": "7881623662",
+    "services_rendered": [
+      "Residential Moves: Apartments, homes, condos.",
+      "Commercial Moves: Offices, businesses.",
+      "Labor Only: Packing, loading, and unloading.",
+      "Junk Removal: Clearing out unwanted items",
+      "Residential & Commercial Cleaning: Thorough cleaning and sanitization for homes and businesses, perfect for pre-move-in or post-move-out."
+    ],
+    "state": "OR",
+    "url": "https://portland.craigslist.org/lbs/d/portland-your-last-minute-local-move/7881623662.html",
+    "website_url": "https://www.STRONGMANMOVER.com"
+  }
+]
+2025-10-29 15:30:01,129 - __main__ - INFO - --- End of Normalized Leads Results ---
+2025-10-29 15:30:01,142 - __main__ - INFO - 
+--- Cached Arbitrage Data (including SERP) ---
+2025-10-29 15:30:01,144 - __main__ - INFO - No arbitrage data found in cache for moving/portland-or
+2025-10-29 15:30:01,147 - __main__ - INFO - --- End of Cached Arbitrage Data ---
+2025-10-29 15:30:01,147 - __main__ - INFO - 
+--- Test Script Finished ---
+2025-10-29 15:50:38,153 - __main__ - INFO - --- Test Log started at 2025-10-29 15:50:38 ---
+2025-10-29 15:50:38,162 - __main__ - INFO - --- All test output redirected to C:\Users\Gio\Documents\Work\AGS-Site\Ninja-Team-Leadgen\test_category_arbitrage_log.txt ---
+2025-10-29 15:50:38,166 - __main__ - INFO - 
+--- Starting test_category_arbitrage.py ---
+2025-10-29 15:50:41,095 - __main__ - INFO -     [Test] Consumer script surfer_queue_consumer.py is running with PID 15496.
+2025-10-29 15:50:41,095 - __main__ - INFO -     [Test] Consumer script surfer_queue_consumer.py is already running. Skipping launch.
+2025-10-29 15:50:41,095 - __main__ - INFO -     [Test] Attempting to load config from: C:\Users\Gio\Documents\Work\AGS-Site\Ninja-Team-Leadgen\config.json
+2025-10-29 15:50:41,096 - __main__ - INFO -     [Test] Config loaded successfully.
+2025-10-29 15:50:41,097 - __main__ - INFO -     [Test] LLM Model configured: gemini-2.0-flash-lite
+2025-10-29 15:50:41,098 - __main__ - INFO -     [Test] Master DB Path: master_contacts.db
+2025-10-29 15:50:41,098 - __main__ - INFO -     [Test] Firebase Arbitrage Sync URL: https://us-central1-fourth-outpost-470409-u3.cloudfunctions.net/saveArbitrageData
+2025-10-29 15:50:41,098 - __main__ - INFO -     [Test] Arbitrage Update Interval: 7 days
+2025-10-29 15:50:41,099 - __main__ - INFO -     [Test] Ensuring master_contacts.db and canonical_categories table exist...
+2025-10-29 15:50:41,100 - __main__ - INFO -     [Test] canonical_categories table checked/created successfully.
+2025-10-29 15:50:41,101 - __main__ - INFO -     [Test] Preparing to call normalize_business_category with a batch of 1 leads.
+2025-10-29 15:50:41,102 - __main__ - INFO - 
+--- Calling normalize_business_category ---
+2025-10-29 16:12:10,349 - __main__ - INFO - --- Test Log started at 2025-10-29 16:12:10 ---
+2025-10-29 16:12:10,349 - __main__ - INFO - --- All test output redirected to C:\Users\Gio\Documents\Work\AGS-Site\Ninja-Team-Leadgen\test_category_arbitrage_log.txt ---
+2025-10-29 16:12:10,351 - __main__ - INFO - 
+--- Starting test_category_arbitrage.py ---
+2025-10-29 16:12:13,147 - __main__ - INFO -     [Test] Consumer script surfer_queue_consumer.py is running with PID 15496.
+2025-10-29 16:12:13,148 - __main__ - INFO -     [Test] Consumer script surfer_queue_consumer.py is already running. Skipping launch.
+2025-10-29 16:12:13,148 - __main__ - INFO -     [Test] Attempting to load config from: C:\Users\Gio\Documents\Work\AGS-Site\Ninja-Team-Leadgen\config.json
+2025-10-29 16:12:13,149 - __main__ - INFO -     [Test] Config loaded successfully.
+2025-10-29 16:12:13,150 - __main__ - INFO -     [Test] LLM Model configured: gemini-2.0-flash-lite
+2025-10-29 16:12:13,150 - __main__ - INFO -     [Test] Master DB Path: master_contacts.db
+2025-10-29 16:12:13,150 - __main__ - INFO -     [Test] Firebase Arbitrage Sync URL: https://us-central1-fourth-outpost-470409-u3.cloudfunctions.net/saveArbitrageData
+2025-10-29 16:12:13,151 - __main__ - INFO -     [Test] Arbitrage Update Interval: 7 days
+2025-10-29 16:12:13,151 - __main__ - INFO -     [Test] Ensuring master_contacts.db and canonical_categories table exist...
+2025-10-29 16:12:13,153 - __main__ - INFO -     [Test] canonical_categories table checked/created successfully.
+2025-10-29 16:12:13,154 - __main__ - INFO -     [Test] Preparing to call normalize_business_category with a batch of 1 leads.
+2025-10-29 16:12:13,156 - __main__ - INFO - 
+--- Calling normalize_business_category ---
+2025-10-29 16:12:42,318 - __main__ - INFO - 
+--- normalize_business_category completed ---
+2025-10-29 16:12:42,321 - __main__ - INFO - 
+--- Normalized Leads Results ---
+2025-10-29 16:12:42,326 - __main__ - INFO - [
+  {
+    "body_text": "QR Code Link to This Post Your Last-Minute Go-To: Movers, Laborers, Long-Distance Moving, Junk Removal, Hauling & Cleaning Services! Looking for reliable, professional movers? Strongman Mover is here for all your moving needs \u2013 big or small, local or long-distance. We handle everything with speed, care, and reliability! Why Choose Strongman Mover? Experienced Crews - Over 3 years of experience per crew ensures a smooth move. Any Move, Any Distance - Residential or commercial, local or long-distance \u2013 we do it all! Specialty Item Experts - Safes, pianos, hot tubs? No problem! We move large and delicate items with care. Last-Minute & Same-Day Service - Need to move now? We're available anytime, anywhere, even for last-minute jobs. Flexible Scheduling - No extra charges for date or time changes. Our Services: (For any move - Big or Small) Residential Moves: Apartments, homes, condos. Commercial Moves: Offices, businesses. Labor Only: Packing, loading, and unloading. Junk Removal: Clearing out unwanted items Residential & Commercial Cleaning: Thorough cleaning and sanitization for homes and businesses, perfect for pre-move-in or post-move-out. Availability & Contact: \u2022 7 Days a Week: 8 AM - 6 PM \u2022 After-Hours/Emergencies: Call us directly at (503) 433-5602. Simple Terms of Service:: \u2022 Deposit Policy: No refunds or cancellations once processed. Reschedule requests are based on availability. \u2022 Guaranteed Completion: Your move will be completed within 72 hours of the estimated time of arrival. Call/Text Now: (503) 433-5602 Visit Us Online: www.STRONGMANMOVER.com STRONGMAN MOVER - Your Trusted Partner for a Stress-Free Move! Thank you for choosing STRONGMAN MOVER for your Movers and Laborers!",
+    "business_name": "Strongman Mover",
+    "cant_text": 1,
+    "category": "moving-services",
+    "city": "portland",
+    "email": null,
+    "image_hash": "04Q03d",
+    "name": null,
+    "name_confidence": 0,
+    "original_category": "labor & moving",
+    "phone": "5034335602",
+    "post_id": "7881623662",
+    "services_rendered": [
+      "Residential Moves: Apartments, homes, condos.",
+      "Commercial Moves: Offices, businesses.",
+      "Labor Only: Packing, loading, and unloading.",
+      "Junk Removal: Clearing out unwanted items",
+      "Residential & Commercial Cleaning: Thorough cleaning and sanitization for homes and businesses, perfect for pre-move-in or post-move-out."
+    ],
+    "state": "OR",
+    "url": "https://portland.craigslist.org/lbs/d/portland-your-last-minute-local-move/7881623662.html",
+    "website_url": "https://www.STRONGMANMOVER.com"
+  }
+]
+2025-10-29 16:12:42,358 - __main__ - INFO - --- End of Normalized Leads Results ---
+2025-10-29 16:12:42,360 - __main__ - INFO - 
+--- Cached Arbitrage Data (including SERP) ---
+2025-10-29 16:12:42,363 - __main__ - INFO - No arbitrage data found in cache for moving-services/portland-or
+2025-10-29 16:12:42,364 - __main__ - INFO - --- End of Cached Arbitrage Data ---
+2025-10-29 16:12:42,365 - __main__ - INFO - 
+--- Test Script Finished ---
+2025-10-29 17:40:38,161 - __main__ - INFO - --- Test Log started at 2025-10-29 17:40:38 ---
+2025-10-29 17:40:38,176 - __main__ - INFO - --- All test output redirected to C:\Users\Gio\Documents\Work\AGS-Site\Ninja-Team-Leadgen\test_category_arbitrage_log.txt ---
+2025-10-29 17:40:38,178 - __main__ - INFO - 
+--- Starting test_category_arbitrage.py ---
+2025-10-29 17:40:40,707 - __main__ - INFO -     [Test] Consumer script surfer_queue_consumer.py is NOT running.
+2025-10-29 17:40:40,707 - __main__ - INFO -     [Test] Launching consumer script: surfer_queue_consumer.py...
+2025-10-29 17:40:40,718 - __main__ - INFO -     [Test] Consumer script surfer_queue_consumer.py launched successfully in background.
+2025-10-29 17:40:40,721 - __main__ - ERROR - !!! [Test] ERROR launching consumer script: name 'time' is not defined
+2025-10-29 17:40:40,722 - __main__ - INFO -     [Test] Attempting to load config from: C:\Users\Gio\Documents\Work\AGS-Site\Ninja-Team-Leadgen\config.json
+2025-10-29 17:40:40,787 - __main__ - INFO -     [Test] Config loaded successfully.
+2025-10-29 17:40:40,789 - __main__ - INFO -     [Test] LLM Model configured: gemini-2.0-flash-lite
+2025-10-29 17:40:40,793 - __main__ - INFO -     [Test] Master DB Path: master_contacts.db
+2025-10-29 17:40:40,800 - __main__ - INFO -     [Test] Firebase Arbitrage Sync URL: https://us-central1-fourth-outpost-470409-u3.cloudfunctions.net/saveArbitrageData
+2025-10-29 17:40:40,800 - __main__ - INFO -     [Test] Arbitrage Update Interval: 7 days
+2025-10-29 17:40:40,802 - __main__ - INFO -     [Test] Ensuring master_contacts.db and canonical_categories table exist...
+2025-10-29 17:40:40,819 - __main__ - INFO -     [Test] canonical_categories table checked/created successfully.
+2025-10-29 17:40:40,821 - __main__ - INFO -     [Test] Preparing to call normalize_business_category with a batch of 1 leads.
+2025-10-29 17:40:40,823 - __main__ - INFO - 
+--- Calling normalize_business_category ---
+2025-10-29 17:41:08,891 - __main__ - INFO - 
+--- normalize_business_category completed ---
+2025-10-29 17:41:08,892 - __main__ - INFO - 
+--- Normalized Leads Results ---
+2025-10-29 17:41:08,893 - __main__ - INFO - [
+  {
+    "body_text": "QR Code Link to This Post Your Last-Minute Go-To: Movers, Laborers, Long-Distance Moving, Junk Removal, Hauling & Cleaning Services! Looking for reliable, professional movers? Strongman Mover is here for all your moving needs \u2013 big or small, local or long-distance. We handle everything with speed, care, and reliability! Why Choose Strongman Mover? Experienced Crews - Over 3 years of experience per crew ensures a smooth move. Any Move, Any Distance - Residential or commercial, local or long-distance \u2013 we do it all! Specialty Item Experts - Safes, pianos, hot tubs? No problem! We move large and delicate items with care. Last-Minute & Same-Day Service - Need to move now? We're available anytime, anywhere, even for last-minute jobs. Flexible Scheduling - No extra charges for date or time changes. Our Services: (For any move - Big or Small) Residential Moves: Apartments, homes, condos. Commercial Moves: Offices, businesses. Labor Only: Packing, loading, and unloading. Junk Removal: Clearing out unwanted items Residential & Commercial Cleaning: Thorough cleaning and sanitization for homes and businesses, perfect for pre-move-in or post-move-out. Availability & Contact: \u2022 7 Days a Week: 8 AM - 6 PM \u2022 After-Hours/Emergencies: Call us directly at (503) 433-5602. Simple Terms of Service:: \u2022 Deposit Policy: No refunds or cancellations once processed. Reschedule requests are based on availability. \u2022 Guaranteed Completion: Your move will be completed within 72 hours of the estimated time of arrival. Call/Text Now: (503) 433-5602 Visit Us Online: www.STRONGMANMOVER.com STRONGMAN MOVER - Your Trusted Partner for a Stress-Free Move! Thank you for choosing STRONGMAN MOVER for your Movers and Laborers!",
+    "business_name": "Strongman Mover",
+    "cant_text": 1,
+    "category": "moving-services",
+    "city": "portland",
+    "email": null,
+    "image_hash": "04Q03d",
+    "name": null,
+    "name_confidence": 0,
+    "original_category": "labor & moving",
+    "phone": "5034335602",
+    "post_id": "7881623662",
+    "services_rendered": [
+      "Residential Moves: Apartments, homes, condos.",
+      "Commercial Moves: Offices, businesses.",
+      "Labor Only: Packing, loading, and unloading.",
+      "Junk Removal: Clearing out unwanted items",
+      "Residential & Commercial Cleaning: Thorough cleaning and sanitization for homes and businesses, perfect for pre-move-in or post-move-out."
+    ],
+    "state": "OR",
+    "url": "https://portland.craigslist.org/lbs/d/portland-your-last-minute-local-move/7881623662.html",
+    "website_url": "https://www.STRONGMANMOVER.com"
+  }
+]
+2025-10-29 17:41:08,918 - __main__ - INFO - --- End of Normalized Leads Results ---
+2025-10-29 17:41:08,919 - __main__ - INFO - 
+--- Cached Arbitrage Data (including SERP) ---
+2025-10-29 17:41:08,920 - __main__ - INFO - No arbitrage data found in cache for moving-services/portland-or
+2025-10-29 17:41:08,923 - __main__ - INFO - --- End of Cached Arbitrage Data ---
+2025-10-29 17:41:08,927 - __main__ - INFO - 
+--- Test Script Finished ---
+2025-10-29 17:59:22,606 - __main__ - INFO - --- Test Log started at 2025-10-29 17:59:22 ---
+2025-10-29 17:59:22,610 - __main__ - INFO - --- All test output redirected to C:\Users\Gio\Documents\Work\AGS-Site\Ninja-Team-Leadgen\test_category_arbitrage_log.txt ---
+2025-10-29 17:59:22,614 - __main__ - INFO - 
+--- Starting test_category_arbitrage.py ---
+2025-10-29 17:59:26,104 - __main__ - INFO -     [Test] Consumer script surfer_queue_consumer.py is NOT running.
+2025-10-29 17:59:26,105 - __main__ - INFO -     [Test] Launching consumer script: surfer_queue_consumer.py...
+2025-10-29 17:59:26,119 - __main__ - INFO -     [Test] Consumer script surfer_queue_consumer.py launched successfully in background.
+2025-10-29 17:59:26,120 - __main__ - ERROR - !!! [Test] ERROR launching consumer script: name 'time' is not defined
+2025-10-29 17:59:26,122 - __main__ - INFO -     [Test] Attempting to load config from: C:\Users\Gio\Documents\Work\AGS-Site\Ninja-Team-Leadgen\config.json
+2025-10-29 17:59:26,125 - __main__ - INFO -     [Test] Config loaded successfully.
+2025-10-29 17:59:26,125 - __main__ - INFO -     [Test] LLM Model configured: gemini-2.0-flash-lite
+2025-10-29 17:59:26,127 - __main__ - INFO -     [Test] Master DB Path: master_contacts.db
+2025-10-29 17:59:26,128 - __main__ - INFO -     [Test] Firebase Arbitrage Sync URL: https://us-central1-fourth-outpost-470409-u3.cloudfunctions.net/saveArbitrageData
+2025-10-29 17:59:26,131 - __main__ - INFO -     [Test] Arbitrage Update Interval: 7 days
+2025-10-29 17:59:26,133 - __main__ - INFO -     [Test] Ensuring master_contacts.db and canonical_categories table exist...
+2025-10-29 17:59:26,137 - __main__ - INFO -     [Test] canonical_categories table checked/created successfully.
+2025-10-29 17:59:26,138 - __main__ - INFO -     [Test] Preparing to call normalize_business_category with a batch of 1 leads.
+2025-10-29 17:59:26,141 - __main__ - INFO - 
+--- Calling normalize_business_category ---
+2025-10-29 17:59:54,547 - __main__ - INFO - 
+--- normalize_business_category completed ---
+2025-10-29 17:59:54,548 - __main__ - INFO - 
+--- Normalized Leads Results ---
+2025-10-29 17:59:54,549 - __main__ - INFO - [
+  {
+    "body_text": "QR Code Link to This Post Your Last-Minute Go-To: Movers, Laborers, Long-Distance Moving, Junk Removal, Hauling & Cleaning Services! Looking for reliable, professional movers? Strongman Mover is here for all your moving needs \u2013 big or small, local or long-distance. We handle everything with speed, care, and reliability! Why Choose Strongman Mover? Experienced Crews - Over 3 years of experience per crew ensures a smooth move. Any Move, Any Distance - Residential or commercial, local or long-distance \u2013 we do it all! Specialty Item Experts - Safes, pianos, hot tubs? No problem! We move large and delicate items with care. Last-Minute & Same-Day Service - Need to move now? We're available anytime, anywhere, even for last-minute jobs. Flexible Scheduling - No extra charges for date or time changes. Our Services: (For any move - Big or Small) Residential Moves: Apartments, homes, condos. Commercial Moves: Offices, businesses. Labor Only: Packing, loading, and unloading. Junk Removal: Clearing out unwanted items Residential & Commercial Cleaning: Thorough cleaning and sanitization for homes and businesses, perfect for pre-move-in or post-move-out. Availability & Contact: \u2022 7 Days a Week: 8 AM - 6 PM \u2022 After-Hours/Emergencies: Call us directly at (503) 433-5602. Simple Terms of Service:: \u2022 Deposit Policy: No refunds or cancellations once processed. Reschedule requests are based on availability. \u2022 Guaranteed Completion: Your move will be completed within 72 hours of the estimated time of arrival. Call/Text Now: (503) 433-5602 Visit Us Online: www.STRONGMANMOVER.com STRONGMAN MOVER - Your Trusted Partner for a Stress-Free Move! Thank you for choosing STRONGMAN MOVER for your Movers and Laborers!",
+    "business_name": "Strongman Mover",
+    "cant_text": 1,
+    "category": "moving-services",
+    "city": "portland",
+    "email": null,
+    "image_hash": "04Q03d",
+    "name": null,
+    "name_confidence": 0,
+    "original_category": "labor & moving",
+    "phone": "5034335602",
+    "post_id": "7881623662",
+    "services_rendered": [
+      "Residential Moves: Apartments, homes, condos.",
+      "Commercial Moves: Offices, businesses.",
+      "Labor Only: Packing, loading, and unloading.",
+      "Junk Removal: Clearing out unwanted items",
+      "Residential & Commercial Cleaning: Thorough cleaning and sanitization for homes and businesses, perfect for pre-move-in or post-move-out."
+    ],
+    "state": "OR",
+    "url": "https://portland.craigslist.org/lbs/d/portland-your-last-minute-local-move/7881623662.html",
+    "website_url": "https://www.STRONGMANMOVER.com"
+  }
+]
+2025-10-29 17:59:54,575 - __main__ - INFO - --- End of Normalized Leads Results ---
+2025-10-29 17:59:54,582 - __main__ - INFO - 
+--- Cached Arbitrage Data (including SERP) ---
+2025-10-29 17:59:54,584 - __main__ - INFO - No arbitrage data found in cache for moving-services/portland-or
+2025-10-29 17:59:54,595 - __main__ - INFO - --- End of Cached Arbitrage Data ---
+2025-10-29 17:59:54,599 - __main__ - INFO - 
+--- Test Script Finished ---
+2025-10-29 18:04:02,819 - __main__ - INFO - --- Test Log started at 2025-10-29 18:04:02 ---
+2025-10-29 18:04:02,821 - __main__ - INFO - --- All test output redirected to C:\Users\Gio\Documents\Work\AGS-Site\Ninja-Team-Leadgen\test_category_arbitrage_log.txt ---
+2025-10-29 18:04:02,825 - __main__ - INFO - 
+--- Starting test_category_arbitrage.py ---
+2025-10-29 18:04:06,099 - __main__ - INFO -     [Test] Consumer script surfer_queue_consumer.py is NOT running.
+2025-10-29 18:04:06,099 - __main__ - INFO -     [Test] Launching consumer script: surfer_queue_consumer.py...
+2025-10-29 18:04:06,114 - __main__ - INFO -     [Test] Consumer script surfer_queue_consumer.py launched successfully in background.
+2025-10-29 18:04:06,118 - __main__ - ERROR - !!! [Test] ERROR launching consumer script: name 'time' is not defined
+2025-10-29 18:04:06,119 - __main__ - INFO -     [Test] Attempting to load config from: C:\Users\Gio\Documents\Work\AGS-Site\Ninja-Team-Leadgen\config.json
+2025-10-29 18:04:06,124 - __main__ - INFO -     [Test] Config loaded successfully.
+2025-10-29 18:04:06,130 - __main__ - INFO -     [Test] LLM Model configured: gemini-2.0-flash-lite
+2025-10-29 18:04:06,131 - __main__ - INFO -     [Test] Master DB Path: master_contacts.db
+2025-10-29 18:04:06,132 - __main__ - INFO -     [Test] Firebase Arbitrage Sync URL: https://us-central1-fourth-outpost-470409-u3.cloudfunctions.net/saveArbitrageData
+2025-10-29 18:04:06,139 - __main__ - INFO -     [Test] Arbitrage Update Interval: 7 days
+2025-10-29 18:04:06,142 - __main__ - INFO -     [Test] Ensuring master_contacts.db and canonical_categories table exist...
+2025-10-29 18:04:06,151 - __main__ - INFO -     [Test] canonical_categories table checked/created successfully.
+2025-10-29 18:04:06,152 - __main__ - INFO -     [Test] Preparing to call normalize_business_category with a batch of 1 leads.
+2025-10-29 18:04:06,155 - __main__ - INFO - 
+--- Calling normalize_business_category ---
+2025-10-29 18:04:34,176 - __main__ - INFO - 
+--- normalize_business_category completed ---
+2025-10-29 18:04:34,177 - __main__ - INFO - 
+--- Normalized Leads Results ---
+2025-10-29 18:04:34,178 - __main__ - INFO - [
+  {
+    "body_text": "QR Code Link to This Post Your Last-Minute Go-To: Movers, Laborers, Long-Distance Moving, Junk Removal, Hauling & Cleaning Services! Looking for reliable, professional movers? Strongman Mover is here for all your moving needs \u2013 big or small, local or long-distance. We handle everything with speed, care, and reliability! Why Choose Strongman Mover? Experienced Crews - Over 3 years of experience per crew ensures a smooth move. Any Move, Any Distance - Residential or commercial, local or long-distance \u2013 we do it all! Specialty Item Experts - Safes, pianos, hot tubs? No problem! We move large and delicate items with care. Last-Minute & Same-Day Service - Need to move now? We're available anytime, anywhere, even for last-minute jobs. Flexible Scheduling - No extra charges for date or time changes. Our Services: (For any move - Big or Small) Residential Moves: Apartments, homes, condos. Commercial Moves: Offices, businesses. Labor Only: Packing, loading, and unloading. Junk Removal: Clearing out unwanted items Residential & Commercial Cleaning: Thorough cleaning and sanitization for homes and businesses, perfect for pre-move-in or post-move-out. Availability & Contact: \u2022 7 Days a Week: 8 AM - 6 PM \u2022 After-Hours/Emergencies: Call us directly at (503) 433-5602. Simple Terms of Service:: \u2022 Deposit Policy: No refunds or cancellations once processed. Reschedule requests are based on availability. \u2022 Guaranteed Completion: Your move will be completed within 72 hours of the estimated time of arrival. Call/Text Now: (503) 433-5602 Visit Us Online: www.STRONGMANMOVER.com STRONGMAN MOVER - Your Trusted Partner for a Stress-Free Move! Thank you for choosing STRONGMAN MOVER for your Movers and Laborers!",
+    "business_name": "Strongman Mover",
+    "cant_text": 1,
+    "category": "moving-services",
+    "city": "portland",
+    "email": null,
+    "image_hash": "04Q03d",
+    "name": null,
+    "name_confidence": 0,
+    "original_category": "labor & moving",
+    "phone": "5034335602",
+    "post_id": "7881623662",
+    "services_rendered": [
+      "Residential Moves: Apartments, homes, condos.",
+      "Commercial Moves: Offices, businesses.",
+      "Labor Only: Packing, loading, and unloading.",
+      "Junk Removal: Clearing out unwanted items",
+      "Residential & Commercial Cleaning: Thorough cleaning and sanitization for homes and businesses, perfect for pre-move-in or post-move-out."
+    ],
+    "state": "OR",
+    "url": "https://portland.craigslist.org/lbs/d/portland-your-last-minute-local-move/7881623662.html",
+    "website_url": "https://www.STRONGMANMOVER.com"
+  }
+]
+2025-10-29 18:04:34,211 - __main__ - INFO - --- End of Normalized Leads Results ---
+2025-10-29 18:04:34,219 - __main__ - INFO - 
+--- Cached Arbitrage Data (including SERP) ---
+2025-10-29 18:04:34,224 - __main__ - INFO - No arbitrage data found in cache for moving-services/portland-or
+2025-10-29 18:04:34,227 - __main__ - INFO - --- End of Cached Arbitrage Data ---
+2025-10-29 18:04:34,237 - __main__ - INFO - 
+--- Test Script Finished ---
+2025-10-29 18:20:40,480 - __main__ - INFO - --- Test Log started at 2025-10-29 18:20:40 ---
+2025-10-29 18:20:40,482 - __main__ - INFO - --- All test output redirected to C:\Users\Gio\Documents\Work\AGS-Site\Ninja-Team-Leadgen\test_category_arbitrage_log.txt ---
+2025-10-29 18:20:40,486 - __main__ - INFO - 
+--- Starting test_category_arbitrage.py ---
+2025-10-29 18:20:43,112 - __main__ - INFO -     [Test] Consumer script surfer_queue_consumer.py is NOT running.
+2025-10-29 18:20:43,113 - __main__ - INFO -     [Test] Launching consumer script: surfer_queue_consumer.py...
+2025-10-29 18:20:43,127 - __main__ - INFO -     [Test] Consumer script surfer_queue_consumer.py launched successfully in background.
+2025-10-29 18:20:43,128 - __main__ - ERROR - !!! [Test] ERROR launching consumer script: name 'time' is not defined
+2025-10-29 18:20:43,128 - __main__ - INFO -     [Test] Attempting to load config from: C:\Users\Gio\Documents\Work\AGS-Site\Ninja-Team-Leadgen\config.json
+2025-10-29 18:20:43,135 - __main__ - INFO -     [Test] Config loaded successfully.
+2025-10-29 18:20:43,136 - __main__ - INFO -     [Test] LLM Model configured: gemini-2.0-flash-lite
+2025-10-29 18:20:43,137 - __main__ - INFO -     [Test] Master DB Path: master_contacts.db
+2025-10-29 18:20:43,139 - __main__ - INFO -     [Test] Firebase Arbitrage Sync URL: https://us-central1-fourth-outpost-470409-u3.cloudfunctions.net/saveArbitrageData
+2025-10-29 18:20:43,140 - __main__ - INFO -     [Test] Arbitrage Update Interval: 7 days
+2025-10-29 18:20:43,140 - __main__ - INFO -     [Test] Ensuring master_contacts.db and canonical_categories table exist...
+2025-10-29 18:20:43,147 - __main__ - INFO -     [Test] canonical_categories table checked/created successfully.
+2025-10-29 18:20:43,151 - __main__ - INFO -     [Test] Preparing to call normalize_business_category with a batch of 1 leads.
+2025-10-29 18:20:43,153 - __main__ - INFO - 
+--- Calling normalize_business_category ---
+2025-10-29 18:21:10,956 - __main__ - INFO - 
+--- normalize_business_category completed ---
+2025-10-29 18:21:10,956 - __main__ - INFO - 
+--- Normalized Leads Results ---
+2025-10-29 18:21:10,957 - __main__ - INFO - [
+  {
+    "body_text": "QR Code Link to This Post Your Last-Minute Go-To: Movers, Laborers, Long-Distance Moving, Junk Removal, Hauling & Cleaning Services! Looking for reliable, professional movers? Strongman Mover is here for all your moving needs \u2013 big or small, local or long-distance. We handle everything with speed, care, and reliability! Why Choose Strongman Mover? Experienced Crews - Over 3 years of experience per crew ensures a smooth move. Any Move, Any Distance - Residential or commercial, local or long-distance \u2013 we do it all! Specialty Item Experts - Safes, pianos, hot tubs? No problem! We move large and delicate items with care. Last-Minute & Same-Day Service - Need to move now? We're available anytime, anywhere, even for last-minute jobs. Flexible Scheduling - No extra charges for date or time changes. Our Services: (For any move - Big or Small) Residential Moves: Apartments, homes, condos. Commercial Moves: Offices, businesses. Labor Only: Packing, loading, and unloading. Junk Removal: Clearing out unwanted items Residential & Commercial Cleaning: Thorough cleaning and sanitization for homes and businesses, perfect for pre-move-in or post-move-out. Availability & Contact: \u2022 7 Days a Week: 8 AM - 6 PM \u2022 After-Hours/Emergencies: Call us directly at (503) 433-5602. Simple Terms of Service:: \u2022 Deposit Policy: No refunds or cancellations once processed. Reschedule requests are based on availability. \u2022 Guaranteed Completion: Your move will be completed within 72 hours of the estimated time of arrival. Call/Text Now: (503) 433-5602 Visit Us Online: www.STRONGMANMOVER.com STRONGMAN MOVER - Your Trusted Partner for a Stress-Free Move! Thank you for choosing STRONGMAN MOVER for your Movers and Laborers!",
+    "business_name": "Strongman Mover",
+    "cant_text": 1,
+    "category": "moving-services",
+    "city": "portland",
+    "email": null,
+    "image_hash": "04Q03d",
+    "name": null,
+    "name_confidence": 0,
+    "original_category": "labor & moving",
+    "phone": "5034335602",
+    "post_id": "7881623662",
+    "services_rendered": [
+      "Residential Moves: Apartments, homes, condos.",
+      "Commercial Moves: Offices, businesses.",
+      "Labor Only: Packing, loading, and unloading.",
+      "Junk Removal: Clearing out unwanted items",
+      "Residential & Commercial Cleaning: Thorough cleaning and sanitization for homes and businesses, perfect for pre-move-in or post-move-out."
+    ],
+    "state": "OR",
+    "url": "https://portland.craigslist.org/lbs/d/portland-your-last-minute-local-move/7881623662.html",
+    "website_url": "https://www.STRONGMANMOVER.com"
+  }
+]
+2025-10-29 18:21:10,972 - __main__ - INFO - --- End of Normalized Leads Results ---
+2025-10-29 18:21:10,974 - __main__ - INFO - 
+--- Cached Arbitrage Data (including SERP) ---
+2025-10-29 18:21:10,976 - __main__ - INFO - No arbitrage data found in cache for moving-services/portland-or
+2025-10-29 18:21:10,985 - __main__ - INFO - --- End of Cached Arbitrage Data ---
+2025-10-29 18:21:10,986 - __main__ - INFO - 
+--- Test Script Finished ---

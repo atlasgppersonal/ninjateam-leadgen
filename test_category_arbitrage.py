@@ -9,6 +9,7 @@ import google.generativeai as genai
 import httpx
 import subprocess
 import psutil # For process checking
+import time # Added for time.sleep
 
 # Add the directory containing category_normalizer.py and surfer_prospector_module.py to the Python path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
@@ -64,7 +65,8 @@ def launch_consumer_script():
         logger.info(f"    [Test] Consumer script {CONSUMER_SCRIPT_NAME} is already running. Skipping launch.")
         return
 
-    script_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), CONSUMER_SCRIPT_NAME)
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    script_path = os.path.join(script_dir, CONSUMER_SCRIPT_NAME)
     if not os.path.exists(script_path):
         logger.error(f"!!! [Test] ERROR: Consumer script not found at {script_path}. Cannot launch.")
         return
@@ -166,8 +168,10 @@ async def main_test():
         cursor = conn.cursor()
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS canonical_categories (
-                id TEXT PRIMARY KEY,
-                json_metadata TEXT
+                category TEXT NOT NULL,
+                location TEXT NOT NULL,
+                json_metadata TEXT,
+                PRIMARY KEY (category, location)
             )
         ''')
         conn.commit()
@@ -180,7 +184,7 @@ async def main_test():
     # --- Define Test Data for normalize_business_category call ---
     # This is the raw_contact provided by the user, converted to JSON
     raw_contact = {
-        "body_text": "QR Code Link to This Post Your Last-Minute Go-To: Movers, Laborers, Long-Distance Moving, Junk Removal, Hauling & Cleaning Services! Looking for reliable, professional movers? Strongman Mover is here for all your moving needs – big or small, local or long-distance. We handle everything with speed, care, and reliability! Why Choose Strongman Mover? Experienced Crews - Over 3 years of experience per crew ensures a smooth move. Any Move, Any Distance - Residential or commercial, local or long-distance – we do it all! Specialty Item Experts - Safes, pianos, hot tubs? No problem! We move large and delicate items with care. Last-Minute & Same-Day Service - Need to move now? We're available anytime, anywhere, even for last-minute jobs. Flexible Scheduling - No extra charges for date or time changes. Our Services: (For any move - Big or Small) Residential Moves: Apartments, homes, condos. Commercial Moves: Offices, businesses. Labor Only: Packing, loading, and unloading. Junk Removal: Clearing out unwanted items Residential & Commercial Cleaning: Thorough cleaning and sanitization for homes and businesses, perfect for pre-move-in or post-move-out. Availability & Contact: • 7 Days a Week: 8 AM - 6 PM • After-Hours/Emergencies: Call us directly at (503) 433-5602. Simple Terms of Service:: • Deposit Policy: No refunds or cancellations once processed. Reschedule requests are based on availability. • Guaranteed Completion: Your move will be completed within 72 hours of the estimated time of arrival. Call/Text Now: (503) 433-5602 Visit Us Online: www.STRONGMANMOVER.com STRONGMAN MOVER - Your Trusted Partner for a Stress-Free Move! Thank you for choosing STRONGMAN MOVER for your Movers and Laborers!",
+        "body_text": "QR Code Link to This Post Your Last-Minute Go-To: Movers, Laborers, Long-Distance Moving, Junk Removal, Hauling & Cleaning Services! Looking for reliable, professional movers? Strongman Mover is here for all your moving needs – big or small, local or long-distance. We handle everything with speed, care, and reliability! Why Choose Strongman Mover? Experienced Crews - Over 3 years of experience per crew ensures a smooth move. Any Move, Any Distance - Residential or commercial, local or long-distance – we do it all! Specialty Item Experts - Safes, pianos, hot tubs? No problem! We move large and delicate items with care. Last-Minute & Same-Day Service - Need to move now? We're available anytime, anywhere, even for last-minute jobs. Flexible Scheduling - No extra charges for date or time changes. Our Services: (For any move - Big or Small) Residential Moves: Apartments, homes, condos. Commercial Moves: Offices, businesses. Labor Only: Packing, loading, and unloading. Junk Removal: Clearing out unwanted items Residential & Commercial Cleaning: Thorough cleaning and sanitization for homes and businesses, perfect for pre-move-in or post-move-out}.",
         "business_name": "Strongman Mover",
         "cant_text": 1,
         "category": "Moving",
@@ -224,18 +228,18 @@ async def main_test():
 
     # --- Retrieve and print arbitrageData from cache for the test lead ---
     if normalized_leads and normalized_leads[0].get("category") and normalized_leads[0].get("city") and normalized_leads[0].get("state"):
-        canonical_category_id = normalized_leads[0]["category"]
-        location_slug = normalized_leads[0]["city"].lower().replace(" ", "-") + "-" + normalized_leads[0]["state"].lower().replace(" ", "-")
-        category_location_id = f"{canonical_category_id}/{location_slug}"
+        canonical_category = normalized_leads[0]["category"]
+        location = normalized_leads[0]["city"].lower().replace(" ", "-") + "-" + normalized_leads[0]["state"].lower().replace(" ", "-")
+        cache_key = f"{canonical_category}|{location}"
         
         from category_normalizer import _arbitrage_data_cache
-        cached_arbitrage_data = _arbitrage_data_cache.get(category_location_id)
+        cached_arbitrage_data = _arbitrage_data_cache.get(cache_key)
 
         logger.info("\n--- Cached Arbitrage Data (including SERP) ---")
         if cached_arbitrage_data:
             logger.info(json.dumps(cached_arbitrage_data, indent=2))
         else:
-            logger.info(f"No arbitrage data found in cache for {category_location_id}")
+            logger.info(f"No arbitrage data found in cache for {cache_key}")
         logger.info("--- End of Cached Arbitrage Data ---")
 
 

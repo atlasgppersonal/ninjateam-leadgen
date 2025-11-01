@@ -4,7 +4,7 @@ import json
 import time
 import os
 import logging
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta # Added timedelta
 from typing import List, Dict, Any
 import httpx # Added for Firebase push
 import google.generativeai as genai # Added for LLM initialization
@@ -65,13 +65,17 @@ async def _initialize_canonical_categories_cache(master_db_path: str):
     try:
         with sqlite3.connect(master_db_path) as con:
             cur = con.cursor()
-            cur.execute("SELECT id, json_metadata FROM canonical_categories")
-            for row_id, json_data in cur.fetchall():
+            # The ID in the DB is category/location_slug, but the cache key should be just category
+            cur.execute("SELECT category, location, json_metadata FROM canonical_categories")
+            for category, location, json_data in cur.fetchall():
                 try:
                     metadata = json.loads(json_data)
-                    _canonical_categories_cache[row_id] = metadata
+                    # Ensure metadata also contains category and location for consistency
+                    metadata['category'] = category
+                    metadata['location'] = location
+                    _canonical_categories_cache[f"{category}|{location}"] = metadata
                 except json.JSONDecodeError:
-                    logger.error(f"Error decoding JSON for ID: {row_id}. Skipping entry.")
+                    logger.error(f"Error decoding JSON for category '{category}', location '{location}'. Skipping entry.")
         logger.debug(f"Loaded {len(_canonical_categories_cache)} entries into canonical categories cache.")
         _cache_initialized = True
     except sqlite3.Error as e:
@@ -97,14 +101,22 @@ async def process_queue_item(task_id: int, task_data: Dict[str, Any], llm_model:
         logger.info(f"Task {task_id}: Status updated to 'processing'.")
         logger.debug(f"Task {task_id}: Processing task data: {task_data}")
 
+        # Deserialize parameters
+        seed_keywords = json.loads(task_data['seed_keywords'])
+        service_radius_cities = json.loads(task_data['service_radius_cities'])
+        logger.debug(f"Task {task_id}: Deserialized seed_keywords: {seed_keywords[:5]}...")
+        logger.debug(f"Task {task_id}: Deserialized service_radius_cities: {service_radius_cities[:5]}...")
+
         canonical_category_id = task_data['category']
         location_slug = f"{task_data['state'].lower()}-{task_data['country'].lower()}"
-        category_location_id = f"{canonical_category_id}/{location_slug}"
+        # The combined ID for DB storage, but not for Firebase document path
+        db_category_location_id = f"{canonical_category_id}|{service_radius_cities[0].lower()}-{task_data['state'].lower()}" 
 
         # --- Cache Check Logic ---
         await _initialize_canonical_categories_cache(MASTER_DB_PATH) # Ensure cache is up-to-date
 
-        cached_data = _canonical_categories_cache.get(category_location_id)
+        # Use just the category for cache lookup as per user's clarification for 'id'
+        cached_data = _canonical_categories_cache.get(db_category_location_id)
         needs_prospecting = True
 
         if cached_data:
@@ -113,13 +125,13 @@ async def process_queue_item(task_id: int, task_data: Dict[str, Any], llm_model:
                 last_updated_dt = datetime.fromisoformat(last_updated_str.replace('Z', '+00:00')).astimezone(timezone.utc)
                 if datetime.now(timezone.utc) - last_updated_dt < timedelta(days=CATEGORY_ARBITRAGE_UPDATE_INTERVAL_DAYS):
                     needs_prospecting = False
-                    logger.info(f"Task {task_id}: Category '{category_location_id}' is up-to-date in cache. Skipping prospecting.")
+                    logger.info(f"Task {task_id}: Category '{db_category_location_id}' is up-to-date in cache. Skipping prospecting.")
                 else:
-                    logger.info(f"Task {task_id}: Category '{category_location_id}' needs refresh (older than {CATEGORY_ARBITRAGE_UPDATE_INTERVAL_DAYS} days).")
+                    logger.info(f"Task {task_id}: Category '{db_category_location_id}' needs refresh (older than {CATEGORY_ARBITRAGE_UPDATE_INTERVAL_DAYS} days).")
             else:
-                logger.info(f"Task {task_id}: Category '{category_location_id}' has no 'lastUpdated' timestamp. Proceeding with prospecting.")
+                logger.info(f"Task {task_id}: Category '{db_category_location_id}' has no 'lastUpdated' timestamp. Proceeding with prospecting.")
         else:
-            logger.info(f"Task {task_id}: Category '{category_location_id}' not found in cache. Proceeding with prospecting.")
+            logger.info(f"Task {task_id}: Category '{db_category_location_id}' not found in cache. Proceeding with prospecting.")
 
         if not needs_prospecting:
             cursor.execute("UPDATE surfer_prospector_queue SET status = 'completed' WHERE id = ?", (task_id,))
@@ -127,13 +139,6 @@ async def process_queue_item(task_id: int, task_data: Dict[str, Any], llm_model:
             logger.info(f"Task {task_id}: Status updated to 'completed' (skipped due to cache).")
             return # Exit early if no prospecting is needed
         # --- End Cache Check Logic ---
-
-
-        # Deserialize parameters
-        seed_keywords = json.loads(task_data['seed_keywords'])
-        service_radius_cities = json.loads(task_data['service_radius_cities'])
-        logger.debug(f"Task {task_id}: Deserialized seed_keywords: {seed_keywords[:5]}...")
-        logger.debug(f"Task {task_id}: Deserialized service_radius_cities: {service_radius_cities[:5]}...")
         
         # Prepare parameters for run_prospecting_async
         prospecting_params = {
@@ -198,7 +203,7 @@ async def process_queue_item(task_id: int, task_data: Dict[str, Any], llm_model:
         # Prepare combined_json_metadata for master_contacts.db
         current_utc_timestamp = datetime.now(timezone.utc).isoformat().replace('Z', '+00:00')
         combined_json_metadata = {
-            "id": task_data['category'],
+            "id": task_data['category'], # Corrected: only the category
             "displayName": task_data['category'], # Placeholder, ideally from initial LLM classification
             "aliases": [], # Placeholder
             "description": "", # Placeholder
@@ -207,7 +212,7 @@ async def process_queue_item(task_id: int, task_data: Dict[str, Any], llm_model:
             "suggestedAt": current_utc_timestamp,
             "createdBy": "surfer_consumer",
             "lastUpdated": current_utc_timestamp,
-            "location": f"{task_data['category']}/{task_data['state'].lower()}", # Simplified location slug
+            "location": f"{service_radius_cities[0].lower()}-{task_data['state'].lower()}", # Corrected: city-state abbreviation
             "arbitrageData": serp_data,
             "serviceRadiusCities": service_radius_cities,
             "cityClusters": city_clusters
@@ -217,31 +222,45 @@ async def process_queue_item(task_id: int, task_data: Dict[str, Any], llm_model:
         logger.debug(f"Task {task_id}: Combined JSON metadata prepared: {json.dumps(combined_json_metadata, indent=2)}")
 
         # Update canonical_categories table
+        # Use db_category_location_id for the DB primary key to ensure uniqueness per category-location pair
         cursor.execute(
-            "INSERT OR REPLACE INTO canonical_categories (id, json_metadata) VALUES (?, ?)",
-            (category_location_id, json.dumps(combined_json_metadata))
+            "INSERT OR REPLACE INTO canonical_categories (category, location, json_metadata) VALUES (?, ?, ?)",
+            (canonical_category_id, f"{service_radius_cities[0].lower()}-{task_data['state'].lower()}", json.dumps(combined_json_metadata))
         )
         conn.commit()
-        logger.info(f"Task {task_id}: Updated canonical_categories for '{category_location_id}'.")
+        logger.info(f"Task {task_id}: Updated canonical_categories for '{db_category_location_id}'.")
 
         # Push to Firebase
         firebase_payload = {
-            "location": combined_json_metadata["location"],
-            "arbitrageData": combined_json_metadata
+            "data": {
+                "id": task_data['category'], # Corrected: only the category
+                "displayName": combined_json_metadata["displayName"],
+                "aliases": combined_json_metadata["aliases"],
+                "description": combined_json_metadata["description"],
+                "confidence": combined_json_metadata["confidence"],
+                "avgJobAmount": combined_json_metadata["avgJobAmount"],
+                "suggestedAt": combined_json_metadata["suggestedAt"],
+                "createdBy": combined_json_metadata["createdBy"],
+                "lastUpdated": combined_json_metadata["lastUpdated"],
+                "location": f"{service_radius_cities[0].lower()}-{task_data['state'].lower()}", # Corrected: city-state abbreviation
+                "arbitrageData": serp_data, # Direct assignment of serp_data
+                "serviceRadiusCities": combined_json_metadata["serviceRadiusCities"],
+                "cityClusters": combined_json_metadata["cityClusters"]
+            }
         }
         try:
-            logger.info(f"Task {task_id}: Pushing '{category_location_id}' to Firebase...")
+            logger.info(f"Task {task_id}: Pushing category '{task_data['category']}' to Firebase...")
             async with httpx.AsyncClient() as client:
                 response = await client.post(FIREBASE_ARBITRAGE_SYNC_URL, json=firebase_payload, timeout=30.0)
                 if response.is_success:
-                    logger.info(f"Task {task_id}: Successfully pushed '{category_location_id}' to Firebase.")
+                    logger.info(f"Task {task_id}: Successfully pushed category '{task_data['category']}' to Firebase.")
                 else:
-                    logger.warning(f"Task {task_id}: FAILED to push '{category_location_id}' to Firebase. Status: {response.status_code}, Body: {response.text}")
+                    logger.warning(f"Task {task_id}: FAILED to push category '{task_data['category']}' to Firebase. Status: {response.status_code}, Body: {response.text}")
                     logger.debug(f"Task {task_id}: Firebase response body: {response.text}")
         except httpx.RequestError as e:
-            logger.error(f"Task {task_id}: HTTPX error pushing '{category_location_id}' to Firebase: {e}")
+            logger.error(f"Task {task_id}: HTTPX error pushing '{db_category_location_id}' to Firebase: {e}")
         except Exception as e:
-            logger.error(f"Task {task_id}: Unexpected error pushing '{category_location_id}' to Firebase: {e}")
+            logger.error(f"Task {task_id}: Unexpected error pushing '{db_category_location_id}' to Firebase: {e}")
 
         # Update status to 'completed'
         cursor.execute("UPDATE surfer_prospector_queue SET status = 'completed' WHERE id = ?", (task_id,))

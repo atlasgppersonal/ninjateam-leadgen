@@ -236,30 +236,34 @@ async def _initialize_cache(master_db_path: str):
     try:
         with sqlite3.connect(master_db_path) as con:
             cur = con.cursor()
-            cur.execute("SELECT id, json_metadata FROM canonical_categories")
-            for row_id, json_data in cur.fetchall():
+            cur.execute("SELECT category, location, json_metadata FROM canonical_categories")
+            for category, location, json_data in cur.fetchall():
                 try:
                     metadata = json.loads(json_data)
                     # Explicitly check for essential fields. If any are missing, log and skip.
                     required_fields = ["id", "displayName", "aliases", "description", "examplePhrases", "confidence", "avgJobAmount"]
-                    if not all(field in metadata for field in required_fields):
-                        logger.error(f"Essential fields missing for ID: {row_id}. Required: {required_fields}. Found: {list(metadata.keys())}. Skipping entry.")
+                    # The 'id' field in metadata should correspond to the category
+                    if not all(field in metadata for field in required_fields) or metadata.get("id") != category:
+                        logger.error(f"Essential fields missing or 'id' mismatch for category '{category}', location '{location}'. Required: {required_fields}. Found: {list(metadata.keys())}. Skipping entry.")
                         continue
                     if not isinstance(metadata.get("aliases"), list):
-                        logger.error(f"'aliases' for ID: {row_id} is not a list. Skipping entry.")
+                        logger.error(f"'aliases' for category '{category}', location '{location}' is not a list. Skipping entry.")
                         continue
                     if not isinstance(metadata.get("examplePhrases"), list):
-                        logger.error(f"'examplePhrases' for ID: {row_id} is not a list. Skipping entry.")
+                        logger.error(f"'examplePhrases' for category '{category}', location '{location}' is not a list. Skipping entry.")
                         continue
                     
                     # Check if arbitrageData is present and not just a "queued" placeholder
                     if "arbitrageData" not in metadata or (isinstance(metadata["arbitrageData"], dict) and metadata["arbitrageData"].get("status") == "queued"):
-                        logger.debug(f"Arbitrage data for ID: {row_id} is missing or queued. Not adding to cache for 'up-to-date' check.")
+                        logger.debug(f"Arbitrage data for category '{category}', location '{location}' is missing or queued. Not adding to cache for 'up-to-date' check.")
                         continue
 
-                    _arbitrage_data_cache[row_id] = metadata
+                    # Add category and location to metadata for consistency
+                    metadata['category'] = category
+                    metadata['location'] = location
+                    _arbitrage_data_cache[f"{category}|{location}"] = metadata
                 except json.JSONDecodeError:
-                    logger.error(f"Error decoding JSON for ID: {row_id}. Skipping entry.")
+                    logger.error(f"Error decoding JSON for category '{category}', location '{location}'. Skipping entry.")
         logger.debug(f"Loaded {len(_arbitrage_data_cache)} entries into cache.")
         _cache_initialized = True
     except sqlite3.Error as e:
@@ -478,7 +482,7 @@ Here is the batch of leads to process: {batch_llm_input_json}
             logger.error(f"CRITICAL ERROR during batch LLM call (Attempt {retries + 1}/{MAX_LLM_RETRIES}): {e}") # Fixed NameError here
             if retries > MAX_LLM_RETRIES:
                 logger.error(f"Max LLM retries reached. LLM failed to assign a valid category after {MAX_LLM_RETRIES} attempts. Marking leads as 'error'.")
-                break
+                return [] # Return empty list on critical failure
     
     # Map LLM output back to leads and apply retry/error logic
     final_llm_output_map = {}
@@ -520,8 +524,10 @@ Here is the batch of leads to process: {batch_llm_input_json}
 
         # Validate categoryId against existing cache if it's not a new category
         if not llm_result.get("newCategory"): # If it's an existing category match
-            if canonical_category_id not in _arbitrage_data_cache:
-                logger.warning(f"Lead {post_id}: LLM returned existing category '{canonical_category_id}' not found in provided existingCategories. Marking for retry or setting to 'error'.")
+            # The cache key is now category|location
+            cache_key_for_lookup = f"{canonical_category_id}|{lead.get('city', '').lower().replace(' ', '-')}-{lead.get('state', '').lower()}"
+            if cache_key_for_lookup not in _arbitrage_data_cache:
+                logger.warning(f"Lead {post_id}: LLM returned existing category '{canonical_category_id}' for location '{lead.get('city')}-{lead.get('state')}' not found in provided existingCategories. Marking for retry or setting to 'error'.")
                 # This is where the retry logic would go. For now, setting to error as per fallback.
                 canonical_category_id = "error"
                 lead['category'] = "error"

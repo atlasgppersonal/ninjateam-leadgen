@@ -1,0 +1,1457 @@
+2025-11-01 09:37:50,735 - category_normalizer - INFO - Category Normalizer logging to C:\Users\Gio\Documents\Work\AGS-Site\Ninja-Team-Leadgen\category_normalizer.log
+2025-11-01 09:37:55,014 - category_normalizer - INFO - Starting normalization for batch of 1 leads.
+2025-11-01 09:37:55,016 - category_normalizer - DEBUG - Initializing in-memory cache from DB...
+2025-11-01 09:37:55,024 - category_normalizer - ERROR - Essential fields missing or 'id' mismatch for category 'moving-services', location 'portland-or'. Required: ['id', 'displayName', 'aliases', 'description', 'examplePhrases', 'confidence', 'avgJobAmount']. Found: ['id', 'displayName', 'aliases', 'description', 'confidence', 'avgJobAmount', 'suggestedAt', 'createdBy', 'lastUpdated', 'location', 'arbitrageData', 'serviceRadiusCities', 'cityClusters', 'short_term_strategy']. Skipping entry.
+2025-11-01 09:37:55,027 - category_normalizer - DEBUG - Loaded 0 entries into cache.
+2025-11-01 09:38:08,932 - category_normalizer - INFO - LLM batch output: [
+  {
+    "post_id": "7881623662",
+    "categoryId": null,
+    "matchedAlias": null,
+    "confidence": 0.9,
+    "newCategory": {
+      "id": "moving-services",
+      "displayName": "Moving Services",
+      "aliases": [
+        "movers",
+        "moving",
+        "long distance moving",
+        "local moving",
+        "labor only moving",
+        "junk removal",
+        "hauling",
+        "cleaning services"
+      ],
+      "description": "Provides residential and commercial moving services, including packing, loading, unloading, and junk removal. Also offers cleaning services.",
+      "examplePhrases": [
+        "moving services",
+        "local movers",
+        "long distance moving",
+        "junk removal",
+        "packing and unpacking",
+        "commercial moving",
+        "office moving"
+      ],
+      "parent": null,
+      "confidence": 0.9,
+      "avgJobAmount": 800
+    },
+    "serviceRadiusCities": [
+      "Portland",
+      "Vancouver",
+      "Gresham",
+      "Hillsboro",
+      "Beaverton",
+      "Happy Valley",
+      "Lake Oswego",
+      "Oregon City",
+      "Milwaukie",
+      "Tigard",
+      "Troutdale",
+      "Fairview",
+      "Wood Village",
+      "Clackamas",
+      "Wilsonville",
+      "Sherwood",
+      "Canby",
+      "Forest Grove",
+      "Cornelius",
+      "Banks",
+      "North Plains",
+      "Gaston",
+      "St. Helens",
+      "Scappoose",
+      "Columbia City",
+      "Rainier",
+      "Vernonia",
+      "Estacada",
+      "Sandy",
+      "Welches",
+      "Government Camp",
+      "Brightwood",
+      "Rhododendron",
+      "Zigzag",
+      "Mount Hood Village",
+      "Parkdale",
+      "Hood River",
+      "The Dalles",
+      "White Salmon",
+      "Bingen",
+      "Stevenson",
+      "Carson",
+      "North Bonneville",
+      "Skamania",
+      "Underwood",
+      "Lyle",
+      "Goldendale",
+      "Klickitat",
+      "Wishram",
+      "Dufur",
+      "Maupin"
+    ]
+  }
+]
+2025-11-01 09:38:08,969 - category_normalizer - INFO - Lead 7881623662: New category suggested: 'moving-services'
+2025-11-01 09:38:08,971 - category_normalizer - DEBUG - LLM Input for generate_city_specific_keywords (Attempt 1):
+
+You are a professional SEO keyword researcher. Your task is to generate exactly 10 high-quality, short-tail SEO keywords for each city in the batch for a given category. These keywords MUST be highly relevant and represent what a human would search for with the highest probability for services related to 'moving-services' in that specific city.
+
+CRITICAL INSTRUCTIONS - READ CAREFULLY:
+1. You MUST return ONLY a valid JSON object.
+2. You MUST include ALL requested cities as keys in the JSON object.
+3. Each city MUST have an array called "keywords" containing exactly 10 keyword strings.
+4. ALL keywords MUST be short-tail (1-2 words) and mid-tail (2-4 words) only.
+5. NO long phrases, questions, or conversational language.
+6. ALL keywords MUST explicitly include the city name (e.g., "moving Portland", "best movers Portland"). Do NOT generate keywords without the city name.
+7. AVOID generic terms that don't clearly link the service to the city.
+8. AVOID keywords that are not directly related to the service or are too broad.
+9. Consider the nature of the business (service vs. non-service) and return the most logical search terms.
+10. If the 'existingCategories' list provided in the input is an empty array, you MUST consider this category as a new category and you MUST set the "newCategory" field, and set "categoryId" to null.
+
+VERIFICATION CHECKLIST - CONFIRM BEFORE RESPONDING:
+- [ ] Response is a valid JSON object (not array, not string).
+- [ ] Each city key exists and has an array called "keywords".
+- [ ] "keywords" array contains exactly 10 keyword strings.
+- [ ] All keywords are 1-4 words maximum.
+- [ ] No keywords contain questions or long phrases.
+- [ ] ALL keywords MUST follow the format: "service city" or "adjective service city".
+- [ ] ALL keywords MUST be highly relevant to the category and city.
+
+EXPECTED JSON FORMAT:
+{
+  "Portland": {
+    "keywords": [
+      "moving-services portland",
+      "best moving-services portland",
+      "local moving-services portland",
+      "moving service portland",
+      "24 hour moving-services portland",
+      "top rated moving-services portland",
+      "affordable moving-services portland",
+      "residential moving-services portland",
+      "commercial moving-services portland",
+      "long distance moving-services portland"
+    ]
+  },
+  "Beaverton": {
+    "keywords": [
+      "moving-services beaverton",
+      "best moving-services beaverton",
+      "local moving-services beaverton",
+      "moving service beaverton",
+      "24 hour moving-services beaverton",
+      "24 hour moving-services beaverton",
+      "top rated moving-services beaverton",
+      "affordable moving-services beaverton",
+      "residential moving-services beaverton",
+      "commercial moving-services beaverton",
+      "long distance moving-services beaverton"
+    ]
+  }
+}
+
+Cities to process: Portland, Vancouver, Gresham, Hillsboro, Beaverton, Happy Valley, Lake Oswego, Oregon City, Milwaukie, Tigard, Troutdale, Fairview, Wood Village, Clackamas, Wilsonville, Sherwood, Canby, Forest Grove, Cornelius, Banks, North Plains, Gaston, St. Helens, Scappoose, Columbia City, Rainier
+
+Return ONLY the JSON object. No explanations, no markdown, no additional text.
+
+2025-11-01 09:38:20,993 - category_normalizer - DEBUG - LLM Raw Output for generate_city_specific_keywords (Attempt 1):
+```json
+{
+  "Portland": {
+    "keywords": [
+      "movers Portland",
+      "moving company Portland",
+      "local movers Portland",
+      "best movers Portland",
+      "cheap movers Portland",
+      "Portland moving services",
+      "residential movers Portland",
+      "commercial movers Portland",
+      "long distance movers Portland",
+      "furniture movers Portland"
+    ]
+  },
+  "Vancouver": {
+    "keywords": [
+      "movers Vancouver",
+      "moving company Vancouver",
+      "local movers Vancouver",
+      "best movers Vancouver",
+      "cheap movers Vancouver",
+      "Vancouver moving services",
+      "residential movers Vancouver",
+      "commercial movers Vancouver",
+      "long distance movers Vancouver",
+      "furniture movers Vancouver"
+    ]
+  },
+  "Gresham": {
+    "keywords": [
+      "movers Gresham",
+      "moving company Gresham",
+      "local movers Gresham",
+      "best movers Gresham",
+      "cheap movers Gresham",
+      "Gresham moving services",
+      "residential movers Gresham",
+      "commercial movers Gresham",
+      "long distance movers Gresham",
+      "furniture movers Gresham"
+    ]
+  },
+  "Hillsboro": {
+    "keywords": [
+      "movers Hillsboro",
+      "moving company Hillsboro",
+      "local movers Hillsboro",
+      "best movers Hillsboro",
+      "cheap movers Hillsboro",
+      "Hillsboro moving services",
+      "residential movers Hillsboro",
+      "commercial movers Hillsboro",
+      "long distance movers Hillsboro",
+      "furniture movers Hillsboro"
+    ]
+  },
+  "Beaverton": {
+    "keywords": [
+      "movers Beaverton",
+      "moving company Beaverton",
+      "local movers Beaverton",
+      "best movers Beaverton",
+      "cheap movers Beaverton",
+      "Beaverton moving services",
+      "residential movers Beaverton",
+      "commercial movers Beaverton",
+      "long distance movers Beaverton",
+      "furniture movers Beaverton"
+    ]
+  },
+  "Happy Valley": {
+    "keywords": [
+      "movers Happy Valley",
+      "moving company Happy Valley",
+      "local movers Happy Valley",
+      "best movers Happy Valley",
+      "cheap movers Happy Valley",
+      "Happy Valley moving services",
+      "residential movers Happy Valley",
+      "commercial movers Happy Valley",
+      "long distance movers Happy Valley",
+      "furniture movers Happy Valley"
+    ]
+  },
+  "Lake Oswego": {
+    "keywords": [
+      "movers Lake Oswego",
+      "moving company Lake Oswego",
+      "local movers Lake Oswego",
+      "best movers Lake Oswego",
+      "cheap movers Lake Oswego",
+      "Lake Oswego moving services",
+      "residential movers Lake Oswego",
+      "commercial movers Lake Oswego",
+      "long distance movers Lake Oswego",
+      "furniture movers Lake Oswego"
+    ]
+  },
+  "Oregon City": {
+    "keywords": [
+      "movers Oregon City",
+      "moving company Oregon City",
+      "local movers Oregon City",
+      "best movers Oregon City",
+      "cheap movers Oregon City",
+      "Oregon City moving services",
+      "residential movers Oregon City",
+      "commercial movers Oregon City",
+      "long distance movers Oregon City",
+      "furniture movers Oregon City"
+    ]
+  },
+  "Milwaukie": {
+    "keywords": [
+      "movers Milwaukie",
+      "moving company Milwaukie",
+      "local movers Milwaukie",
+      "best movers Milwaukie",
+      "cheap movers Milwaukie",
+      "Milwaukie moving services",
+      "residential movers Milwaukie",
+      "commercial movers Milwaukie",
+      "long distance movers Milwaukie",
+      "furniture movers Milwaukie"
+    ]
+  },
+  "Tigard": {
+    "keywords": [
+      "movers Tigard",
+      "moving company Tigard",
+      "local movers Tigard",
+      "best movers Tigard",
+      "cheap movers Tigard",
+      "Tigard moving services",
+      "residential movers Tigard",
+      "commercial movers Tigard",
+      "long distance movers Tigard",
+      "furniture movers Tigard"
+    ]
+  },
+  "Troutdale": {
+    "keywords": [
+      "movers Troutdale",
+      "moving company Troutdale",
+      "local movers Troutdale",
+      "best movers Troutdale",
+      "cheap movers Troutdale",
+      "Troutdale moving services",
+      "residential movers Troutdale",
+      "commercial movers Troutdale",
+      "long distance movers Troutdale",
+      "furniture movers Troutdale"
+    ]
+  },
+  "Fairview": {
+    "keywords": [
+      "movers Fairview",
+      "moving company Fairview",
+      "local movers Fairview",
+      "best movers Fairview",
+      "cheap movers Fairview",
+      "Fairview moving services",
+      "residential movers Fairview",
+      "commercial movers Fairview",
+      "long distance movers Fairview",
+      "furniture movers Fairview"
+    ]
+  },
+  "Wood Village": {
+    "keywords": [
+      "movers Wood Village",
+      "moving company Wood Village",
+      "local movers Wood Village",
+      "best movers Wood Village",
+      "cheap movers Wood Village",
+      "Wood Village moving services",
+      "residential movers Wood Village",
+      "commercial movers Wood Village",
+      "long distance movers Wood Village",
+      "furniture movers Wood Village"
+    ]
+  },
+  "Clackamas": {
+    "keywords": [
+      "movers Clackamas",
+      "moving company Clackamas",
+      "local movers Clackamas",
+      "best movers Clackamas",
+      "cheap movers Clackamas",
+      "Clackamas moving services",
+      "residential movers Clackamas",
+      "commercial movers Clackamas",
+      "long distance movers Clackamas",
+      "furniture movers Clackamas"
+    ]
+  },
+  "Wilsonville": {
+    "keywords": [
+      "movers Wilsonville",
+      "moving company Wilsonville",
+      "local movers Wilsonville",
+      "best movers Wilsonville",
+      "cheap movers Wilsonville",
+      "Wilsonville moving services",
+      "residential movers Wilsonville",
+      "commercial movers Wilsonville",
+      "long distance movers Wilsonville",
+      "furniture movers Wilsonville"
+    ]
+  },
+  "Sherwood": {
+    "keywords": [
+      "movers Sherwood",
+      "moving company Sherwood",
+      "local movers Sherwood",
+      "best movers Sherwood",
+      "cheap movers Sherwood",
+      "Sherwood moving services",
+      "residential movers Sherwood",
+      "commercial movers Sherwood",
+      "long distance movers Sherwood",
+      "furniture movers Sherwood"
+    ]
+  },
+  "Canby": {
+    "keywords": [
+      "movers Canby",
+      "moving company Canby",
+      "local movers Canby",
+      "best movers Canby",
+      "cheap movers Canby",
+      "Canby moving services",
+      "residential movers Canby",
+      "commercial movers Canby",
+      "long distance movers Canby",
+      "furniture movers Canby"
+    ]
+  },
+  "Forest Grove": {
+    "keywords": [
+      "movers Forest Grove",
+      "moving company Forest Grove",
+      "local movers Forest Grove",
+      "best movers Forest Grove",
+      "cheap movers Forest Grove",
+      "Forest Grove moving services",
+      "residential movers Forest Grove",
+      "commercial movers Forest Grove",
+      "long distance movers Forest Grove",
+      "furniture movers Forest Grove"
+    ]
+  },
+  "Cornelius": {
+    "keywords": [
+      "movers Cornelius",
+      "moving company Cornelius",
+      "local movers Cornelius",
+      "best movers Cornelius",
+      "cheap movers Cornelius",
+      "Cornelius moving services",
+      "residential movers Cornelius",
+      "commercial movers Cornelius",
+      "long distance movers Cornelius",
+      "furniture movers Cornelius"
+    ]
+  },
+  "Banks": {
+    "keywords": [
+      "movers Banks",
+      "moving company Banks",
+      "local movers Banks",
+      "best movers Banks",
+      "cheap movers Banks",
+      "Banks moving services",
+      "residential movers Banks",
+      "commercial movers Banks",
+      "long distance movers Banks",
+      "furniture movers Banks"
+    ]
+  },
+  "North Plains": {
+    "keywords": [
+      "movers North Plains",
+      "moving company North Plains",
+      "local movers North Plains",
+      "best movers North Plains",
+      "cheap movers North Plains",
+      "North Plains moving services",
+      "residential movers North Plains",
+      "commercial movers North Plains",
+      "long distance movers North Plains",
+      "furniture movers North Plains"
+    ]
+  },
+  "Gaston": {
+    "keywords": [
+      "movers Gaston",
+      "moving company Gaston",
+      "local movers Gaston",
+      "best movers Gaston",
+      "cheap movers Gaston",
+      "Gaston moving services",
+      "residential movers Gaston",
+      "commercial movers Gaston",
+      "long distance movers Gaston",
+      "furniture movers Gaston"
+    ]
+  },
+  "St. Helens": {
+    "keywords": [
+      "movers St. Helens",
+      "moving company St. Helens",
+      "local movers St. Helens",
+      "best movers St. Helens",
+      "cheap movers St. Helens",
+      "St. Helens moving services",
+      "residential movers St. Helens",
+      "commercial movers St. Helens",
+      "long distance movers St. Helens",
+      "furniture movers St. Helens"
+    ]
+  },
+  "Scappoose": {
+    "keywords": [
+      "movers Scappoose",
+      "moving company Scappoose",
+      "local movers Scappoose",
+      "best movers Scappoose",
+      "cheap movers Scappoose",
+      "Scappoose moving services",
+      "residential movers Scappoose",
+      "commercial movers Scappoose",
+      "long distance movers Scappoose",
+      "furniture movers Scappoose"
+    ]
+  },
+  "Columbia City": {
+    "keywords": [
+      "movers Columbia City",
+      "moving company Columbia City",
+      "local movers Columbia City",
+      "best movers Columbia City",
+      "cheap movers Columbia City",
+      "Columbia City moving services",
+      "residential movers Columbia City",
+      "commercial movers Columbia City",
+      "long distance movers Columbia City",
+      "furniture movers Columbia City"
+    ]
+  },
+  "Rainier": {
+    "keywords": [
+      "movers Rainier",
+      "moving company Rainier",
+      "local movers Rainier",
+      "best movers Rainier",
+      "cheap movers Rainier",
+      "Rainier moving services",
+      "residential movers Rainier",
+      "commercial movers Rainier",
+      "long distance movers Rainier",
+      "furniture movers Rainier"
+    ]
+  }
+}
+```
+2025-11-01 09:38:20,995 - category_normalizer - DEBUG - Successfully generated keywords for batch of 26 cities.
+2025-11-01 09:38:20,995 - category_normalizer - DEBUG - Normalized LLM keyword: 'movers Portland' -> 'movers portland'
+2025-11-01 09:38:20,996 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Portland' -> 'moving company portland'
+2025-11-01 09:38:20,997 - category_normalizer - DEBUG - Normalized LLM keyword: 'local movers Portland' -> 'local movers portland'
+2025-11-01 09:38:20,997 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Portland' -> 'best movers portland'
+2025-11-01 09:38:20,998 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Portland' -> 'cheap movers portland'
+2025-11-01 09:38:20,998 - category_normalizer - DEBUG - Normalized LLM keyword: 'Portland moving services' -> 'portland moving services'
+2025-11-01 09:38:20,999 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential movers Portland' -> 'residential movers portland'
+2025-11-01 09:38:20,999 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial movers Portland' -> 'commercial movers portland'
+2025-11-01 09:38:21,000 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance movers Portland' -> 'long distance movers portland'
+2025-11-01 09:38:21,000 - category_normalizer - DEBUG - Normalized LLM keyword: 'furniture movers Portland' -> 'furniture movers portland'
+2025-11-01 09:38:21,000 - category_normalizer - DEBUG - Normalized LLM keyword: 'movers Vancouver' -> 'movers vancouver'
+2025-11-01 09:38:21,000 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Vancouver' -> 'moving company vancouver'
+2025-11-01 09:38:21,001 - category_normalizer - DEBUG - Normalized LLM keyword: 'local movers Vancouver' -> 'local movers vancouver'
+2025-11-01 09:38:21,001 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Vancouver' -> 'best movers vancouver'
+2025-11-01 09:38:21,001 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Vancouver' -> 'cheap movers vancouver'
+2025-11-01 09:38:21,001 - category_normalizer - DEBUG - Normalized LLM keyword: 'Vancouver moving services' -> 'vancouver moving services'
+2025-11-01 09:38:21,002 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential movers Vancouver' -> 'residential movers vancouver'
+2025-11-01 09:38:21,002 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial movers Vancouver' -> 'commercial movers vancouver'
+2025-11-01 09:38:21,002 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance movers Vancouver' -> 'long distance movers vancouver'
+2025-11-01 09:38:21,002 - category_normalizer - DEBUG - Normalized LLM keyword: 'furniture movers Vancouver' -> 'furniture movers vancouver'
+2025-11-01 09:38:21,003 - category_normalizer - DEBUG - Normalized LLM keyword: 'movers Gresham' -> 'movers gresham'
+2025-11-01 09:38:21,003 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Gresham' -> 'moving company gresham'
+2025-11-01 09:38:21,003 - category_normalizer - DEBUG - Normalized LLM keyword: 'local movers Gresham' -> 'local movers gresham'
+2025-11-01 09:38:21,003 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Gresham' -> 'best movers gresham'
+2025-11-01 09:38:21,004 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Gresham' -> 'cheap movers gresham'
+2025-11-01 09:38:21,004 - category_normalizer - DEBUG - Normalized LLM keyword: 'Gresham moving services' -> 'gresham moving services'
+2025-11-01 09:38:21,004 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential movers Gresham' -> 'residential movers gresham'
+2025-11-01 09:38:21,004 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial movers Gresham' -> 'commercial movers gresham'
+2025-11-01 09:38:21,005 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance movers Gresham' -> 'long distance movers gresham'
+2025-11-01 09:38:21,005 - category_normalizer - DEBUG - Normalized LLM keyword: 'furniture movers Gresham' -> 'furniture movers gresham'
+2025-11-01 09:38:21,005 - category_normalizer - DEBUG - Normalized LLM keyword: 'movers Hillsboro' -> 'movers hillsboro'
+2025-11-01 09:38:21,005 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Hillsboro' -> 'moving company hillsboro'
+2025-11-01 09:38:21,005 - category_normalizer - DEBUG - Normalized LLM keyword: 'local movers Hillsboro' -> 'local movers hillsboro'
+2025-11-01 09:38:21,006 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Hillsboro' -> 'best movers hillsboro'
+2025-11-01 09:38:21,006 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Hillsboro' -> 'cheap movers hillsboro'
+2025-11-01 09:38:21,006 - category_normalizer - DEBUG - Normalized LLM keyword: 'Hillsboro moving services' -> 'hillsboro moving services'
+2025-11-01 09:38:21,006 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential movers Hillsboro' -> 'residential movers hillsboro'
+2025-11-01 09:38:21,006 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial movers Hillsboro' -> 'commercial movers hillsboro'
+2025-11-01 09:38:21,007 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance movers Hillsboro' -> 'long distance movers hillsboro'
+2025-11-01 09:38:21,007 - category_normalizer - DEBUG - Normalized LLM keyword: 'furniture movers Hillsboro' -> 'furniture movers hillsboro'
+2025-11-01 09:38:21,007 - category_normalizer - DEBUG - Normalized LLM keyword: 'movers Beaverton' -> 'movers beaverton'
+2025-11-01 09:38:21,007 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Beaverton' -> 'moving company beaverton'
+2025-11-01 09:38:21,007 - category_normalizer - DEBUG - Normalized LLM keyword: 'local movers Beaverton' -> 'local movers beaverton'
+2025-11-01 09:38:21,007 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Beaverton' -> 'best movers beaverton'
+2025-11-01 09:38:21,008 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Beaverton' -> 'cheap movers beaverton'
+2025-11-01 09:38:21,008 - category_normalizer - DEBUG - Normalized LLM keyword: 'Beaverton moving services' -> 'beaverton moving services'
+2025-11-01 09:38:21,008 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential movers Beaverton' -> 'residential movers beaverton'
+2025-11-01 09:38:21,009 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial movers Beaverton' -> 'commercial movers beaverton'
+2025-11-01 09:38:21,009 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance movers Beaverton' -> 'long distance movers beaverton'
+2025-11-01 09:38:21,009 - category_normalizer - DEBUG - Normalized LLM keyword: 'furniture movers Beaverton' -> 'furniture movers beaverton'
+2025-11-01 09:38:21,010 - category_normalizer - DEBUG - Normalized LLM keyword: 'movers Happy Valley' -> 'movers happy valley'
+2025-11-01 09:38:21,010 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Happy Valley' -> 'moving company happy valley'
+2025-11-01 09:38:21,010 - category_normalizer - DEBUG - Normalized LLM keyword: 'local movers Happy Valley' -> 'local movers happy valley'
+2025-11-01 09:38:21,010 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Happy Valley' -> 'best movers happy valley'
+2025-11-01 09:38:21,010 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Happy Valley' -> 'cheap movers happy valley'
+2025-11-01 09:38:21,010 - category_normalizer - DEBUG - Normalized LLM keyword: 'Happy Valley moving services' -> 'happy valley moving services'
+2025-11-01 09:38:21,010 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential movers Happy Valley' -> 'residential movers happy valley'
+2025-11-01 09:38:21,011 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial movers Happy Valley' -> 'commercial movers happy valley'
+2025-11-01 09:38:21,011 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance movers Happy Valley' -> 'long distance movers happy valley'
+2025-11-01 09:38:21,011 - category_normalizer - DEBUG - Normalized LLM keyword: 'furniture movers Happy Valley' -> 'furniture movers happy valley'
+2025-11-01 09:38:21,011 - category_normalizer - DEBUG - Normalized LLM keyword: 'movers Lake Oswego' -> 'movers lake oswego'
+2025-11-01 09:38:21,011 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Lake Oswego' -> 'moving company lake oswego'
+2025-11-01 09:38:21,011 - category_normalizer - DEBUG - Normalized LLM keyword: 'local movers Lake Oswego' -> 'local movers lake oswego'
+2025-11-01 09:38:21,012 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Lake Oswego' -> 'best movers lake oswego'
+2025-11-01 09:38:21,012 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Lake Oswego' -> 'cheap movers lake oswego'
+2025-11-01 09:38:21,012 - category_normalizer - DEBUG - Normalized LLM keyword: 'Lake Oswego moving services' -> 'lake oswego moving services'
+2025-11-01 09:38:21,012 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential movers Lake Oswego' -> 'residential movers lake oswego'
+2025-11-01 09:38:21,012 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial movers Lake Oswego' -> 'commercial movers lake oswego'
+2025-11-01 09:38:21,012 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance movers Lake Oswego' -> 'long distance movers lake oswego'
+2025-11-01 09:38:21,012 - category_normalizer - DEBUG - Normalized LLM keyword: 'furniture movers Lake Oswego' -> 'furniture movers lake oswego'
+2025-11-01 09:38:21,012 - category_normalizer - DEBUG - Normalized LLM keyword: 'movers Oregon City' -> 'movers oregon city'
+2025-11-01 09:38:21,013 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Oregon City' -> 'moving company oregon city'
+2025-11-01 09:38:21,013 - category_normalizer - DEBUG - Normalized LLM keyword: 'local movers Oregon City' -> 'local movers oregon city'
+2025-11-01 09:38:21,013 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Oregon City' -> 'best movers oregon city'
+2025-11-01 09:38:21,013 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Oregon City' -> 'cheap movers oregon city'
+2025-11-01 09:38:21,013 - category_normalizer - DEBUG - Normalized LLM keyword: 'Oregon City moving services' -> 'oregon city moving services'
+2025-11-01 09:38:21,013 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential movers Oregon City' -> 'residential movers oregon city'
+2025-11-01 09:38:21,013 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial movers Oregon City' -> 'commercial movers oregon city'
+2025-11-01 09:38:21,014 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance movers Oregon City' -> 'long distance movers oregon city'
+2025-11-01 09:38:21,014 - category_normalizer - DEBUG - Normalized LLM keyword: 'furniture movers Oregon City' -> 'furniture movers oregon city'
+2025-11-01 09:38:21,014 - category_normalizer - DEBUG - Normalized LLM keyword: 'movers Milwaukie' -> 'movers milwaukie'
+2025-11-01 09:38:21,014 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Milwaukie' -> 'moving company milwaukie'
+2025-11-01 09:38:21,014 - category_normalizer - DEBUG - Normalized LLM keyword: 'local movers Milwaukie' -> 'local movers milwaukie'
+2025-11-01 09:38:21,014 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Milwaukie' -> 'best movers milwaukie'
+2025-11-01 09:38:21,015 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Milwaukie' -> 'cheap movers milwaukie'
+2025-11-01 09:38:21,015 - category_normalizer - DEBUG - Normalized LLM keyword: 'Milwaukie moving services' -> 'milwaukie moving services'
+2025-11-01 09:38:21,015 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential movers Milwaukie' -> 'residential movers milwaukie'
+2025-11-01 09:38:21,015 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial movers Milwaukie' -> 'commercial movers milwaukie'
+2025-11-01 09:38:21,015 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance movers Milwaukie' -> 'long distance movers milwaukie'
+2025-11-01 09:38:21,015 - category_normalizer - DEBUG - Normalized LLM keyword: 'furniture movers Milwaukie' -> 'furniture movers milwaukie'
+2025-11-01 09:38:21,015 - category_normalizer - DEBUG - Normalized LLM keyword: 'movers Tigard' -> 'movers tigard'
+2025-11-01 09:38:21,015 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Tigard' -> 'moving company tigard'
+2025-11-01 09:38:21,016 - category_normalizer - DEBUG - Normalized LLM keyword: 'local movers Tigard' -> 'local movers tigard'
+2025-11-01 09:38:21,016 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Tigard' -> 'best movers tigard'
+2025-11-01 09:38:21,016 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Tigard' -> 'cheap movers tigard'
+2025-11-01 09:38:21,016 - category_normalizer - DEBUG - Normalized LLM keyword: 'Tigard moving services' -> 'tigard moving services'
+2025-11-01 09:38:21,016 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential movers Tigard' -> 'residential movers tigard'
+2025-11-01 09:38:21,016 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial movers Tigard' -> 'commercial movers tigard'
+2025-11-01 09:38:21,016 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance movers Tigard' -> 'long distance movers tigard'
+2025-11-01 09:38:21,017 - category_normalizer - DEBUG - Normalized LLM keyword: 'furniture movers Tigard' -> 'furniture movers tigard'
+2025-11-01 09:38:21,017 - category_normalizer - DEBUG - Normalized LLM keyword: 'movers Troutdale' -> 'movers troutdale'
+2025-11-01 09:38:21,017 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Troutdale' -> 'moving company troutdale'
+2025-11-01 09:38:21,017 - category_normalizer - DEBUG - Normalized LLM keyword: 'local movers Troutdale' -> 'local movers troutdale'
+2025-11-01 09:38:21,017 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Troutdale' -> 'best movers troutdale'
+2025-11-01 09:38:21,017 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Troutdale' -> 'cheap movers troutdale'
+2025-11-01 09:38:21,017 - category_normalizer - DEBUG - Normalized LLM keyword: 'Troutdale moving services' -> 'troutdale moving services'
+2025-11-01 09:38:21,017 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential movers Troutdale' -> 'residential movers troutdale'
+2025-11-01 09:38:21,018 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial movers Troutdale' -> 'commercial movers troutdale'
+2025-11-01 09:38:21,018 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance movers Troutdale' -> 'long distance movers troutdale'
+2025-11-01 09:38:21,018 - category_normalizer - DEBUG - Normalized LLM keyword: 'furniture movers Troutdale' -> 'furniture movers troutdale'
+2025-11-01 09:38:21,018 - category_normalizer - DEBUG - Normalized LLM keyword: 'movers Fairview' -> 'movers fairview'
+2025-11-01 09:38:21,018 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Fairview' -> 'moving company fairview'
+2025-11-01 09:38:21,018 - category_normalizer - DEBUG - Normalized LLM keyword: 'local movers Fairview' -> 'local movers fairview'
+2025-11-01 09:38:21,018 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Fairview' -> 'best movers fairview'
+2025-11-01 09:38:21,018 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Fairview' -> 'cheap movers fairview'
+2025-11-01 09:38:21,019 - category_normalizer - DEBUG - Normalized LLM keyword: 'Fairview moving services' -> 'fairview moving services'
+2025-11-01 09:38:21,019 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential movers Fairview' -> 'residential movers fairview'
+2025-11-01 09:38:21,019 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial movers Fairview' -> 'commercial movers fairview'
+2025-11-01 09:38:21,019 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance movers Fairview' -> 'long distance movers fairview'
+2025-11-01 09:38:21,019 - category_normalizer - DEBUG - Normalized LLM keyword: 'furniture movers Fairview' -> 'furniture movers fairview'
+2025-11-01 09:38:21,019 - category_normalizer - DEBUG - Normalized LLM keyword: 'movers Wood Village' -> 'movers wood village'
+2025-11-01 09:38:21,019 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Wood Village' -> 'moving company wood village'
+2025-11-01 09:38:21,019 - category_normalizer - DEBUG - Normalized LLM keyword: 'local movers Wood Village' -> 'local movers wood village'
+2025-11-01 09:38:21,020 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Wood Village' -> 'best movers wood village'
+2025-11-01 09:38:21,020 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Wood Village' -> 'cheap movers wood village'
+2025-11-01 09:38:21,020 - category_normalizer - DEBUG - Normalized LLM keyword: 'Wood Village moving services' -> 'wood village moving services'
+2025-11-01 09:38:21,020 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential movers Wood Village' -> 'residential movers wood village'
+2025-11-01 09:38:21,020 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial movers Wood Village' -> 'commercial movers wood village'
+2025-11-01 09:38:21,020 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance movers Wood Village' -> 'long distance movers wood village'
+2025-11-01 09:38:21,020 - category_normalizer - DEBUG - Normalized LLM keyword: 'furniture movers Wood Village' -> 'furniture movers wood village'
+2025-11-01 09:38:21,020 - category_normalizer - DEBUG - Normalized LLM keyword: 'movers Clackamas' -> 'movers clackamas'
+2025-11-01 09:38:21,021 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Clackamas' -> 'moving company clackamas'
+2025-11-01 09:38:21,021 - category_normalizer - DEBUG - Normalized LLM keyword: 'local movers Clackamas' -> 'local movers clackamas'
+2025-11-01 09:38:21,021 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Clackamas' -> 'best movers clackamas'
+2025-11-01 09:38:21,021 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Clackamas' -> 'cheap movers clackamas'
+2025-11-01 09:38:21,021 - category_normalizer - DEBUG - Normalized LLM keyword: 'Clackamas moving services' -> 'clackamas moving services'
+2025-11-01 09:38:21,021 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential movers Clackamas' -> 'residential movers clackamas'
+2025-11-01 09:38:21,021 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial movers Clackamas' -> 'commercial movers clackamas'
+2025-11-01 09:38:21,021 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance movers Clackamas' -> 'long distance movers clackamas'
+2025-11-01 09:38:21,021 - category_normalizer - DEBUG - Normalized LLM keyword: 'furniture movers Clackamas' -> 'furniture movers clackamas'
+2025-11-01 09:38:21,022 - category_normalizer - DEBUG - Normalized LLM keyword: 'movers Wilsonville' -> 'movers wilsonville'
+2025-11-01 09:38:21,022 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Wilsonville' -> 'moving company wilsonville'
+2025-11-01 09:38:21,022 - category_normalizer - DEBUG - Normalized LLM keyword: 'local movers Wilsonville' -> 'local movers wilsonville'
+2025-11-01 09:38:21,022 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Wilsonville' -> 'best movers wilsonville'
+2025-11-01 09:38:21,022 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Wilsonville' -> 'cheap movers wilsonville'
+2025-11-01 09:38:21,022 - category_normalizer - DEBUG - Normalized LLM keyword: 'Wilsonville moving services' -> 'wilsonville moving services'
+2025-11-01 09:38:21,022 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential movers Wilsonville' -> 'residential movers wilsonville'
+2025-11-01 09:38:21,022 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial movers Wilsonville' -> 'commercial movers wilsonville'
+2025-11-01 09:38:21,022 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance movers Wilsonville' -> 'long distance movers wilsonville'
+2025-11-01 09:38:21,023 - category_normalizer - DEBUG - Normalized LLM keyword: 'furniture movers Wilsonville' -> 'furniture movers wilsonville'
+2025-11-01 09:38:21,023 - category_normalizer - DEBUG - Normalized LLM keyword: 'movers Sherwood' -> 'movers sherwood'
+2025-11-01 09:38:21,023 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Sherwood' -> 'moving company sherwood'
+2025-11-01 09:38:21,023 - category_normalizer - DEBUG - Normalized LLM keyword: 'local movers Sherwood' -> 'local movers sherwood'
+2025-11-01 09:38:21,023 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Sherwood' -> 'best movers sherwood'
+2025-11-01 09:38:21,023 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Sherwood' -> 'cheap movers sherwood'
+2025-11-01 09:38:21,023 - category_normalizer - DEBUG - Normalized LLM keyword: 'Sherwood moving services' -> 'sherwood moving services'
+2025-11-01 09:38:21,023 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential movers Sherwood' -> 'residential movers sherwood'
+2025-11-01 09:38:21,024 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial movers Sherwood' -> 'commercial movers sherwood'
+2025-11-01 09:38:21,024 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance movers Sherwood' -> 'long distance movers sherwood'
+2025-11-01 09:38:21,024 - category_normalizer - DEBUG - Normalized LLM keyword: 'furniture movers Sherwood' -> 'furniture movers sherwood'
+2025-11-01 09:38:21,024 - category_normalizer - DEBUG - Normalized LLM keyword: 'movers Canby' -> 'movers canby'
+2025-11-01 09:38:21,024 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Canby' -> 'moving company canby'
+2025-11-01 09:38:21,024 - category_normalizer - DEBUG - Normalized LLM keyword: 'local movers Canby' -> 'local movers canby'
+2025-11-01 09:38:21,024 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Canby' -> 'best movers canby'
+2025-11-01 09:38:21,024 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Canby' -> 'cheap movers canby'
+2025-11-01 09:38:21,025 - category_normalizer - DEBUG - Normalized LLM keyword: 'Canby moving services' -> 'canby moving services'
+2025-11-01 09:38:21,025 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential movers Canby' -> 'residential movers canby'
+2025-11-01 09:38:21,025 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial movers Canby' -> 'commercial movers canby'
+2025-11-01 09:38:21,025 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance movers Canby' -> 'long distance movers canby'
+2025-11-01 09:38:21,025 - category_normalizer - DEBUG - Normalized LLM keyword: 'furniture movers Canby' -> 'furniture movers canby'
+2025-11-01 09:38:21,025 - category_normalizer - DEBUG - Normalized LLM keyword: 'movers Forest Grove' -> 'movers forest grove'
+2025-11-01 09:38:21,025 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Forest Grove' -> 'moving company forest grove'
+2025-11-01 09:38:21,025 - category_normalizer - DEBUG - Normalized LLM keyword: 'local movers Forest Grove' -> 'local movers forest grove'
+2025-11-01 09:38:21,026 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Forest Grove' -> 'best movers forest grove'
+2025-11-01 09:38:21,026 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Forest Grove' -> 'cheap movers forest grove'
+2025-11-01 09:38:21,026 - category_normalizer - DEBUG - Normalized LLM keyword: 'Forest Grove moving services' -> 'forest grove moving services'
+2025-11-01 09:38:21,026 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential movers Forest Grove' -> 'residential movers forest grove'
+2025-11-01 09:38:21,026 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial movers Forest Grove' -> 'commercial movers forest grove'
+2025-11-01 09:38:21,026 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance movers Forest Grove' -> 'long distance movers forest grove'
+2025-11-01 09:38:21,026 - category_normalizer - DEBUG - Normalized LLM keyword: 'furniture movers Forest Grove' -> 'furniture movers forest grove'
+2025-11-01 09:38:21,026 - category_normalizer - DEBUG - Normalized LLM keyword: 'movers Cornelius' -> 'movers cornelius'
+2025-11-01 09:38:21,026 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Cornelius' -> 'moving company cornelius'
+2025-11-01 09:38:21,027 - category_normalizer - DEBUG - Normalized LLM keyword: 'local movers Cornelius' -> 'local movers cornelius'
+2025-11-01 09:38:21,027 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Cornelius' -> 'best movers cornelius'
+2025-11-01 09:38:21,027 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Cornelius' -> 'cheap movers cornelius'
+2025-11-01 09:38:21,027 - category_normalizer - DEBUG - Normalized LLM keyword: 'Cornelius moving services' -> 'cornelius moving services'
+2025-11-01 09:38:21,027 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential movers Cornelius' -> 'residential movers cornelius'
+2025-11-01 09:38:21,027 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial movers Cornelius' -> 'commercial movers cornelius'
+2025-11-01 09:38:21,027 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance movers Cornelius' -> 'long distance movers cornelius'
+2025-11-01 09:38:21,027 - category_normalizer - DEBUG - Normalized LLM keyword: 'furniture movers Cornelius' -> 'furniture movers cornelius'
+2025-11-01 09:38:21,028 - category_normalizer - DEBUG - Normalized LLM keyword: 'movers Banks' -> 'movers banks'
+2025-11-01 09:38:21,028 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Banks' -> 'moving company banks'
+2025-11-01 09:38:21,028 - category_normalizer - DEBUG - Normalized LLM keyword: 'local movers Banks' -> 'local movers banks'
+2025-11-01 09:38:21,028 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Banks' -> 'best movers banks'
+2025-11-01 09:38:21,028 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Banks' -> 'cheap movers banks'
+2025-11-01 09:38:21,028 - category_normalizer - DEBUG - Normalized LLM keyword: 'Banks moving services' -> 'banks moving services'
+2025-11-01 09:38:21,028 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential movers Banks' -> 'residential movers banks'
+2025-11-01 09:38:21,028 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial movers Banks' -> 'commercial movers banks'
+2025-11-01 09:38:21,028 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance movers Banks' -> 'long distance movers banks'
+2025-11-01 09:38:21,029 - category_normalizer - DEBUG - Normalized LLM keyword: 'furniture movers Banks' -> 'furniture movers banks'
+2025-11-01 09:38:21,029 - category_normalizer - DEBUG - Normalized LLM keyword: 'movers North Plains' -> 'movers north plains'
+2025-11-01 09:38:21,029 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company North Plains' -> 'moving company north plains'
+2025-11-01 09:38:21,029 - category_normalizer - DEBUG - Normalized LLM keyword: 'local movers North Plains' -> 'local movers north plains'
+2025-11-01 09:38:21,029 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers North Plains' -> 'best movers north plains'
+2025-11-01 09:38:21,029 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers North Plains' -> 'cheap movers north plains'
+2025-11-01 09:38:21,030 - category_normalizer - DEBUG - Normalized LLM keyword: 'North Plains moving services' -> 'north plains moving services'
+2025-11-01 09:38:21,030 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential movers North Plains' -> 'residential movers north plains'
+2025-11-01 09:38:21,030 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial movers North Plains' -> 'commercial movers north plains'
+2025-11-01 09:38:21,030 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance movers North Plains' -> 'long distance movers north plains'
+2025-11-01 09:38:21,030 - category_normalizer - DEBUG - Normalized LLM keyword: 'furniture movers North Plains' -> 'furniture movers north plains'
+2025-11-01 09:38:21,030 - category_normalizer - DEBUG - Normalized LLM keyword: 'movers Gaston' -> 'movers gaston'
+2025-11-01 09:38:21,030 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Gaston' -> 'moving company gaston'
+2025-11-01 09:38:21,030 - category_normalizer - DEBUG - Normalized LLM keyword: 'local movers Gaston' -> 'local movers gaston'
+2025-11-01 09:38:21,030 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Gaston' -> 'best movers gaston'
+2025-11-01 09:38:21,031 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Gaston' -> 'cheap movers gaston'
+2025-11-01 09:38:21,031 - category_normalizer - DEBUG - Normalized LLM keyword: 'Gaston moving services' -> 'gaston moving services'
+2025-11-01 09:38:21,031 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential movers Gaston' -> 'residential movers gaston'
+2025-11-01 09:38:21,031 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial movers Gaston' -> 'commercial movers gaston'
+2025-11-01 09:38:21,031 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance movers Gaston' -> 'long distance movers gaston'
+2025-11-01 09:38:21,031 - category_normalizer - DEBUG - Normalized LLM keyword: 'furniture movers Gaston' -> 'furniture movers gaston'
+2025-11-01 09:38:21,032 - category_normalizer - DEBUG - Normalized LLM keyword: 'movers St. Helens' -> 'movers st. helens'
+2025-11-01 09:38:21,032 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company St. Helens' -> 'moving company st. helens'
+2025-11-01 09:38:21,032 - category_normalizer - DEBUG - Normalized LLM keyword: 'local movers St. Helens' -> 'local movers st. helens'
+2025-11-01 09:38:21,032 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers St. Helens' -> 'best movers st. helens'
+2025-11-01 09:38:21,032 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers St. Helens' -> 'cheap movers st. helens'
+2025-11-01 09:38:21,032 - category_normalizer - DEBUG - Normalized LLM keyword: 'St. Helens moving services' -> 'st. helens moving services'
+2025-11-01 09:38:21,032 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential movers St. Helens' -> 'residential movers st. helens'
+2025-11-01 09:38:21,033 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial movers St. Helens' -> 'commercial movers st. helens'
+2025-11-01 09:38:21,033 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance movers St. Helens' -> 'long distance movers st. helens'
+2025-11-01 09:38:21,033 - category_normalizer - DEBUG - Normalized LLM keyword: 'furniture movers St. Helens' -> 'furniture movers st. helens'
+2025-11-01 09:38:21,033 - category_normalizer - DEBUG - Normalized LLM keyword: 'movers Scappoose' -> 'movers scappoose'
+2025-11-01 09:38:21,033 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Scappoose' -> 'moving company scappoose'
+2025-11-01 09:38:21,033 - category_normalizer - DEBUG - Normalized LLM keyword: 'local movers Scappoose' -> 'local movers scappoose'
+2025-11-01 09:38:21,033 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Scappoose' -> 'best movers scappoose'
+2025-11-01 09:38:21,033 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Scappoose' -> 'cheap movers scappoose'
+2025-11-01 09:38:21,034 - category_normalizer - DEBUG - Normalized LLM keyword: 'Scappoose moving services' -> 'scappoose moving services'
+2025-11-01 09:38:21,034 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential movers Scappoose' -> 'residential movers scappoose'
+2025-11-01 09:38:21,034 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial movers Scappoose' -> 'commercial movers scappoose'
+2025-11-01 09:38:21,034 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance movers Scappoose' -> 'long distance movers scappoose'
+2025-11-01 09:38:21,034 - category_normalizer - DEBUG - Normalized LLM keyword: 'furniture movers Scappoose' -> 'furniture movers scappoose'
+2025-11-01 09:38:21,034 - category_normalizer - DEBUG - Normalized LLM keyword: 'movers Columbia City' -> 'movers columbia city'
+2025-11-01 09:38:21,034 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Columbia City' -> 'moving company columbia city'
+2025-11-01 09:38:21,034 - category_normalizer - DEBUG - Normalized LLM keyword: 'local movers Columbia City' -> 'local movers columbia city'
+2025-11-01 09:38:21,034 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Columbia City' -> 'best movers columbia city'
+2025-11-01 09:38:21,035 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Columbia City' -> 'cheap movers columbia city'
+2025-11-01 09:38:21,035 - category_normalizer - DEBUG - Normalized LLM keyword: 'Columbia City moving services' -> 'columbia city moving services'
+2025-11-01 09:38:21,035 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential movers Columbia City' -> 'residential movers columbia city'
+2025-11-01 09:38:21,035 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial movers Columbia City' -> 'commercial movers columbia city'
+2025-11-01 09:38:21,035 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance movers Columbia City' -> 'long distance movers columbia city'
+2025-11-01 09:38:21,035 - category_normalizer - DEBUG - Normalized LLM keyword: 'furniture movers Columbia City' -> 'furniture movers columbia city'
+2025-11-01 09:38:21,035 - category_normalizer - DEBUG - Normalized LLM keyword: 'movers Rainier' -> 'movers rainier'
+2025-11-01 09:38:21,035 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Rainier' -> 'moving company rainier'
+2025-11-01 09:38:21,036 - category_normalizer - DEBUG - Normalized LLM keyword: 'local movers Rainier' -> 'local movers rainier'
+2025-11-01 09:38:21,036 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Rainier' -> 'best movers rainier'
+2025-11-01 09:38:21,036 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Rainier' -> 'cheap movers rainier'
+2025-11-01 09:38:21,036 - category_normalizer - DEBUG - Normalized LLM keyword: 'Rainier moving services' -> 'rainier moving services'
+2025-11-01 09:38:21,036 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential movers Rainier' -> 'residential movers rainier'
+2025-11-01 09:38:21,036 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial movers Rainier' -> 'commercial movers rainier'
+2025-11-01 09:38:21,036 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance movers Rainier' -> 'long distance movers rainier'
+2025-11-01 09:38:21,036 - category_normalizer - DEBUG - Normalized LLM keyword: 'furniture movers Rainier' -> 'furniture movers rainier'
+2025-11-01 09:38:21,036 - category_normalizer - DEBUG - LLM Input for generate_city_specific_keywords (Attempt 1):
+
+You are a professional SEO keyword researcher. Your task is to generate exactly 10 high-quality, short-tail SEO keywords for each city in the batch for a given category. These keywords MUST be highly relevant and represent what a human would search for with the highest probability for services related to 'moving-services' in that specific city.
+
+CRITICAL INSTRUCTIONS - READ CAREFULLY:
+1. You MUST return ONLY a valid JSON object.
+2. You MUST include ALL requested cities as keys in the JSON object.
+3. Each city MUST have an array called "keywords" containing exactly 10 keyword strings.
+4. ALL keywords MUST be short-tail (1-2 words) and mid-tail (2-4 words) only.
+5. NO long phrases, questions, or conversational language.
+6. ALL keywords MUST explicitly include the city name (e.g., "moving Portland", "best movers Portland"). Do NOT generate keywords without the city name.
+7. AVOID generic terms that don't clearly link the service to the city.
+8. AVOID keywords that are not directly related to the service or are too broad.
+9. Consider the nature of the business (service vs. non-service) and return the most logical search terms.
+10. If the 'existingCategories' list provided in the input is an empty array, you MUST consider this category as a new category and you MUST set the "newCategory" field, and set "categoryId" to null.
+
+VERIFICATION CHECKLIST - CONFIRM BEFORE RESPONDING:
+- [ ] Response is a valid JSON object (not array, not string).
+- [ ] Each city key exists and has an array called "keywords".
+- [ ] "keywords" array contains exactly 10 keyword strings.
+- [ ] All keywords are 1-4 words maximum.
+- [ ] No keywords contain questions or long phrases.
+- [ ] ALL keywords MUST follow the format: "service city" or "adjective service city".
+- [ ] ALL keywords MUST be highly relevant to the category and city.
+
+EXPECTED JSON FORMAT:
+{
+  "Portland": {
+    "keywords": [
+      "moving-services portland",
+      "best moving-services portland",
+      "local moving-services portland",
+      "moving service portland",
+      "24 hour moving-services portland",
+      "top rated moving-services portland",
+      "affordable moving-services portland",
+      "residential moving-services portland",
+      "commercial moving-services portland",
+      "long distance moving-services portland"
+    ]
+  },
+  "Beaverton": {
+    "keywords": [
+      "moving-services beaverton",
+      "best moving-services beaverton",
+      "local moving-services beaverton",
+      "moving service beaverton",
+      "24 hour moving-services beaverton",
+      "24 hour moving-services beaverton",
+      "top rated moving-services beaverton",
+      "affordable moving-services beaverton",
+      "residential moving-services beaverton",
+      "commercial moving-services beaverton",
+      "long distance moving-services beaverton"
+    ]
+  }
+}
+
+Cities to process: Vernonia, Estacada, Sandy, Welches, Government Camp, Brightwood, Rhododendron, Zigzag, Mount Hood Village, Parkdale, Hood River, The Dalles, White Salmon, Bingen, Stevenson, Carson, North Bonneville, Skamania, Underwood, Lyle, Goldendale, Klickitat, Wishram, Dufur, Maupin
+
+Return ONLY the JSON object. No explanations, no markdown, no additional text.
+
+2025-11-01 09:38:32,440 - category_normalizer - DEBUG - LLM Raw Output for generate_city_specific_keywords (Attempt 1):
+```json
+{
+  "Vernonia": {
+    "keywords": [
+      "moving services Vernonia",
+      "Vernonia movers",
+      "best movers Vernonia",
+      "local moving Vernonia",
+      "affordable moving Vernonia",
+      "residential moving Vernonia",
+      "commercial moving Vernonia",
+      "moving company Vernonia",
+      "cheap movers Vernonia",
+      "long distance moving Vernonia"
+    ]
+  },
+  "Estacada": {
+    "keywords": [
+      "moving services Estacada",
+      "Estacada movers",
+      "best movers Estacada",
+      "local moving Estacada",
+      "affordable moving Estacada",
+      "residential moving Estacada",
+      "commercial moving Estacada",
+      "moving company Estacada",
+      "cheap movers Estacada",
+      "long distance moving Estacada"
+    ]
+  },
+  "Sandy": {
+    "keywords": [
+      "moving services Sandy",
+      "Sandy movers",
+      "best movers Sandy",
+      "local moving Sandy",
+      "affordable moving Sandy",
+      "residential moving Sandy",
+      "commercial moving Sandy",
+      "moving company Sandy",
+      "cheap movers Sandy",
+      "long distance moving Sandy"
+    ]
+  },
+  "Welches": {
+    "keywords": [
+      "moving services Welches",
+      "Welches movers",
+      "best movers Welches",
+      "local moving Welches",
+      "affordable moving Welches",
+      "residential moving Welches",
+      "commercial moving Welches",
+      "moving company Welches",
+      "cheap movers Welches",
+      "long distance moving Welches"
+    ]
+  },
+  "Government Camp": {
+    "keywords": [
+      "moving services Government Camp",
+      "Government Camp movers",
+      "best movers Government Camp",
+      "local moving Government Camp",
+      "affordable moving Government Camp",
+      "residential moving Government Camp",
+      "commercial moving Government Camp",
+      "moving company Government Camp",
+      "cheap movers Government Camp",
+      "long distance moving Government Camp"
+    ]
+  },
+  "Brightwood": {
+    "keywords": [
+      "moving services Brightwood",
+      "Brightwood movers",
+      "best movers Brightwood",
+      "local moving Brightwood",
+      "affordable moving Brightwood",
+      "residential moving Brightwood",
+      "commercial moving Brightwood",
+      "moving company Brightwood",
+      "cheap movers Brightwood",
+      "long distance moving Brightwood"
+    ]
+  },
+  "Rhododendron": {
+    "keywords": [
+      "moving services Rhododendron",
+      "Rhododendron movers",
+      "best movers Rhododendron",
+      "local moving Rhododendron",
+      "affordable moving Rhododendron",
+      "residential moving Rhododendron",
+      "commercial moving Rhododendron",
+      "moving company Rhododendron",
+      "cheap movers Rhododendron",
+      "long distance moving Rhododendron"
+    ]
+  },
+  "Zigzag": {
+    "keywords": [
+      "moving services Zigzag",
+      "Zigzag movers",
+      "best movers Zigzag",
+      "local moving Zigzag",
+      "affordable moving Zigzag",
+      "residential moving Zigzag",
+      "commercial moving Zigzag",
+      "moving company Zigzag",
+      "cheap movers Zigzag",
+      "long distance moving Zigzag"
+    ]
+  },
+  "Mount Hood Village": {
+    "keywords": [
+      "moving services Mount Hood Village",
+      "Mount Hood Village movers",
+      "best movers Mount Hood Village",
+      "local moving Mount Hood Village",
+      "affordable moving Mount Hood Village",
+      "residential moving Mount Hood Village",
+      "commercial moving Mount Hood Village",
+      "moving company Mount Hood Village",
+      "cheap movers Mount Hood Village",
+      "long distance moving Mount Hood Village"
+    ]
+  },
+  "Parkdale": {
+    "keywords": [
+      "moving services Parkdale",
+      "Parkdale movers",
+      "best movers Parkdale",
+      "local moving Parkdale",
+      "affordable moving Parkdale",
+      "residential moving Parkdale",
+      "commercial moving Parkdale",
+      "moving company Parkdale",
+      "cheap movers Parkdale",
+      "long distance moving Parkdale"
+    ]
+  },
+  "Hood River": {
+    "keywords": [
+      "moving services Hood River",
+      "Hood River movers",
+      "best movers Hood River",
+      "local moving Hood River",
+      "affordable moving Hood River",
+      "residential moving Hood River",
+      "commercial moving Hood River",
+      "moving company Hood River",
+      "cheap movers Hood River",
+      "long distance moving Hood River"
+    ]
+  },
+  "The Dalles": {
+    "keywords": [
+      "moving services The Dalles",
+      "The Dalles movers",
+      "best movers The Dalles",
+      "local moving The Dalles",
+      "affordable moving The Dalles",
+      "residential moving The Dalles",
+      "commercial moving The Dalles",
+      "moving company The Dalles",
+      "cheap movers The Dalles",
+      "long distance moving The Dalles"
+    ]
+  },
+  "White Salmon": {
+    "keywords": [
+      "moving services White Salmon",
+      "White Salmon movers",
+      "best movers White Salmon",
+      "local moving White Salmon",
+      "affordable moving White Salmon",
+      "residential moving White Salmon",
+      "commercial moving White Salmon",
+      "moving company White Salmon",
+      "cheap movers White Salmon",
+      "long distance moving White Salmon"
+    ]
+  },
+  "Bingen": {
+    "keywords": [
+      "moving services Bingen",
+      "Bingen movers",
+      "best movers Bingen",
+      "local moving Bingen",
+      "affordable moving Bingen",
+      "residential moving Bingen",
+      "commercial moving Bingen",
+      "moving company Bingen",
+      "cheap movers Bingen",
+      "long distance moving Bingen"
+    ]
+  },
+  "Stevenson": {
+    "keywords": [
+      "moving services Stevenson",
+      "Stevenson movers",
+      "best movers Stevenson",
+      "local moving Stevenson",
+      "affordable moving Stevenson",
+      "residential moving Stevenson",
+      "commercial moving Stevenson",
+      "moving company Stevenson",
+      "cheap movers Stevenson",
+      "long distance moving Stevenson"
+    ]
+  },
+  "Carson": {
+    "keywords": [
+      "moving services Carson",
+      "Carson movers",
+      "best movers Carson",
+      "local moving Carson",
+      "affordable moving Carson",
+      "residential moving Carson",
+      "commercial moving Carson",
+      "moving company Carson",
+      "cheap movers Carson",
+      "long distance moving Carson"
+    ]
+  },
+  "North Bonneville": {
+    "keywords": [
+      "moving services North Bonneville",
+      "North Bonneville movers",
+      "best movers North Bonneville",
+      "local moving North Bonneville",
+      "affordable moving North Bonneville",
+      "residential moving North Bonneville",
+      "commercial moving North Bonneville",
+      "moving company North Bonneville",
+      "cheap movers North Bonneville",
+      "long distance moving North Bonneville"
+    ]
+  },
+  "Skamania": {
+    "keywords": [
+      "moving services Skamania",
+      "Skamania movers",
+      "best movers Skamania",
+      "local moving Skamania",
+      "affordable moving Skamania",
+      "residential moving Skamania",
+      "commercial moving Skamania",
+      "moving company Skamania",
+      "cheap movers Skamania",
+      "long distance moving Skamania"
+    ]
+  },
+  "Underwood": {
+    "keywords": [
+      "moving services Underwood",
+      "Underwood movers",
+      "best movers Underwood",
+      "local moving Underwood",
+      "affordable moving Underwood",
+      "residential moving Underwood",
+      "commercial moving Underwood",
+      "moving company Underwood",
+      "cheap movers Underwood",
+      "long distance moving Underwood"
+    ]
+  },
+  "Lyle": {
+    "keywords": [
+      "moving services Lyle",
+      "Lyle movers",
+      "best movers Lyle",
+      "local moving Lyle",
+      "affordable moving Lyle",
+      "residential moving Lyle",
+      "commercial moving Lyle",
+      "moving company Lyle",
+      "cheap movers Lyle",
+      "long distance moving Lyle"
+    ]
+  },
+  "Goldendale": {
+    "keywords": [
+      "moving services Goldendale",
+      "Goldendale movers",
+      "best movers Goldendale",
+      "local moving Goldendale",
+      "affordable moving Goldendale",
+      "residential moving Goldendale",
+      "commercial moving Goldendale",
+      "moving company Goldendale",
+      "cheap movers Goldendale",
+      "long distance moving Goldendale"
+    ]
+  },
+  "Klickitat": {
+    "keywords": [
+      "moving services Klickitat",
+      "Klickitat movers",
+      "best movers Klickitat",
+      "local moving Klickitat",
+      "affordable moving Klickitat",
+      "residential moving Klickitat",
+      "commercial moving Klickitat",
+      "moving company Klickitat",
+      "cheap movers Klickitat",
+      "long distance moving Klickitat"
+    ]
+  },
+  "Wishram": {
+    "keywords": [
+      "moving services Wishram",
+      "Wishram movers",
+      "best movers Wishram",
+      "local moving Wishram",
+      "affordable moving Wishram",
+      "residential moving Wishram",
+      "commercial moving Wishram",
+      "moving company Wishram",
+      "cheap movers Wishram",
+      "long distance moving Wishram"
+    ]
+  },
+  "Dufur": {
+    "keywords": [
+      "moving services Dufur",
+      "Dufur movers",
+      "best movers Dufur",
+      "local moving Dufur",
+      "affordable moving Dufur",
+      "residential moving Dufur",
+      "commercial moving Dufur",
+      "moving company Dufur",
+      "cheap movers Dufur",
+      "long distance moving Dufur"
+    ]
+  },
+  "Maupin": {
+    "keywords": [
+      "moving services Maupin",
+      "Maupin movers",
+      "best movers Maupin",
+      "local moving Maupin",
+      "affordable moving Maupin",
+      "residential moving Maupin",
+      "commercial moving Maupin",
+      "moving company Maupin",
+      "cheap movers Maupin",
+      "long distance moving Maupin"
+    ]
+  }
+}
+```
+2025-11-01 09:38:32,441 - category_normalizer - DEBUG - Successfully generated keywords for batch of 25 cities.
+2025-11-01 09:38:32,442 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving services Vernonia' -> 'moving services vernonia'
+2025-11-01 09:38:32,443 - category_normalizer - DEBUG - Normalized LLM keyword: 'Vernonia movers' -> 'vernonia movers'
+2025-11-01 09:38:32,443 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Vernonia' -> 'best movers vernonia'
+2025-11-01 09:38:32,443 - category_normalizer - DEBUG - Normalized LLM keyword: 'local moving Vernonia' -> 'local moving vernonia'
+2025-11-01 09:38:32,444 - category_normalizer - DEBUG - Normalized LLM keyword: 'affordable moving Vernonia' -> 'affordable moving vernonia'
+2025-11-01 09:38:32,444 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential moving Vernonia' -> 'residential moving vernonia'
+2025-11-01 09:38:32,444 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial moving Vernonia' -> 'commercial moving vernonia'
+2025-11-01 09:38:32,445 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Vernonia' -> 'moving company vernonia'
+2025-11-01 09:38:32,445 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Vernonia' -> 'cheap movers vernonia'
+2025-11-01 09:38:32,446 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance moving Vernonia' -> 'long distance moving vernonia'
+2025-11-01 09:38:32,446 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving services Estacada' -> 'moving services estacada'
+2025-11-01 09:38:32,447 - category_normalizer - DEBUG - Normalized LLM keyword: 'Estacada movers' -> 'estacada movers'
+2025-11-01 09:38:32,447 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Estacada' -> 'best movers estacada'
+2025-11-01 09:38:32,448 - category_normalizer - DEBUG - Normalized LLM keyword: 'local moving Estacada' -> 'local moving estacada'
+2025-11-01 09:38:32,449 - category_normalizer - DEBUG - Normalized LLM keyword: 'affordable moving Estacada' -> 'affordable moving estacada'
+2025-11-01 09:38:32,449 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential moving Estacada' -> 'residential moving estacada'
+2025-11-01 09:38:32,449 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial moving Estacada' -> 'commercial moving estacada'
+2025-11-01 09:38:32,450 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Estacada' -> 'moving company estacada'
+2025-11-01 09:38:32,450 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Estacada' -> 'cheap movers estacada'
+2025-11-01 09:38:32,450 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance moving Estacada' -> 'long distance moving estacada'
+2025-11-01 09:38:32,451 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving services Sandy' -> 'moving services sandy'
+2025-11-01 09:38:32,451 - category_normalizer - DEBUG - Normalized LLM keyword: 'Sandy movers' -> 'sandy movers'
+2025-11-01 09:38:32,452 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Sandy' -> 'best movers sandy'
+2025-11-01 09:38:32,452 - category_normalizer - DEBUG - Normalized LLM keyword: 'local moving Sandy' -> 'local moving sandy'
+2025-11-01 09:38:32,452 - category_normalizer - DEBUG - Normalized LLM keyword: 'affordable moving Sandy' -> 'affordable moving sandy'
+2025-11-01 09:38:32,452 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential moving Sandy' -> 'residential moving sandy'
+2025-11-01 09:38:32,453 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial moving Sandy' -> 'commercial moving sandy'
+2025-11-01 09:38:32,453 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Sandy' -> 'moving company sandy'
+2025-11-01 09:38:32,453 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Sandy' -> 'cheap movers sandy'
+2025-11-01 09:38:32,453 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance moving Sandy' -> 'long distance moving sandy'
+2025-11-01 09:38:32,454 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving services Welches' -> 'moving services welches'
+2025-11-01 09:38:32,454 - category_normalizer - DEBUG - Normalized LLM keyword: 'Welches movers' -> 'welches movers'
+2025-11-01 09:38:32,454 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Welches' -> 'best movers welches'
+2025-11-01 09:38:32,454 - category_normalizer - DEBUG - Normalized LLM keyword: 'local moving Welches' -> 'local moving welches'
+2025-11-01 09:38:32,455 - category_normalizer - DEBUG - Normalized LLM keyword: 'affordable moving Welches' -> 'affordable moving welches'
+2025-11-01 09:38:32,455 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential moving Welches' -> 'residential moving welches'
+2025-11-01 09:38:32,455 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial moving Welches' -> 'commercial moving welches'
+2025-11-01 09:38:32,455 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Welches' -> 'moving company welches'
+2025-11-01 09:38:32,456 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Welches' -> 'cheap movers welches'
+2025-11-01 09:38:32,456 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance moving Welches' -> 'long distance moving welches'
+2025-11-01 09:38:32,456 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving services Government Camp' -> 'moving services government camp'
+2025-11-01 09:38:32,456 - category_normalizer - DEBUG - Normalized LLM keyword: 'Government Camp movers' -> 'government camp movers'
+2025-11-01 09:38:32,457 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Government Camp' -> 'best movers government camp'
+2025-11-01 09:38:32,457 - category_normalizer - DEBUG - Normalized LLM keyword: 'local moving Government Camp' -> 'local moving government camp'
+2025-11-01 09:38:32,457 - category_normalizer - DEBUG - Normalized LLM keyword: 'affordable moving Government Camp' -> 'affordable moving government camp'
+2025-11-01 09:38:32,457 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential moving Government Camp' -> 'residential moving government camp'
+2025-11-01 09:38:32,457 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial moving Government Camp' -> 'commercial moving government camp'
+2025-11-01 09:38:32,457 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Government Camp' -> 'moving company government camp'
+2025-11-01 09:38:32,458 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Government Camp' -> 'cheap movers government camp'
+2025-11-01 09:38:32,458 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance moving Government Camp' -> 'long distance moving government camp'
+2025-11-01 09:38:32,458 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving services Brightwood' -> 'moving services brightwood'
+2025-11-01 09:38:32,458 - category_normalizer - DEBUG - Normalized LLM keyword: 'Brightwood movers' -> 'brightwood movers'
+2025-11-01 09:38:32,458 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Brightwood' -> 'best movers brightwood'
+2025-11-01 09:38:32,459 - category_normalizer - DEBUG - Normalized LLM keyword: 'local moving Brightwood' -> 'local moving brightwood'
+2025-11-01 09:38:32,459 - category_normalizer - DEBUG - Normalized LLM keyword: 'affordable moving Brightwood' -> 'affordable moving brightwood'
+2025-11-01 09:38:32,459 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential moving Brightwood' -> 'residential moving brightwood'
+2025-11-01 09:38:32,459 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial moving Brightwood' -> 'commercial moving brightwood'
+2025-11-01 09:38:32,459 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Brightwood' -> 'moving company brightwood'
+2025-11-01 09:38:32,459 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Brightwood' -> 'cheap movers brightwood'
+2025-11-01 09:38:32,460 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance moving Brightwood' -> 'long distance moving brightwood'
+2025-11-01 09:38:32,460 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving services Rhododendron' -> 'moving services rhododendron'
+2025-11-01 09:38:32,460 - category_normalizer - DEBUG - Normalized LLM keyword: 'Rhododendron movers' -> 'rhododendron movers'
+2025-11-01 09:38:32,460 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Rhododendron' -> 'best movers rhododendron'
+2025-11-01 09:38:32,460 - category_normalizer - DEBUG - Normalized LLM keyword: 'local moving Rhododendron' -> 'local moving rhododendron'
+2025-11-01 09:38:32,460 - category_normalizer - DEBUG - Normalized LLM keyword: 'affordable moving Rhododendron' -> 'affordable moving rhododendron'
+2025-11-01 09:38:32,461 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential moving Rhododendron' -> 'residential moving rhododendron'
+2025-11-01 09:38:32,461 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial moving Rhododendron' -> 'commercial moving rhododendron'
+2025-11-01 09:38:32,461 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Rhododendron' -> 'moving company rhododendron'
+2025-11-01 09:38:32,461 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Rhododendron' -> 'cheap movers rhododendron'
+2025-11-01 09:38:32,461 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance moving Rhododendron' -> 'long distance moving rhododendron'
+2025-11-01 09:38:32,462 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving services Zigzag' -> 'moving services zigzag'
+2025-11-01 09:38:32,462 - category_normalizer - DEBUG - Normalized LLM keyword: 'Zigzag movers' -> 'zigzag movers'
+2025-11-01 09:38:32,462 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Zigzag' -> 'best movers zigzag'
+2025-11-01 09:38:32,462 - category_normalizer - DEBUG - Normalized LLM keyword: 'local moving Zigzag' -> 'local moving zigzag'
+2025-11-01 09:38:32,462 - category_normalizer - DEBUG - Normalized LLM keyword: 'affordable moving Zigzag' -> 'affordable moving zigzag'
+2025-11-01 09:38:32,462 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential moving Zigzag' -> 'residential moving zigzag'
+2025-11-01 09:38:32,462 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial moving Zigzag' -> 'commercial moving zigzag'
+2025-11-01 09:38:32,463 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Zigzag' -> 'moving company zigzag'
+2025-11-01 09:38:32,463 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Zigzag' -> 'cheap movers zigzag'
+2025-11-01 09:38:32,463 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance moving Zigzag' -> 'long distance moving zigzag'
+2025-11-01 09:38:32,463 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving services Mount Hood Village' -> 'moving services mount hood village'
+2025-11-01 09:38:32,463 - category_normalizer - DEBUG - Normalized LLM keyword: 'Mount Hood Village movers' -> 'mount hood village movers'
+2025-11-01 09:38:32,464 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Mount Hood Village' -> 'best movers mount hood village'
+2025-11-01 09:38:32,464 - category_normalizer - DEBUG - Normalized LLM keyword: 'local moving Mount Hood Village' -> 'local moving mount hood village'
+2025-11-01 09:38:32,464 - category_normalizer - DEBUG - Normalized LLM keyword: 'affordable moving Mount Hood Village' -> 'affordable moving mount hood village'
+2025-11-01 09:38:32,464 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential moving Mount Hood Village' -> 'residential moving mount hood village'
+2025-11-01 09:38:32,464 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial moving Mount Hood Village' -> 'commercial moving mount hood village'
+2025-11-01 09:38:32,464 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Mount Hood Village' -> 'moving company mount hood village'
+2025-11-01 09:38:32,464 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Mount Hood Village' -> 'cheap movers mount hood village'
+2025-11-01 09:38:32,465 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance moving Mount Hood Village' -> 'long distance moving mount hood village'
+2025-11-01 09:38:32,465 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving services Parkdale' -> 'moving services parkdale'
+2025-11-01 09:38:32,465 - category_normalizer - DEBUG - Normalized LLM keyword: 'Parkdale movers' -> 'parkdale movers'
+2025-11-01 09:38:32,465 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Parkdale' -> 'best movers parkdale'
+2025-11-01 09:38:32,465 - category_normalizer - DEBUG - Normalized LLM keyword: 'local moving Parkdale' -> 'local moving parkdale'
+2025-11-01 09:38:32,465 - category_normalizer - DEBUG - Normalized LLM keyword: 'affordable moving Parkdale' -> 'affordable moving parkdale'
+2025-11-01 09:38:32,465 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential moving Parkdale' -> 'residential moving parkdale'
+2025-11-01 09:38:32,466 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial moving Parkdale' -> 'commercial moving parkdale'
+2025-11-01 09:38:32,466 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Parkdale' -> 'moving company parkdale'
+2025-11-01 09:38:32,466 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Parkdale' -> 'cheap movers parkdale'
+2025-11-01 09:38:32,466 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance moving Parkdale' -> 'long distance moving parkdale'
+2025-11-01 09:38:32,466 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving services Hood River' -> 'moving services hood river'
+2025-11-01 09:38:32,466 - category_normalizer - DEBUG - Normalized LLM keyword: 'Hood River movers' -> 'hood river movers'
+2025-11-01 09:38:32,466 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Hood River' -> 'best movers hood river'
+2025-11-01 09:38:32,467 - category_normalizer - DEBUG - Normalized LLM keyword: 'local moving Hood River' -> 'local moving hood river'
+2025-11-01 09:38:32,467 - category_normalizer - DEBUG - Normalized LLM keyword: 'affordable moving Hood River' -> 'affordable moving hood river'
+2025-11-01 09:38:32,467 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential moving Hood River' -> 'residential moving hood river'
+2025-11-01 09:38:32,467 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial moving Hood River' -> 'commercial moving hood river'
+2025-11-01 09:38:32,467 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Hood River' -> 'moving company hood river'
+2025-11-01 09:38:32,467 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Hood River' -> 'cheap movers hood river'
+2025-11-01 09:38:32,467 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance moving Hood River' -> 'long distance moving hood river'
+2025-11-01 09:38:32,468 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving services The Dalles' -> 'moving services the dalles'
+2025-11-01 09:38:32,468 - category_normalizer - DEBUG - Normalized LLM keyword: 'The Dalles movers' -> 'the dalles movers'
+2025-11-01 09:38:32,468 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers The Dalles' -> 'best movers the dalles'
+2025-11-01 09:38:32,468 - category_normalizer - DEBUG - Normalized LLM keyword: 'local moving The Dalles' -> 'local moving the dalles'
+2025-11-01 09:38:32,468 - category_normalizer - DEBUG - Normalized LLM keyword: 'affordable moving The Dalles' -> 'affordable moving the dalles'
+2025-11-01 09:38:32,468 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential moving The Dalles' -> 'residential moving the dalles'
+2025-11-01 09:38:32,468 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial moving The Dalles' -> 'commercial moving the dalles'
+2025-11-01 09:38:32,468 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company The Dalles' -> 'moving company the dalles'
+2025-11-01 09:38:32,469 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers The Dalles' -> 'cheap movers the dalles'
+2025-11-01 09:38:32,469 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance moving The Dalles' -> 'long distance moving the dalles'
+2025-11-01 09:38:32,469 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving services White Salmon' -> 'moving services white salmon'
+2025-11-01 09:38:32,469 - category_normalizer - DEBUG - Normalized LLM keyword: 'White Salmon movers' -> 'white salmon movers'
+2025-11-01 09:38:32,469 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers White Salmon' -> 'best movers white salmon'
+2025-11-01 09:38:32,469 - category_normalizer - DEBUG - Normalized LLM keyword: 'local moving White Salmon' -> 'local moving white salmon'
+2025-11-01 09:38:32,469 - category_normalizer - DEBUG - Normalized LLM keyword: 'affordable moving White Salmon' -> 'affordable moving white salmon'
+2025-11-01 09:38:32,469 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential moving White Salmon' -> 'residential moving white salmon'
+2025-11-01 09:38:32,470 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial moving White Salmon' -> 'commercial moving white salmon'
+2025-11-01 09:38:32,470 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company White Salmon' -> 'moving company white salmon'
+2025-11-01 09:38:32,470 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers White Salmon' -> 'cheap movers white salmon'
+2025-11-01 09:38:32,470 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance moving White Salmon' -> 'long distance moving white salmon'
+2025-11-01 09:38:32,470 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving services Bingen' -> 'moving services bingen'
+2025-11-01 09:38:32,470 - category_normalizer - DEBUG - Normalized LLM keyword: 'Bingen movers' -> 'bingen movers'
+2025-11-01 09:38:32,470 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Bingen' -> 'best movers bingen'
+2025-11-01 09:38:32,470 - category_normalizer - DEBUG - Normalized LLM keyword: 'local moving Bingen' -> 'local moving bingen'
+2025-11-01 09:38:32,470 - category_normalizer - DEBUG - Normalized LLM keyword: 'affordable moving Bingen' -> 'affordable moving bingen'
+2025-11-01 09:38:32,471 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential moving Bingen' -> 'residential moving bingen'
+2025-11-01 09:38:32,471 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial moving Bingen' -> 'commercial moving bingen'
+2025-11-01 09:38:32,471 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Bingen' -> 'moving company bingen'
+2025-11-01 09:38:32,471 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Bingen' -> 'cheap movers bingen'
+2025-11-01 09:38:32,471 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance moving Bingen' -> 'long distance moving bingen'
+2025-11-01 09:38:32,471 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving services Stevenson' -> 'moving services stevenson'
+2025-11-01 09:38:32,471 - category_normalizer - DEBUG - Normalized LLM keyword: 'Stevenson movers' -> 'stevenson movers'
+2025-11-01 09:38:32,471 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Stevenson' -> 'best movers stevenson'
+2025-11-01 09:38:32,472 - category_normalizer - DEBUG - Normalized LLM keyword: 'local moving Stevenson' -> 'local moving stevenson'
+2025-11-01 09:38:32,472 - category_normalizer - DEBUG - Normalized LLM keyword: 'affordable moving Stevenson' -> 'affordable moving stevenson'
+2025-11-01 09:38:32,472 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential moving Stevenson' -> 'residential moving stevenson'
+2025-11-01 09:38:32,472 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial moving Stevenson' -> 'commercial moving stevenson'
+2025-11-01 09:38:32,472 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Stevenson' -> 'moving company stevenson'
+2025-11-01 09:38:32,472 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Stevenson' -> 'cheap movers stevenson'
+2025-11-01 09:38:32,472 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance moving Stevenson' -> 'long distance moving stevenson'
+2025-11-01 09:38:32,472 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving services Carson' -> 'moving services carson'
+2025-11-01 09:38:32,472 - category_normalizer - DEBUG - Normalized LLM keyword: 'Carson movers' -> 'carson movers'
+2025-11-01 09:38:32,473 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Carson' -> 'best movers carson'
+2025-11-01 09:38:32,473 - category_normalizer - DEBUG - Normalized LLM keyword: 'local moving Carson' -> 'local moving carson'
+2025-11-01 09:38:32,473 - category_normalizer - DEBUG - Normalized LLM keyword: 'affordable moving Carson' -> 'affordable moving carson'
+2025-11-01 09:38:32,473 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential moving Carson' -> 'residential moving carson'
+2025-11-01 09:38:32,473 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial moving Carson' -> 'commercial moving carson'
+2025-11-01 09:38:32,473 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Carson' -> 'moving company carson'
+2025-11-01 09:38:32,473 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Carson' -> 'cheap movers carson'
+2025-11-01 09:38:32,473 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance moving Carson' -> 'long distance moving carson'
+2025-11-01 09:38:32,473 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving services North Bonneville' -> 'moving services north bonneville'
+2025-11-01 09:38:32,474 - category_normalizer - DEBUG - Normalized LLM keyword: 'North Bonneville movers' -> 'north bonneville movers'
+2025-11-01 09:38:32,474 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers North Bonneville' -> 'best movers north bonneville'
+2025-11-01 09:38:32,474 - category_normalizer - DEBUG - Normalized LLM keyword: 'local moving North Bonneville' -> 'local moving north bonneville'
+2025-11-01 09:38:32,474 - category_normalizer - DEBUG - Normalized LLM keyword: 'affordable moving North Bonneville' -> 'affordable moving north bonneville'
+2025-11-01 09:38:32,474 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential moving North Bonneville' -> 'residential moving north bonneville'
+2025-11-01 09:38:32,474 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial moving North Bonneville' -> 'commercial moving north bonneville'
+2025-11-01 09:38:32,474 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company North Bonneville' -> 'moving company north bonneville'
+2025-11-01 09:38:32,474 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers North Bonneville' -> 'cheap movers north bonneville'
+2025-11-01 09:38:32,475 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance moving North Bonneville' -> 'long distance moving north bonneville'
+2025-11-01 09:38:32,475 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving services Skamania' -> 'moving services skamania'
+2025-11-01 09:38:32,475 - category_normalizer - DEBUG - Normalized LLM keyword: 'Skamania movers' -> 'skamania movers'
+2025-11-01 09:38:32,475 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Skamania' -> 'best movers skamania'
+2025-11-01 09:38:32,475 - category_normalizer - DEBUG - Normalized LLM keyword: 'local moving Skamania' -> 'local moving skamania'
+2025-11-01 09:38:32,475 - category_normalizer - DEBUG - Normalized LLM keyword: 'affordable moving Skamania' -> 'affordable moving skamania'
+2025-11-01 09:38:32,475 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential moving Skamania' -> 'residential moving skamania'
+2025-11-01 09:38:32,475 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial moving Skamania' -> 'commercial moving skamania'
+2025-11-01 09:38:32,475 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Skamania' -> 'moving company skamania'
+2025-11-01 09:38:32,476 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Skamania' -> 'cheap movers skamania'
+2025-11-01 09:38:32,476 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance moving Skamania' -> 'long distance moving skamania'
+2025-11-01 09:38:32,476 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving services Underwood' -> 'moving services underwood'
+2025-11-01 09:38:32,476 - category_normalizer - DEBUG - Normalized LLM keyword: 'Underwood movers' -> 'underwood movers'
+2025-11-01 09:38:32,476 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Underwood' -> 'best movers underwood'
+2025-11-01 09:38:32,476 - category_normalizer - DEBUG - Normalized LLM keyword: 'local moving Underwood' -> 'local moving underwood'
+2025-11-01 09:38:32,476 - category_normalizer - DEBUG - Normalized LLM keyword: 'affordable moving Underwood' -> 'affordable moving underwood'
+2025-11-01 09:38:32,476 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential moving Underwood' -> 'residential moving underwood'
+2025-11-01 09:38:32,476 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial moving Underwood' -> 'commercial moving underwood'
+2025-11-01 09:38:32,477 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Underwood' -> 'moving company underwood'
+2025-11-01 09:38:32,477 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Underwood' -> 'cheap movers underwood'
+2025-11-01 09:38:32,477 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance moving Underwood' -> 'long distance moving underwood'
+2025-11-01 09:38:32,477 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving services Lyle' -> 'moving services lyle'
+2025-11-01 09:38:32,477 - category_normalizer - DEBUG - Normalized LLM keyword: 'Lyle movers' -> 'lyle movers'
+2025-11-01 09:38:32,477 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Lyle' -> 'best movers lyle'
+2025-11-01 09:38:32,477 - category_normalizer - DEBUG - Normalized LLM keyword: 'local moving Lyle' -> 'local moving lyle'
+2025-11-01 09:38:32,477 - category_normalizer - DEBUG - Normalized LLM keyword: 'affordable moving Lyle' -> 'affordable moving lyle'
+2025-11-01 09:38:32,478 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential moving Lyle' -> 'residential moving lyle'
+2025-11-01 09:38:32,478 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial moving Lyle' -> 'commercial moving lyle'
+2025-11-01 09:38:32,478 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Lyle' -> 'moving company lyle'
+2025-11-01 09:38:32,478 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Lyle' -> 'cheap movers lyle'
+2025-11-01 09:38:32,478 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance moving Lyle' -> 'long distance moving lyle'
+2025-11-01 09:38:32,478 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving services Goldendale' -> 'moving services goldendale'
+2025-11-01 09:38:32,478 - category_normalizer - DEBUG - Normalized LLM keyword: 'Goldendale movers' -> 'goldendale movers'
+2025-11-01 09:38:32,478 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Goldendale' -> 'best movers goldendale'
+2025-11-01 09:38:32,478 - category_normalizer - DEBUG - Normalized LLM keyword: 'local moving Goldendale' -> 'local moving goldendale'
+2025-11-01 09:38:32,479 - category_normalizer - DEBUG - Normalized LLM keyword: 'affordable moving Goldendale' -> 'affordable moving goldendale'
+2025-11-01 09:38:32,479 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential moving Goldendale' -> 'residential moving goldendale'
+2025-11-01 09:38:32,479 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial moving Goldendale' -> 'commercial moving goldendale'
+2025-11-01 09:38:32,479 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Goldendale' -> 'moving company goldendale'
+2025-11-01 09:38:32,479 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Goldendale' -> 'cheap movers goldendale'
+2025-11-01 09:38:32,479 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance moving Goldendale' -> 'long distance moving goldendale'
+2025-11-01 09:38:32,479 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving services Klickitat' -> 'moving services klickitat'
+2025-11-01 09:38:32,479 - category_normalizer - DEBUG - Normalized LLM keyword: 'Klickitat movers' -> 'klickitat movers'
+2025-11-01 09:38:32,480 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Klickitat' -> 'best movers klickitat'
+2025-11-01 09:38:32,480 - category_normalizer - DEBUG - Normalized LLM keyword: 'local moving Klickitat' -> 'local moving klickitat'
+2025-11-01 09:38:32,480 - category_normalizer - DEBUG - Normalized LLM keyword: 'affordable moving Klickitat' -> 'affordable moving klickitat'
+2025-11-01 09:38:32,480 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential moving Klickitat' -> 'residential moving klickitat'
+2025-11-01 09:38:32,480 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial moving Klickitat' -> 'commercial moving klickitat'
+2025-11-01 09:38:32,480 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Klickitat' -> 'moving company klickitat'
+2025-11-01 09:38:32,481 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Klickitat' -> 'cheap movers klickitat'
+2025-11-01 09:38:32,481 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance moving Klickitat' -> 'long distance moving klickitat'
+2025-11-01 09:38:32,481 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving services Wishram' -> 'moving services wishram'
+2025-11-01 09:38:32,481 - category_normalizer - DEBUG - Normalized LLM keyword: 'Wishram movers' -> 'wishram movers'
+2025-11-01 09:38:32,481 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Wishram' -> 'best movers wishram'
+2025-11-01 09:38:32,481 - category_normalizer - DEBUG - Normalized LLM keyword: 'local moving Wishram' -> 'local moving wishram'
+2025-11-01 09:38:32,481 - category_normalizer - DEBUG - Normalized LLM keyword: 'affordable moving Wishram' -> 'affordable moving wishram'
+2025-11-01 09:38:32,481 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential moving Wishram' -> 'residential moving wishram'
+2025-11-01 09:38:32,481 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial moving Wishram' -> 'commercial moving wishram'
+2025-11-01 09:38:32,482 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Wishram' -> 'moving company wishram'
+2025-11-01 09:38:32,482 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Wishram' -> 'cheap movers wishram'
+2025-11-01 09:38:32,482 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance moving Wishram' -> 'long distance moving wishram'
+2025-11-01 09:38:32,482 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving services Dufur' -> 'moving services dufur'
+2025-11-01 09:38:32,482 - category_normalizer - DEBUG - Normalized LLM keyword: 'Dufur movers' -> 'dufur movers'
+2025-11-01 09:38:32,482 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Dufur' -> 'best movers dufur'
+2025-11-01 09:38:32,482 - category_normalizer - DEBUG - Normalized LLM keyword: 'local moving Dufur' -> 'local moving dufur'
+2025-11-01 09:38:32,483 - category_normalizer - DEBUG - Normalized LLM keyword: 'affordable moving Dufur' -> 'affordable moving dufur'
+2025-11-01 09:38:32,483 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential moving Dufur' -> 'residential moving dufur'
+2025-11-01 09:38:32,483 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial moving Dufur' -> 'commercial moving dufur'
+2025-11-01 09:38:32,483 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Dufur' -> 'moving company dufur'
+2025-11-01 09:38:32,483 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Dufur' -> 'cheap movers dufur'
+2025-11-01 09:38:32,483 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance moving Dufur' -> 'long distance moving dufur'
+2025-11-01 09:38:32,483 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving services Maupin' -> 'moving services maupin'
+2025-11-01 09:38:32,483 - category_normalizer - DEBUG - Normalized LLM keyword: 'Maupin movers' -> 'maupin movers'
+2025-11-01 09:38:32,484 - category_normalizer - DEBUG - Normalized LLM keyword: 'best movers Maupin' -> 'best movers maupin'
+2025-11-01 09:38:32,484 - category_normalizer - DEBUG - Normalized LLM keyword: 'local moving Maupin' -> 'local moving maupin'
+2025-11-01 09:38:32,484 - category_normalizer - DEBUG - Normalized LLM keyword: 'affordable moving Maupin' -> 'affordable moving maupin'
+2025-11-01 09:38:32,484 - category_normalizer - DEBUG - Normalized LLM keyword: 'residential moving Maupin' -> 'residential moving maupin'
+2025-11-01 09:38:32,484 - category_normalizer - DEBUG - Normalized LLM keyword: 'commercial moving Maupin' -> 'commercial moving maupin'
+2025-11-01 09:38:32,484 - category_normalizer - DEBUG - Normalized LLM keyword: 'moving company Maupin' -> 'moving company maupin'
+2025-11-01 09:38:32,484 - category_normalizer - DEBUG - Normalized LLM keyword: 'cheap movers Maupin' -> 'cheap movers maupin'
+2025-11-01 09:38:32,484 - category_normalizer - DEBUG - Normalized LLM keyword: 'long distance moving Maupin' -> 'long distance moving maupin'
+2025-11-01 09:38:32,485 - category_normalizer - DEBUG - Attempting to push task to surfer_prospector_queue for category: 'moving-services'
+2025-11-01 09:38:32,493 - category_normalizer - INFO - Pushed task for category 'moving-services' to surfer_prospector_queue. Task details: moving-services, OR, https://www.STRONGMANMOVER.com
+2025-11-01 09:38:32,493 - category_normalizer - INFO - Lead 7881623662: Pushed Surfer Prospecting task for 'moving-services' to queue.
